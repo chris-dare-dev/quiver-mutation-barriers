@@ -103,7 +103,7 @@ make report BATCH=batches/section-07.toml
 | `section-12` | 6 | Conjecture 5.5: the split at each height ≤ 6, by enumeration | Python | 50 s |
 | `section-13` | 1 | the counts of Section 13, recounted from the stored outputs of the core and tube programs | the data archive | 20 s, 3 GB |
 | `section-14` | 34 | the generic search of Section 14 on R_b, P⁺_t and Q_a | `make build` | 3 s |
-| `long-pplus` | 253 | P⁺_t for t ≤ 80 by the two enumerators of the original runs. The C search: barrier and region for t ≤ 64; from t = 65 the barrier is above 2³¹ and its 32 tasks end `unsupported`. The second enumerator (note 17): the region for every t ≤ 80. The route for 65 ≤ t ≤ 80 | `make build` | 2 min for the C search; minutes more for the second enumerator |
+| `long-pplus` | 253 | P⁺_t for t ≤ 80 by the two enumerators of the original runs. The C search: barrier and region for t ≤ 64; from t = 65 the barrier is above 2³¹ and its 32 tasks end `unsupported`. The second enumerator (note 17): the region for every t ≤ 80. The route for 65 ≤ t ≤ 80 | `make build` | 7 min: 2 for the C search, 5 for the rest; 520 MB at most for one task |
 | `long-qa` | 110 | Q_a for a ≤ 48 without pruning and a ≤ 64 with forks not expanded | `make build`, numpy | not run; hours |
 | `long-conj55` | 1 | Conjecture 5.5 to height 18, by the original program | numpy | not run; over an hour, 11 GB |
 | `long-section-13` | 3 | the cores and the tube certificates, regenerated from stored inputs | the data archive, numpy | never run |
