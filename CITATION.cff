@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below. No human has read the paper; the results have not been independently reviewed."
+title: "Mirror barriers in quiver mutation: notes, code and stored results"
+type: software
+authors:
+  - family-names: Dare
+    given-names: Christopher
+date-released: 2026-11-17
+version: "1.0-draft"
+# Not a choice between two licences: MIT applies to the code (experiments/, verify/, tools/), and
+# CC-BY-4.0 to the text, the paper and the data archive. See LICENSE and LICENSE-TEXT.md.
+license: [MIT, CC-BY-4.0]
+# TODO-REPOSITORY-URL: set once the repository is public
+# repository-code: "TODO-REPOSITORY-URL"
+keywords:
+  - quiver mutation
+  - cluster algebras
+  - mutation equivalence
+  - exchange graphs
+  - forks
+  - computer-assisted proof
+abstract: >-
+  How high must a mutation path between two quivers of small height climb?
+  Four-vertex quivers of height b that reach their opposite only through
+  height 2b^2 - 3b - 3 (even b, computer-assisted proof), five-vertex quivers
+  of height t^2 that need 2t^5 - t^4 + t^2 - 1 (computer-assisted proof), and
+  five-vertex quivers of height a + 1 that need about 4a^3 (exhaustive search
+  for a <= 64, conjectured beyond). Also: Conjecture 5.5 of arXiv:2610.36179
+  checked for every four-vertex quiver of height at most 18, and a census of
+  788,026 four-vertex mutation classes. Notes, scripts, separately written
+  checking scripts and the stored results. Produced with extensive help from
+  AI tools; no human has read the paper.

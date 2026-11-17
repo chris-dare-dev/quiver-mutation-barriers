@@ -1,0 +1,15 @@
+# Stored results are not kept in git; they ship as one release archive (see DATA.md).
+*.jsonl
+*.jsonl.gz
+*.json
+*.json.gz
+*.part
+*.log
+# Release archive and checksum, built locally
+dist/
+*.tar.xz
+*.tar.xz.sha256
+# Python
+__pycache__/
+*.pyc
+.venv/

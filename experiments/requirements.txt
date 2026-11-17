@@ -1,0 +1,5 @@
+# Interpreter used for every stored result: CPython 3.12 (3.12.14).
+# verify/smoke.py and the certificate programs (n4_doors.py prove/prove2, np_corridor_prove.py,
+# n4_doors_readable.py, np_corridor_members.py) need no package at all.
+numpy==2.5.4
+cypari2==2.2.4

@@ -1,0 +1,597 @@
+\documentclass[11pt]{amsart}
+\usepackage[margin=1.15in]{geometry}
+\usepackage{amssymb,amsmath,mathtools}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{computation}[theorem]{Computational result}
+\newtheorem{mainthm}{Theorem}
+\renewcommand{\themainthm}{\Alph{mainthm}}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{question}[theorem]{Question}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\htt}{\operatorname{ht}}
+\newcommand{\pos}[1]{[#1]_+}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\Vp}{V'}
+
+\title[Mirror barriers in quiver mutation]{Mirror barriers in quiver mutation:\\ how high must a path between two low quivers climb?}
+\author{Christopher Dare}
+\date{Draft of 16 November 2026}
+\thanks{\emph{Status of this draft.} The proofs and computations reported here were produced with the help of AI tools. Each was rechecked by a fresh instance of the same AI model, with separately written code over the ranges stated in Appendix~\ref{app:comp}; some all-parameter certificates were re-read and rerun rather than re-implemented, and some ranges rest on one program, as the appendix says. No human specialist has yet read the arguments. Results that rest on computation are labelled as such, with the range checked.}
+
+\begin{document}
+
+\begin{abstract}
+For a quiver $Q$ and an integer $w$, let $f(Q,w)$ be the least $L$ such that any two quivers of height at most $w$ in the mutation class of $Q$ are joined by mutations through quivers of height at most $L$; the height of a quiver is its largest arrow multiplicity. Let $F(n,w)$ be the largest value of $f(Q,w)$ over quivers on $n$ vertices. Any computable upper bound for $F(n,w)$ would decide mutation equivalence, an open problem of Fomin, Williams and Zelevinsky. We give lower bounds from explicit families in which a quiver and its opposite are both low but are joined only high up. We show $F(n,w)\ge w(w-1)$ for every $n\ge 4$, by hand. With computer assistance we show $F(4,w)\ge 2w^2-7w+2$, so the constant of the bound $F(4,w)\le 2w^2$ suggested by our census cannot be lowered, and $F(5,w)\ge 2w^{5/2}-11w^2$ for every $w\ge 4$. By exhaustive computation $F(5,w)\ge 4w^3-15w^2+19w-11$ for $3\le w\le 65$, which we conjecture for all $w$. On four vertices we verify Conjecture~5.5 of Armstrong-Williams, Hirst, Jackson and Lee on all $106{,}918{,}566$ quivers of height at most $18$. We also measure how far Warkentin's forks and pre-forks, with finite cores and periodic ``tube'' certificates, go towards deciding equivalence on four vertices. Together with rank~$3$ and the theorem of Armstrong-Williams et al., they settle all but $2{,}828$ of the $788{,}026$ classes that contain a quiver of height at most $9$; they provably cannot settle the class of the Markov quiver with one pendant arrow.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}\label{sec:intro}
+
+\subsection{The question}
+A quiver on $n$ vertices without loops or oriented $2$-cycles is a skew-symmetric integer matrix $B=(b_{ij})$, with $b_{ij}>0$ meaning $b_{ij}$ arrows $i\to j$. Its \emph{height} $\htt(B)$ is $\max_{i,j}|b_{ij}|$. Whether two quivers are mutation-equivalent up to relabelling is not known to be decidable in general (Fomin, Williams and Zelevinsky \cite[Problem~2.6.14]{FWZ}). The mutation class of a connected quiver on at least three vertices is infinite as soon as some quiver in it has an entry of absolute value at least $3$, but only finitely many quivers of any given height exist. So a natural way to decide equivalence is to search among quivers of bounded height, and the question is how high such a search must go.
+
+\begin{definition}\label{def:f}
+A \emph{route} is a sequence of mutations, and its height is the largest height of a quiver on it. For a quiver $Q$ and $w\ge 0$, let $S_w(Q)$ be the set of quivers of height at most $w$ in the mutation class of $Q$, up to relabelling. Let $f(Q,w)$ be the least $L\ge w$ such that any two members of $S_w(Q)$ are joined by a route of height at most $L$. Let $F(n,w)$ be the maximum of $f(Q,w)$ over all quivers $Q$ on $n$ vertices, connected or not.
+\end{definition}
+
+Only finitely many classes meet height $\le w$, so $F(n,w)$ is finite. If $F(n,w)\le\Phi(n,w)$ for a computable $\Phi$, then two quivers of height at most $w$ are mutation-equivalent exactly when they lie in one component of the finite graph of quivers of height at most $\Phi(n,w)$; this would decide mutation equivalence. Up to relabelling, rank $3$ needs no detour: every class has $f(Q,w)\le w$ once $w$ is at least the least height in the class, which follows from the Markov-constant descent of Beineke, Br\"ustle and Hille \cite{BBH}, from Assem, Blais, Br\"ustle and Samson \cite{ABBS} and from Caldero and Keller \cite{CK} (see also \cite[\S3]{FN-long}). This paper is about four and five vertices.
+
+\subsection{Mirror barriers}
+All our lower bounds have one shape. A quiver $X$ of height $h$ and its opposite $-X$ (all arrows reversed) lie in one mutation class, are not isomorphic, and every route between them climbs to a height $E$ far above $h$. Then $f(X,w)\ge E$ for every $h\le w<E$ (Lemma~\ref{lem:escape}). We call $E$ a \emph{mirror barrier}. Mutation commutes with $B\mapsto -B$, so a route that reaches a quiver equal to the opposite of its own mutation can be completed by its mirror image (Corollary~\ref{cor:mirror}); this is how every route below is built.
+
+\begin{mainthm}[Section~\ref{sec:gk}]\label{thmA}
+For $k\ge3$ let $G_k$ be the $4$-vertex quiver with rows $(0,k,-k,-k)$, $(-k,0,0,k)$, $(k,0,0,-(k-1))$, $(k,-k,k-1,0)$. Then $G_k$ and $-G_k$ have height $k$, lie in one class, are not isomorphic, and are joined at exactly $k(k-1)$. Attaching a path of single arrows gives, for every $n\ge4$, a connected $n$-vertex quiver $Q$ of height $k$ with $f(Q,k)\ge k(k-1)$. Hence $F(n,w)\ge w(w-1)$ for all $n\ge4$ and $w\ge3$. The proof is by hand.
+\end{mainthm}
+
+\begin{mainthm}[Section~\ref{sec:rb}]\label{thmB}
+For even $b\ge6$ let $R_b$ be the $4$-vertex quiver with $(b_{01},\dots,b_{23})=(-b,-b,b-1,-2,b-2,-b)$, in the order of \S\ref{sec:conv}. Then $R_b$ and $-R_b$ have height $b$, are not isomorphic, and are joined at exactly $2b^2-3b-3$. Hence $F(4,w)\ge 2w^2-3w-3$ for even $w\ge6$ and $F(4,w)\ge 2w^2-7w+2$ for all $w\ge6$. The upper bound is proved by hand; the lower bound is a computer-assisted proof by $30$ polynomial certificates.
+\end{mainthm}
+
+Our census of all $788{,}026$ classes of $4$-vertex quivers that contain a quiver of height at most $9$ suggested the bound $F(4,w)\le 2w^2$ (Conjecture~\ref{conj:2w2}). Theorem~\ref{thmB} shows that its constant could not be lowered.
+
+\begin{mainthm}[Section~\ref{sec:pt}]\label{thmC}
+For $t\ge2$ let $P^+_t$ be the $5$-vertex quiver
+\begin{align*}
+(b_{01},b_{02},b_{03},b_{04})&=(1,\,-(t^2-1),\,-t(t-1),\,t^2),\\
+(b_{12},b_{13},b_{14},b_{23},b_{24},b_{34})&=(-2,\,t(t-1),\,t^2,\,-t^2,\,t^2-1,\,-2t).
+\end{align*}
+Then $P^+_t$ and $-P^+_t$ have height $t^2$, are not isomorphic, and are joined at exactly $H^+(t)=2t^5-t^4+t^2-1$. Hence $F(5,w)\ge 2w^{5/2}-11w^2$ for every $w\ge4$; $11$ is the least constant for which this follows from the family. The route is by hand; the lower bound is computer-assisted: exhaustive search for $2\le t\le80$ and a symbolic certificate for $t\ge8$.
+\end{mainthm}
+
+\begin{mainthm}[Section~\ref{sec:qa}; computational]\label{thmD}
+For $a\ge2$ let $Q_a=(-(a-3),\,a-2,\,a+1,\,-(a+1),\,-(a+1),\,-a,\,2,\,-2,\,-a,\,-(a+1))$, of height $a+1$. For every $a\ge2$ there is an explicit route from $Q_a$ to $-Q_a$ of height $H(a)=4a^3-3a^2+O(a)$; this is derived by hand (only a sketch is given here, and it has not been re-derived independently) and was rebuilt by integer mutation for $a\le48$. For $2\le a\le64$, exhaustive search shows that no lower route exists. Hence $F(5,w)\ge 4w^3-15w^2+19w-11$ for $3\le w\le65$. We conjecture that this holds for every $w\ge3$ (Conjecture~\ref{conj:cubic}).
+\end{mainthm}
+
+The exponents $1,2,3$ for $n=3,4,5$ suggest asking whether $F(n,w)$ has order $w^{n-2}$ (Question~\ref{q:degree}). We know no upper bound for $F(n,w)$ for any $n\ge4$.
+
+\subsection{Four vertices: the acyclic side and what forks decide}
+Armstrong-Williams, Hirst, Jackson and Lee \cite{AHJL} proved that mutation-acyclicity of $4$-vertex quivers is decidable, and that a mutation-acyclic quiver $Q$ reaches an acyclic quiver through quivers of height at most $\max\{\htt(Q),m(Q)\}$, where $m$ is a Markov invariant. Their Conjecture~5.5 says that $\htt(Q)$ alone suffices; they checked it for heights at most $3$.
+
+\begin{mainthm}[Section~\ref{sec:conj55}; computational]\label{thmE}
+Conjecture~5.5 of \cite{AHJL} holds for every $4$-vertex quiver of height at most $18$. There are $106{,}918{,}566$ such quivers up to relabelling (the zero quiver excluded); $45{,}694{,}973$ reach an acyclic quiver within their own height, and each of the other $61{,}223{,}593$ is certified mutation-cyclic by a published criterion or, in one case, by checking that its class is finite.
+\end{mainthm}
+
+Consequently, in a mutation-acyclic $4$-vertex class $f(Q,w)\le w$ for $w\le18$ (Proposition~\ref{prop:acyclicf}), and every barrier found above lies in a mutation-cyclic class.
+
+For mutation-cyclic classes we turn to Warkentin's forks and pre-forks \cite{War}. These cut a class into far regions, each attached by single edges, and a rest~$N$, which is Ervin's pre-forkless part \cite{Erv}. When the search for $N$ from a quiver closes, it decides equivalence with no bound on the entries. In Section~\ref{sec:cores} we add finite certificates for periodic infinite ``tubes'', and measure the result on the census. All but $2{,}828$ of the $788{,}026$ census classes are decided this way, or by \cite{AHJL} or rank~$3$. We also prove that no certificate of this form exists for the class of the Markov quiver with one pendant arrow (Theorem~\ref{thm:markov}).
+
+\subsection{Motivation}
+This work began in cryptography, with a test of whether mutation routes between quivers could serve as the secret of a one-way function: publish two quivers and a height bound, and keep a route between them inside that bound. Mirror barriers make the bound an attacker must use high, but not the cost of inverting. The literal route over each of our barriers has length a fixed power of the barrier $H$ (about $H/4$ for $R_b$, $2H$ for $Q_a$, and of order $H^{3/4}$ and $H^{3/5}$ for $Q_t$ and $P^+_t$), and iterative deepening on the bound stayed within a small power of the planter's own cost in every case measured. A search that leaves fork regions by descent and then jumps along the linear counters described below inverted every planted instance it was tried on (Section~\ref{sec:crypto}). So the interest of the barriers is combinatorial, and that is how they are presented here.
+
+\subsection{Conventions}\label{sec:conv}
+Quivers are considered up to relabelling unless stated otherwise. Tuples list the entries above the diagonal in the order $(b_{01},b_{02},b_{03},b_{12},b_{13},b_{23})$ on four vertices and $(b_{01},\dots,b_{04},b_{12},b_{13},b_{14},b_{23},b_{24},b_{34})$ on five. We write $\pos{x}=\max(x,0)$. A result labelled \emph{computational} rests on an exhaustive computation over the stated range; a \emph{computer-assisted proof} covers all parameters, using a program to check finitely many polynomial identities and inequalities. Appendix~\ref{app:comp} lists every computation and how it was checked.
+
+\section{Preliminaries}\label{sec:prelim}
+
+\subsection{Mutation, opposites and barriers}
+The mutation of $B$ at $k$ is $\mu_k(B)=B'$ with $b'_{ij}=-b_{ij}$ if $k\in\{i,j\}$ and
+\[b'_{ij}=b_{ij}+\pos{b_{ik}}\pos{b_{kj}}-\pos{-b_{ik}}\pos{-b_{kj}}\quad\text{otherwise.}\]
+It is an involution, it commutes with relabelling, and $\mu_k(-B)=-\mu_k(B)$. A labelled route is \emph{reduced} if no two consecutive mutations are at the same vertex; cancelling such a pair shortens a route without raising its height. Two quivers are \emph{joined at $L$} if the least height of a route between them is $L$.
+
+\begin{lemma}\label{lem:escape}
+Let $X$ have height $h$, let $-X$ lie in the class of $X$ and not be isomorphic to $X$, and suppose every route from $X$ to $-X$ has height at least $E$. Then $f(X,w)\ge E$ for every $w$ with $h\le w<E$. In particular $F(n,w)\ge E$ for these $w$, where $n$ is the number of vertices of $X$.
+\end{lemma}
+\begin{proof}
+For $h\le w<E$ both $X$ and $-X$ lie in $S_w(X)$, and no route of height $<E$ joins them.
+\end{proof}
+
+On four vertices the \emph{Pfaffian} $\mathrm{Pf}(B)=b_{01}b_{23}-b_{02}b_{13}+b_{03}b_{12}$ changes sign under mutation and is multiplied by the sign of a relabelling, so $|\mathrm{Pf}|$ is a class invariant (see \cite[proof of Lemma~3.2]{BFZ}).
+
+\subsection{Steps and turns on a pair of weight two}\label{sec:steps}
+Let $p,q$ be two vertices with two arrows $q\to p$. For every other vertex $e$ put $A_e=b_{pe}$ and $B_e=b_{qe}$, the \emph{column} of $e$, and $S_{ef}=b_{ef}$ for two other vertices $e,f$. A \emph{step} mutates at $p$ and then exchanges the names $p$ and $q$, so that there are again two arrows $q\to p$. A \emph{backward step} mutates at $q$ and exchanges the names; it undoes a step. The \emph{slope} of $e$ is $d_e=A_e+B_e$.
+
+\begin{lemma}[Step]\label{lem:step}
+After a step, the column of $e$ is $(2A_e+B_e,\,-A_e)$ if $A_e\ge0$ and $(B_e,\,-A_e)$ if $A_e<0$, and $S'_{ef}=S_{ef}+\pos{-A_e}\pos{A_f}-\pos{A_e}\pos{-A_f}$. In particular, while $A_e\ge0$ the column moves by $(A_e,B_e)\mapsto(A_e+d_e,B_e-d_e)$, and if every $A_e\ge0$ no $S_{ef}$ changes. A backward step takes the column of $e$ to $(-B_e,\,A_e+2B_e)$ if $B_e\le0$ and to $(-B_e,\,A_e)$ if $B_e>0$, and changes $S_{ef}$ by $\pos{-B_e}\pos{B_f}-\pos{B_e}\pos{-B_f}$.
+\end{lemma}
+\begin{proof}
+At $p$ we have $b_{qp}=2$ and $b_{pe}=A_e$, so $b'_{qe}=B_e+2\pos{A_e}$ and $b'_{pe}=-A_e$; exchanging names gives the column. For $e,f\neq p,q$ use $b_{ep}=-A_e$ and $b_{pf}=A_f$. A backward step is the same computation at $q$, with $b_{eq}=-B_e$ and $b_{qf}=B_f$.
+\end{proof}
+
+\begin{lemma}[Turn]\label{lem:turn}
+Let $y$ have column $(0,-\eta)$ with $\eta\ge1$, and let $S_{ey}\ge0$ for every other vertex $e$. Then $\mu_y$ changes only the following entries: $B_e\mapsto B_e-\eta S_{ey}$ for every $e\ne y$, the column of $y$ becomes $(0,\eta)$, and every $S_{ey}$ changes sign.
+\end{lemma}
+\begin{proof}
+The arrows at $y$ are $y\to q$ and $e\to y$, so the only paths through $y$ are $e\to y\to q$.
+\end{proof}
+
+\begin{lemma}[Top]\label{lem:top}
+In the situation of Lemma~\ref{lem:turn} suppose further that $A_e\ge0$ for every $e$, that $\eta S_{ey}=2(A_e+B_e)$ for every $e\ne y$, and that $S_{ef}=0$ whenever $e,f\ne y$. Then $\mu_y(X)=-\mu_p(X)$, with the same labels.
+\end{lemma}
+\begin{proof}
+By the mutation rule, $\mu_p(X)$ has $b_{pq}=2$, $b_{pe}=-A_e$, $b_{qe}=B_e+2A_e$, $b_{py}=0$, $b_{qy}=-\eta$, and the entries $S$ of $X$. By Lemma~\ref{lem:turn}, $\mu_y(X)$ has $b_{qp}=2$, $b_{pe}=A_e$, $b_{qe}=B_e-2(A_e+B_e)=-(B_e+2A_e)$, $b_{py}=0$, $b_{qy}=\eta$, the entries $-S_{ey}$, and $S_{ef}=0$. These are the entries of $-\mu_p(X)$.
+\end{proof}
+
+\begin{corollary}[Mirror routes]\label{cor:mirror}
+If a route $\rho$ leads from $X_0$ to a quiver $X$ as in Lemma~\ref{lem:top}, then $\rho$, followed by $\mu_y$, $\mu_p$ and the mutations of $\rho$ in reverse order, leads from $X_0$ to $-X_0$. Its height is the larger of the height of $\rho$ and $\htt\mu_p(X)$.
+\end{corollary}
+\begin{proof}
+$\mu_p\mu_y(X)=\mu_p(-\mu_p X)=-X$, and reversing $\rho$ from $-X$ ends at $-X_0$ because mutation commutes with $B\mapsto-B$.
+\end{proof}
+
+A column with $A_e\ge0$ is thus a \emph{counter}: its entries run through arithmetic progressions with difference $d_e$. The same rules, for one other vertex, are the orbits of two mutations described in \cite[Theorem~1.3]{Sou} and \cite[\S3]{FN-long}.
+
+\subsection{Forks}\label{sec:forks}
+\begin{definition}[{Warkentin \cite[Def.~2.1]{War}}]\label{def:fork}
+A \emph{fork} is a quiver $F$ in which every two vertices are joined by at least two arrows, which is not acyclic, and which has a vertex $r$, the \emph{point of return}, such that $b_{ji}>b_{ir}$ and $b_{ji}>b_{rj}$ for every path $i\to r\to j$, and such that the full subquivers on the in-neighbours and on the out-neighbours of $r$ are acyclic.
+\end{definition}
+
+\begin{lemma}[{Warkentin \cite[Lemma~2.5 and its proof]{War}}]\label{lem:fork}
+Let $F$ be a fork with point of return $r$ and let $k\ne r$. Then $\mu_k(F)$ is a fork with point of return $k$, no entry of $\mu_k(F)$ is smaller in absolute value than the corresponding entry of $F$, and the total number of arrows increases.
+\end{lemma}
+
+\begin{lemma}[Fork exclusion]\label{lem:forkexcl}
+On a reduced route from $X$ to $Y$, every fork has height at most $\max(\htt X,\htt Y)$. This holds on any number of vertices.
+\end{lemma}
+\begin{proof}
+Let $R$ be a fork on the route, with point of return $r$. If $R=X$ or $R=Y$ there is nothing to prove. If the route leaves $R$ at a vertex $k\ne r$, the next quiver is a fork with point of return $k$ and no smaller entries, by Lemma~\ref{lem:fork}. The route is reduced, so it leaves that quiver at a vertex other than $k$, and so on to $Y$; hence $\htt Y\ge\htt R$. If the route leaves $R$ at $r$, then it arrived at $R$ by a mutation at some $k\ne r$, since it is reduced; read backwards, the route leaves $R$ at $k$, and the same argument gives $\htt X\ge\htt R$.
+\end{proof}
+
+Lemma~\ref{lem:forkexcl} is a form of Warkentin's observation that the fork-free part of the exchange graph is convex \cite[Cor.~4.5]{War}. Our lower bounds all use it through the following lemma.
+
+\begin{lemma}[Closed regions]\label{lem:region}
+Let $X$ have height $h$, let $E>h$, and let $\cM$ be a set of quivers up to relabelling with $X\in\cM$. Suppose every mutation of every member of $\cM$ is a member, or has height at least $E$, or is a fork of height greater than $h$. Suppose $X$ is the only member of height at most $h$. Then every route from $X$ to a quiver of height at most $h$ not isomorphic to $X$ has height at least $E$.
+\end{lemma}
+\begin{proof}
+Take such a route of height $<E$ and reduce it. By Lemma~\ref{lem:forkexcl} it meets no fork higher than $h$. Starting from $X\in\cM$, each mutation therefore leads to a member, so the route ends at a member of height at most $h$, which is $X$.
+\end{proof}
+
+In Sections~\ref{sec:rb} and~\ref{sec:pt} the members come in finitely many families whose entries are polynomials in the parameters. Each claim ``is a member'', ``has an entry of absolute value $\ge E$'' or ``is a fork higher than $h$'' then becomes finitely many polynomial identities and inequalities on domains of the form $\{t\ge t_0,\ j\ge j_0,\dots\}$. An inequality $p\ge0$ on such a domain is certified by substituting $t=t_0+t'$, $j=j_0+j'$, \dots\ and checking that every coefficient of the expanded polynomial is non-negative; signs needed by the mutation rule are certified the same way before the mutation is carried out symbolically.
+
+\section{Quadratic barriers on four vertices}\label{sec:four}
+
+\subsection{The family \texorpdfstring{$G_k$}{G\_k}}\label{sec:gk}
+Label the vertices of $G_k$ by $0,1,2,3$ as in Theorem~\ref{thmA}. Its arrows are $0\to1$, $2\to0$, $3\to0$ and $1\to3$ of weight $k$, and $3\to2$ of weight $k-1$.
+
+\begin{theorem}\label{thm:gk}
+Let $k\ge3$.
+\begin{enumerate}
+\item Each of the four mutations of $G_k$ has height at least $k^2-k$.
+\item $\mu_2\mu_1(G_k)$ is the oriented $4$-cycle $C_k$: $0\to2\to3\to1\to0$ with weights $k,k-1,k,k$. The route $\mu_1,\mu_2,\mu_3,\mu_0$ passes through heights $k^2-k$, $k$, $k^2-k$, $k$ and ends at $-G_k$ relabelled by $0\leftrightarrow1$, $2\leftrightarrow3$.
+\item $G_k$ and $-G_k$ are not isomorphic.
+\end{enumerate}
+Hence $G_k$ and $-G_k$ are joined at exactly $k(k-1)$, and $F(4,w)\ge w(w-1)$ for every $w\ge3$.
+\end{theorem}
+\begin{proof}
+(1) Each new entry is a product of the two arrows of a path through the mutated vertex, less at most one existing entry: $\mu_0$ creates $b_{21}=k^2$ (from $2\to0\to1$), $\mu_1$ creates $b_{03}=k^2-k$, $\mu_2$ creates $b_{30}=k^2$, and $\mu_3$ creates $b_{12}=k^2-k$.
+(2) is a direct computation of four mutations.
+(3) The multisets of (out-weight, in-weight) at the vertices are $\{(k,2k),(k,k),(k,k-1),(2k-1,k)\}$ for $G_k$ and $\{(2k,k),(k,k),(k-1,k),(k,2k-1)\}$ for $-G_k$.
+By (1), $G_k$ is alone in its component of the graph of quivers of height $<k^2-k$, since $k^2-k>k$. By (2) and (3) the class contains $-G_k\not\cong G_k$, joined to $G_k$ at height $k^2-k$. Lemma~\ref{lem:escape} with $k=w$ gives the bound.
+\end{proof}
+
+The full subquiver of $G_k$ on $\{0,1,3\}$ is an oriented triangle with weights $(k,k,k)$ and Markov constant $3k^2-k^3<4$, so it is mutation-cyclic \cite{BBH}; by Warkentin's theorem on subquivers \cite{War-sub}, $G_k$ is not mutation-acyclic. The same argument applies to $R_b$, $Q_t$ and $P^+_t$ below, and to $Q_a$ for $a\ge6$; for $a\le5$, $Q_a$ has no mutation-cyclic full triangle.
+
+\begin{proposition}\label{prop:gkn}
+Let $n\ge4$ and $k\ge3$. Let $Q_{n,k}$ be $G_k$ with vertices $4,\dots,n-1$ attached to vertex $0$ as a path $0-4-5-\cdots-(n-1)$ of single arrows, oriented in any way. Then $Q_{n,k}$ is connected and $f(Q_{n,k},k)\ge k(k-1)$. Hence $F(n,w)\ge w(w-1)$ for every $n\ge4$ and $w\ge3$, with connected quivers.
+\end{proposition}
+\begin{proof}
+Call $\{0,1,2,3\}$ the block and the other vertices the tail. We show by induction along routes from $Q_{n,k}$ through heights $<k^2-k$ that every quiver met has block $G_k$ and has no arrow between a tail vertex and $1$, $2$ or $3$. A mutation changes only entries between neighbours of the mutated vertex. At a tail vertex all neighbours lie in $\{0\}\cup$tail, so the block and the invariant are kept, and the full subquiver on $\{0\}\cup$tail moves within the class of a path of type $A_{n-3}$, whose entries are $0$ and $\pm1$. At a block vertex, the entries inside the block change exactly as for $G_k$, so by Theorem~\ref{thm:gk}(1) the result has height $\ge k^2-k$. Hence every quiver reached through heights $<k^2-k$ has block $G_k$ and tail entries of absolute value $\le1$, so exactly four entries of absolute value $k$. Let $X=\mu_0\mu_3\mu_2\mu_1(Q_{n,k})$. The mutations $\mu_1,\mu_2,\mu_3$ do not touch the tail; $\mu_0$ reverses the arrow between $0$ and $4$ and creates one arrow of weight $k$ between $4$ and a neighbour of $0$ in $\mu_3(C_k)$. So $X$ has height $k$, lies in $S_k(Q_{n,k})$, and has five entries of absolute value $k$, so it is not reached below $k^2-k$.
+\end{proof}
+
+\begin{remark}[The whole class of $G_k$]\label{rem:gkclass}
+Using the cores of Section~\ref{sec:cores}, with entries treated as polynomials in $k$ (a computer-assisted proof, certified for every $k\ge3$), the class of $G_k$ is described completely: its core consists of the seven quivers $G_k$, $-G_k$, $C_k$ (height $k$), $\mu_1(G_k)$ and its opposite (height $k^2-k$), and $\mu_2(G_k)$ and its opposite (height $k^2$); every other quiver of the class lies in one of twelve far regions and has height at least $k^2-k$. So $k$ is the least height in the class, the class has exactly three quivers of height below $k^2-k$, and $f(G_k,w)=k(k-1)$ for $k\le w<k(k-1)$.
+\end{remark}
+
+\subsection{The plateau family \texorpdfstring{$R_b$}{R\_b}}\label{sec:rb}
+Let $b=2c\ge6$ be even and $H=2b^2-3b-3$. In $R_b=(-b,-b,b-1,-2,b-2,-b)$ there are two arrows $2\to1$, so we take $p=1$, $q=2$ in Section~\ref{sec:steps}. The column of $0$ is $(A_0,B_0)=(b,b)$, with slope $2b$; the column of $3$ is $(b-2,-b)$, with slope $-2$; and $S_{03}=b-1$.
+
+\begin{theorem}\label{thm:rb}
+Let $b\ge6$ be even.
+\begin{enumerate}
+\item There is a route from $R_b$ to $-R_b$ of height $H=2b^2-3b-3$ with $b(b-1)/2+b+1$ mutations.
+\item Every route from $R_b$ to a quiver of height at most $b$ not isomorphic to $R_b$ has height at least $H$.
+\item $R_b\not\cong-R_b$.
+\end{enumerate}
+Hence $R_b$ and $-R_b$ are joined at exactly $H$.
+\end{theorem}
+
+\begin{corollary}\label{cor:rb}
+$F(4,w)\ge2w^2-3w-3$ for every even $w\ge6$, and $F(4,w)\ge2w^2-7w+2$ for every $w\ge6$. In particular $\liminf_w F(4,w)/w^2\ge2$. The same bounds hold for $F(n,w)$, $n\ge5$.
+\end{corollary}
+\begin{proof}
+Use $R_w$ for even $w$ and $R_{w-1}$ for odd $w$, with $2(w-1)^2-3(w-1)-3=2w^2-7w+2$, and Lemma~\ref{lem:escape}. For $n\ge5$ add isolated vertices.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:rb}]
+\emph{The region.} Let $A(j)$ be the quiver after $j$ steps from $R_b=A(0)$, for $0\le j\le c$. By Lemma~\ref{lem:step}, in $A(j)$ the column of $0$ is $((2j+1)b,\,-(2j-1)b)$, the column of $3$ is $(b-2-2j,\,-(b-2j))$, and $S_{03}=b-1$. The heights are $b,3b,\dots,(b-1)b$ for $j\le c-1$ and $(b+1)b$ for $j=c$. In $A(c-1)$ the column of $3$ is $(0,-2)$ and $S_{03}\ge0$, so Lemma~\ref{lem:turn} applies at $3$: $B=\mu_3A(c-1)$ has the columns $(b^2-b,\,-(b^2-b-2))$ for $0$ and $(0,2)$ for $3$, and $S_{03}=-(b-1)$; its height is $b^2-b$. Put $B'=\mu_3A(c)$, of height $b^2-b+2$. Since $p$ and $3$ are not joined in $A(c-1)$, the quivers $A(c-1),A(c),B,B'$ form a commuting square. Let $\cM=\{A(0),\dots,A(c),B,B'\}$. The exits are:
+\begin{center}
+\begin{tabular}{lcccc}
+\toprule
+member & $\mu_q$ & $\mu_p$ & $\mu_0$ & $\mu_3$\\
+\midrule
+$A(0)$ & fork & $A(1)$ & fork & fork\\
+$A(j)$, $1\le j\le c-2$ & $A(j-1)$ & $A(j+1)$ & $\ge H$ & fork\\
+$A(c-1)$ & $A(c-2)$ & $A(c)$ & $\ge H$ & $B$\\
+$A(c)$ & $A(c-1)$ & $\ge H$ & $\ge H$ & $B'$\\
+$B$ & $=H$ & $B'$ & $\ge H$ & $A(c-1)$\\
+$B'$ & $B$ & fork & $\ge H$ & $A(c)$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Here ``fork'' means a fork of height $>b$, and ``$\ge H$'' means a quiver with an entry of absolute value at least $H$. The entries of $A(j)$ are polynomials in $j$ and $v=c-1-j$; each cell is a polynomial identity or inequality on $\{j\ge1,\,v\ge1\}$ or on a single quiver with $c\ge3$, certified as described after Lemma~\ref{lem:region}. With the heights of the members, and the value $|\mathrm{Pf}(R_b)|=2(b-1)^2$, which is recorded but not used, there are $30$ claims, all certified. Only $A(0)$ has height $\le b$. Each cell can also be checked by hand from the column formulas. For example, for $1\le j\le c-2$ put $\alpha=b-2-2j\ge2$ and $\beta=\alpha+2$; then $\mu_3A(j)$ has the arrows $1\to0$ ($(2j+1)b$), $0\to2$ ($(2j-1)b+(b-1)\beta$), $1\to2$ ($\alpha\beta-2$), $3\to1$ ($\alpha$), $3\to0$ ($b-1$) and $2\to3$ ($\beta$). Every pair carries at least two arrows, $2\to3\to1\to2$ is an oriented cycle, the only paths through $3$ are $2\to3\to1$ and $2\to3\to0$, and $\alpha\beta-2>\beta\ge\alpha$ and $(2j-1)b+(b-1)\beta>\max(\beta,b-1)$. So it is a fork with point of return $3$, of height $>b$.
+
+\emph{(2)} follows from Lemma~\ref{lem:region} with $X=R_b$ and $E=H$.
+
+\emph{(1): the plateau.} Put $T=b(b-1)/2$. From $B$ take backward steps, and let $P(m)$ be the quiver after $m+1$ of them. At the first, $B_0<0<B_3$, so by Lemma~\ref{lem:step} $S_{03}$ becomes $-(b-1)+2(b^2-b-2)=H$. By the backward rules of Lemma~\ref{lem:step}, in $P(m)$, $0\le m\le T-1$, the column of $3$ is $(2m-2,\,-2m)$, and the column of $0$ is $(b^2-b-2-2m,\,-(b^2-b-4-2m))$ for $m\le T-2$ and $(0,2)$ for $m=T-1$. Each step out of $P(m)$ with $m\le T-2$ has $B_0\le0$ and $B_3\le0$, so $S_{03}=H$ in all of $P(0),\dots,P(T-1)$, while every column entry is at most $b^2-b<H$: these $T$ quivers have height exactly $H$. The step out of $P(T-1)$ has $B_0=2>0>B_3$, returns $S_{03}$ to $-(b-1)$, and reaches $-B$ with the names $0\leftrightarrow3$ and $1\leftrightarrow2$ exchanged. Since mutation commutes with $B\mapsto-B$, the mirror image of the route from $R_b$ to $B$ leads from $-B$ to $-R_b$. The route has $(c-1)+1+(T+1)+1+(c-1)=T+b+1$ mutations and height $H$.
+
+\emph{(3)} The (out-weight, in-weight) pairs of $R_b$ are $(b-1,2b)$, $(2b-2,2)$, $(b+2,b)$, $(b,2b-3)$, and no vertex of $-R_b$ has in-weight $2$.
+\end{proof}
+
+\begin{remark}\label{rem:rbchecks}
+The theorem was also checked without certificates. A search that uses no forks returns $2b^2-3b-3$ as the least height at which $R_b$ reaches another quiver of height $\le b$, with $-R_b$ the quiver reached, for every $b$ from $5$ to $60$, including odd $b$; an independent program confirmed this for $5\le b\le48$. For even $b\le60$ the search from $R_b$ through non-forks below $H$ and forks of height $\le b$ returns exactly the region of the proof, with the exits of the table. For odd $b$ the region has a different shape, and the value $2b^2-3b-3$ is computational only, for odd $b$ with $5\le b\le59$.
+\end{remark}
+
+\begin{remark}[A second mechanism]\label{rem:qt}
+For $t\ge3$, the quiver $Q_t=(-t^2,-(t^2-1),2t,-2,t(t-1),-t^2)$ of height $t^2$ is joined to $-Q_t$ at exactly $2t^4-t^3-t^2+2t$, by the same method with $43$ polynomial claims. Here the barrier is not a plateau but a single commuting square at the end of a corridor of about $2t^3$ steps. The bound it gives on $F(4,w)$ is weaker than Corollary~\ref{cor:rb}; $Q_t$ is used as a block in Section~\ref{sec:pt}.
+\end{remark}
+
+\subsection{The upper side}\label{sec:upper}
+By the \emph{census} we mean the list of all mutation classes of $4$-vertex quivers that contain a quiver of height at most $9$: $788{,}026$ classes, obtained by enumerating all $4$-vertex quivers of height at most $14$, keeping one quiver of each component born at height $\le9$, and then enumerating each class within a bound of at least $192$. A \emph{pocket} born at $b$ and dying at $D$ is a persistence pair of the height filtration of a class: a component of the graph of its quivers of height $\le b$ that appears at height $b$ and first merges with an older component at height $D$. The census pockets were all computed within the enumeration bounds.
+
+\begin{conjecture}\label{conj:2w2}
+$F(4,w)\le2w^2$ for every $w$.
+\end{conjecture}
+
+The evidence is computational. On the census, $f(Q,w)\le1.834\,w^2$ for every class and every $w\le9$, up to joins hidden above the bound to which each class was enumerated; a re-enumeration of every class with least height $6$ to $9$ not otherwise certified, to bound $8b^2$, found no join between the census bound and $8b^2$. For the $258{,}363$ census classes whose core (Section~\ref{sec:cores}) is finite and whose far regions are all rooted at forks, the pockets at every level are determined by a finite graph, and $f(Q,w)\le\max(w,0.703\,w^2)$ for every $w$. For mutation-acyclic classes, \cite{AHJL} gives $f(Q,w)\le w^4+4w^3+6w^2$, and Proposition~\ref{prop:acyclicf} gives $f(Q,w)\le w$ for $w\le18$. So the content of the conjecture lies in mutation-cyclic classes, which contain $G_k$, $R_b$, $Q_t$ and every census extreme. Nothing found exceeds $2w^2-w$. Two quivers of height $\le w$ that lie in one orbit of the mutations at two fixed vertices are joined inside that orbit, up to relabelling, within height $w^2+w$ (we omit the proof, a case analysis of the rules of Lemma~\ref{lem:step} for a pair of any weight; it was also tested on random orbits). So a barrier near $2w^2$ never separates two low quivers of one such orbit: in $R_b$ the plateau lies on one orbit, but the ends of that orbit have height about $w^2$.
+
+\section{Five vertices}\label{sec:five}
+
+\subsection{The family \texorpdfstring{$P^+_t$}{P+\_t}}\label{sec:pt}
+Name the vertices $x=0$, $p=1$, $q=2$, $c_1=3$, $c=4$. The full subquiver on $p,q,c_1,c$ is $Q_t$ of Remark~\ref{rem:qt}: two arrows $q\to p$, and $p\to c_1$, $c_1\to q$, $p\to c$, $q\to c$, $c\to c_1$ of weights $t(t-1)$, $t^2$, $t^2$, $t^2-1$, $2t$. The fifth vertex $x$ has one arrow $x\to p$, $t^2-1$ arrows $q\to x$, $t^2$ arrows $x\to c$ and $t(t-1)$ arrows $c_1\to x$. Put
+\[N=2t^3-t^2-t,\qquad H^+(t)=2t^5-t^4+t^2-1=(t+N+1)t^2-1.\]
+
+\begin{theorem}[The route]\label{thm:ptroute}
+Let $t\ge2$. Let $K(0)=P^+_t$ and let $K(j)$ be the quiver after $j$ steps on $(p,q)$, $0\le j\le t-1$. Let $L(0)=\mu_{c_1}K(t-1)$ and let $L(i)$ be the quiver $i$ steps after $L(0)$, $0\le i\le N+1$. Their columns on $(p,q)$ and their other entries are:
+\begin{center}\small
+\begin{tabular}{lcc}
+\toprule
+ & $K(j)$, $1\le j\le t-1$ & $L(i)$, $0\le i\le N+1$\\
+\midrule
+$c_1$ & $((t-1-j)t,\ -(t-j)t)$ & $(it,\ -(i-1)t)$\\
+$c$ & $(t^2+j(2t^2-1),\ -(t^2+(j-1)(2t^2-1)))$ & $(N+1-i,\ -(N+2-i))$\\
+$x$ & $(jt^2-1,\ -((j-1)t^2-1))$ & $((t-1+i)t^2-1,\ -((t-2+i)t^2-1))$\\
+other & $2t$ arrows $c\to c_1$, $2t^2$ arrows $x\to c$ & $2t$ arrows $c_1\to c$, $2t^2$ arrows $x\to c$\\
+\bottomrule
+\end{tabular}
+\end{center}
+and $x$, $c_1$ are not joined. In $K(0)$ the columns of $c_1$ and $c$ are those of the formula at $j=0$, namely $((t-1)t,-t^2)$ and $(t^2,t^2-1)$, the column of $x$ is $(-1,t^2-1)$, and there are $2t$ arrows $c\to c_1$, $t^2$ arrows $x\to c$ and $t(t-1)$ arrows $c_1\to x$. In $L(N+1)$, Lemma~\ref{lem:top} applies with $y=c$, $\eta=1$. So there is a route from $P^+_t$ to $-P^+_t$ with $4t^3-2t^2+4$ mutations. Exactly one quiver on it, $\mu_c L(N+1)$, has height $H^+(t)$, and all others have height at most $H^+(t)-t^2$. Also $P^+_t\not\cong-P^+_t$.
+\end{theorem}
+\begin{proof}
+From $K(0)$ to $K(1)$: the columns of $c_1$ and $c$ have first entry $\ge0$ (slopes $-t$ and $2t^2-1$); the column of $x$ has first entry $-1$, so by Lemma~\ref{lem:step} it becomes $(t^2-1,1)$, and the entries from $x$ to $c_1$ and $c$ gain $A_{c_1}=(t-1)t$ and $A_c=t^2$, becoming $0$ and $2t^2$. From $K(j)$ to $K(j+1)$ every first entry is $\ge0$ and every column moves one place along its progression. In $K(t-1)$ the column of $c_1$ is $(0,-t)$, there are $2t$ arrows $c\to c_1$, and $x$ is not joined to $c_1$; Lemma~\ref{lem:turn} with $\eta=t$ lowers the slope of $c$ by $2t^2$, to $-1$, and gives $c_1$ the column $(0,t)$ (note $t^2+(t-1)(2t^2-1)=N+1$). From $L(i)$ to $L(i+1)$ every first entry is $\ge0$ for $i\le N$, with slopes $t$, $-1$, $t^2$. In $L(N+1)$ the column of $c$ is $(0,-1)$, there are $2t$ arrows $c_1\to c$ and $2t^2$ arrows $x\to c$, twice the slopes of $c_1$ and $x$, and $x,c_1$ are not joined: this is Lemma~\ref{lem:top} with $y=c$, and Corollary~\ref{cor:mirror} gives the route, of $2(t-1+1+N+1)+2=4t^3-2t^2+4$ mutations. On $K(j)$ and $L(i)$ the largest entry is the first entry of $x$ in $L(N+1)$, $(t+N)t^2-1=H^+(t)-t^2$; in $\mu_pL(N+1)$, and so in $\mu_cL(N+1)=-\mu_pL(N+1)$, the entry between $q$ and $x$ is $(t+N+1)t^2-1=H^+(t)$. Finally, in $P^+_t$ the vertex $p$ has exactly three incoming arrows, while the numbers of incoming arrows in $-P^+_t$ are $t^2+1$, $2t^2-t$, $2t^2$, $2t^2-t$, $2t$, none equal to $3$.
+\end{proof}
+
+\begin{theorem}[No lower route; computer-assisted]\label{thm:ptlower}
+Let $t\ge2$. Every route from $P^+_t$ to a quiver of height at most $t^2$ not isomorphic to $P^+_t$ has height at least $H^+(t)$. So $P^+_t$ and $-P^+_t$ are joined at exactly $H^+(t)$.
+\end{theorem}
+\begin{proof}
+For $2\le t\le80$ this is an exhaustive computation: the set of all quivers, up to relabelling, that $P^+_t$ reaches through quivers of height $<H^+(t)$ was computed with no pruning, and it contains no quiver of height $\le t^2$ other than $P^+_t$ (two independent enumerators for $t\le64$, the second continued to $t=80$; $2{,}130{,}710{,}527=H^+(64)$, and $1{,}561{,}537$ quivers are reached at $t=64$).
+
+For $t\ge8$ we apply Lemma~\ref{lem:region}. The members are the quivers $K(j)$ and $L(i)$ of Theorem~\ref{thm:ptroute}; the quivers on the line of backward steps from $L(0)$, in two stretches on which the columns are linear in the index; finitely many single quivers near the ends of these lines; and $14$ kinds of quivers at most two mutations off a line. On the second stretch of the backward line $x$ is not joined to $c_1$, so its quivers are not forks; it runs at height $H^+(t)-2t^2$ until the column of $x$ reaches $H^+(t)$. All entries are polynomials in $t$ and one or two indices. For every member and every vertex, a program certifies one of: the mutation is a member (an identity of polynomial matrices up to a stated relabelling), it has an entry $\ge H^+(t)$, or it is a fork higher than $t^2$. There are $766$ exits ($161$ to members, $428$ high, $54$ forks, $123$ creating a further member), and every member except $P^+_t$ has an entry above $t^2$. All $766$ exits were certified a second time by independent code (other polynomial arithmetic, mutation and fork test), and every member at its true parameters (for example $L(i)$ with $i\le N+1$) lies in the domain on which its claims are certified. The list of member families, their domains and relabellings is too long to print here; it is contained in the certificate program and its log, which would accompany the article as ancillary data.
+\end{proof}
+
+\begin{corollary}\label{cor:pt}
+$F(5,w)\ge H^+(\lfloor\sqrt w\rfloor)\ge2w^{5/2}-11w^2$ for every $w\ge4$. In particular $F(5,w)/w^2\to\infty$, and a polynomial upper bound for $F(5,w)$ would have degree at least $3$. The same holds for $F(n,w)$, $n\ge6$.
+\end{corollary}
+\begin{proof}
+Put $s=\sqrt w$ and $t=\lfloor s\rfloor>s-1\ge1$. Then $H^+(t)\ge2t^5-t^4>2(s-1)^5-(s-1)^4$, since $2x^5-x^4$ increases for $x>2/5$, and $2(s-1)^5-(s-1)^4-(2s^5-11s^4)=24s^3-26s^2+14s-3>0$ for $s\ge2$. The condition $w<H^+(t)$ of Lemma~\ref{lem:escape} holds because $(t+1)^2\le H^+(t)$ for $t\ge2$. For $n\ge6$ add isolated vertices.
+\end{proof}
+
+In the inequality $H^+(\lfloor\sqrt w\rfloor)\ge2w^{5/2}-c\,w^2$ the constant $c=11$ cannot be replaced by $10$: on $w=(t+1)^2-1$ the least admissible $c$ tends to $11$ from below, and with $10$ the inequality first fails at $w=783$. This says nothing about the true size of $F(5,w)$. For connected quivers on $n\ge6$ vertices we claim nothing beyond small searches.
+
+\begin{remark}\label{rem:star}
+Call a route \emph{pure} if it consists of steps on one pair in which every first entry is non-negative and of turns as in Lemma~\ref{lem:turn}, and ends as in Lemma~\ref{lem:top}. On a pure route the full subquiver on the vertices other than $p,q$ must be a star throughout, and a heuristic count (not a theorem) bounds the barrier of a pure route by about $2\sqrt{n-4}\,w^{5/2}$. The next family is not pure: its fifth vertex follows a cycle of mutations on the other four.
+\end{remark}
+
+\subsection{A cubic family}\label{sec:qa}
+\emph{The bounce cycle.} For $m\ge3$ and $0\le j\le m+1$ let $W_m(j)$ be the quiver on vertices $p,q,r,s$ with two arrows $q\to p$, two arrows $s\to r$, and columns
+\[r:\ (b_{pr},b_{qr})=(m-j,\,-(m+1-j)),\qquad s:\ (b_{ps},b_{qs})=(j,\,-(j-1)).\]
+
+\begin{lemma}\label{lem:bounce}
+\begin{enumerate}
+\item For $0\le j\le m$, a step on $(p,q)$ takes $W_m(j)$ to $W_m(j+1)$.
+\item $\mu_r W_m(m)$ is $W_m(0)$ with the names $r,s$ exchanged. So $m$ steps and one \emph{turn} at $r$ lead from $W_m(0)$ back to itself, with $r\leftrightarrow s$ (and $p\leftrightarrow q$ if $m$ is odd).
+\item $-W_m(j)$, with the names $p\leftrightarrow q$ and $r\leftrightarrow s$ exchanged, is $W_m(m+1-j)$.
+\item Let $D_a$ be the quiver on the vertices $1,\dots,4$ with
+\[(b_{12},b_{13},b_{14},b_{23},b_{24},b_{34})=(-(a+1),\,-a,\,2,\,-2,\,-a,\,-(a+1)).\]
+Then $D_a=W_{2a+1}(a+1)$ with $(p,q,r,s)=(4,1,2,3)$.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+(1) The first entries $m-j$ and $j$ are $\ge0$; by Lemma~\ref{lem:step} the columns move along progressions with slopes $-1$ and $+1$, and the arrows between $r$ and $s$ do not change. (2) In $W_m(m)$ the column of $r$ is $(0,-1)$ and $S_{sr}=2$; Lemma~\ref{lem:turn} with $\eta=1$ gives the columns $(m,-(m+1))$ for $s$ and $(0,1)$ for $r$, and reverses the arrows between $r$ and $s$. (3) and (4) are read off.
+\end{proof}
+
+\emph{A fifth vertex.} Let $x$ be a further vertex, recorded by its \emph{state} $(A,B,U,V)=(b_{px},b_{qx},b_{xr},b_{xs})$.
+
+\begin{lemma}\label{lem:fifth}
+\begin{enumerate}
+\item[(S)] A step from position $j\le m$ takes the state to $(2A+B,-A,U,V)$ if $A\ge0$, and to $(B,-A,\,U+|A|(m-j),\,V+|A|j)$ if $A<0$.
+\item[(T)] The turn at position $m$, with $r,s$ renamed, takes the state to $(A,B-U,V,-U)$ if $U\ge0$, and to $(A,B,V+2U,-U)$ if $U<0$.
+\item[(M)] If $X$ is the quiver at position $j$ with state $(A,B,U,V)$, then $-X$ with $p\leftrightarrow q$, $r\leftrightarrow s$ is the quiver at position $m+1-j$ with state $(-B,-A,-V,-U)$.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+(S) is Lemma~\ref{lem:step} for the columns $m-j$, $j\ge0$ of $r,s$ and the column $(A,B)$ of $x$. (T): the arrows at $r$ in $W_m(m)$ are $s\to r$ (two), $r\to q$ (one), and the $U$ arrows between $x$ and $r$. If $U>0$ the paths $x\to r\to q$ lower $B$ by $U$; if $U<0$ the paths $s\to r\to x$ lower $V$ by $2|U|$. In both cases $U$ changes sign and $r,s$ are renamed. (M) follows from Lemma~\ref{lem:bounce}(3).
+\end{proof}
+
+With $d=A+B$ and $e=U+V$, the fifth vertex moves like a ball between two walls: between bounces one column falls and the other climbs at constant rates, and each time one column passes its bottom, the rate of the other changes by a linear map of determinant $1$. In the notation of Lemma~\ref{lem:fifth}, $Q_a$ of Theorem~\ref{thmD} is $D_a$ (on the vertices $1,\dots,4$) together with the vertex $x=0$: the quiver at position $a+1$ of the cycle $W_{2a+1}$, with $m=2a+1$ and state $(A,B,U,V)=(a+1,\,a-3,\,a-2,\,a+1)$, so its slopes are $(d,e)=(2a-2,2a-1)$. Put $c=(4a-1)(a-1)$ and
+\[H(a)=\begin{cases}4a^3-3a^2+(5a-1)/2 & a\text{ odd},\\ 4a^3-3a^2+(3a-4)/2 & a\text{ even}.\end{cases}\]
+
+\begin{theorem}[The route]\label{thm:qaroute}
+Let $a\ge2$. There is a route from $Q_a$ to $-Q_a$ (up to relabelling) with $(2a+2)(4a^2-a+6)$ mutations, none of them at $x$, of height $H(a)$. For odd $a$ one quiver on it has height $H(a)$, for even $a$ there are $2a+5$, and all others have height at most $H(a)-1$; no entry away from $x$ exceeds $2a+2$. Moreover $Q_a\not\cong-Q_a$.
+\end{theorem}
+\begin{proof}[Proof sketch]
+Walk from $Q_a$: $a$ steps to position $m$, then alternately a turn and $m$ steps. Applying (S) and (T), the state before the $n$-th turn is:
+\begin{center}\footnotesize
+\begin{tabular}{l@{\ \ }c@{\ \ }c@{\ \ }c@{\ \ }c@{\ \ }c}
+\toprule
+$n$ & $A$ & $B$ & $U$ & $V$ & $(d,e)$\\
+\midrule
+$1$ & $2a^2-a+1$ & $-(2a^2-3a+3)$ & $a-2$ & $a+1$ & $(2a-2,2a-1)$\\
+$2$ & $4a^2+1$ & $-(4a^2-a+1)$ & $a+1$ & $-(a-2)$ & $(a,3)$\\
+$2+k$ & $4a^2+1-km$ & $-(4a^2+2-km)$ & $-u_{k-1}$ & $u_{k-2}$ & $(-1,-(2a-1))$\\
+$2a+1+\tau$ & $2a-3+(\tau-1)m$ & $-(2a-4+(\tau-1)m)$ & $-(c-2\tau+2)$ & $c-2\tau+4$ & $(1,2)$\\
+\bottomrule
+\end{tabular}
+\end{center}
+for $1\le k\le2a-1$ and $1\le\tau\le\tau^*$, where $u_i=a-2+i(2a-1)$, and $\tau^*=c/2+2$ for odd $a$, $(c+3)/2$ for even $a$. The first turn changes the slopes from $(2a-2,2a-1)$ to $(a,3)$, and the second passes the column on $(r,s)$ through its bottom and changes them to $(-1,-(2a-1))$; after turn $2a+1$ three steps take the column on $(p,q)$ through its bottom, and a step with $A=-1$ changes the slopes to $(1,2)$. In the last stretch $A$ grows by $m$ per round while $U$ rises by $2$ per turn. For odd $a$, before the last turn the state is $(A_1,-(A_1-1),2,0)$ with $A_1=2a-3+(c/2+1)m$: the column of $r$ is $(0,-1)$, there are two arrows $s\to r$ and two arrows $x\to r$, both slopes are $1$, and $x,s$ are not joined, so Lemma~\ref{lem:top} applies with $y=r$, and Corollary~\ref{cor:mirror} closes the route at height $A_1+1=H(a)$. For even $a$ the last turn reaches a quiver at position $0$ with slope $d=0$, and $m+1$ further steps reach its mirror image by Lemma~\ref{lem:fifth}(M). The count and heights follow from the table. For $a\ge5$ the sums of absolute values of entries at the five vertices force an isomorphism $Q_a\to-Q_a$ to fix vertices $1$ and $2$, but $Q_a$ has $a+1$ arrows $2\to1$ and $-Q_a$ has them from $1$ to $2$; for $a\le4$ the canonical forms differ. The route was also built by integer mutation and compared with the table, turn by turn, for every $a\le48$, and again by a second program for $a\le20$; the full route was replayed literally at $a=1{,}000$ ($8{,}006{,}010{,}012$ mutations). The computation behind the table has not been re-derived by hand independently.
+\end{proof}
+
+\begin{computation}[No lower route]\label{comp:qa}
+For every $2\le a\le64$, every route from $Q_a$ to a quiver of height at most $a+1$ not isomorphic to $Q_a$ has height at least $H(a)$. For $2\le a\le48$ the set of all quivers reached from $Q_a$ through heights $<H(a)$ was computed with no pruning; for $49\le a\le64$ forks were not expanded, which is justified by Lemma~\ref{lem:forkexcl}, and no fork of height $\le a+1$ was met. An independent program reproduced the counts without pruning for $a\le26$ and $a=32$, and with forks not expanded for $a\le32$, $a=36$ and $a=40$. At $a=48$ there are $3{,}057{,}734{,}065$ quivers below $H(48)=435{,}526$, and at $a=64$ there are $4{,}165{,}617{,}632$ non-fork quivers below $H(64)=1{,}036{,}382$.
+\end{computation}
+
+\begin{corollary}[computational]\label{cor:qa}
+$F(5,w)\ge H(w-1)\ge4w^3-15w^2+19w-11$ for $3\le w\le65$. At $w=65$ this is $1{,}036{,}382\approx30.4\,w^{5/2}$.
+\end{corollary}
+
+\begin{conjecture}\label{conj:cubic}
+For every $a\ge2$, $Q_a$ and $-Q_a$ are joined at exactly $H(a)$. Hence $F(5,w)\ge4w^3-15w^2+19w-11$ for every $w\ge3$.
+\end{conjecture}
+
+\begin{remark}[What blocks a proof]\label{rem:spirals}
+A certificate in the style of Theorem~\ref{thm:ptlower} would have to cover the set $K(a)$ of quivers that $Q_a$ reaches below $H(a)$ without entering a fork, which has about $4a^5$ members. Over $98\%$ of them lie on lines of steps on $(p,q)$ that continue each round of the route beyond its ends; these have closed forms for every $a$, and their side exits are high as soon as the two entries of the relevant column have product at least $H(a)+2$. About $4a^3$ to $5a^3$ further members lie near the route, in roughly a hundred kinds, on domains bounded by quadrics rather than orthants. The class of $D_a$ itself also contains infinitely many quivers that are not forks: from $W_m(0)$, the ten mutations $q,p,q,s,p,s,p,s,q,p$ return the triangle on $p,q,s$ to itself and multiply the entries of $r$ at $p,q,s$ by an integer matrix with eigenvalues $\varphi^8$, $1$, $\varphi^{-8}$, where $\varphi$ is the golden ratio, and every quiver on the way has a pair among $p,q,s$ with fewer than two arrows (a proved statement). Up to $a=48$ the measured set $K(a)$ follows these two spirals further as $a$ grows. Families indexed by the words of the route would therefore grow in number with $a$; families parametrised by their state on cones, mapped linearly by the ten mutations, are not ruled out, and an induction along the spirals of that kind is the natural route to a proof. Finally, $x$ is not an intrinsic vertex of the class: for $2\le a\le6$ (measured), $Q_a$ reaches below $H(a)$ relabellings of itself that move $x$, through the pentagon $\mu_i\mu_j\mu_i\mu_j\mu_i$ at a single arrow, which exchanges $i$ and $j$.
+\end{remark}
+
+\begin{question}\label{q:degree}
+Is $F(n,w)$ of order $w^{n-2}$? Known: $F(3,w)=w$; $F(4,w)\ge2w^2-O(w)$; and $F(5,w)\ge4w^3-O(w^2)$ on $3\le w\le65$, by computation.
+\end{question}
+
+\section{The acyclic side: Conjecture 5.5 of \texorpdfstring{\cite{AHJL}}{AHJL} up to height 18}\label{sec:conj55}
+
+\emph{Conjecture 5.5 of \cite{AHJL}}, verbatim: ``Every mutation-acyclic four-vertex quiver $Q$ admits a mutation sequence to an acyclic quiver along which every arrow multiplicity is at most $\htt(Q)$.''
+
+Let $G_L$ be the graph on $4$-vertex quivers of height at most $L$, up to relabelling, with mutation edges, and let $a(Q)$ be the least $L$ at which the component of $Q$ in $G_L$ contains an acyclic quiver. A quiver \emph{fails} if $a(Q)>\htt(Q)$. A failing quiver is a counterexample exactly when it is mutation-acyclic.
+
+\begin{computation}\label{comp:conj55}
+All $106{,}918{,}566$ four-vertex quivers of height $1$ to $18$ (up to relabelling) were enumerated. $45{,}694{,}973$ reach an acyclic quiver within their own height. Each of the other $61{,}223{,}593$ was certified mutation-cyclic, by the first applicable of the following, found on its component of $G_{18}$ or by a search upward through its class:
+\begin{center}\small
+\begin{tabular}{lrl}
+\toprule
+certificate & quivers & source\\
+\midrule
+a member has a mutation-cyclic full triangle & $50{,}110{,}169$ & \cite{BBH}, \cite{War-sub}; \cite[Prop.~2.1]{AHJL}\\
+a member is a vortex & $9{,}261{,}670$ & \cite[Prop.~13.2]{FN-coq}, \cite{Nev}; \cite[Lemma~2.7]{AHJL}\\
+Markov exclusion \cite[Lemma~2.4]{AHJL} & $1{,}598{,}562$ & \cite{Nev}\\
+\cite[Cor.~5.2]{AHJL} within the class & $253{,}191$ & \cite[Thm.~5.1]{AHJL}\\
+the class is finite with no acyclic quiver & $1$ & direct\\
+\bottomrule
+\end{tabular}
+\end{center}
+No failing quiver is mutation-acyclic, and none is undetermined. Hence Conjecture~5.5 of \cite{AHJL} holds for all $4$-vertex quivers of height at most $18$.
+\end{computation}
+
+\begin{center}\small
+\begin{tabular}{lrrrr}
+\toprule
+height $h$ & quivers & reach acyclic within $h$ & certified cyclic & largest bound used\\
+\midrule
+$1$ & $41$ & $39$ & $2$ & --\\
+$3$ & $4{,}317$ & $2{,}916$ & $1{,}401$ & $41$\\
+$6$ & $127{,}541$ & $66{,}393$ & $61{,}148$ & $257$\\
+$9$ & $955{,}033$ & $446{,}963$ & $508{,}070$ & $815$\\
+$12$ & $4{,}005{,}273$ & $1{,}776{,}593$ & $2{,}228{,}680$ & $1{,}877$\\
+$15$ & $12{,}196{,}421$ & $5{,}229{,}234$ & $6{,}967{,}187$ & $3{,}605$\\
+$18$ & $30{,}312{,}877$ & $12{,}711{,}219$ & $17{,}601{,}658$ & $6{,}161$\\
+all $\le18$ & $106{,}918{,}566$ & $45{,}694{,}973$ & $61{,}223{,}593$ & \\
+\bottomrule
+\end{tabular}
+\end{center}
+The last column is the largest height to which a search had to go to apply \cite[Cor.~5.2]{AHJL}; for representatives of height $h$ it equals $h^3+h^2+5$ for every $2\le h\le18$, against the quartic bound $h^4+4h^3+6h^2$ of \cite[Cor.~5.3]{AHJL}.
+
+\emph{Checks.} The counts of \cite{AHJL} at heights $\le3$ and of their Theorem~6.2 at heights $\le2$ are reproduced. A separately written program recomputed the pass/fail split exactly for all $6{,}171{,}451$ quivers of height $\le11$; an independent review recomputed it for height $\le10$, re-certified all $1{,}889{,}317$ failing quivers of height $\le10$, and repeated all $418{,}042$ upward searches with the same verdicts. No component of $G_9$ or $G_{14}$ that contains an acyclic quiver carries a certificate of mutation-cyclicity, a consistency check of the certificate code. Above height $11$ the passing verdicts were checked on samples.
+
+\emph{What the verdict rests on.} Passing quivers need no citation: each has an explicit route. The cyclic verdicts rest on published theorems; $253{,}191$ of them on Theorem~5.1 of \cite{AHJL} itself, and about $10.9$ million on Neville's theorem that mutation-acyclic quivers are totally proper \cite{Nev}. If one of these failed, the affected quivers would become undetermined, not counterexamples.
+
+\begin{proposition}[Computer-assisted, $w\le18$]\label{prop:acyclicf}
+Let $\mathcal C$ be a mutation class of $4$-vertex quivers that contains an acyclic quiver, and let $w\le18$. Then any two quivers of $\mathcal C$ of height $\le w$ are joined through quivers of height $\le w$, so $f(Q,w)\le w$ for $Q\in\mathcal C$, and $\mathcal C$ has no pocket born at height $\le18$. If $\mathcal C$ contains a quiver of height $\le18$, its acyclic quivers have the least height in $\mathcal C$.
+\end{proposition}
+\begin{proof}
+Quivers $X,Y\in\mathcal C$ of height $\le w$ reach acyclic quivers $A_X,A_Y$ within their own heights, by Computation~\ref{comp:conj55}. By Caldero and Keller \cite[Cor.~4]{CK}, $A_Y$ is obtained from $A_X$, up to relabelling, by mutations at sinks and sources, which keep all weights; so $A_X,A_Y$ are joined at height $\htt(A_X)\le w$. For the last claim, a quiver of least height reaches an acyclic quiver without going higher, and all acyclic quivers of $\mathcal C$ have the same weights up to relabelling \cite{CK}.
+\end{proof}
+
+So every pocket born at height $\le18$ on four vertices lies in a mutation-cyclic class, where the method of \cite{AHJL} decides nothing \cite[Cor.~5.7]{AHJL}: its inequalities $m\ge3$ and $2|\mathrm{Pf}|<m$, where $m$ is the Markov invariant of Fomin and Neville evaluated on a proper wiggle class \cite[\S2]{AHJL}, come from an acyclic quiver in the class, and we found that no bound of the form $\max(w,T_0(m,\mathrm{Pf}))$ can hold for mutation-cyclic classes. For instance $V_b=(-b,2,-1,-b,1,1)$ has one proper wiggle class with $m=5$ and $\mathrm{Pf}=-2$ for every $b\ge3$, and it is joined to $-V_b$ only at height $b+1$.
+
+\section{Deciding equivalence on four vertices: cores and tubes}\label{sec:cores}
+
+\subsection{Far regions and the core}
+A \emph{pre-fork} (Warkentin \cite[Def.~3.7]{War}; Ervin \cite[Def.~4.5]{Erv}) is a quiver $P$ with two vertices $k\ne k'$ such that $P\setminus\{k\}$ and $P\setminus\{k'\}$ are forks with a common point of return $r$, and every other vertex has arrows to both $k$ and $k'$ or from both. Call $(Y,m)$ an \emph{exit} if $Y$ is a fork or a pre-fork with point of return $m$. We use four facts from \cite{War,Erv}:
+\begin{itemize}
+\item[(F1)] Lemma~\ref{lem:fork}.
+\item[(F2)] If $F$ is a fork with point of return $r$, the edge between $F$ and $\mu_r(F)$ is a bridge of the labelled mutation graph, and the side of $F$ is a tree of forks \cite[Lemma~2.8]{War}, \cite[Lemma~2.8]{Erv}.
+\item[(F3)] If $P$ is a pre-fork with vertices $\{r,k,k'\}$ and $m\notin\{r,k,k'\}$, then $\mu_m(P)$ is a pre-fork with vertices $\{m,k,k'\}$ and more arrows \cite[Cor.~6.2]{War}, \cite[Lemma~4.6]{Erv}.
+\item[(F4)] For a pre-fork $P$ with fewer than two arrows between $k$ and $k'$, removing the edges labelled $\mu_r$ at $P$ and at $\tilde P$ (which is $P$, or $P$ with $k,k'$ exchanged when they are joined by one arrow) cuts the labelled mutation graph in two; every quiver on the side of $P$ is a tip, wing (Ervin's Definitions~4.14 and~4.18), pre-fork or fork, with at least as many arrows as $P$, and exactly as many only if it is $P$ or $\tilde P$ \cite[Lemmas~6.7, 13.20--13.22]{War}, \cite[Lemma~4.23, Cors.~4.24--4.25]{Erv}.
+\end{itemize}
+We also use that the vertex $m$ of an exit $(Y,m)$ is determined by $Y$: for a fork it is the unique point of return \cite[Lemma~2.3(e)]{War}, and a pre-fork that is not a fork has exactly one pair of vertices joined by fewer than two arrows, which determines $r$. For an exit $(Y,m)$ the side of $Y$ in (F2) or (F4) is the \emph{far region} rooted at $Y$; by (F1)--(F4) its root has the fewest arrows in it, and only $Y$ and $\tilde Y$ attain that number. Let $N$ be the set of quivers of the class that lie in no far region; this is Ervin's pre-forkless part \cite[Def.~5.1]{Erv}, up to relabelling. A step $X\to\mu_mX$ is a \emph{strict up-exit} if $(\mu_mX,m)$ is an exit and $(X,m)$ is not; all other steps are \emph{allowed}. Let $\Vp(X)$ be the set of quivers reached from $X$ by allowed steps. A set is \emph{closed} if no allowed step leaves it.
+
+\begin{theorem}\label{thm:core}
+Let $A$ and $B$ be $4$-vertex quivers.
+\begin{enumerate}
+\item $A$ and $B$ are mutation-equivalent if and only if $\Vp(A)\cap\Vp(B)\ne\emptyset$.
+\item If $X$ lies in no far region, then $\Vp(X)=N$.
+\item If $\Vp(A)$ is finite, it contains exactly one minimal non-empty closed set, the \emph{core} $K(A)$, and $K(A)=K(B)$ whenever $A\sim B$ and $\Vp(B)$ is finite. Moreover $K(-A)=-K(A)$, so $A\sim-A$ if and only if $K(A)=-K(A)$.
+\end{enumerate}
+\end{theorem}
+\begin{proof}[Proof sketch]
+Work in the labelled mutation graph. \emph{Step 1}: a path that enters a far region by a bridge and later leaves it returns to the foot of that bridge or to its relabelled copy, so the excursion can be cut out, after relabelling the rest of the path by $(k\,k')$ if needed. \emph{Step 2}: take a shortest path from $A$ to a relabelling of $B$. Suppose it makes a strict up-exit step into $\mathrm{Up}(Y,m)$ and later a step $Z\to\mu_{m'}Z$ with $(Z,m')$ an exit. By Step~1 the path stays in $\mathrm{Up}(Y,m)$ after entering it, so $Z\in\mathrm{Up}(Y,m)$; read backwards, the path enters $\mathrm{Up}(Z,m')$ across its bridge and, being shortest, stays there, so $Y\in\mathrm{Up}(Z,m')$. Each root has the fewest arrows in its region, so $Y$ and $Z$ have the same number of arrows and $Z\in\{Y,\tilde Y\}$; then $m'=m$, the step $Z\to\mu_mZ$ returns to the foot, and Step~1 shortens the path, a contradiction. So after its first strict up-exit step the path makes no step out of an exit. So the quiver before the first strict up-exit step lies in $\Vp(A)\cap\Vp(B)$. For (2), $N$ is closed, because a step out of $N$ crosses a bridge upward and is a strict up-exit, and a step between two quivers of $N$ is allowed; by Step~1 any two quivers of $N$ are joined inside $N$. For (3), if $S,S'$ are minimal closed sets in $\Vp(A)$ and $\Vp(B)$ and $a\in S$, $b\in S'$, then $S\cap S'=\Vp(a)\cap\Vp(b)$ is non-empty and closed.
+\end{proof}
+
+When the core lies in no far region it equals $N$, the pre-forkless part. Item (2) is essentially Ervin's Remark~5.2: the pre-forkless part is connected, convex and unique \cite[Rem.~5.2]{Erv}. That forks and pre-forks can be discarded without losing information, so that this part determines the class, is Warkentin's \cite[Cor.~4.5 and the remark after it]{War}, and Ervin proved that a finite pre-forkless part is a hereditary mutation invariant \cite[Thm.~1.2]{Erv}. Items (1) and (3) are reformulations; what is new here is their systematic use on the census and the tube certificates below. Equivalence is decided by Theorem~\ref{thm:core} whenever the search for $\Vp$ closes on both quivers.
+
+\begin{computation}\label{comp:cores}
+Of the $788{,}026$ census classes, $555{,}828$ have a finite core, of at most $77$ quivers and height at most $1{,}312$. These cores are pairwise distinct, and each of these classes is certified distinct from every other census class. All cores were recomputed by independent code.
+\end{computation}
+
+\subsection{Tube certificates}
+In the other census classes the search for $\Vp$ did not close within its caps ($800$ quivers or height $10^6$). In every class that was later certified, $\Vp$ consists of a finite part and \emph{tubes}: families in which one vertex $g$ has growing entries while the other three keep a triangle $T$ of finitely many shapes. Write a quiver as $(T,v)$ with column $v_i=b_{ig}$.
+
+A \emph{family} is a sequence $Y(n)$, $n\ge0$, whose six entries all satisfy $e(n+3)=(\tau+1)e(n+2)-(\tau+1)e(n+1)+e(n)$ for one integer $\tau\ge2$ (or are polynomials in $n$), each certified constant or of fixed sign with non-decreasing absolute value. For $\tau\ge2$ this is certified (a sufficient test) by the values at $n=0,1,2$, since the differences $\Delta$ satisfy $\Delta(n+2)-\Delta(n+1)=(\tau-2)\Delta(n+1)+\Delta(n+1)-\Delta(n)$. A \emph{tube certificate} for a quiver $x$ that lies in no far region is a finite set $E$ and finitely many families, all contained in $\Vp(x)$, whose union is closed under allowed steps. The union is then $\Vp(x)=N$ (Theorem~\ref{thm:core}(2)), so its quivers of least height, a finite computable set, are the quivers of least height of $N$: a complete invariant of the class.
+
+\begin{lemma}\label{lem:dominant}
+Let $X=(T,v)$ with $v$ of both signs, $|v_i|\ge2$ for all $i\ne g$, and $|b_{ij}|<\max(|v_i|,|v_j|)$ for $i,j\ne g$. Then the step at $g$ is a strict up-exit. If instead $|v_i|\le1$ for some $i\ne g$, the step at $g$ is allowed.
+\end{lemma}
+\begin{proof}
+Under the first hypotheses, the in-neighbours $I$ and out-neighbours $O$ of $g$ are both non-empty, so one of them is a pair $\{k,k'\}$ and the other a single vertex. A fork or pre-fork with point of return $g$ would need some arrow $b_{ij}$ with $i\to g\to j$ to outweigh both $v_i$ and $|v_j|$, which the third hypothesis rules out, so $(X,g)$ is not an exit. In $Y=\mu_gX$, for $i\in I$, $j\in O$ the new entry is $b_{ij}+v_i|v_j|>\max(v_i,|v_j|)\ge2$, since $v_i|v_j|\ge2\max(v_i,|v_j|)$ and $b_{ij}>-\max(v_i,|v_j|)$. So every arrow between the two sides of $g$ points from $I$ to $O$ and outweighs both arrows at $g$ in its triangle. If $|b_{kk'}|\ge2$, $Y$ is a fork with point of return $g$; otherwise $Y\setminus\{k\}$ and $Y\setminus\{k'\}$ are forks with point of return $g$ and the third vertex has arrows to both of $k,k'$ or from both, so $Y$ is a pre-fork. Conversely, if $|v_i|\le1$, the pair $\{g,i\}$ of $Y$ carries at most one arrow, so $Y$ is not a fork, and every candidate pre-fork with point of return $g$ contains a triangle through $g$ and $i$ that is not a fork.
+\end{proof}
+
+Steps inside $T$ act on $v$ by integer matrices $E$ with $(Ev)_k=-v_k$ and $(Ev)_j=v_j+\pos{\varepsilon b_{jk}}v_k$ for $j\notin\{g,k\}$, where $\varepsilon$ is the sign of $v_k$; this is the frozen-row rule. Along a walk inside $T$ that returns $T$ to itself the column moves by a monodromy $M$, and the Pfaffian functional is a left eigenvector of $M$ with eigenvalue $\pm1$. The Markov constant of a triangle with weights $x,y,z$ is $C=x^2+y^2+z^2-xyz$ if it is an oriented $3$-cycle and $x^2+y^2+z^2+xyz$ otherwise; it is a mutation invariant \cite{BBH}. A \emph{Coxeter walk} through an acyclic triangle mutates its sink, then the new sink, then the last vertex, with every mutated entry of $v$ positive; it returns $T$ to itself, and its monodromy has characteristic polynomial $(x+1)(x^2-(C-2)x+1)$, the Coxeter polynomial of the Euler form of $T$. A mutation-cyclic triangle stays bounded along an infinite reduced walk only if, from some point on, it is $(2,m,m)$ with the walk alternating at the ends of the double arrow ($\tau=2$), or it is the Markov quiver: once a step raises a weight every later step of a reduced walk does, so eventually every step keeps the weights ($xy=2z$ at the vertex opposite $z$), and two such steps in a row force $(2,m,m)$.
+
+\begin{theorem}[Tube lemma]\label{thm:tube}
+Let $\omega=(k_1,\dots,k_p)$ be a walk inside $T$ with $\mu_\omega(T)=\pi(T)$ for a relabelling $\pi$ fixing $g$, let $\varepsilon\in\{\pm1\}^p$ be a sign pattern, and let $M=P_\pi E_p\cdots E_1$ be the corresponding monodromy. Suppose $M$ has characteristic polynomial $(x-1)(x^2-\tau x+1)$ with $\tau\ge2$. In the Coxeter case this holds for $M^2$ when $C\ge4$, as for every tube of the census; when $|C-2|<2$ the monodromy has finite order and the orbit is finite.
+\begin{enumerate}
+\item If, for $n=0,1,2$, every entry of every quiver met along $\omega$ from $(T,M^nv_0)$ is constant in $n$ or has a fixed sign (the sign $\varepsilon_s$ for the entry mutated at step $s$) with non-decreasing absolute values and differences, then the same holds for every $n\ge0$, and the quivers met along $\omega$ form $p$ families.
+\item Every integer linear form in $M^nv_0$ is either constant in $n$ or, from an explicit $n_1$ on, of constant sign with non-decreasing absolute value and differences. So every comparison that is linear in the column is decided for all $n\ge n_1$, and in particular, after shifting the base to $n_1$, the hypothesis of (1) holds. Steps at $g$ are decided by Lemma~\ref{lem:dominant}, whose hypotheses are such comparisons; if some $|v_i|\le1$, that entry is constant and the step at $g$ is allowed.
+\item If $\tau=2$, every entry, and every quiver reached from the family by a fixed sequence of steps, is a polynomial in $n$.
+\end{enumerate}
+\end{theorem}
+\begin{proof}[Proof sketch]
+(1) Each entry of $M^nv_0$ satisfies $e(n+3)=(\tau+1)e(n+2)-(\tau+1)e(n+1)+e(n)$ by Cayley--Hamilton, and the three-point criterion above applies; at each step the mutated entry has the prescribed sign, so the mutation acts by the fixed matrix $E_s$. (2) A linear form equals $A\lambda^n+B\lambda^{-n}+C_0$ with $\lambda+\lambda^{-1}=\tau$, $\lambda>1$, or a polynomial when $\tau=2$; if $A\ne0$ the dominant term fixes the signs of the value and of its first two differences from some explicit $n_1$ on, and if $A=0$ the integer sequence converges, so it is eventually constant and then $B=0$. (3) Polynomials are closed under the operations of the mutation rule once signs are certified, and the sign of $p(n)=\sum_j\Delta^jp(0)\binom nj$ is certified for all $n$ by $p(0)>0$ and $\Delta^jp(0)\ge0$.
+\end{proof}
+
+So a class whose $\Vp$ is a finite set together with finitely many such tubes (and polynomial spikes on $\tau=2$ tubes) has a tube certificate, and a search finds it.
+
+\begin{computation}\label{comp:tubes}
+Of the $232{,}198$ census classes whose core search did not close, $227{,}414$ have a tube certificate, so forks, cores and tubes alone settle $783{,}242$ classes. With the $400$ disconnected classes (settled by rank~$3$) and $1{,}556$ classes whose least quiver is acyclic (settled by \cite{AHJL}), $785{,}198$ of the $788{,}026$ census classes are decided, and $2{,}828$ connected classes whose least quivers are not acyclic are not. The census contains $377{,}451$ pairs of classes $\mathcal C\ne-\mathcal C$ as computed; of these, $376{,}240$ are certified to be two classes; none turned out to be one class; $1{,}211$ remain open. The least quivers of $2{,}206$ of the certificates were confirmed by independent exhaustive cuts of $\Vp$ to $1{,}024$ times the least height, and an independent engine re-certified $149$ of a sample of $150$ classes (the last was inconclusive).
+\end{computation}
+
+\subsection{An obstruction}
+Let $X_0=(-1,0,0,2,-2,2)$: the Markov quiver $1\to2\to3\to1$ with two arrows each, and one arrow $1\to0$.
+
+\begin{theorem}\label{thm:markov}
+$X_0$ lies in no far region and is mutation-cyclic. For every $z\ge2$ and $n\ge0$, $\Vp(X_0)$ contains the quiver with the Markov triangle on $\{1,2,3\}$ and column
+\[v(z,n)=(-(z-1)(n+1),\ (z-1)n,\ z),\qquad v_i=b_{i0}.\]
+For $z\ge3$, $n\ge1$ these quivers are pairwise non-isomorphic, of height $(z-1)(n+1)$. Hence $\Vp(X_0)$ has at least $L\ln L-3L$ quivers of height $\le L$ for large $L$, while a finite set $E$ together with $r$ families has at most $|E|+6rL+C_0$ quivers of height $\le L$, for a constant $C_0$ depending on the families. So the class of $X_0$ has no tube certificate, with any caps and with polynomial families allowed.
+\end{theorem}
+\begin{proof}
+$X_0$ has two pairs of vertices with no arrows, $\{0,2\}$ and $\{0,3\}$, while every fork, pre-fork, wing and tip, hence every quiver of a far region, has at most one pair joined by fewer than two arrows, by their definitions \cite[Defs.~2.5, 4.5, 4.14, 4.18]{Erv}; so $X_0$ lies in no far region. The Markov quiver is mutation-cyclic and is a full subquiver, so the class is mutation-cyclic.
+
+If $T$ is the Markov quiver and $k\in T$, then $(\mu_kX,k)$ is never an exit. Indeed $\mu_kT$ is again the Markov quiver, so a fork with point of return $k$ would need $b_{ji}>b_{ik}$ along a path $i\to k\to j$ in it, but both equal $2$. A pre-fork with point of return $k$ and vertices $\{k,k_1,k_1'\}$ is impossible too. If $g\in\{k_1,k_1'\}$, one of the two triangles that must be forks is $\mu_kT$, whose largest weight is attained three times. If $\{k_1,k_1'\}=T\setminus\{k\}$, the triangles $\{k,k_1',g\}$ and $\{k,k_1,g\}$ must be forks, hence oriented, and $g$ has arrows to both $k_1,k_1'$ or from both; then $k$ has two in-neighbours or two out-neighbours in $\mu_kT$, which an oriented $3$-cycle does not allow. So every step inside the triangle is allowed, and the triangle stays the Markov quiver.
+
+Work up to relabelling. A step at $1$, followed by exchanging the names $2,3$ to restore the orientation of $T$, acts by $(v_1,v_2,v_3)\mapsto(-v_1,v_3+2v_1,v_2)$ if $v_1\ge0$ and $(-v_1,v_3,v_2+2v_1)$ if $v_1\le0$; the cyclic rotations of $v$ are relabellings fixing $T$. Then $(a,0,1-a)\mapsto(-a,1+a,0)$, a rotation of $(1+a,0,-a)$, so from $(1,0,0)$ every $(a,0,1-a)$, $a\ge1$, is reached. Rotating $(a,0,1-a)$ to $(0,1-a,a)$ and stepping at the zero entry gives $(0,a,1-a)$, a rotation of $v(a,0)=(1-a,0,a)$. From $v(z,n)$ the step at the negative entry gives $((z-1)(n+1),z,-(z-1)(n+2))$, a rotation of $v(z,n+1)$.
+
+For $z\ge3$ and $n\ge1$ at most one entry of $v(z,n)$ equals $\pm2$, so $T$ is the only Markov triangle of the quiver; an isomorphism fixes $g$ and $T$ and acts on $v$ by a rotation, and the single negative entry fixes the rotation. The pairs $(z,n)$ with $z\ge3$, $n\ge1$, $(z-1)(n+1)\le L$ number $\sum_{m=2}^{\lfloor L/2\rfloor}(\lfloor L/m\rfloor-1)\ge L\ln L-3L$ for large $L$. A non-constant family has certified non-decreasing entries, so its total weight is strictly increasing from $n=1$ on, or from $n=D$ for a polynomial family of degree $D$; total weight is at most $6$ times the height, so the family has at most $6L+D+1$ members of height $\le L$ (with $D=1$ for a family of the first kind).
+\end{proof}
+
+Exhaustive cuts give $823$, $3{,}181$, $12{,}383$ and $49{,}157$ quivers of $\Vp(X_0)$ of height at most $25,50,100,200$, which suggests quadratic growth. Heuristically, and without a check against the literature beyond a parity invariant, the column on a Markov triangle moves as the shear coordinates of an integral lamination on the once-punctured torus under flips; if so, a decision procedure for such pieces would need the orbit classification of laminations, a two-parameter object. A second obstruction is measured but not proved: in the census class of $(8,0,-7,-7,2,1)$, a pendant vertex joined by one arrow to the growing vertex of a tube with $\tau=57$ makes every member of that tube the base of a further tube, whose $\tau$ grows without bound.
+
+\begin{corollary}\label{cor:n4decided}
+On four vertices, mutation equivalence up to relabelling is decided for a pair of quivers when one of them is mutation-acyclic \cite{AHJL}, or one is disconnected (rank~$3$), or both classes have a finite core or a tube certificate. No bound on $f(Q,w)$ is used. Theorem~\ref{thm:markov} shows that this is not a decision procedure; a proof of Conjecture~\ref{conj:2w2}, or any computable bound on $F(4,w)$, would give one.
+\end{corollary}
+
+\section{The cryptographic question}\label{sec:crypto}
+We came to these barriers from a wider question: whether derived categories of K3 surfaces, and the combinatorics of tilting and mutation that they carry, could supply a new hard problem for cryptography. One candidate was a one-way function whose secret is a mutation route between two public quivers inside a public height bound. Iterative deepening on the bound already inverted every planted instance of the earliest constructions. Mirror barriers raise the bound but not the cost. For the small instances tested ($R_6$, $R_8$, $Q_3$, $P^+_2$, $P^+_3$, and $Q_a$ for $a=2,3$), the fewest mutations from $X$ to $-X$ did not decrease when the bound was raised from the barrier up to $2^{40}$. So a planter who publishes a literal route writes down about as many mutations as an exhaustive bottleneck search visits quivers: about $1.5$ to $2.5$ quivers per mutation for $R_b$, $Q_t$ and $P^+_t$, depending on how ties are broken, and, for $Q_a$, a cost whose logarithm is $1.55$ times that of the route length at $a=12$, rising towards $5/3$. A compressed route is cheap to publish only because its stretches are arithmetic progressions, and an attacker that descends out of fork regions and then certifies and jumps along these progressions inverted all $246$ randomly relabelled instances of the four families it was given (heights up to $2^{128}$), all $1{,}506$ instances planted by random rows over the bounce cycle on five vertices, and all $198$ instances masked by a climb into the forks; random rows planted nothing on seven or eight vertices. Under further unproved assumptions (that $F(n,w)\asymp w^{n-2}$, that planted barriers are of that order, and that the literal route over a barrier $H$ has length at least $H^\gamma$ with $\gamma$ bounded below uniformly in $n$), iterative deepening stays quasi-polynomial in the planter's cost. We therefore see no cryptographic use for these barriers, and none of the broader candidates from K3 surfaces survived either.
+
+\section{Relation to the literature}\label{sec:lit}
+We searched for prior statements of each result presented as new between 9 and 16 November 2026, in two ways. First, we read or searched the full texts of \cite{AHJL} (version~1 is the only version), \cite{FN-coq}, \cite{FN-long}, \cite{Nev}, \cite{Erv}, \cite{EN}, \cite{War}, \cite{War-sub}, \cite{Sou} and \cite{Che}, and, on 9 November, the sections of \cite{FWZ}, \cite{BBH}, \cite{ABBS} and \cite{CK} that we use; Seven \cite{Sev} and Ladkani \cite{Lad} were checked only through summaries of their main results. Second, on 16 November, we ran web searches combining ``quiver mutation'' with ``height bound'', ``maximal entry'', ``opposite quiver'', ``mutation-cyclic'', ``four vertices'', ``forks'', ``pre-forks'', ``Markov quiver'' with ``extra vertex'', and ``frozen vertex'' with ``growth''. We did not search MathSciNet or zbMATH, and we did not read Neville's 2025 thesis.
+
+\begin{itemize}
+\item \emph{Barriers (Theorems~\ref{thmA}--\ref{thmD}).} We found no lower bound on the height of routes between quivers of bounded height, and no super-linear barrier, in any of these sources. The nearest framings are Soukup's remarks \cite[\S4.1--4.2]{Sou}, which ask how long a route must be and compare with the Coward--Lackenby bound for Reidemeister moves, and the long mutation cycles of Fomin and Neville \cite{FN-long} and Ervin and Neville \cite[Ex.~4.34]{EN}, which also walk on a heavy pair with Chebyshev multiplicities but concern the length of cycles, not heights. The orbits of two mutations underlying Lemma~\ref{lem:step} are described in \cite[Thm.~1.3]{Sou} and \cite[\S3]{FN-long}. A vertex that is never mutated, as in Theorem~\ref{thm:qaroute}, behaves like a frozen vertex, whose row evolves by the coefficient rule of the extended exchange matrix; we found no study of how high such a row must climb on routes that return to a low quiver. In particular, no prior-art search had been made for the cubic family before this one, and this one found nothing.
+\item \emph{Conjecture~\ref{conj:2w2}.} Not found. The quartic bound for mutation-acyclic classes is a consequence of \cite[Thm.~1.1, Cor.~5.3]{AHJL}.
+\item \emph{Computation~\ref{comp:conj55}.} The authors of \cite{AHJL} checked heights $\le3$; we found no other check.
+\item \emph{Section~\ref{sec:cores}.} The core is Warkentin's and Ervin's construction in another form, and Theorem~\ref{thm:core}(2) is essentially \cite[Rem.~5.2]{Erv}, as explained after Theorem~\ref{thm:core}. Ervin gives examples of $4$-vertex quivers with infinite forkless part \cite[\S3]{Erv}; we found no statement that the pre-forkless part of a $4$-vertex class can fail to be a finite union of periodic families, nor Theorem~\ref{thm:markov}.
+\end{itemize}
+
+\section{Open problems}\label{sec:open}
+\begin{enumerate}
+\item Prove Conjecture~\ref{conj:cubic}, for instance by an induction along the spirals of Remark~\ref{rem:spirals} with families parametrised by their state.
+\item Prove Theorem~\ref{thm:rb} for odd $b$.
+\item Find any upper bound for $F(4,w)$ on mutation-cyclic classes; Conjecture~\ref{conj:2w2} is the natural target. On the census, every pocket born at height $\le9$ ($30{,}527$ of them) has a join of least height on which every quiver of the top height has an entry of absolute value at most $2$ (computational); proving this in general would reduce the problem to bounding plateaus on lines of weight $2$ and commuting squares, as in Section~\ref{sec:rb}.
+\item Answer Question~\ref{q:degree}; even $F(6,w)\gg w^3$ is open.
+\item Decide the $2{,}828$ open census classes; this needs a two-parameter lemma for Markov pieces (Theorem~\ref{thm:markov}) and a recursive one for tubes hanging from tubes.
+\end{enumerate}
+
+\appendix
+\section{Computations}\label{app:comp}
+Every program works with exact integers. Each item lists what was computed and how it was checked independently.
+\begin{center}\small
+\begin{tabular}{p{0.32\textwidth}p{0.22\textwidth}p{0.36\textwidth}}
+\toprule
+claim & range & independent check\\
+\midrule
+Remark~\ref{rem:gkclass}: class of $G_k$ & all $k\ge3$ (symbolic) & integer runs $3\le k\le200$, independent $3\le k\le40$; missing checks of the symbolic run certified separately\\
+Theorem~\ref{thm:rb}(2): 30 certificates & all even $b\ge6$ & script re-read and rerun (identical), not re-implemented; fork-free search $5\le b\le60$, independent $5\le b\le48$\\
+Remark~\ref{rem:qt}: 43 certificates & all $t\ge3$ & script rerun, not re-implemented; search $3\le t\le30$, independent $3\le t\le16$\\
+Theorem~\ref{thm:ptlower}: search & $2\le t\le80$ & two enumerators for $t\le64$; one program alone for $65\le t\le80$\\
+Theorem~\ref{thm:ptlower}: 766 exits & all $t\ge8$ & all exits re-certified with other code; members checked against search for $t=8,\dots,14,16,20,24$\\
+Computation~\ref{comp:qa} & $2\le a\le64$ & independent search: no pruning $a\le26$, $a=32$; forks not expanded $a\le32$, $36$, $40$; other $a$ rest on one program\\
+Computation~\ref{comp:conj55} & height $\le18$ & exact recount height $\le11$; independent recount $\le10$; all upward searches repeated; samples above $11$\\
+Computation~\ref{comp:cores} & census & all cores recomputed independently\\
+Computation~\ref{comp:tubes} & census & 322 of the first $225{,}208$ certificates attacked by independent code (the rest not rechecked; certificates not stored); the later $2{,}206$ by exhaustive cuts; 149/150 re-certified\\
+Theorem~\ref{thm:markov} & proof by hand & cuts of $\Vp(X_0)$ to height $200$ reproduced independently\\
+\bottomrule
+\end{tabular}
+\end{center}
+In addition, while preparing this draft, a short bottleneck search written from scratch (a draft-time check, not part of the reviewed record) recomputed: $k(k-1)$ for $G_k$, $3\le k\le6$; $2b^2-3b-3$ for $R_b$, $5\le b\le12$; $2t^4-t^3-t^2+2t$ for $Q_t$, $t=3,4$; $H^+(t)$ for $2\le t\le4$; $H(a)$ for $2\le a\le4$.
+
+\begin{thebibliography}{99}
+\bibitem{ABBS} I.~Assem, M.~Blais, T.~Br\"ustle, A.~Samson, \emph{Mutation classes of skew-symmetric $3\times3$ matrices}, Comm. Algebra \textbf{36} (2008), 1209--1220.
+\bibitem{AHJL} K.~T.~K. Armstrong-Williams, E.~Hirst, B.~Jackson, K.-H.~Lee, \emph{Mutation-acyclicity in rank four is decidable but not semialgebraic}, arXiv:2610.36179 (2026).
+\bibitem{BBH} A.~Beineke, T.~Br\"ustle, L.~Hille, \emph{Cluster-cyclic quivers with three vertices and the Markov equation}, Algebr. Represent. Theory \textbf{14} (2011), 97--112; arXiv:math/0612213.
+\bibitem{BFZ} A.~Berenstein, S.~Fomin, A.~Zelevinsky, \emph{Cluster algebras III: upper bounds and double Bruhat cells}, Duke Math. J. \textbf{126} (2005), 1--52; arXiv:math/0305434.
+\bibitem{CK} P.~Caldero, B.~Keller, \emph{From triangulated categories to cluster algebras II}, Ann. Sci. \'Ec. Norm. Sup\'er. \textbf{39} (2006), 983--1009; arXiv:math/0510251.
+\bibitem{Che} G.~Chelnokov, \emph{On the invariants of $4\times4$ skew-symmetric matrices under cluster mutations}, arXiv:2311.01784 (2023).
+\bibitem{EN} T.~J.~Ervin, S.~Neville, \emph{Mutation cycles from reddening sequences}, arXiv:2504.06573 (2025).
+\bibitem{Erv} T.~J.~Ervin, \emph{New hereditary and mutation-invariant properties arising from forks}, Electron. J. Combin. \textbf{31} (2024), P1.16; arXiv:2306.07502.
+\bibitem{FN-long} S.~Fomin, S.~Neville, \emph{Long mutation cycles}, arXiv:2304.11505 (2023).
+\bibitem{FN-coq} S.~Fomin, S.~Neville, \emph{Cyclically ordered quivers}, arXiv:2406.03604 (2024).
+\bibitem{FWZ} S.~Fomin, L.~Williams, A.~Zelevinsky, \emph{Introduction to cluster algebras, Chapters 1--3}, arXiv:1608.05735.
+\bibitem{Lad} S.~Ladkani, \emph{Which mutation classes of quivers have constant number of arrows?}, arXiv:1104.0436.
+\bibitem{Nev} S.~Neville, \emph{Mutation-acyclic quivers are totally proper}, arXiv:2409.17832 (2024).
+\bibitem{Sev} A.~Seven, \emph{Cluster algebras and symmetric matrices}, arXiv:1201.4270.
+\bibitem{Sou} D.~Soukup, \emph{Complexity of quiver mutation equivalence}, arXiv:2306.03232 (2023).
+\bibitem{War} M.~Warkentin, \emph{Exchange graphs via quiver mutation}, Dissertation, TU Chemnitz (2014), \url{https://d-nb.info/1214302807/34}.
+\bibitem{War-sub} M.~Warkentin, \emph{Subquivers of mutation-acyclic quivers are mutation-acyclic}, arXiv:1102.3382 (2011).
+\end{thebibliography}
+
+\end{document}
