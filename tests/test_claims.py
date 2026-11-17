@@ -80,6 +80,20 @@ class Registry(unittest.TestCase):
             self.assertIn(part, message)
         self.assertNotIn("!control", message)
 
+    def test_a_star_after_a_number_is_refused(self) -> None:
+        # "b=8*" is meant for b = 8 and would also take b = 80
+        registry = {
+            "table": {"t": {"heading": "T", "columns": ["a"]}},
+            "claim": [
+                {"id": "x", "table": "t", "cells": ["1"], "tasks": ["barrier/R/b=8*", "barrier/R/b=9"]}
+            ],
+            "headline": [],
+        }
+        with self.assertRaisesRegex(claims.RegistryError, "the \\* follows a digit"):
+            claims.validate(registry, TASKS)
+        registry["claim"][0]["tasks"] = ["barrier/R/b=8", "barrier/R/b=9"]
+        claims.validate(registry, TASKS)
+
     def test_negative_controls_never_count_for_a_claim(self) -> None:
         self.assertEqual(claims.claim_tasks(CLAIM, TASKS), ["barrier/R/b=8", "barrier/R/b=9"])
 
