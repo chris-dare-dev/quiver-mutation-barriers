@@ -1,0 +1,143 @@
+{
+ "batch": "section-12",
+ "tasks": [
+  {
+   "article": "Proposition 12.1",
+   "cost": 1,
+   "evidence": [
+    {
+     "file": "n4_conj55_N18_summary.log",
+     "line": 4
+    }
+   ],
+   "group": "conj55",
+   "height": 1,
+   "id": "conj55/h=1",
+   "kind": "conj55",
+   "limits": {
+    "memory_mb": 600,
+    "time_seconds": 900
+   },
+   "predicted": {
+    "quivers": 41,
+    "reach_acyclic": 39
+   },
+   "set": 0
+  },
+  {
+   "article": "Proposition 12.1",
+   "cost": 8,
+   "evidence": [
+    {
+     "file": "n4_conj55_N18_summary.log",
+     "line": 5
+    }
+   ],
+   "group": "conj55",
+   "height": 2,
+   "id": "conj55/h=2",
+   "kind": "conj55",
+   "limits": {
+    "memory_mb": 600,
+    "time_seconds": 900
+   },
+   "predicted": {
+    "quivers": 653,
+    "reach_acyclic": 521
+   },
+   "set": 0
+  },
+  {
+   "article": "Proposition 12.1",
+   "cost": 27,
+   "evidence": [
+    {
+     "file": "n4_conj55_N18_summary.log",
+     "line": 6
+    }
+   ],
+   "group": "conj55",
+   "height": 3,
+   "id": "conj55/h=3",
+   "kind": "conj55",
+   "limits": {
+    "memory_mb": 600,
+    "time_seconds": 900
+   },
+   "predicted": {
+    "quivers": 4317,
+    "reach_acyclic": 2916
+   },
+   "set": 0
+  },
+  {
+   "article": "Proposition 12.1",
+   "cost": 64,
+   "evidence": [
+    {
+     "file": "n4_conj55_N18_summary.log",
+     "line": 7
+    }
+   ],
+   "group": "conj55",
+   "height": 4,
+   "id": "conj55/h=4",
+   "kind": "conj55",
+   "limits": {
+    "memory_mb": 600,
+    "time_seconds": 900
+   },
+   "predicted": {
+    "quivers": 17353,
+    "reach_acyclic": 10415
+   },
+   "set": 0
+  },
+  {
+   "article": "Proposition 12.1",
+   "cost": 125,
+   "evidence": [
+    {
+     "file": "n4_conj55_N18_summary.log",
+     "line": 8
+    }
+   ],
+   "group": "conj55",
+   "height": 5,
+   "id": "conj55/h=5",
+   "kind": "conj55",
+   "limits": {
+    "memory_mb": 600,
+    "time_seconds": 900
+   },
+   "predicted": {
+    "quivers": 51841,
+    "reach_acyclic": 28523
+   },
+   "set": 0
+  },
+  {
+   "article": "Proposition 12.1",
+   "cost": 216,
+   "evidence": [
+    {
+     "file": "n4_conj55_N18_summary.log",
+     "line": 9
+    }
+   ],
+   "group": "conj55",
+   "height": 6,
+   "id": "conj55/h=6",
+   "kind": "conj55",
+   "limits": {
+    "memory_mb": 600,
+    "time_seconds": 900
+   },
+   "predicted": {
+    "quivers": 127541,
+    "reach_acyclic": 66393
+   },
+   "set": 0
+  }
+ ]
+}

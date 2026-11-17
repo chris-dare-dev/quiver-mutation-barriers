@@ -1,0 +1,43 @@
+{
+ "batch": "section-13",
+ "tasks": [
+  {
+   "article": "Section 13",
+   "cost": 20,
+   "evidence": [
+    {
+     "file": "review23_n22_counts.log"
+    }
+   ],
+   "group": "census",
+   "id": "census/decided-classes",
+   "inputs": [
+    "n4_opposite_cores.jsonl.gz",
+    "n4_opposite_plateaus.jsonl.gz",
+    "n4_opposite_tubes.jsonl.gz",
+    "n4_tube_certify2.jsonl.gz",
+    "n4_tube_classify.jsonl.gz"
+   ],
+   "kind": "census",
+   "limits": {
+    "memory_mb": 6000,
+    "time_seconds": 600
+   },
+   "predicted": {
+    "acyclic_bottom": 1556,
+    "classes": 788026,
+    "decided": 785198,
+    "disconnected": 400,
+    "finite_cores": 555828,
+    "mirror_pairs": 377451,
+    "open_classes": 2828,
+    "settled_by_cores_and_tubes": 783242,
+    "tube_certificates_note_14": 225208,
+    "tube_certificates_note_22": 2206
+   },
+   "procs": 4,
+   "set": 0,
+   "stage": "decided-classes"
+  }
+ ]
+}

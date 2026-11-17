@@ -42,21 +42,21 @@ File names without a directory are stored results; they are in the data archive 
 <!-- BEGIN GENERATED headline: tools/claims.py tables -->
 | Quantity | Predicted | Computed | Status | Task |
 |---|---|---|---|---|
-| G₈ and −G₈ are joined at height | 56 |  | not re-run | `barrier/G/k=8` |
-| R₈ and −R₈ are joined at height | 101 |  | not re-run | `barrier/R/b=8` |
-| quivers reached from R₈ below 101, up to relabelling | 35 |  | not re-run | `reach/R/b=8` |
-| mutations on the route from R₈ to −R₈ | 37 |  | not re-run | `route/R/b=8` |
-| quivers at height 101 on that route | 28 |  | not re-run | `route/R/b=8` |
-| Q₃ and −Q₃ are joined at height | 132 |  | not re-run | `barrier/Qt/t=3` |
-| P⁺₃ (height 9) and −P⁺₃ are joined at height | 413 |  | not re-run | `barrier/P+/t=3` |
-| mutations on the route from P⁺₃ to −P⁺₃ | 94 |  | not re-run | `route/P+/t=3` |
-| top of the route from Q₇ (height 8) to −Q₇ | 1,242 |  | not re-run | `route/Qa/a=7` |
-| mutations on that route | 3,120 |  | not re-run | `route/Qa/a=7` |
-| quivers of height exactly 4, up to relabelling | 17,353 |  | not re-run | `conj55/h=4` |
-| of these, reaching an acyclic quiver within height 4 | 10,415 |  | not re-run | `conj55/h=4` |
-| claims certified for R_b, even b ≥ 6 | 30 |  | not re-run | `certificate/R_b` |
-| claims certified for Q_t, t ≥ 3 | 43 |  | not re-run | `certificate/Q_t` |
-| claims certified for P⁺_t, t ≥ 8 | 938 |  | not re-run | `certificate/P+_t/audit-to-7` |
+| G₈ and −G₈ are joined at height | 56 | 56 | ok | `barrier/G/k=8` |
+| R₈ and −R₈ are joined at height | 101 | 101 | ok | `barrier/R/b=8` |
+| quivers reached from R₈ below 101, up to relabelling | 35 | 35 | ok | `reach/R/b=8` |
+| mutations on the route from R₈ to −R₈ | 37 | 37 | ok | `route/R/b=8` |
+| quivers at height 101 on that route | 28 | 28 | ok | `route/R/b=8` |
+| Q₃ and −Q₃ are joined at height | 132 | 132 | ok | `barrier/Qt/t=3` |
+| P⁺₃ (height 9) and −P⁺₃ are joined at height | 413 | 413 | ok | `barrier/P+/t=3` |
+| mutations on the route from P⁺₃ to −P⁺₃ | 94 | 94 | ok | `route/P+/t=3` |
+| top of the route from Q₇ (height 8) to −Q₇ | 1,242 | 1,242 | ok | `route/Qa/a=7` |
+| mutations on that route | 3,120 | 3,120 | ok | `route/Qa/a=7` |
+| quivers of height exactly 4, up to relabelling | 17,353 | 17,353 | ok | `conj55/h=4` |
+| of these, reaching an acyclic quiver within height 4 | 10,415 | 10,415 | ok | `conj55/h=4` |
+| claims certified for R_b, even b ≥ 6 | 30 | 30 | ok | `certificate/R_b` |
+| claims certified for Q_t, t ≥ 3 | 43 | 43 | ok | `certificate/Q_t` |
+| claims certified for P⁺_t, t ≥ 8 | 938 | 938 | ok | `certificate/P+_t/audit-to-7` |
 <!-- END GENERATED headline -->
 
 These tasks recompute, at the parameters shown, what the closed forms, the routes and the certificate programs say. They were written by the same AI model as everything else here. They do not replace the proofs, and they are not an independent reading.

@@ -1,0 +1,3727 @@
+{
+ "batch": "section-07",
+ "tasks": [
+  {
+   "article": "Theorem 7.2",
+   "cost": 5,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=5",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 5
+   },
+   "set": 0,
+   "value": 5
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 6,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=6",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 6
+   },
+   "set": 0,
+   "value": 6
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 7,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=7",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 7
+   },
+   "set": 0,
+   "value": 7
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 8,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=8",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 8,
+    "mutation_heights": [
+     62,
+     24,
+     57,
+     48
+    ]
+   },
+   "set": 0,
+   "value": 8
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 9,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=9",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 9
+   },
+   "set": 0,
+   "value": 9
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 10,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=10",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 10
+   },
+   "set": 0,
+   "value": 10
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 11,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=11",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 11
+   },
+   "set": 0,
+   "value": 11
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 12,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=12",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 12
+   },
+   "set": 0,
+   "value": 12
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 13,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=13",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 13
+   },
+   "set": 0,
+   "value": 13
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 14,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=14",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 14
+   },
+   "set": 0,
+   "value": 14
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 15,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=15",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 15
+   },
+   "set": 0,
+   "value": 15
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 16,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=16",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 16
+   },
+   "set": 0,
+   "value": 16
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 17,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=17",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 17
+   },
+   "set": 0,
+   "value": 17
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 18,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=18",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 18
+   },
+   "set": 0,
+   "value": 18
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 19,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=19",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 19
+   },
+   "set": 0,
+   "value": 19
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 20,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=20",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 20
+   },
+   "set": 0,
+   "value": 20
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 21,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=21",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 21
+   },
+   "set": 0,
+   "value": 21
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 22,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=22",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 22
+   },
+   "set": 0,
+   "value": 22
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 23,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=23",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 23
+   },
+   "set": 0,
+   "value": 23
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 24,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=24",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 24
+   },
+   "set": 0,
+   "value": 24
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 25,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=25",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 25
+   },
+   "set": 0,
+   "value": 25
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 26,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=26",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 26
+   },
+   "set": 0,
+   "value": 26
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 27,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=27",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 27
+   },
+   "set": 0,
+   "value": 27
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 28,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=28",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 28
+   },
+   "set": 0,
+   "value": 28
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 29,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=29",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 29
+   },
+   "set": 0,
+   "value": 29
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 30,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=30",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 30
+   },
+   "set": 0,
+   "value": 30
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 31,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=31",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 31
+   },
+   "set": 0,
+   "value": 31
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 32,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=32",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 32
+   },
+   "set": 0,
+   "value": 32
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 33,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=33",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 33
+   },
+   "set": 0,
+   "value": 33
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 34,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=34",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 34
+   },
+   "set": 0,
+   "value": 34
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 35,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=35",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 35
+   },
+   "set": 0,
+   "value": 35
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 36,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=36",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 36
+   },
+   "set": 0,
+   "value": 36
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 37,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=37",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 37
+   },
+   "set": 0,
+   "value": 37
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 38,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=38",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 38
+   },
+   "set": 0,
+   "value": 38
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 39,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=39",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 39
+   },
+   "set": 0,
+   "value": 39
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 40,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=40",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 40
+   },
+   "set": 0,
+   "value": 40
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 41,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=41",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 41
+   },
+   "set": 0,
+   "value": 41
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 42,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=42",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 42
+   },
+   "set": 0,
+   "value": 42
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 43,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=43",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 43
+   },
+   "set": 0,
+   "value": 43
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 44,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=44",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 44
+   },
+   "set": 0,
+   "value": 44
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 45,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=45",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 45
+   },
+   "set": 0,
+   "value": 45
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 46,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=46",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 46
+   },
+   "set": 0,
+   "value": 46
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 47,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=47",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 47
+   },
+   "set": 0,
+   "value": 47
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 48,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=48",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 48
+   },
+   "set": 0,
+   "value": 48
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 49,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=49",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 49
+   },
+   "set": 0,
+   "value": 49
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 50,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=50",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 50
+   },
+   "set": 0,
+   "value": 50
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 51,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=51",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 51
+   },
+   "set": 0,
+   "value": 51
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 52,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=52",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 52
+   },
+   "set": 0,
+   "value": 52
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 53,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=53",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 53
+   },
+   "set": 0,
+   "value": 53
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 54,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=54",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 54
+   },
+   "set": 0,
+   "value": 54
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 55,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=55",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 55
+   },
+   "set": 0,
+   "value": 55
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 56,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=56",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 56
+   },
+   "set": 0,
+   "value": 56
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 57,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=57",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 57
+   },
+   "set": 0,
+   "value": 57
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 58,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=58",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 58
+   },
+   "set": 0,
+   "value": 58
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 59,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=59",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 59
+   },
+   "set": 0,
+   "value": 59
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 60,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=60",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 60
+   },
+   "set": 0,
+   "value": 60
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 5,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 1
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=5",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 32,
+   "set": 1,
+   "value": 5
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 6,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 2
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=6",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 51,
+   "set": 1,
+   "value": 6
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 7,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 3
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=7",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 74,
+   "set": 1,
+   "value": 7
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 8,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 4
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=8",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 101,
+   "set": 1,
+   "value": 8
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 9,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 5
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=9",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 132,
+   "set": 1,
+   "value": 9
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 10,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 6
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=10",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 167,
+   "set": 1,
+   "value": 10
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 11,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 7
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=11",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 206,
+   "set": 1,
+   "value": 11
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 12,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 8
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=12",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 249,
+   "set": 1,
+   "value": 12
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 13,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 9
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=13",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 296,
+   "set": 1,
+   "value": 13
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 14,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 10
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=14",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 347,
+   "set": 1,
+   "value": 14
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 15,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 11
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=15",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 402,
+   "set": 1,
+   "value": 15
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 16,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 12
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=16",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 461,
+   "set": 1,
+   "value": 16
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 17,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 13
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=17",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 524,
+   "set": 1,
+   "value": 17
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 18,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 14
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=18",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 591,
+   "set": 1,
+   "value": 18
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 19,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 15
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=19",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 662,
+   "set": 1,
+   "value": 19
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 20,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 16
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=20",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 737,
+   "set": 1,
+   "value": 20
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 21,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 17
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=21",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 816,
+   "set": 1,
+   "value": 21
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 22,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 18
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=22",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 899,
+   "set": 1,
+   "value": 22
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 23,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 19
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=23",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 986,
+   "set": 1,
+   "value": 23
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 24,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 20
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=24",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 1077,
+   "set": 1,
+   "value": 24
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 25,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 21
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=25",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 1172,
+   "set": 1,
+   "value": 25
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 26,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 22
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=26",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 1271,
+   "set": 1,
+   "value": 26
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 27,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 23
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=27",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 1374,
+   "set": 1,
+   "value": 27
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 28,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 24
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=28",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 1481,
+   "set": 1,
+   "value": 28
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 29,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 25
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=29",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 1592,
+   "set": 1,
+   "value": 29
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 30,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 26
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=30",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 1707,
+   "set": 1,
+   "value": 30
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 31,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 27
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=31",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 1826,
+   "set": 1,
+   "value": 31
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 32,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 28
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=32",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 1949,
+   "set": 1,
+   "value": 32
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 33,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 29
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=33",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 2076,
+   "set": 1,
+   "value": 33
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 34,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 30
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=34",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 2207,
+   "set": 1,
+   "value": 34
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 35,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 31
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=35",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 2342,
+   "set": 1,
+   "value": 35
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 36,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 32
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=36",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 2481,
+   "set": 1,
+   "value": 36
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 37,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 33
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=37",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 2624,
+   "set": 1,
+   "value": 37
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 38,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 34
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=38",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 2771,
+   "set": 1,
+   "value": 38
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 39,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 35
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=39",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 2922,
+   "set": 1,
+   "value": 39
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 40,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 36
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=40",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 3077,
+   "set": 1,
+   "value": 40
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 41,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 37
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=41",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 3236,
+   "set": 1,
+   "value": 41
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 42,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 38
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=42",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 3399,
+   "set": 1,
+   "value": 42
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 43,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 39
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=43",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 3566,
+   "set": 1,
+   "value": 43
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 44,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 40
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=44",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 3737,
+   "set": 1,
+   "value": 44
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 45,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 41
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=45",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 3912,
+   "set": 1,
+   "value": 45
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 46,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 42
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=46",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 4091,
+   "set": 1,
+   "value": 46
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 47,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 43
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=47",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 4274,
+   "set": 1,
+   "value": 47
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 48,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 44
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=48",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 4461,
+   "set": 1,
+   "value": 48
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 49,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 45
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=49",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 4652,
+   "set": 1,
+   "value": 49
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 50,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 46
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=50",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 4847,
+   "set": 1,
+   "value": 50
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 51,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 47
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=51",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 5046,
+   "set": 1,
+   "value": 51
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 52,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 48
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=52",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 5249,
+   "set": 1,
+   "value": 52
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 53,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 49
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=53",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 5456,
+   "set": 1,
+   "value": 53
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 54,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 50
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=54",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 5667,
+   "set": 1,
+   "value": 54
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 55,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 51
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=55",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 5882,
+   "set": 1,
+   "value": 55
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 56,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 52
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=56",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 6101,
+   "set": 1,
+   "value": 56
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 57,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 53
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=57",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 6324,
+   "set": 1,
+   "value": 57
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 58,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 54
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=58",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 6551,
+   "set": 1,
+   "value": 58
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 59,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 55
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=59",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 6782,
+   "set": 1,
+   "value": 59
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 60,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 56
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=60",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 7017,
+   "set": 1,
+   "value": 60
+  },
+  {
+   "article": "Theorem 7.2",
+   "bound": 51,
+   "cost": 6,
+   "evidence": [
+    {
+     "field": "below H",
+     "file": "owf_barrier_summary.log",
+     "line": 5
+    }
+   ],
+   "family": "R",
+   "group": "reach R_b",
+   "id": "reach/R/b=6",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": {
+    "low": 1,
+    "quivers": 20
+   },
+   "prune_forks": false,
+   "set": 2,
+   "value": 6
+  },
+  {
+   "article": "Theorem 7.2",
+   "bound": 101,
+   "cost": 8,
+   "evidence": [
+    {
+     "field": "below H",
+     "file": "owf_barrier_summary.log",
+     "line": 6
+    }
+   ],
+   "family": "R",
+   "group": "reach R_b",
+   "id": "reach/R/b=8",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": {
+    "low": 1,
+    "quivers": 35
+   },
+   "prune_forks": false,
+   "set": 2,
+   "value": 8
+  },
+  {
+   "article": "Theorem 7.2",
+   "bound": 167,
+   "cost": 10,
+   "evidence": [
+    {
+     "field": "below H",
+     "file": "owf_barrier_summary.log",
+     "line": 7
+    }
+   ],
+   "family": "R",
+   "group": "reach R_b",
+   "id": "reach/R/b=10",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": {
+    "low": 1,
+    "quivers": 54
+   },
+   "prune_forks": false,
+   "set": 2,
+   "value": 10
+  },
+  {
+   "article": "Theorem 7.2",
+   "bound": 461,
+   "cost": 16,
+   "evidence": [
+    {
+     "field": "below H",
+     "file": "owf_barrier_summary.log",
+     "line": 8
+    }
+   ],
+   "family": "R",
+   "group": "reach R_b",
+   "id": "reach/R/b=16",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": {
+    "low": 1,
+    "quivers": 135
+   },
+   "prune_forks": false,
+   "set": 2,
+   "value": 16
+  },
+  {
+   "article": "Theorem 7.2",
+   "bound": 737,
+   "cost": 20,
+   "evidence": [
+    {
+     "field": "below H",
+     "file": "owf_barrier_summary.log",
+     "line": 9
+    }
+   ],
+   "family": "R",
+   "group": "reach R_b",
+   "id": "reach/R/b=20",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": {
+    "low": 1,
+    "quivers": 209
+   },
+   "prune_forks": false,
+   "set": 2,
+   "value": 20
+  },
+  {
+   "article": "Theorem 7.2",
+   "bound": 1707,
+   "cost": 30,
+   "evidence": [
+    {
+     "field": "below H",
+     "file": "owf_barrier_summary.log",
+     "line": 10
+    }
+   ],
+   "family": "R",
+   "group": "reach R_b",
+   "id": "reach/R/b=30",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": {
+    "low": 1,
+    "quivers": 464
+   },
+   "prune_forks": false,
+   "set": 2,
+   "value": 30
+  },
+  {
+   "article": "Theorem 7.2",
+   "bound": 3077,
+   "cost": 40,
+   "evidence": [
+    {
+     "field": "below H",
+     "file": "owf_barrier_summary.log",
+     "line": 11
+    }
+   ],
+   "family": "R",
+   "group": "reach R_b",
+   "id": "reach/R/b=40",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": {
+    "low": 1,
+    "quivers": 819
+   },
+   "prune_forks": false,
+   "set": 2,
+   "value": 40
+  },
+  {
+   "article": "Theorem 7.2",
+   "bound": 7017,
+   "cost": 60,
+   "evidence": [
+    {
+     "field": "below H",
+     "file": "owf_barrier_summary.log",
+     "line": 12
+    }
+   ],
+   "family": "R",
+   "group": "reach R_b",
+   "id": "reach/R/b=60",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": {
+    "low": 1,
+    "quivers": 1829
+   },
+   "prune_forks": false,
+   "set": 2,
+   "value": 60
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 6,
+   "evidence": [
+    {
+     "field": "route_ok, plateau_quivers",
+     "file": "n4_doors_family3.log",
+     "line": 2
+    },
+    {
+     "field": "L",
+     "file": "owf_barrier_summary.log",
+     "line": 5
+    }
+   ],
+   "family": "R",
+   "group": "route R_b",
+   "id": "route/R/b=6",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 15,
+    "ends_at_opposite": true,
+    "mutations": 22,
+    "top": 51
+   },
+   "set": 3,
+   "value": 6
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 8,
+   "evidence": [
+    {
+     "field": "route_ok, plateau_quivers",
+     "file": "n4_doors_family3.log",
+     "line": 4
+    },
+    {
+     "field": "L",
+     "file": "owf_barrier_summary.log",
+     "line": 6
+    }
+   ],
+   "family": "R",
+   "group": "route R_b",
+   "id": "route/R/b=8",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 28,
+    "ends_at_opposite": true,
+    "first_heights": [
+     8,
+     24,
+     40,
+     56
+    ],
+    "mutations": 37,
+    "top": 101
+   },
+   "set": 3,
+   "value": 8
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 10,
+   "evidence": [
+    {
+     "field": "route_ok, plateau_quivers",
+     "file": "n4_doors_family3.log",
+     "line": 6
+    },
+    {
+     "field": "L",
+     "file": "owf_barrier_summary.log",
+     "line": 7
+    }
+   ],
+   "family": "R",
+   "group": "route R_b",
+   "id": "route/R/b=10",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 45,
+    "ends_at_opposite": true,
+    "mutations": 56,
+    "top": 167
+   },
+   "set": 3,
+   "value": 10
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 12,
+   "evidence": [
+    {
+     "field": "route_ok, plateau_quivers",
+     "file": "n4_doors_family3.log",
+     "line": 8
+    }
+   ],
+   "family": "R",
+   "group": "route R_b",
+   "id": "route/R/b=12",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 66,
+    "ends_at_opposite": true,
+    "mutations": 79,
+    "top": 249
+   },
+   "set": 3,
+   "value": 12
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 14,
+   "evidence": [
+    {
+     "field": "route_ok, plateau_quivers",
+     "file": "n4_doors_family3.log",
+     "line": 10
+    }
+   ],
+   "family": "R",
+   "group": "route R_b",
+   "id": "route/R/b=14",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 91,
+    "ends_at_opposite": true,
+    "mutations": 106,
+    "top": 347
+   },
+   "set": 3,
+   "value": 14
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 16,
+   "evidence": [
+    {
+     "field": "route_ok, plateau_quivers",
+     "file": "n4_doors_family3.log",
+     "line": 12
+    },
+    {
+     "field": "L",
+     "file": "owf_barrier_summary.log",
+     "line": 8
+    }
+   ],
+   "family": "R",
+   "group": "route R_b",
+   "id": "route/R/b=16",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 120,
+    "ends_at_opposite": true,
+    "mutations": 137,
+    "top": 461
+   },
+   "set": 3,
+   "value": 16
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 18,
+   "evidence": [
+    {
+     "field": "route_ok, plateau_quivers",
+     "file": "n4_doors_family3.log",
+     "line": 14
+    }
+   ],
+   "family": "R",
+   "group": "route R_b",
+   "id": "route/R/b=18",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 153,
+    "ends_at_opposite": true,
+    "mutations": 172,
+    "top": 591
+   },
+   "set": 3,
+   "value": 18
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 20,
+   "evidence": [
+    {
+     "field": "route_ok, plateau_quivers",
+     "file": "n4_doors_family3.log",
+     "line": 16
+    },
+    {
+     "field": "L",
+     "file": "owf_barrier_summary.log",
+     "line": 9
+    }
+   ],
+   "family": "R",
+   "group": "route R_b",
+   "id": "route/R/b=20",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 190,
+    "ends_at_opposite": true,
+    "mutations": 211,
+    "top": 737
+   },
+   "set": 3,
+   "value": 20
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 22,
+   "evidence": [
+    {
+     "field": "route_ok, plateau_quivers",
+     "file": "n4_doors_family3.log",
+     "line": 18
+    }
+   ],
+   "family": "R",
+   "group": "route R_b",
+   "id": "route/R/b=22",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 231,
+    "ends_at_opposite": true,
+    "mutations": 254,
+    "top": 899
+   },
+   "set": 3,
+   "value": 22
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 24,
+   "evidence": [
+    {
+     "field": "route_ok, plateau_quivers",
+     "file": "n4_doors_family3.log",
+     "line": 20
+    }
+   ],
+   "family": "R",
+   "group": "route R_b",
+   "id": "route/R/b=24",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 276,
+    "ends_at_opposite": true,
+    "mutations": 301,
+    "top": 1077
+   },
+   "set": 3,
+   "value": 24
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 26,
+   "evidence": [
+    {
+     "field": "route_ok, plateau_quivers",
+     "file": "n4_doors_family3.log",
+     "line": 22
+    }
+   ],
+   "family": "R",
+   "group": "route R_b",
+   "id": "route/R/b=26",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 325,
+    "ends_at_opposite": true,
+    "mutations": 352,
+    "top": 1271
+   },
+   "set": 3,
+   "value": 26
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 28,
+   "evidence": [
+    {
+     "field": "route_ok, plateau_quivers",
+     "file": "n4_doors_family3.log",
+     "line": 24
+    }
+   ],
+   "family": "R",
+   "group": "route R_b",
+   "id": "route/R/b=28",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 378,
+    "ends_at_opposite": true,
+    "mutations": 407,
+    "top": 1481
+   },
+   "set": 3,
+   "value": 28
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 30,
+   "evidence": [
+    {
+     "field": "route_ok, plateau_quivers",
+     "file": "n4_doors_family3.log",
+     "line": 26
+    },
+    {
+     "field": "L",
+     "file": "owf_barrier_summary.log",
+     "line": 10
+    }
+   ],
+   "family": "R",
+   "group": "route R_b",
+   "id": "route/R/b=30",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 435,
+    "ends_at_opposite": true,
+    "mutations": 466,
+    "top": 1707
+   },
+   "set": 3,
+   "value": 30
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 32,
+   "evidence": [
+    {
+     "field": "route_ok, plateau_quivers",
+     "file": "n4_doors_family3.log",
+     "line": 28
+    }
+   ],
+   "family": "R",
+   "group": "route R_b",
+   "id": "route/R/b=32",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 496,
+    "ends_at_opposite": true,
+    "mutations": 529,
+    "top": 1949
+   },
+   "set": 3,
+   "value": 32
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 34,
+   "evidence": [
+    {
+     "field": "route_ok, plateau_quivers",
+     "file": "n4_doors_family3.log",
+     "line": 30
+    }
+   ],
+   "family": "R",
+   "group": "route R_b",
+   "id": "route/R/b=34",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 561,
+    "ends_at_opposite": true,
+    "mutations": 596,
+    "top": 2207
+   },
+   "set": 3,
+   "value": 34
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 36,
+   "evidence": [
+    {
+     "field": "route_ok, plateau_quivers",
+     "file": "n4_doors_family3.log",
+     "line": 32
+    }
+   ],
+   "family": "R",
+   "group": "route R_b",
+   "id": "route/R/b=36",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 630,
+    "ends_at_opposite": true,
+    "mutations": 667,
+    "top": 2481
+   },
+   "set": 3,
+   "value": 36
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 38,
+   "evidence": [
+    {
+     "field": "route_ok, plateau_quivers",
+     "file": "n4_doors_family3.log",
+     "line": 34
+    }
+   ],
+   "family": "R",
+   "group": "route R_b",
+   "id": "route/R/b=38",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 703,
+    "ends_at_opposite": true,
+    "mutations": 742,
+    "top": 2771
+   },
+   "set": 3,
+   "value": 38
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 40,
+   "evidence": [
+    {
+     "field": "route_ok, plateau_quivers",
+     "file": "n4_doors_family3.log",
+     "line": 36
+    },
+    {
+     "field": "L",
+     "file": "owf_barrier_summary.log",
+     "line": 11
+    }
+   ],
+   "family": "R",
+   "group": "route R_b",
+   "id": "route/R/b=40",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 780,
+    "ends_at_opposite": true,
+    "mutations": 821,
+    "top": 3077
+   },
+   "set": 3,
+   "value": 40
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 42,
+   "evidence": [
+    {
+     "field": "route_ok, plateau_quivers",
+     "file": "n4_doors_family3.log",
+     "line": 38
+    }
+   ],
+   "family": "R",
+   "group": "route R_b",
+   "id": "route/R/b=42",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 861,
+    "ends_at_opposite": true,
+    "mutations": 904,
+    "top": 3399
+   },
+   "set": 3,
+   "value": 42
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 44,
+   "evidence": [
+    {
+     "field": "route_ok, plateau_quivers",
+     "file": "n4_doors_family3.log",
+     "line": 40
+    }
+   ],
+   "family": "R",
+   "group": "route R_b",
+   "id": "route/R/b=44",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 946,
+    "ends_at_opposite": true,
+    "mutations": 991,
+    "top": 3737
+   },
+   "set": 3,
+   "value": 44
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 46,
+   "evidence": [
+    {
+     "field": "route_ok, plateau_quivers",
+     "file": "n4_doors_family3.log",
+     "line": 42
+    }
+   ],
+   "family": "R",
+   "group": "route R_b",
+   "id": "route/R/b=46",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 1035,
+    "ends_at_opposite": true,
+    "mutations": 1082,
+    "top": 4091
+   },
+   "set": 3,
+   "value": 46
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 48,
+   "evidence": [
+    {
+     "field": "route_ok, plateau_quivers",
+     "file": "n4_doors_family3.log",
+     "line": 44
+    }
+   ],
+   "family": "R",
+   "group": "route R_b",
+   "id": "route/R/b=48",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 1128,
+    "ends_at_opposite": true,
+    "mutations": 1177,
+    "top": 4461
+   },
+   "set": 3,
+   "value": 48
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 50,
+   "evidence": [
+    {
+     "field": "route_ok, plateau_quivers",
+     "file": "n4_doors_family3.log",
+     "line": 46
+    }
+   ],
+   "family": "R",
+   "group": "route R_b",
+   "id": "route/R/b=50",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 1225,
+    "ends_at_opposite": true,
+    "mutations": 1276,
+    "top": 4847
+   },
+   "set": 3,
+   "value": 50
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 52,
+   "evidence": [
+    {
+     "field": "route_ok, plateau_quivers",
+     "file": "n4_doors_family3.log",
+     "line": 48
+    }
+   ],
+   "family": "R",
+   "group": "route R_b",
+   "id": "route/R/b=52",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 1326,
+    "ends_at_opposite": true,
+    "mutations": 1379,
+    "top": 5249
+   },
+   "set": 3,
+   "value": 52
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 54,
+   "evidence": [
+    {
+     "field": "route_ok, plateau_quivers",
+     "file": "n4_doors_family3.log",
+     "line": 50
+    }
+   ],
+   "family": "R",
+   "group": "route R_b",
+   "id": "route/R/b=54",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 1431,
+    "ends_at_opposite": true,
+    "mutations": 1486,
+    "top": 5667
+   },
+   "set": 3,
+   "value": 54
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 56,
+   "evidence": [
+    {
+     "field": "route_ok, plateau_quivers",
+     "file": "n4_doors_family3.log",
+     "line": 52
+    }
+   ],
+   "family": "R",
+   "group": "route R_b",
+   "id": "route/R/b=56",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 1540,
+    "ends_at_opposite": true,
+    "mutations": 1597,
+    "top": 6101
+   },
+   "set": 3,
+   "value": 56
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 58,
+   "evidence": [
+    {
+     "field": "route_ok, plateau_quivers",
+     "file": "n4_doors_family3.log",
+     "line": 54
+    }
+   ],
+   "family": "R",
+   "group": "route R_b",
+   "id": "route/R/b=58",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 1653,
+    "ends_at_opposite": true,
+    "mutations": 1712,
+    "top": 6551
+   },
+   "set": 3,
+   "value": 58
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 60,
+   "evidence": [
+    {
+     "field": "route_ok, plateau_quivers",
+     "file": "n4_doors_family3.log",
+     "line": 56
+    },
+    {
+     "field": "L",
+     "file": "owf_barrier_summary.log",
+     "line": 12
+    }
+   ],
+   "family": "R",
+   "group": "route R_b",
+   "id": "route/R/b=60",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 1770,
+    "ends_at_opposite": true,
+    "mutations": 1831,
+    "top": 7017
+   },
+   "set": 3,
+   "value": 60
+  },
+  {
+   "article": "Section 7",
+   "cost": 3,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family.log",
+     "line": 1
+    }
+   ],
+   "family": "Qt",
+   "group": "barrier Q_t",
+   "id": "barrier/Qt/t=3",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 132,
+   "set": 4,
+   "value": 3
+  },
+  {
+   "article": "Section 7",
+   "cost": 4,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family.log",
+     "line": 2
+    }
+   ],
+   "family": "Qt",
+   "group": "barrier Q_t",
+   "id": "barrier/Qt/t=4",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 440,
+   "set": 4,
+   "value": 4
+  },
+  {
+   "article": "Section 7",
+   "cost": 5,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family.log",
+     "line": 3
+    }
+   ],
+   "family": "Qt",
+   "group": "barrier Q_t",
+   "id": "barrier/Qt/t=5",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 1110,
+   "set": 4,
+   "value": 5
+  },
+  {
+   "article": "Section 7",
+   "cost": 6,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family.log",
+     "line": 4
+    }
+   ],
+   "family": "Qt",
+   "group": "barrier Q_t",
+   "id": "barrier/Qt/t=6",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 2352,
+   "set": 4,
+   "value": 6
+  },
+  {
+   "article": "Section 7",
+   "cost": 7,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family.log",
+     "line": 5
+    }
+   ],
+   "family": "Qt",
+   "group": "barrier Q_t",
+   "id": "barrier/Qt/t=7",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 4424,
+   "set": 4,
+   "value": 7
+  },
+  {
+   "article": "Section 7",
+   "cost": 8,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family.log",
+     "line": 6
+    }
+   ],
+   "family": "Qt",
+   "group": "barrier Q_t",
+   "id": "barrier/Qt/t=8",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 7632,
+   "set": 4,
+   "value": 8
+  },
+  {
+   "article": "Section 7",
+   "cost": 9,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family.log",
+     "line": 7
+    }
+   ],
+   "family": "Qt",
+   "group": "barrier Q_t",
+   "id": "barrier/Qt/t=9",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 12330,
+   "set": 4,
+   "value": 9
+  },
+  {
+   "article": "Section 7",
+   "cost": 10,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family.log",
+     "line": 8
+    }
+   ],
+   "family": "Qt",
+   "group": "barrier Q_t",
+   "id": "barrier/Qt/t=10",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 18920,
+   "set": 4,
+   "value": 10
+  },
+  {
+   "article": "Section 7",
+   "cost": 11,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family.log",
+     "line": 9
+    }
+   ],
+   "family": "Qt",
+   "group": "barrier Q_t",
+   "id": "barrier/Qt/t=11",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 27852,
+   "set": 4,
+   "value": 11
+  },
+  {
+   "article": "Section 7",
+   "cost": 12,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family.log",
+     "line": 10
+    }
+   ],
+   "family": "Qt",
+   "group": "barrier Q_t",
+   "id": "barrier/Qt/t=12",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 39624,
+   "set": 4,
+   "value": 12
+  },
+  {
+   "article": "Section 7",
+   "cost": 13,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family.log",
+     "line": 11
+    }
+   ],
+   "family": "Qt",
+   "group": "barrier Q_t",
+   "id": "barrier/Qt/t=13",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 54782,
+   "set": 4,
+   "value": 13
+  },
+  {
+   "article": "Section 7",
+   "cost": 14,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family.log",
+     "line": 12
+    }
+   ],
+   "family": "Qt",
+   "group": "barrier Q_t",
+   "id": "barrier/Qt/t=14",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 73920,
+   "set": 4,
+   "value": 14
+  },
+  {
+   "article": "Section 7",
+   "cost": 15,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family.log",
+     "line": 13
+    }
+   ],
+   "family": "Qt",
+   "group": "barrier Q_t",
+   "id": "barrier/Qt/t=15",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 97680,
+   "set": 4,
+   "value": 15
+  },
+  {
+   "article": "Section 7",
+   "cost": 16,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family.log",
+     "line": 14
+    }
+   ],
+   "family": "Qt",
+   "group": "barrier Q_t",
+   "id": "barrier/Qt/t=16",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 126752,
+   "set": 4,
+   "value": 16
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 1,
+   "evidence": [],
+   "group": "certificate",
+   "id": "certificate/R_b",
+   "kind": "certificate",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "name": "R_b",
+   "predicted": {
+    "certified": true,
+    "claims": 30
+   },
+   "program": [
+    "n4_doors.py",
+    "prove2"
+   ],
+   "set": 5
+  },
+  {
+   "article": "Section 7",
+   "cost": 1,
+   "evidence": [],
+   "group": "certificate",
+   "id": "certificate/Q_t",
+   "kind": "certificate",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "name": "Q_t",
+   "predicted": {
+    "certified": true,
+    "claims": 43
+   },
+   "program": [
+    "n4_doors.py",
+    "prove"
+   ],
+   "set": 5
+  }
+ ]
+}

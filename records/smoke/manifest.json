@@ -1,0 +1,1560 @@
+{
+ "batch": "smoke",
+ "tasks": [
+  {
+   "article": "Theorem 7.2",
+   "cost": 8,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=8",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 8,
+    "mutation_heights": [
+     62,
+     24,
+     57,
+     48
+    ]
+   },
+   "set": 0,
+   "value": 8
+  },
+  {
+   "article": "Theorem 7.2",
+   "bound": 101,
+   "cost": 8,
+   "evidence": [
+    {
+     "field": "below H",
+     "file": "owf_barrier_summary.log",
+     "line": 6
+    }
+   ],
+   "family": "R",
+   "group": "reach R_b",
+   "id": "reach/R/b=8",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": {
+    "low": 1,
+    "quivers": 35
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 8
+  },
+  {
+   "article": "Theorem 5.1",
+   "cost": 3,
+   "evidence": [
+    {
+     "file": "review12_handproof.log"
+    }
+   ],
+   "family": "G",
+   "group": "barrier G_k",
+   "id": "barrier/G/k=3",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 6,
+   "set": 2,
+   "value": 3
+  },
+  {
+   "article": "Theorem 5.1",
+   "cost": 4,
+   "evidence": [
+    {
+     "file": "review12_handproof.log"
+    }
+   ],
+   "family": "G",
+   "group": "barrier G_k",
+   "id": "barrier/G/k=4",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 12,
+   "set": 2,
+   "value": 4
+  },
+  {
+   "article": "Theorem 5.1",
+   "cost": 5,
+   "evidence": [
+    {
+     "file": "review12_handproof.log"
+    }
+   ],
+   "family": "G",
+   "group": "barrier G_k",
+   "id": "barrier/G/k=5",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 20,
+   "set": 2,
+   "value": 5
+  },
+  {
+   "article": "Theorem 5.1",
+   "cost": 6,
+   "evidence": [
+    {
+     "file": "review12_handproof.log"
+    }
+   ],
+   "family": "G",
+   "group": "barrier G_k",
+   "id": "barrier/G/k=6",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 30,
+   "set": 2,
+   "value": 6
+  },
+  {
+   "article": "Theorem 5.1",
+   "cost": 7,
+   "evidence": [
+    {
+     "file": "review12_handproof.log"
+    }
+   ],
+   "family": "G",
+   "group": "barrier G_k",
+   "id": "barrier/G/k=7",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 42,
+   "set": 2,
+   "value": 7
+  },
+  {
+   "article": "Theorem 5.1",
+   "cost": 8,
+   "evidence": [
+    {
+     "file": "review12_handproof.log"
+    }
+   ],
+   "family": "G",
+   "group": "barrier G_k",
+   "id": "barrier/G/k=8",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 56,
+   "set": 2,
+   "value": 8
+  },
+  {
+   "article": "Theorem 5.1",
+   "cost": 9,
+   "evidence": [
+    {
+     "file": "review12_handproof.log"
+    }
+   ],
+   "family": "G",
+   "group": "barrier G_k",
+   "id": "barrier/G/k=9",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 72,
+   "set": 2,
+   "value": 9
+  },
+  {
+   "article": "Theorem 5.1",
+   "cost": 10,
+   "evidence": [
+    {
+     "file": "review12_handproof.log"
+    }
+   ],
+   "family": "G",
+   "group": "barrier G_k",
+   "id": "barrier/G/k=10",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 90,
+   "set": 2,
+   "value": 10
+  },
+  {
+   "article": "Theorem 5.1",
+   "cost": 11,
+   "evidence": [
+    {
+     "file": "review12_handproof.log"
+    }
+   ],
+   "family": "G",
+   "group": "barrier G_k",
+   "id": "barrier/G/k=11",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 110,
+   "set": 2,
+   "value": 11
+  },
+  {
+   "article": "Theorem 5.1",
+   "cost": 12,
+   "evidence": [
+    {
+     "file": "review12_handproof.log"
+    }
+   ],
+   "family": "G",
+   "group": "barrier G_k",
+   "id": "barrier/G/k=12",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 132,
+   "set": 2,
+   "value": 12
+  },
+  {
+   "article": "Theorem 5.1",
+   "bound": 56,
+   "cost": 8,
+   "evidence": [
+    {
+     "file": "review12_handproof.log"
+    }
+   ],
+   "family": "G",
+   "group": "reach G_k",
+   "id": "reach/G/k=8",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": {
+    "low": 1,
+    "quivers": 1
+   },
+   "prune_forks": false,
+   "set": 3,
+   "value": 8
+  },
+  {
+   "article": "Theorem 5.1",
+   "cost": 8,
+   "evidence": [
+    {
+     "file": "review12_handproof.log"
+    }
+   ],
+   "family": "G",
+   "group": "route G_k",
+   "id": "route/G/k=8",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 2,
+    "ends_at_opposite": true,
+    "mutations": 4,
+    "top": 56
+   },
+   "set": 4,
+   "value": 8
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 5,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 1
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=5",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 32,
+   "set": 5,
+   "value": 5
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 6,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 2
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=6",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 51,
+   "set": 5,
+   "value": 6
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 7,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 3
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=7",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 74,
+   "set": 5,
+   "value": 7
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 8,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 4
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=8",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 101,
+   "set": 5,
+   "value": 8
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 9,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 5
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=9",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 132,
+   "set": 5,
+   "value": 9
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 10,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 6
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=10",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 167,
+   "set": 5,
+   "value": 10
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 11,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 7
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=11",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 206,
+   "set": 5,
+   "value": 11
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 12,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 8
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=12",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 249,
+   "set": 5,
+   "value": 12
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 13,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 9
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=13",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 296,
+   "set": 5,
+   "value": 13
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 14,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 10
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=14",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 347,
+   "set": 5,
+   "value": 14
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 6,
+   "evidence": [
+    {
+     "field": "route_ok, plateau_quivers",
+     "file": "n4_doors_family3.log",
+     "line": 2
+    },
+    {
+     "field": "L",
+     "file": "owf_barrier_summary.log",
+     "line": 5
+    }
+   ],
+   "family": "R",
+   "group": "route R_b",
+   "id": "route/R/b=6",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 15,
+    "ends_at_opposite": true,
+    "mutations": 22,
+    "top": 51
+   },
+   "set": 6,
+   "value": 6
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 8,
+   "evidence": [
+    {
+     "field": "route_ok, plateau_quivers",
+     "file": "n4_doors_family3.log",
+     "line": 4
+    },
+    {
+     "field": "L",
+     "file": "owf_barrier_summary.log",
+     "line": 6
+    }
+   ],
+   "family": "R",
+   "group": "route R_b",
+   "id": "route/R/b=8",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 28,
+    "ends_at_opposite": true,
+    "first_heights": [
+     8,
+     24,
+     40,
+     56
+    ],
+    "mutations": 37,
+    "top": 101
+   },
+   "set": 6,
+   "value": 8
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 10,
+   "evidence": [
+    {
+     "field": "route_ok, plateau_quivers",
+     "file": "n4_doors_family3.log",
+     "line": 6
+    },
+    {
+     "field": "L",
+     "file": "owf_barrier_summary.log",
+     "line": 7
+    }
+   ],
+   "family": "R",
+   "group": "route R_b",
+   "id": "route/R/b=10",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 45,
+    "ends_at_opposite": true,
+    "mutations": 56,
+    "top": 167
+   },
+   "set": 6,
+   "value": 10
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 12,
+   "evidence": [
+    {
+     "field": "route_ok, plateau_quivers",
+     "file": "n4_doors_family3.log",
+     "line": 8
+    }
+   ],
+   "family": "R",
+   "group": "route R_b",
+   "id": "route/R/b=12",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 66,
+    "ends_at_opposite": true,
+    "mutations": 79,
+    "top": 249
+   },
+   "set": 6,
+   "value": 12
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 14,
+   "evidence": [
+    {
+     "field": "route_ok, plateau_quivers",
+     "file": "n4_doors_family3.log",
+     "line": 10
+    }
+   ],
+   "family": "R",
+   "group": "route R_b",
+   "id": "route/R/b=14",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 91,
+    "ends_at_opposite": true,
+    "mutations": 106,
+    "top": 347
+   },
+   "set": 6,
+   "value": 14
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 60,
+   "evidence": [],
+   "family": "R",
+   "group": "route R_b",
+   "id": "route/R/b=6@shortest",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "shortest",
+   "predicted": {
+    "mutations": 22,
+    "top": 51
+   },
+   "set": 7,
+   "value": 6
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 80,
+   "evidence": [],
+   "family": "R",
+   "group": "route R_b",
+   "id": "route/R/b=8@shortest",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "shortest",
+   "predicted": {
+    "mutations": 37,
+    "top": 101
+   },
+   "set": 7,
+   "value": 8
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 100,
+   "evidence": [],
+   "family": "R",
+   "group": "route R_b",
+   "id": "route/R/b=10@shortest",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "shortest",
+   "predicted": {
+    "mutations": 56,
+    "top": 167
+   },
+   "set": 7,
+   "value": 10
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 120,
+   "evidence": [],
+   "family": "R",
+   "group": "route R_b",
+   "id": "route/R/b=12@shortest",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "shortest",
+   "predicted": {
+    "mutations": 79,
+    "top": 249
+   },
+   "set": 7,
+   "value": 12
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 140,
+   "evidence": [],
+   "family": "R",
+   "group": "route R_b",
+   "id": "route/R/b=14@shortest",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "shortest",
+   "predicted": {
+    "mutations": 106,
+    "top": 347
+   },
+   "set": 7,
+   "value": 14
+  },
+  {
+   "article": "Section 7",
+   "cost": 3,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family.log",
+     "line": 1
+    }
+   ],
+   "family": "Qt",
+   "group": "barrier Q_t",
+   "id": "barrier/Qt/t=3",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 132,
+   "set": 8,
+   "value": 3
+  },
+  {
+   "article": "Section 7",
+   "cost": 4,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family.log",
+     "line": 2
+    }
+   ],
+   "family": "Qt",
+   "group": "barrier Q_t",
+   "id": "barrier/Qt/t=4",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 440,
+   "set": 8,
+   "value": 4
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 2,
+   "evidence": [],
+   "family": "P+",
+   "group": "quiver P+_t",
+   "id": "quiver/P+/t=2",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 4
+   },
+   "set": 9,
+   "value": 2
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 3,
+   "evidence": [],
+   "family": "P+",
+   "group": "quiver P+_t",
+   "id": "quiver/P+/t=3",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 9
+   },
+   "set": 9,
+   "value": 3
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 2,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 1
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=2",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 51,
+   "set": 10,
+   "value": 2
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 3,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 2
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=3",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 413,
+   "set": 10,
+   "value": 3
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 51,
+   "cost": 2,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 1
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=2",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": {
+    "low": 1,
+    "quivers": 157
+   },
+   "prune_forks": false,
+   "set": 11,
+   "value": 2
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 413,
+   "cost": 3,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 2
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=3",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": {
+    "low": 1,
+    "quivers": 173
+   },
+   "prune_forks": false,
+   "set": 11,
+   "value": 3
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 2,
+   "evidence": [
+    {
+     "field": "route_steps_to_top",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 1
+    }
+   ],
+   "family": "P+",
+   "group": "route P+_t",
+   "id": "route/P+/t=2",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 1,
+    "ends_at_opposite": true,
+    "mutations": 28,
+    "top": 51
+   },
+   "set": 12,
+   "value": 2
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 3,
+   "evidence": [
+    {
+     "field": "route_steps_to_top",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 2
+    }
+   ],
+   "family": "P+",
+   "group": "route P+_t",
+   "id": "route/P+/t=3",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 1,
+    "ends_at_opposite": true,
+    "mutations": 94,
+    "top": 413
+   },
+   "set": 12,
+   "value": 3
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 20,
+   "evidence": [],
+   "family": "P+",
+   "group": "route P+_t",
+   "id": "route/P+/t=2@shortest",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "shortest",
+   "predicted": {
+    "mutations": 28,
+    "top": 51
+   },
+   "set": 13,
+   "value": 2
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 30,
+   "evidence": [],
+   "family": "P+",
+   "group": "route P+_t",
+   "id": "route/P+/t=3@shortest",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "shortest",
+   "predicted": {
+    "mutations": 94,
+    "top": 413
+   },
+   "set": 13,
+   "value": 3
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 2,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=2",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 3
+   },
+   "set": 14,
+   "value": 2
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 3,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=3",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 4
+   },
+   "set": 14,
+   "value": 3
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 4,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=4",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 5
+   },
+   "set": 14,
+   "value": 4
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 7,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=7",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "height": 8
+   },
+   "set": 14,
+   "value": 7
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 2,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_rowwalk_family.jsonl",
+     "line": 1
+    }
+   ],
+   "family": "Qa",
+   "group": "barrier Q_a",
+   "id": "barrier/Qa/a=2",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 21,
+   "set": 15,
+   "value": 2
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 3,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_rowwalk_family.jsonl",
+     "line": 2
+    }
+   ],
+   "family": "Qa",
+   "group": "barrier Q_a",
+   "id": "barrier/Qa/a=3",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 88,
+   "set": 15,
+   "value": 3
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 4,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_rowwalk_family.jsonl",
+     "line": 3
+    }
+   ],
+   "family": "Qa",
+   "group": "barrier Q_a",
+   "id": "barrier/Qa/a=4",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 212,
+   "set": 15,
+   "value": 4
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 2,
+   "evidence": [
+    {
+     "field": "mutations, quivers_at_H",
+     "file": "np_rowwalk_family.jsonl",
+     "line": 1
+    }
+   ],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=2",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 9,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 120,
+    "mutations_at_x": 0,
+    "top": 21
+   },
+   "set": 16,
+   "value": 2
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 3,
+   "evidence": [
+    {
+     "field": "mutations, quivers_at_H",
+     "file": "np_rowwalk_family.jsonl",
+     "line": 2
+    }
+   ],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=3",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 1,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 312,
+    "mutations_at_x": 0,
+    "top": 88
+   },
+   "set": 16,
+   "value": 3
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 7,
+   "evidence": [
+    {
+     "field": "mutations, quivers_at_H",
+     "file": "np_rowwalk_family.jsonl",
+     "line": 6
+    }
+   ],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=7",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 1,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 3120,
+    "mutations_at_x": 0,
+    "top": 1242
+   },
+   "set": 16,
+   "value": 7
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 12,
+   "evidence": [
+    {
+     "field": "mutations, quivers_at_H",
+     "file": "np_rowwalk_family.jsonl",
+     "line": 11
+    }
+   ],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=12",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 29,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 14820,
+    "mutations_at_x": 0,
+    "top": 6496
+   },
+   "set": 16,
+   "value": 12
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 20,
+   "evidence": [],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=2@shortest",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "shortest",
+   "predicted": {
+    "mutations": 120,
+    "top": 21
+   },
+   "set": 17,
+   "value": 2
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 30,
+   "evidence": [],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=3@shortest",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "method": "shortest",
+   "predicted": {
+    "mutations": 312,
+    "top": 88
+   },
+   "set": 17,
+   "value": 3
+  },
+  {
+   "article": "Proposition 12.1",
+   "cost": 1,
+   "evidence": [
+    {
+     "file": "n4_conj55_N18_summary.log",
+     "line": 4
+    }
+   ],
+   "group": "conj55",
+   "height": 1,
+   "id": "conj55/h=1",
+   "kind": "conj55",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "quivers": 41,
+    "reach_acyclic": 39
+   },
+   "set": 18
+  },
+  {
+   "article": "Proposition 12.1",
+   "cost": 8,
+   "evidence": [
+    {
+     "file": "n4_conj55_N18_summary.log",
+     "line": 5
+    }
+   ],
+   "group": "conj55",
+   "height": 2,
+   "id": "conj55/h=2",
+   "kind": "conj55",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "quivers": 653,
+    "reach_acyclic": 521
+   },
+   "set": 18
+  },
+  {
+   "article": "Proposition 12.1",
+   "cost": 27,
+   "evidence": [
+    {
+     "file": "n4_conj55_N18_summary.log",
+     "line": 6
+    }
+   ],
+   "group": "conj55",
+   "height": 3,
+   "id": "conj55/h=3",
+   "kind": "conj55",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "quivers": 4317,
+    "reach_acyclic": 2916
+   },
+   "set": 18
+  },
+  {
+   "article": "Proposition 12.1",
+   "cost": 64,
+   "evidence": [
+    {
+     "file": "n4_conj55_N18_summary.log",
+     "line": 7
+    }
+   ],
+   "group": "conj55",
+   "height": 4,
+   "id": "conj55/h=4",
+   "kind": "conj55",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "predicted": {
+    "quivers": 17353,
+    "reach_acyclic": 10415
+   },
+   "set": 18
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 1,
+   "evidence": [],
+   "group": "certificate",
+   "id": "certificate/R_b",
+   "kind": "certificate",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "name": "R_b",
+   "predicted": {
+    "certified": true,
+    "claims": 30
+   },
+   "program": [
+    "n4_doors.py",
+    "prove2"
+   ],
+   "set": 19
+  },
+  {
+   "article": "Section 7",
+   "cost": 1,
+   "evidence": [],
+   "group": "certificate",
+   "id": "certificate/Q_t",
+   "kind": "certificate",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "name": "Q_t",
+   "predicted": {
+    "certified": true,
+    "claims": 43
+   },
+   "program": [
+    "n4_doors.py",
+    "prove"
+   ],
+   "set": 19
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 0,
+   "evidence": [],
+   "group": "certificate",
+   "id": "certificate/P+_t/audit-to-7",
+   "kind": "certificate",
+   "limits": {
+    "memory_mb": 500,
+    "time_seconds": 300
+   },
+   "name": "P+_t",
+   "predicted": {
+    "certified": true,
+    "claims": 938,
+    "exits": {
+     "fork": 54,
+     "height": 428,
+     "member": 161,
+     "new": 123
+    },
+    "members": 149
+   },
+   "program": [
+    "np_corridor_prove.py",
+    "prove",
+    "--T0",
+    "8",
+    "--audit-tmax",
+    "7"
+   ],
+   "set": 19
+  }
+ ]
+}

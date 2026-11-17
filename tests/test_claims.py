@@ -93,12 +93,12 @@ class Summaries(unittest.TestCase):
     def test_a_claim_is_ok_only_when_every_task_is(self) -> None:
         latest = {"barrier/R/b=8": record("barrier/R/b=8")}
         text = claims.summary(CLAIM, TASKS, latest)
-        self.assertIn("ok 1; not re-run 1 (of 2 tasks); 2026-11-17, `aaaaaaa`", text)
+        self.assertIn("tasks: ok 1; not re-run 1 (of 2); 2026-11-17, `aaaaaaa`", text)
         self.assertNotIn("**ok**", text)
         latest["barrier/R/b=9"] = record("barrier/R/b=9", status="mismatch")
-        self.assertIn("ok 1; mismatch 1 (of 2 tasks)", claims.summary(CLAIM, TASKS, latest))
+        self.assertIn("tasks: ok 1; mismatch 1 (of 2)", claims.summary(CLAIM, TASKS, latest))
         latest["barrier/R/b=9"] = record("barrier/R/b=9", day="2026-11-18")
-        self.assertIn("**ok**, all 2 tasks; 2026-11-17 to 2026-11-18", claims.summary(CLAIM, TASKS, latest))
+        self.assertIn("all 2 tasks **ok**; 2026-11-17 to 2026-11-18", claims.summary(CLAIM, TASKS, latest))
 
     def test_a_claim_without_tasks_says_why(self) -> None:
         claim = {"id": "c", "table": "t", "cells": ["x"], "tasks": [], "no_task": "a proof by hand"}

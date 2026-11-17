@@ -1,0 +1,131 @@
+{
+ "batch": "limits-demo",
+ "tasks": [
+  {
+   "article": "Theorem 7.2",
+   "cost": 6,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 2
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=6",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 300,
+    "time_seconds": 120
+   },
+   "method": "search",
+   "predicted": 51,
+   "set": 0,
+   "value": 6
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 8,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 4
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=8",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 300,
+    "time_seconds": 120
+   },
+   "method": "search",
+   "predicted": 101,
+   "set": 0,
+   "value": 8
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 10,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 6
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=10",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 300,
+    "time_seconds": 120
+   },
+   "method": "search",
+   "predicted": 167,
+   "set": 0,
+   "value": 10
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 12,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 8
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=12",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 300,
+    "time_seconds": 120
+   },
+   "method": "search",
+   "predicted": 249,
+   "set": 0,
+   "value": 12
+  },
+  {
+   "allocate_mb": 0,
+   "cost": 0,
+   "evidence": [],
+   "fail": false,
+   "group": "synthetic",
+   "id": "synthetic/sleeps-past-its-time-limit",
+   "kind": "synthetic",
+   "limits": {
+    "memory_mb": 300,
+    "time_seconds": 3
+   },
+   "predicted": null,
+   "set": 1,
+   "sleep_seconds": 300,
+   "value": null
+  },
+  {
+   "allocate_mb": 1000,
+   "cost": 0,
+   "evidence": [],
+   "fail": false,
+   "group": "synthetic",
+   "id": "synthetic/allocates-past-its-memory-limit",
+   "kind": "synthetic",
+   "limits": {
+    "memory_mb": 300,
+    "time_seconds": 120
+   },
+   "predicted": null,
+   "set": 2,
+   "sleep_seconds": 300,
+   "value": null
+  }
+ ]
+}

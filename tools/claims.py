@@ -181,11 +181,10 @@ def summary(
         where = ", ".join(f"`{batch}`" for batch in batches)
         return f"**{NOT_RERUN}**: {len(chosen)} {_plural(len(chosen), 'task')} in {where}, no record; {link}"
     parts = [f"{status} {counts[status]}" for status in STATUSES if counts[status]]
-    lead = (
-        f"**ok**, all {len(chosen)} tasks"
-        if counts["ok"] == len(chosen)
-        else "; ".join(parts) + f" (of {len(chosen)} tasks)"
-    )
+    if counts["ok"] == len(chosen):
+        lead = f"all {len(chosen)} tasks **ok**" if len(chosen) > 1 else "its task is **ok**"
+    else:
+        lead = "tasks: " + "; ".join(parts) + f" (of {len(chosen)})"
     return f"{lead}; {stamp(recorded)}; {link}"
 
 

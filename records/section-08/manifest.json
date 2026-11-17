@@ -1,0 +1,87 @@
+{
+ "batch": "section-08",
+ "tasks": [
+  {
+   "article": "Section 7",
+   "cost": 3,
+   "evidence": [],
+   "family": "Qt",
+   "group": "quiver Q_t",
+   "id": "quiver/Qt/t=3",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 9
+   },
+   "set": 0,
+   "value": 3
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 9,
+   "evidence": [],
+   "family": "R",
+   "group": "quiver R_b",
+   "id": "quiver/R/b=9",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 9
+   },
+   "set": 1,
+   "value": 9
+  },
+  {
+   "article": "Section 7",
+   "cost": 3,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family.log",
+     "line": 1
+    }
+   ],
+   "family": "Qt",
+   "group": "barrier Q_t",
+   "id": "barrier/Qt/t=3",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "method": "search",
+   "predicted": 132,
+   "set": 2,
+   "value": 3
+  },
+  {
+   "article": "Theorem 7.2",
+   "cost": 9,
+   "evidence": [
+    {
+     "field": "escape",
+     "file": "n4_doors_family3.log",
+     "line": 5
+    }
+   ],
+   "family": "R",
+   "group": "barrier R_b",
+   "id": "barrier/R/b=9",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "method": "search",
+   "predicted": 132,
+   "set": 3,
+   "value": 9
+  }
+ ]
+}

@@ -1,0 +1,65 @@
+{
+ "batch": "negative-control",
+ "tasks": [
+  {
+   "article": "Theorem 7.2",
+   "control": true,
+   "cost": 8,
+   "evidence": [],
+   "family": "R",
+   "group": "negative control",
+   "id": "barrier/R/b=8!control",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "method": "search",
+   "predicted": 100,
+   "set": 0,
+   "value": 8
+  },
+  {
+   "article": "Theorem 7.2",
+   "control": true,
+   "cost": 8,
+   "evidence": [],
+   "family": "R",
+   "group": "negative control",
+   "id": "route/R/b=8!control",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "method": "replay",
+   "predicted": {
+    "mutations": 36
+   },
+   "set": 1,
+   "value": 8
+  },
+  {
+   "article": "Theorem 7.2",
+   "control": true,
+   "cost": 1,
+   "evidence": [],
+   "group": "negative control",
+   "id": "certificate/R_b!control",
+   "kind": "certificate",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "name": "R_b",
+   "predicted": {
+    "claims": 31
+   },
+   "program": [
+    "n4_doors.py",
+    "prove2"
+   ],
+   "set": 2
+  }
+ ]
+}

@@ -1,0 +1,2609 @@
+{
+ "batch": "section-10",
+ "tasks": [
+  {
+   "article": "Theorem 10.1",
+   "cost": 2,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=2",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 3
+   },
+   "set": 0,
+   "value": 2
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 3,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=3",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 4
+   },
+   "set": 0,
+   "value": 3
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 4,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=4",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 5
+   },
+   "set": 0,
+   "value": 4
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 5,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=5",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 6
+   },
+   "set": 0,
+   "value": 5
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 6,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=6",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 7
+   },
+   "set": 0,
+   "value": 6
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 7,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=7",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 8
+   },
+   "set": 0,
+   "value": 7
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 8,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=8",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 9
+   },
+   "set": 0,
+   "value": 8
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 9,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=9",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 10
+   },
+   "set": 0,
+   "value": 9
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 10,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=10",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 11
+   },
+   "set": 0,
+   "value": 10
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 11,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=11",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 12
+   },
+   "set": 0,
+   "value": 11
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 12,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=12",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 13
+   },
+   "set": 0,
+   "value": 12
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 13,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=13",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 14
+   },
+   "set": 0,
+   "value": 13
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 14,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=14",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 15
+   },
+   "set": 0,
+   "value": 14
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 15,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=15",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 16
+   },
+   "set": 0,
+   "value": 15
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 16,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=16",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 17
+   },
+   "set": 0,
+   "value": 16
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 17,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=17",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 18
+   },
+   "set": 0,
+   "value": 17
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 18,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=18",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 19
+   },
+   "set": 0,
+   "value": 18
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 19,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=19",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 20
+   },
+   "set": 0,
+   "value": 19
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 20,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=20",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 21
+   },
+   "set": 0,
+   "value": 20
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 21,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=21",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 22
+   },
+   "set": 0,
+   "value": 21
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 22,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=22",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 23
+   },
+   "set": 0,
+   "value": 22
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 23,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=23",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 24
+   },
+   "set": 0,
+   "value": 23
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 24,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=24",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 25
+   },
+   "set": 0,
+   "value": 24
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 25,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=25",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 26
+   },
+   "set": 0,
+   "value": 25
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 26,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=26",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 27
+   },
+   "set": 0,
+   "value": 26
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 27,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=27",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 28
+   },
+   "set": 0,
+   "value": 27
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 28,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=28",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 29
+   },
+   "set": 0,
+   "value": 28
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 29,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=29",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 30
+   },
+   "set": 0,
+   "value": 29
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 30,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=30",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 31
+   },
+   "set": 0,
+   "value": 30
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 31,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=31",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 32
+   },
+   "set": 0,
+   "value": 31
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 32,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=32",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 33
+   },
+   "set": 0,
+   "value": 32
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 33,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=33",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 34
+   },
+   "set": 0,
+   "value": 33
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 34,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=34",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 35
+   },
+   "set": 0,
+   "value": 34
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 35,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=35",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 36
+   },
+   "set": 0,
+   "value": 35
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 36,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=36",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 37
+   },
+   "set": 0,
+   "value": 36
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 37,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=37",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 38
+   },
+   "set": 0,
+   "value": 37
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 38,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=38",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 39
+   },
+   "set": 0,
+   "value": 38
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 39,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=39",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 40
+   },
+   "set": 0,
+   "value": 39
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 40,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=40",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 41
+   },
+   "set": 0,
+   "value": 40
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 41,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=41",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 42
+   },
+   "set": 0,
+   "value": 41
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 42,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=42",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 43
+   },
+   "set": 0,
+   "value": 42
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 43,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=43",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 44
+   },
+   "set": 0,
+   "value": 43
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 44,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=44",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 45
+   },
+   "set": 0,
+   "value": 44
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 45,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=45",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 46
+   },
+   "set": 0,
+   "value": 45
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 46,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=46",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 47
+   },
+   "set": 0,
+   "value": 46
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 47,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=47",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 48
+   },
+   "set": 0,
+   "value": 47
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 48,
+   "evidence": [],
+   "family": "Qa",
+   "group": "quiver Q_a",
+   "id": "quiver/Qa/a=48",
+   "kind": "quiver",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 120
+   },
+   "predicted": {
+    "height": 49
+   },
+   "set": 0,
+   "value": 48
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 2,
+   "evidence": [
+    {
+     "field": "mutations, quivers_at_H",
+     "file": "np_rowwalk_family.jsonl",
+     "line": 1
+    }
+   ],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=2",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 9,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 120,
+    "mutations_at_x": 0,
+    "top": 21
+   },
+   "set": 1,
+   "value": 2
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 3,
+   "evidence": [
+    {
+     "field": "mutations, quivers_at_H",
+     "file": "np_rowwalk_family.jsonl",
+     "line": 2
+    }
+   ],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=3",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 1,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 312,
+    "mutations_at_x": 0,
+    "top": 88
+   },
+   "set": 1,
+   "value": 3
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 4,
+   "evidence": [
+    {
+     "field": "mutations, quivers_at_H",
+     "file": "np_rowwalk_family.jsonl",
+     "line": 3
+    }
+   ],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=4",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 13,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 660,
+    "mutations_at_x": 0,
+    "top": 212
+   },
+   "set": 1,
+   "value": 4
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 5,
+   "evidence": [
+    {
+     "field": "mutations, quivers_at_H",
+     "file": "np_rowwalk_family.jsonl",
+     "line": 4
+    }
+   ],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=5",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 1,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 1212,
+    "mutations_at_x": 0,
+    "top": 437
+   },
+   "set": 1,
+   "value": 5
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 6,
+   "evidence": [
+    {
+     "field": "mutations, quivers_at_H",
+     "file": "np_rowwalk_family.jsonl",
+     "line": 5
+    }
+   ],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=6",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 17,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 2016,
+    "mutations_at_x": 0,
+    "top": 763
+   },
+   "set": 1,
+   "value": 6
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 7,
+   "evidence": [
+    {
+     "field": "mutations, quivers_at_H",
+     "file": "np_rowwalk_family.jsonl",
+     "line": 6
+    }
+   ],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=7",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 1,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 3120,
+    "mutations_at_x": 0,
+    "top": 1242
+   },
+   "set": 1,
+   "value": 7
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 8,
+   "evidence": [
+    {
+     "field": "mutations, quivers_at_H",
+     "file": "np_rowwalk_family.jsonl",
+     "line": 7
+    }
+   ],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=8",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 21,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 4572,
+    "mutations_at_x": 0,
+    "top": 1866
+   },
+   "set": 1,
+   "value": 8
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 9,
+   "evidence": [
+    {
+     "field": "mutations, quivers_at_H",
+     "file": "np_rowwalk_family.jsonl",
+     "line": 8
+    }
+   ],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=9",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 1,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 6420,
+    "mutations_at_x": 0,
+    "top": 2695
+   },
+   "set": 1,
+   "value": 9
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 10,
+   "evidence": [
+    {
+     "field": "mutations, quivers_at_H",
+     "file": "np_rowwalk_family.jsonl",
+     "line": 9
+    }
+   ],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=10",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 25,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 8712,
+    "mutations_at_x": 0,
+    "top": 3713
+   },
+   "set": 1,
+   "value": 10
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 11,
+   "evidence": [
+    {
+     "field": "mutations, quivers_at_H",
+     "file": "np_rowwalk_family.jsonl",
+     "line": 10
+    }
+   ],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=11",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 1,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 11496,
+    "mutations_at_x": 0,
+    "top": 4988
+   },
+   "set": 1,
+   "value": 11
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 12,
+   "evidence": [
+    {
+     "field": "mutations, quivers_at_H",
+     "file": "np_rowwalk_family.jsonl",
+     "line": 11
+    }
+   ],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=12",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 29,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 14820,
+    "mutations_at_x": 0,
+    "top": 6496
+   },
+   "set": 1,
+   "value": 12
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 13,
+   "evidence": [
+    {
+     "field": "mutations, quivers_at_H",
+     "file": "np_rowwalk_family.jsonl",
+     "line": 12
+    }
+   ],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=13",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 1,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 18732,
+    "mutations_at_x": 0,
+    "top": 8313
+   },
+   "set": 1,
+   "value": 13
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 14,
+   "evidence": [
+    {
+     "field": "mutations, quivers_at_H",
+     "file": "np_rowwalk_family.jsonl",
+     "line": 13
+    }
+   ],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=14",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 33,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 23280,
+    "mutations_at_x": 0,
+    "top": 10407
+   },
+   "set": 1,
+   "value": 14
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 15,
+   "evidence": [
+    {
+     "field": "mutations, quivers_at_H",
+     "file": "np_rowwalk_family.jsonl",
+     "line": 14
+    }
+   ],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=15",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 1,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 28512,
+    "mutations_at_x": 0,
+    "top": 12862
+   },
+   "set": 1,
+   "value": 15
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 16,
+   "evidence": [
+    {
+     "field": "mutations, quivers_at_H",
+     "file": "np_rowwalk_family.jsonl",
+     "line": 15
+    }
+   ],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=16",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 37,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 34476,
+    "mutations_at_x": 0,
+    "top": 15638
+   },
+   "set": 1,
+   "value": 16
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 17,
+   "evidence": [
+    {
+     "field": "mutations, quivers_at_H",
+     "file": "np_rowwalk_family.jsonl",
+     "line": 16
+    }
+   ],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=17",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 1,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 41220,
+    "mutations_at_x": 0,
+    "top": 18827
+   },
+   "set": 1,
+   "value": 17
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 18,
+   "evidence": [
+    {
+     "field": "mutations, quivers_at_H",
+     "file": "np_rowwalk_family.jsonl",
+     "line": 17
+    }
+   ],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=18",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 41,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 48792,
+    "mutations_at_x": 0,
+    "top": 22381
+   },
+   "set": 1,
+   "value": 18
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 19,
+   "evidence": [
+    {
+     "field": "mutations, quivers_at_H",
+     "file": "np_rowwalk_family.jsonl",
+     "line": 18
+    }
+   ],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=19",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 1,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 57240,
+    "mutations_at_x": 0,
+    "top": 26400
+   },
+   "set": 1,
+   "value": 19
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 20,
+   "evidence": [
+    {
+     "field": "mutations, quivers_at_H",
+     "file": "np_rowwalk_family.jsonl",
+     "line": 19
+    }
+   ],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=20",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 45,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 66612,
+    "mutations_at_x": 0,
+    "top": 30828
+   },
+   "set": 1,
+   "value": 20
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 21,
+   "evidence": [
+    {
+     "field": "mutations, quivers_at_H",
+     "file": "np_rowwalk_family.jsonl",
+     "line": 20
+    }
+   ],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=21",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 1,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 76956,
+    "mutations_at_x": 0,
+    "top": 35773
+   },
+   "set": 1,
+   "value": 21
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 22,
+   "evidence": [
+    {
+     "field": "mutations, quivers_at_H",
+     "file": "np_rowwalk_family.jsonl",
+     "line": 21
+    }
+   ],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=22",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 49,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 88320,
+    "mutations_at_x": 0,
+    "top": 41171
+   },
+   "set": 1,
+   "value": 22
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 23,
+   "evidence": [],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=23",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 1,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 100752,
+    "mutations_at_x": 0,
+    "top": 47138
+   },
+   "set": 1,
+   "value": 23
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 24,
+   "evidence": [],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=24",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 53,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 114300,
+    "mutations_at_x": 0,
+    "top": 53602
+   },
+   "set": 1,
+   "value": 24
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 25,
+   "evidence": [],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=25",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 1,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 129012,
+    "mutations_at_x": 0,
+    "top": 60687
+   },
+   "set": 1,
+   "value": 25
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 26,
+   "evidence": [],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=26",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 57,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 144936,
+    "mutations_at_x": 0,
+    "top": 68313
+   },
+   "set": 1,
+   "value": 26
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 27,
+   "evidence": [],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=27",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 1,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 162120,
+    "mutations_at_x": 0,
+    "top": 76612
+   },
+   "set": 1,
+   "value": 27
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 28,
+   "evidence": [],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=28",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 61,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 180612,
+    "mutations_at_x": 0,
+    "top": 85496
+   },
+   "set": 1,
+   "value": 28
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 29,
+   "evidence": [],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=29",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 1,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 200460,
+    "mutations_at_x": 0,
+    "top": 95105
+   },
+   "set": 1,
+   "value": 29
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 30,
+   "evidence": [],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=30",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 65,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 221712,
+    "mutations_at_x": 0,
+    "top": 105343
+   },
+   "set": 1,
+   "value": 30
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 31,
+   "evidence": [],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=31",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 1,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 244416,
+    "mutations_at_x": 0,
+    "top": 116358
+   },
+   "set": 1,
+   "value": 31
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 32,
+   "evidence": [],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=32",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 69,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 268620,
+    "mutations_at_x": 0,
+    "top": 128046
+   },
+   "set": 1,
+   "value": 32
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 33,
+   "evidence": [],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=33",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 1,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 294372,
+    "mutations_at_x": 0,
+    "top": 140563
+   },
+   "set": 1,
+   "value": 33
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 34,
+   "evidence": [],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=34",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 73,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 321720,
+    "mutations_at_x": 0,
+    "top": 153797
+   },
+   "set": 1,
+   "value": 34
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 35,
+   "evidence": [],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=35",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 1,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 350712,
+    "mutations_at_x": 0,
+    "top": 167912
+   },
+   "set": 1,
+   "value": 35
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 36,
+   "evidence": [],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=36",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 77,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 381396,
+    "mutations_at_x": 0,
+    "top": 182788
+   },
+   "set": 1,
+   "value": 36
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 37,
+   "evidence": [],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=37",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 1,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 413820,
+    "mutations_at_x": 0,
+    "top": 198597
+   },
+   "set": 1,
+   "value": 37
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 38,
+   "evidence": [],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=38",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 81,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 448032,
+    "mutations_at_x": 0,
+    "top": 215211
+   },
+   "set": 1,
+   "value": 38
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 39,
+   "evidence": [],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=39",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 1,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 484080,
+    "mutations_at_x": 0,
+    "top": 232810
+   },
+   "set": 1,
+   "value": 39
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 40,
+   "evidence": [],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=40",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 85,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 522012,
+    "mutations_at_x": 0,
+    "top": 251258
+   },
+   "set": 1,
+   "value": 40
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 41,
+   "evidence": [],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=41",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 1,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 561876,
+    "mutations_at_x": 0,
+    "top": 270743
+   },
+   "set": 1,
+   "value": 41
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 42,
+   "evidence": [],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=42",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 89,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 603720,
+    "mutations_at_x": 0,
+    "top": 291121
+   },
+   "set": 1,
+   "value": 42
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 43,
+   "evidence": [],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=43",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 1,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 647592,
+    "mutations_at_x": 0,
+    "top": 312588
+   },
+   "set": 1,
+   "value": 43
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 44,
+   "evidence": [],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=44",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 93,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 693540,
+    "mutations_at_x": 0,
+    "top": 334992
+   },
+   "set": 1,
+   "value": 44
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 45,
+   "evidence": [],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=45",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 1,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 741612,
+    "mutations_at_x": 0,
+    "top": 358537
+   },
+   "set": 1,
+   "value": 45
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 46,
+   "evidence": [],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=46",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 97,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 791856,
+    "mutations_at_x": 0,
+    "top": 383063
+   },
+   "set": 1,
+   "value": 46
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 47,
+   "evidence": [],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=47",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 1,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 844320,
+    "mutations_at_x": 0,
+    "top": 408782
+   },
+   "set": 1,
+   "value": 47
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 48,
+   "evidence": [],
+   "family": "Qa",
+   "group": "route Q_a",
+   "id": "route/Qa/a=48",
+   "kind": "route",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "replay",
+   "predicted": {
+    "at_top": 101,
+    "ends_at_opposite": true,
+    "entries_away_from_x_at_most_2a_plus_2": true,
+    "mutations": 899052,
+    "mutations_at_x": 0,
+    "top": 435526
+   },
+   "set": 1,
+   "value": 48
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 2,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_rowwalk_family.jsonl",
+     "line": 1
+    }
+   ],
+   "family": "Qa",
+   "group": "barrier Q_a",
+   "id": "barrier/Qa/a=2",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 21,
+   "set": 2,
+   "value": 2
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 3,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_rowwalk_family.jsonl",
+     "line": 2
+    }
+   ],
+   "family": "Qa",
+   "group": "barrier Q_a",
+   "id": "barrier/Qa/a=3",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 88,
+   "set": 2,
+   "value": 3
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 4,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_rowwalk_family.jsonl",
+     "line": 3
+    }
+   ],
+   "family": "Qa",
+   "group": "barrier Q_a",
+   "id": "barrier/Qa/a=4",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 212,
+   "set": 2,
+   "value": 4
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 5,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_rowwalk_family.jsonl",
+     "line": 4
+    }
+   ],
+   "family": "Qa",
+   "group": "barrier Q_a",
+   "id": "barrier/Qa/a=5",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": 437,
+   "set": 2,
+   "value": 5
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 6,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_rowwalk_family.jsonl",
+     "line": 5
+    }
+   ],
+   "family": "Qa",
+   "group": "barrier Q_a",
+   "id": "barrier/Qa/a=6",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 1200
+   },
+   "method": "search",
+   "predicted": 763,
+   "set": 2,
+   "value": 6
+  },
+  {
+   "article": "Theorem 10.1",
+   "cost": 7,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_rowwalk_family.jsonl",
+     "line": 6
+    }
+   ],
+   "family": "Qa",
+   "group": "barrier Q_a",
+   "id": "barrier/Qa/a=7",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 1200
+   },
+   "method": "search",
+   "predicted": 1242,
+   "set": 2,
+   "value": 7
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 21,
+   "cost": 2,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_rowwalk_family.jsonl",
+     "line": 1
+    },
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 1
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=2",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": {
+    "low": 1,
+    "quivers": 525
+   },
+   "prune_forks": false,
+   "set": 3,
+   "value": 2
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 88,
+   "cost": 3,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_rowwalk_family.jsonl",
+     "line": 2
+    },
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 2
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=3",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": {
+    "low": 1,
+    "quivers": 3907
+   },
+   "prune_forks": false,
+   "set": 3,
+   "value": 3
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 212,
+   "cost": 4,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_rowwalk_family.jsonl",
+     "line": 3
+    },
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 3
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=4",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": {
+    "low": 1,
+    "quivers": 13645
+   },
+   "prune_forks": false,
+   "set": 3,
+   "value": 4
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 437,
+   "cost": 5,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_rowwalk_family.jsonl",
+     "line": 4
+    },
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 4
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=5",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": {
+    "low": 1,
+    "quivers": 41316
+   },
+   "prune_forks": false,
+   "set": 3,
+   "value": 5
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 763,
+   "cost": 6,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_rowwalk_family.jsonl",
+     "line": 5
+    },
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 5
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=6",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 1200
+   },
+   "method": "search",
+   "predicted": {
+    "low": 1,
+    "quivers": 95260
+   },
+   "prune_forks": false,
+   "set": 3,
+   "value": 6
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 1242,
+   "cost": 7,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_rowwalk_family.jsonl",
+     "line": 6
+    },
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 6
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=7",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 1200
+   },
+   "method": "search",
+   "predicted": {
+    "low": 1,
+    "quivers": 206989
+   },
+   "prune_forks": false,
+   "set": 3,
+   "value": 7
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 21,
+   "cost": 2,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 1
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=2/forks-pruned",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": {
+    "low": 1,
+    "quivers": 391
+   },
+   "prune_forks": true,
+   "set": 4,
+   "value": 2
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 88,
+   "cost": 3,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 2
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=3/forks-pruned",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": {
+    "low": 1,
+    "quivers": 1714
+   },
+   "prune_forks": true,
+   "set": 4,
+   "value": 3
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 212,
+   "cost": 4,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 3
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=4/forks-pruned",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": {
+    "low": 1,
+    "quivers": 3955
+   },
+   "prune_forks": true,
+   "set": 4,
+   "value": 4
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 437,
+   "cost": 5,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 4
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=5/forks-pruned",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 400,
+    "time_seconds": 300
+   },
+   "method": "search",
+   "predicted": {
+    "low": 1,
+    "quivers": 10983
+   },
+   "prune_forks": true,
+   "set": 4,
+   "value": 5
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 763,
+   "cost": 6,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 5
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=6/forks-pruned",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 1200
+   },
+   "method": "search",
+   "predicted": {
+    "low": 1,
+    "quivers": 25706
+   },
+   "prune_forks": true,
+   "set": 4,
+   "value": 6
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 1242,
+   "cost": 7,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 6
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=7/forks-pruned",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 1200
+   },
+   "method": "search",
+   "predicted": {
+    "low": 1,
+    "quivers": 56313
+   },
+   "prune_forks": true,
+   "set": 4,
+   "value": 7
+  }
+ ]
+}
