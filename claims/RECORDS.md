@@ -1042,7 +1042,7 @@ A predicted value is a closed form of the article, a number the article prints, 
 | `conj55/h=4` | section-12, smoke | quivers 17,353, reach_acyclic 10,415 | `n4_conj55_N18_summary.log`, line 7 | ok, 2026-11-17, `cf1a25a`, 6.38 s | quivers 17,353, reach_acyclic 10,415 |
 | `conj55/h=5` | section-12 | quivers 51,841, reach_acyclic 28,523 | `n4_conj55_N18_summary.log`, line 8 | ok, 2026-11-17, `cf1a25a`, 20.263 s | quivers 51,841, reach_acyclic 28,523 |
 | `conj55/h=6` | section-12 | quivers 127,541, reach_acyclic 66,393 | `n4_conj55_N18_summary.log`, line 9 | ok, 2026-11-17, `cf1a25a`, 57.152 s | quivers 127,541, reach_acyclic 66,393 |
-| `conj55_program/N=18` | long-conj55 | failing_by_certificate closed 1, cor52 253,191, markov 1,598,562, tri 50,110,169, vortex 9,261,670, heights 1 counterexamples 0, fail 2, quivers 41, reach_acyc… | `n4_conj55_N18_summary.log` | not re-run |  |
+| `conj55_program/N=18` | long-conj55 | failing_by_certificate closed 1, cor52 253,191, markov 1,598,562, tri 50,110,169, vortex 9,261,670, heights 1 counterexamples 0, fail 2, quivers 41, reach_acyc… | `n4_conj55_N18_summary.log` | ok, 2026-11-17, `b1d430c`, 2880.57 s | failing_by_certificate closed 1, cor52 253,191, markov 1,598,562, tri 50,110,169, vortex 9,261,670, heights 1 counterexamples 0, fail 2, quivers 41, reach_acyc… |
 
 <a name="claim-section-13"></a>
 
@@ -1822,7 +1822,7 @@ rebuilt and compared with the table turn by turn for a ≤ 48; by a second progr
 
 | Task | Batches | Predicted | Stored evidence | Record | Computed |
 |---|---|---|---|---|---|
-| `conj55_program/N=18` | long-conj55 | failing_by_certificate closed 1, cor52 253,191, markov 1,598,562, tri 50,110,169, vortex 9,261,670, heights 1 counterexamples 0, fail 2, quivers 41, reach_acyc… | `n4_conj55_N18_summary.log` | not re-run |  |
+| `conj55_program/N=18` | long-conj55 | failing_by_certificate closed 1, cor52 253,191, markov 1,598,562, tri 50,110,169, vortex 9,261,670, heights 1 counterexamples 0, fail 2, quivers 41, reach_acyc… | `n4_conj55_N18_summary.log` | ok, 2026-11-17, `b1d430c`, 2880.57 s | failing_by_certificate closed 1, cor52 253,191, markov 1,598,562, tri 50,110,169, vortex 9,261,670, heights 1 counterexamples 0, fail 2, quivers 41, reach_acyc… |
 
 <a name="claim-s12-certificates"></a>
 
@@ -1832,7 +1832,7 @@ rebuilt and compared with the table turn by turn for a ≤ 48; by a second progr
 
 | Task | Batches | Predicted | Stored evidence | Record | Computed |
 |---|---|---|---|---|---|
-| `conj55_program/N=18` | long-conj55 | failing_by_certificate closed 1, cor52 253,191, markov 1,598,562, tri 50,110,169, vortex 9,261,670, heights 1 counterexamples 0, fail 2, quivers 41, reach_acyc… | `n4_conj55_N18_summary.log` | not re-run |  |
+| `conj55_program/N=18` | long-conj55 | failing_by_certificate closed 1, cor52 253,191, markov 1,598,562, tri 50,110,169, vortex 9,261,670, heights 1 counterexamples 0, fail 2, quivers 41, reach_acyc… | `n4_conj55_N18_summary.log` | ok, 2026-11-17, `b1d430c`, 2880.57 s | failing_by_certificate closed 1, cor52 253,191, markov 1,598,562, tri 50,110,169, vortex 9,261,670, heights 1 counterexamples 0, fail 2, quivers 41, reach_acyc… |
 
 <a name="claim-s12-neville"></a>
 
@@ -1842,7 +1842,7 @@ about 10.9 million rest on Neville's theorem
 
 | Task | Batches | Predicted | Stored evidence | Record | Computed |
 |---|---|---|---|---|---|
-| `conj55_program/N=18` | long-conj55 | failing_by_certificate closed 1, cor52 253,191, markov 1,598,562, tri 50,110,169, vortex 9,261,670, heights 1 counterexamples 0, fail 2, quivers 41, reach_acyc… | `n4_conj55_N18_summary.log` | not re-run |  |
+| `conj55_program/N=18` | long-conj55 | failing_by_certificate closed 1, cor52 253,191, markov 1,598,562, tri 50,110,169, vortex 9,261,670, heights 1 counterexamples 0, fail 2, quivers 41, reach_acyc… | `n4_conj55_N18_summary.log` | ok, 2026-11-17, `b1d430c`, 2880.57 s | failing_by_certificate closed 1, cor52 253,191, markov 1,598,562, tri 50,110,169, vortex 9,261,670, heights 1 counterexamples 0, fail 2, quivers 41, reach_acyc… |
 
 <a name="claim-s12-per-height"></a>
 
@@ -1858,7 +1858,7 @@ the per-height split of Fig. 12.1
 | `conj55/h=4` | section-12, smoke | quivers 17,353, reach_acyclic 10,415 | `n4_conj55_N18_summary.log`, line 7 | ok, 2026-11-17, `cf1a25a`, 6.38 s | quivers 17,353, reach_acyclic 10,415 |
 | `conj55/h=5` | section-12 | quivers 51,841, reach_acyclic 28,523 | `n4_conj55_N18_summary.log`, line 8 | ok, 2026-11-17, `cf1a25a`, 20.263 s | quivers 51,841, reach_acyclic 28,523 |
 | `conj55/h=6` | section-12 | quivers 127,541, reach_acyclic 66,393 | `n4_conj55_N18_summary.log`, line 9 | ok, 2026-11-17, `cf1a25a`, 57.152 s | quivers 127,541, reach_acyclic 66,393 |
-| `conj55_program/N=18` | long-conj55 | failing_by_certificate closed 1, cor52 253,191, markov 1,598,562, tri 50,110,169, vortex 9,261,670, heights 1 counterexamples 0, fail 2, quivers 41, reach_acyc… | `n4_conj55_N18_summary.log` | not re-run |  |
+| `conj55_program/N=18` | long-conj55 | failing_by_certificate closed 1, cor52 253,191, markov 1,598,562, tri 50,110,169, vortex 9,261,670, heights 1 counterexamples 0, fail 2, quivers 41, reach_acyc… | `n4_conj55_N18_summary.log` | ok, 2026-11-17, `b1d430c`, 2880.57 s | failing_by_certificate closed 1, cor52 253,191, markov 1,598,562, tri 50,110,169, vortex 9,261,670, heights 1 counterexamples 0, fail 2, quivers 41, reach_acyc… |
 
 <a name="claim-s12-highest-search"></a>
 
@@ -1868,7 +1868,7 @@ highest search exactly h³ + h² + 5
 
 | Task | Batches | Predicted | Stored evidence | Record | Computed |
 |---|---|---|---|---|---|
-| `conj55_program/N=18` | long-conj55 | failing_by_certificate closed 1, cor52 253,191, markov 1,598,562, tri 50,110,169, vortex 9,261,670, heights 1 counterexamples 0, fail 2, quivers 41, reach_acyc… | `n4_conj55_N18_summary.log` | not re-run |  |
+| `conj55_program/N=18` | long-conj55 | failing_by_certificate closed 1, cor52 253,191, markov 1,598,562, tri 50,110,169, vortex 9,261,670, heights 1 counterexamples 0, fail 2, quivers 41, reach_acyc… | `n4_conj55_N18_summary.log` | ok, 2026-11-17, `b1d430c`, 2880.57 s | failing_by_certificate closed 1, cor52 253,191, markov 1,598,562, tri 50,110,169, vortex 9,261,670, heights 1 counterexamples 0, fail 2, quivers 41, reach_acyc… |
 
 <a name="claim-s13-finite-cores"></a>
 

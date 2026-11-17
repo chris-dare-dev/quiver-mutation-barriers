@@ -1,0 +1,169 @@
+{
+ "batch": "long-conj55",
+ "tasks": [
+  {
+   "N": 18,
+   "article": "Proposition 12.1",
+   "cost": 5832,
+   "evidence": [
+    {
+     "file": "n4_conj55_N18_summary.log"
+    }
+   ],
+   "group": "conj55",
+   "id": "conj55_program/N=18",
+   "kind": "conj55_program",
+   "limits": {
+    "memory_mb": 13500,
+    "time_seconds": 21600.0
+   },
+   "predicted": {
+    "failing_by_certificate": {
+     "closed": 1,
+     "cor52": 253191,
+     "markov": 1598562,
+     "tri": 50110169,
+     "vortex": 9261670
+    },
+    "heights": {
+     "1": {
+      "counterexamples": 0,
+      "fail": 2,
+      "quivers": 41,
+      "reach_acyclic": 39,
+      "undetermined": 0
+     },
+     "10": {
+      "counterexamples": 0,
+      "fail": 874642,
+      "quivers": 1613981,
+      "reach_acyclic": 739339,
+      "undetermined": 0
+     },
+     "11": {
+      "counterexamples": 0,
+      "fail": 1428558,
+      "quivers": 2595341,
+      "reach_acyclic": 1166783,
+      "undetermined": 0
+     },
+     "12": {
+      "counterexamples": 0,
+      "fail": 2228680,
+      "quivers": 4005273,
+      "reach_acyclic": 1776593,
+      "undetermined": 0
+     },
+     "13": {
+      "counterexamples": 0,
+      "fail": 3359354,
+      "quivers": 5971057,
+      "reach_acyclic": 2611703,
+      "undetermined": 0
+     },
+     "14": {
+      "counterexamples": 0,
+      "fail": 4902648,
+      "quivers": 8643013,
+      "reach_acyclic": 3740365,
+      "undetermined": 0
+     },
+     "15": {
+      "counterexamples": 0,
+      "fail": 6967187,
+      "quivers": 12196421,
+      "reach_acyclic": 5229234,
+      "undetermined": 0
+     },
+     "16": {
+      "counterexamples": 0,
+      "fail": 9674091,
+      "quivers": 16833441,
+      "reach_acyclic": 7159350,
+      "undetermined": 0
+     },
+     "17": {
+      "counterexamples": 0,
+      "fail": 13172100,
+      "quivers": 22785033,
+      "reach_acyclic": 9612933,
+      "undetermined": 0
+     },
+     "18": {
+      "counterexamples": 0,
+      "fail": 17601658,
+      "quivers": 30312877,
+      "reach_acyclic": 12711219,
+      "undetermined": 0
+     },
+     "2": {
+      "counterexamples": 0,
+      "fail": 132,
+      "quivers": 653,
+      "reach_acyclic": 521,
+      "undetermined": 0
+     },
+     "3": {
+      "counterexamples": 0,
+      "fail": 1401,
+      "quivers": 4317,
+      "reach_acyclic": 2916,
+      "undetermined": 0
+     },
+     "4": {
+      "counterexamples": 0,
+      "fail": 6938,
+      "quivers": 17353,
+      "reach_acyclic": 10415,
+      "undetermined": 0
+     },
+     "5": {
+      "counterexamples": 0,
+      "fail": 23318,
+      "quivers": 51841,
+      "reach_acyclic": 28523,
+      "undetermined": 0
+     },
+     "6": {
+      "counterexamples": 0,
+      "fail": 61148,
+      "quivers": 127541,
+      "reach_acyclic": 66393,
+      "undetermined": 0
+     },
+     "7": {
+      "counterexamples": 0,
+      "fail": 137881,
+      "quivers": 273813,
+      "reach_acyclic": 135932,
+      "undetermined": 0
+     },
+     "8": {
+      "counterexamples": 0,
+      "fail": 275785,
+      "quivers": 531537,
+      "reach_acyclic": 255752,
+      "undetermined": 0
+     },
+     "9": {
+      "counterexamples": 0,
+      "fail": 508070,
+      "quivers": 955033,
+      "reach_acyclic": 446963,
+      "undetermined": 0
+     }
+    },
+    "largest_search_is_h3_h2_5": true,
+    "totals": {
+     "counterexamples": 0,
+     "fail": 61223593,
+     "left": 0,
+     "pass": 45694973,
+     "quivers": 106918566
+    }
+   },
+   "set": 0,
+   "workers": 4
+  }
+ ]
+}
