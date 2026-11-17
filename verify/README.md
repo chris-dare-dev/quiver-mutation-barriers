@@ -21,7 +21,7 @@ The tasks of [../batches/](../batches/) are computed by `../runners/task_runner.
 | Task kind, method | Computed by | What it shares |
 |---|---|---|
 | `quiver`, `barrier` and `reach` by search, `route`, `conj55` | `qmb/`: its own mutation, canonical form, fork test, searches and route words, standard library only | Nothing with `experiments/`, nothing with this directory. `qmb/` was written for this repository from the statements of the article and the paper; no script here imports it, and it imports none. `smoke.py` and `qmb/` are two separate implementations of the same definitions, and neither reads the other. |
-| `barrier` and `reach` with method `np_barrier` | `experiments/np_barrier.c`, built by `make build` | The search is the code under check. `qmb/` only writes its input line, and tests that the quiver it reports is the opposite of the start. |
+| `barrier` and `reach` with method `np_barrier` | `experiments/np_barrier.c`, built by `make build` | The search is the code under check. `qmb/` only writes its input line, and tests that the quiver it reports is the opposite of the start. The program holds entries in 32 bits; a task whose barrier is 2³¹ or more ends `unsupported` instead of reporting the part of the region below 2³¹. |
 | `reach` with method `np_qa_core` | `experiments/np_qa_core.py` driving `np_qa_core.c` | The code under check, run again. |
 | `certificate` | `experiments/n4_doors.py prove2`, `prove`; `np_corridor_prove.py prove` | The certificate programs themselves, run again; the task reads their verdict. Not an independent check, as for `smoke_certificates.sh`. |
 | `conj55_program` | `experiments/n4_conj55.py run`, `resolve`, `summary` | The code under check, run again. |

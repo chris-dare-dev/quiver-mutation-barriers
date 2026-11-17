@@ -1,7 +1,11 @@
-# LONG RUN.  P+_t for 2 <= t <= 80 by the C search with no pruning (Theorem 9.1: "search for t <= 80"):
-# the barrier 2t^5 - t^4 + t^2 - 1, and the number of quivers reached below it (1,561,537 at t = 64).
-# The original logs record about 4 minutes for t <= 64 and about a minute per value from 65 to 80.
-# Needs `make build`.  The search holds up to about 0.5 GB per task.
+# P+_t by the C search with no pruning (Theorem 9.1): the barrier 2t^5 - t^4 + t^2 - 1, and the number
+# of quivers reached below it (1,561,537 at t = 64).  Needs `make build`.  Two minutes of computing in
+# all; the largest task takes under 3 s and 200 MB.
+#
+# The C search holds entries in 32 bits.  The barrier is below 2^31 for t <= 64 and above it from
+# t = 65 (2,302,734,849), so the 32 tasks for 65 <= t <= 80 end `unsupported`: this method cannot
+# compute them.  They are kept in the batch so that the gap shows in the records.  The original runs
+# used a second enumerator for that range (verify/review17.py plain, note 17); no task runs it.
 
 name = "long-pplus"
 

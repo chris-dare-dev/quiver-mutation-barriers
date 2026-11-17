@@ -18,8 +18,9 @@ Kinds and the keys of their `[[tasks]]` table:
     census, core, tube   stages, procs              one stage of Sections 8 and 13, by its own program
     synthetic     items                             no mathematics: sleeps, holds memory or fails
 
-`method` is "search" (this package, the default), "np_barrier" (the C program, after `make build`), or for
-`reach` also "np_qa_core" (the program of note 20); for `route` it is "replay" (the default) or
+`method` is "search" (this package, the default), "np_barrier" (the C program, after `make build`; it holds
+entries in 32 bits, so a task whose barrier is 2^31 or more ends "unsupported"), or for `reach` also
+"np_qa_core" (the program of note 20); for `route` it is "replay" (the default) or
 "shortest".  A table with `control = { predicted = ... }` makes negative controls: the same tasks under
 other ids, with a predicted value that is wrong on purpose.
 
@@ -40,7 +41,17 @@ from pathlib import Path
 from typing import Any
 
 from . import conj55, search
-from .backends import EXPERIMENTS, REPOSITORY, BackendError, binary, np_barrier, program, require, scratch
+from .backends import (
+    EXPERIMENTS,
+    INT_MAX,
+    REPOSITORY,
+    BackendError,
+    binary,
+    np_barrier,
+    program,
+    require,
+    scratch,
+)
 from .families import Family, family, replay
 from .quiver import height, isomorphic, mutate, opposite, vertices
 
@@ -52,6 +63,19 @@ EXPECTED = REPOSITORY / "claims" / "expected.json"
 
 class TaskError(ValueError):
     """A batch description or a task that cannot be used."""
+
+
+class Unsupported(Exception):
+    """The method of a task cannot compute it; the message says why.  The task ends "unsupported"."""
+
+
+def _fits_np_barrier(bound: int) -> None:
+    """np_barrier.c holds every entry in 32 bits and discards a quiver with a larger one, so it sees the
+    whole region below a barrier, and the join at it, only when the barrier is below 2^31."""
+    if bound > INT_MAX:
+        raise Unsupported(
+            f"np_barrier.c holds entries in 32 bits, and the barrier of this task, {bound}, is above 2^31 - 1"
+        )
 
 
 def load_expected(path: Path = EXPECTED) -> dict[str, dict[str, Any]]:
@@ -506,7 +530,9 @@ def _run_barrier(task: Task) -> Result:
             "method": "least-height-first search, no pruning",
             "popped": found.popped,
         }
-    cap = 4 * chosen.barrier(value) + 1024  # the search stops where it finds the join; this only bounds it
+    _fits_np_barrier(chosen.barrier(value))
+    # the search stops where it finds the join; the cap only bounds it
+    cap = min(4 * chosen.barrier(value) + 1024, INT_MAX)
     result = np_barrier(quiver, low=height(quiver), cap=cap, n=vertices(quiver))
     joined = result["status"] == "found" and isomorphic(result["target"], opposite(quiver))
     return {
@@ -532,6 +558,7 @@ def _run_reach(task: Task) -> Result:
     if task["method"] == "np_barrier":
         if prune:
             raise TaskError("np_barrier counts forks among the quivers reached; use search or np_qa_core")
+        _fits_np_barrier(bound)
         result = np_barrier(quiver, low=height(quiver), cap=bound - 1, n=vertices(quiver))
         if result["status"] not in ("cap", "closed"):
             return {"value": None, "method": "np_barrier.c", "search_status": result["status"]}
@@ -726,13 +753,24 @@ RUNNERS: dict[str, Callable[[Task], Result]] = {
 
 def run_task(task: Task) -> Result:
     """The outcome of one task: "ok" when the value agrees with the predicted one or there is none to
-    agree with, "mismatch" when it differs or no value could be computed where one is predicted."""
+    agree with, "mismatch" when it differs or no value could be computed where one is predicted, and
+    "unsupported" when the task's method cannot compute it at all."""
     kind = task.get("kind")
     if kind not in RUNNERS:
         raise TaskError(f"kind must be one of {', '.join(RUNNERS)}")
     started = time.perf_counter()
-    result = RUNNERS[kind](task)
     predicted = task.get("predicted")
+    try:
+        result = RUNNERS[kind](task)
+    except Unsupported as reason:
+        return {
+            "status": "unsupported",
+            "value": None,
+            "predicted": predicted,
+            "agrees": None,
+            "method": task.get("method"),
+            "reason": str(reason),
+        }
     agreement = agrees(result["value"], predicted)
     status = "mismatch" if agreement is False or (result["value"] is None and predicted is not None) else "ok"
     return result | {

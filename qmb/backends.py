@@ -50,7 +50,9 @@ def np_barrier(
     "budget" when more than `budget` quivers were needed), `popped` (quivers taken from the queue),
     `plateau` (quivers of height at most `low` among them) and `forks`.
     """
-    line = f"{n} {low} {min(cap, INT_MAX)} {budget} {int(prune_forks)} {' '.join(map(str, quiver))}\n"
+    if cap > INT_MAX:
+        raise BackendError(f"np_barrier.c holds entries in 32 bits: the cap {cap} is above 2^31 - 1")
+    line = f"{n} {low} {cap} {budget} {int(prune_forks)} {' '.join(map(str, quiver))}\n"
     done = subprocess.run(
         [str(binary("np_barrier"))], input=line, capture_output=True, text=True, check=False
     )

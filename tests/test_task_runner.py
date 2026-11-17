@@ -12,7 +12,7 @@ from pathlib import Path
 from typing import Any
 
 from qmb import families, search
-from qmb.backends import BUILD
+from qmb.backends import BUILD, BackendError, np_barrier
 from qmb.tasks import STAGES, TaskError, agrees, expand_batch, parse_conj55_summary, parse_counts, run_task
 from taskbatch.cli import EXIT_FAILED, EXIT_LIMITS, EXIT_OK
 from taskbatch.config import load_config
@@ -221,6 +221,20 @@ class CBackEnds(unittest.TestCase):
                     )
                     region = search.below(quiver, chosen.barrier(value))
                     self.assertEqual(reach["value"], {"quivers": region.quivers, "low": region.low})
+
+    def test_a_barrier_above_32_bits_is_unsupported_and_not_a_mismatch(self) -> None:
+        # H+(64) = 2,130,710,527 fits in 32 bits and H+(65) = 2,302,734,849 does not: the C search would
+        # discard every quiver above 2^31 - 1 and report a part of the region as if it were all of it
+        self.assertLess(families.barrier_p_plus(64), 2**31)
+        self.assertGreaterEqual(families.barrier_p_plus(65), 2**31)
+        for kind in ("barrier", "reach"):
+            result = run_task(one({"kind": kind, "family": "P+", "values": [65], "method": "np_barrier"}))
+            self.assertEqual(
+                (result["status"], result["value"], result["agrees"]), ("unsupported", None, None)
+            )
+            self.assertIn("32 bits", result["reason"])
+        with self.assertRaisesRegex(BackendError, "32 bits"):
+            np_barrier(families.p_plus(2), low=4, cap=2**31, n=5)
 
     @unittest.skipUnless(HAVE_NUMPY, "numpy is not installed (experiments/requirements.txt)")
     def test_the_programs_of_experiments_against_python(self) -> None:

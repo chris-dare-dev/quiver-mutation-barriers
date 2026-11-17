@@ -15,7 +15,7 @@ The tables of the three sections after the next one are generated: their rows ar
 The last column, *Re-run under the scheduler*, is computed from the records in [records/](records/). A claim that a program can check has tasks: computations with one answer each, defined by the batch files in [batches/](batches/) and run by the scheduler under time and memory limits ([README.md](README.md#tasks-batches-and-records)). The column reads:
 
 - **all N tasks ok**, when every task of the claim has a record and each computed value agrees with the predicted one, with the day and the commit of the records;
-- the count of tasks by status otherwise: `ok`, `mismatch`, `timeout`, `memory`, `error`, `crashed`, and `not re-run` for tasks without a record;
+- the count of tasks by status otherwise: `ok`, `mismatch`, `unsupported` (the task's method cannot compute it), `timeout`, `memory`, `error`, `crashed`, and `not re-run` for tasks without a record;
 - **not re-run**, when no task of the claim has a record. The stored output named in the row is then the only support, and it is the original output, not a run of this repository;
 - **no task**, with the reason, when nothing in the batch files computes the claim.
 
@@ -23,7 +23,8 @@ The last column, *Re-run under the scheduler*, is computed from the records in [
 
 What the tasks do not cover:
 
-- **The long runs.** `batches/long-pplus.toml`, `long-qa.toml`, `long-conj55.toml` and `long-section-13.toml` describe the original long runs as tasks. None has been run; `long-section-13.toml` has never been executed at any size, because its programs take no option that makes them small.
+- **P⁺_t for 65 ≤ t ≤ 80.** `batches/long-pplus.toml` has been run. The C search computed the barrier and the quivers below it for every t ≤ 64, and they agree with the stored values. From t = 65 the barrier is above 2³¹ − 1 and the C search, which holds entries in 32 bits, cannot compute the task: those 32 tasks end `unsupported`. That range rests on the original output of the second enumerator of note 17 (`review17_plain_65_80.log`), which no task runs.
+- **The other long runs.** `batches/long-qa.toml`, `long-conj55.toml` and `long-section-13.toml` describe original long runs as tasks. None has been run; `long-section-13.toml` has never been executed at any size, because its programs take no option that makes them small.
 - **The census** (Section 8): the enumeration of all quivers of height at most 14 and of the 788,026 classes is not a task. The commands are in notes 8 and 10.
 - **Section 13 from scratch.** The task `census/decided-classes` runs the counting script of note 23 on the stored outputs of the core and tube programs. It recounts; it regenerates no core and no certificate.
 - **Hand proofs, and statements about the original checks** (which program was compared with which): these have no task.

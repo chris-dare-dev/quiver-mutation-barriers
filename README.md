@@ -71,7 +71,7 @@ These tasks recompute, at the parameters shown, what the closed forms, the route
 - **The census can hide joins.** A pocket that joined its class only above the bound to which the class was enumerated (192 or more) would not be seen.
 - **Cited theorems.** Proposition 12.1 rests on published and preprint theorems, among them Theorem 5.1 of arXiv:2610.36179 (an unrefereed preprint of 26 October 2026) for 253,191 quivers.
 - **Prior art.** The literature search (9 to 16 November 2026) did not cover MathSciNet or zbMATH. Prior art could exist under other names.
-- **What was run again here.** The records cover the smoke batch, the section batches and the recount of Section 13 from stored outputs. No long computation was run again: the searches for P⁺_t above t = 16 and for Q_a above a = 12, Conjecture 5.5 above height 6, the census, the cores and the tube certificates rest on the original outputs. [CLAIMS.md](CLAIMS.md) says so row by row.
+- **What was run again here.** The records cover the smoke batch, the section batches, the recount of Section 13 from stored outputs, and the search for P⁺_t up to t = 64. The rest was not run again: the search for P⁺_t from t = 65 to 80 (out of reach of the C search, whose entries are 32 bits), the searches for Q_a above a = 12, Conjecture 5.5 above height 6, the census, the cores and the tube certificates rest on the original outputs. [CLAIMS.md](CLAIMS.md) says so row by row.
 - **Known discrepancies** between the paper, the notes and the logs are listed in [CLAIMS.md](CLAIMS.md#known-discrepancies).
 
 ## Tasks, batches and records
@@ -103,14 +103,14 @@ make report BATCH=batches/section-07.toml
 | `section-12` | 6 | Conjecture 5.5: the split at each height ≤ 6, by enumeration | Python | 50 s |
 | `section-13` | 1 | the counts of Section 13, recounted from the stored outputs of the core and tube programs | the data archive | 20 s, 3 GB |
 | `section-14` | 34 | the generic search of Section 14 on R_b, P⁺_t and Q_a | `make build` | 3 s |
-| `long-pplus` | 158 | P⁺_t for t ≤ 80 by the C search | `make build` | not run |
+| `long-pplus` | 158 | P⁺_t by the C search: barrier and region for t ≤ 64; for 65 ≤ t ≤ 80 the barrier is above 2³¹ and the 32 tasks end `unsupported` | `make build` | 2 min |
 | `long-qa` | 110 | Q_a for a ≤ 48 without pruning and a ≤ 64 with forks not expanded | `make build`, numpy | not run; hours |
 | `long-conj55` | 1 | Conjecture 5.5 to height 18, by the original program | numpy | not run; over an hour, 11 GB |
 | `long-section-13` | 3 | the cores and the tube certificates, regenerated from stored inputs | the data archive, numpy | never run |
 | `limits-demo` | 6 | a task stopped at its time limit and one at its memory limit, next to four that finish | Python | 3 s |
 | `negative-control` | 3 | predicted values that are wrong on purpose: each task must end `mismatch` | Python | 1 s |
 
-The long batches are the original long runs, described as tasks with limits. They are for a machine left alone for hours and have not been run for this repository; their claims read "not re-run". The census of Section 8 is not a task at all ([CLAIMS.md](CLAIMS.md#tasks-and-records)). The task kinds and the keys of a batch file are listed at the top of [qmb/tasks.py](qmb/tasks.py); what a run guarantees, and the contract between the scheduler and the program that computes, are in [taskbatch/PROTOCOL.md](taskbatch/PROTOCOL.md).
+The long batches are the original long runs, described as tasks with limits. `long-pplus` has been run. The other three are for a machine left alone for hours and have not been run for this repository; their claims read "not re-run". The census of Section 8 is not a task at all ([CLAIMS.md](CLAIMS.md#tasks-and-records)). The task kinds and the keys of a batch file are listed at the top of [qmb/tasks.py](qmb/tasks.py); what a run guarantees, and the contract between the scheduler and the program that computes, are in [taskbatch/PROTOCOL.md](taskbatch/PROTOCOL.md).
 
 The records in [records/](records/) were computed on one machine, from committed code, and each names its commit. [claims/RECORDS.md](claims/RECORDS.md) lists every task with its predicted value, its stored evidence and its record.
 
