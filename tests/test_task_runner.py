@@ -4,10 +4,12 @@ from __future__ import annotations
 
 import importlib.util
 import json
+import os
 import subprocess
 import sys
 import tempfile
 import unittest
+import unittest.mock
 from pathlib import Path
 from typing import Any
 
@@ -246,6 +248,32 @@ class CBackEnds(unittest.TestCase):
             self.assertIn("32 bits", result["reason"])
         with self.assertRaisesRegex(BackendError, "32 bits"):
             np_barrier(families.p_plus(2), low=4, cap=2**31, n=5)
+
+    @unittest.skipUnless(HAVE_NUMPY, "numpy is not installed (experiments/requirements.txt)")
+    def test_np_qa_core_computes_and_does_not_read_a_kept_summary(self) -> None:
+        # np_qa_core.py prints the summary it kept under ~/.cache/qmb-np/ when there is one.  Here the home
+        # directory holds a kept summary with a wrong count; a task must compute its own
+        kept = {
+            "mode": "chain", "status": "closed", "H": 88, "w": 4, "stored": 1, "passed_through": 0, "members": 7,
+            "chain_sum_is_even": True, "longest_chain": 0, "forks_of_height_le_w": 0, "members_of_height_le_w": 1,
+        }  # fmt: skip
+        with tempfile.TemporaryDirectory() as home:
+            cache = Path(home) / ".cache" / "qmb-np" / "qa_core"
+            cache.mkdir(parents=True)
+            (cache / "core_a3_chain_single.bin.json").write_text(json.dumps(kept))
+            table = {
+                "kind": "reach",
+                "family": "Qa",
+                "values": [3],
+                "method": "np_qa_core",
+                "prune_forks": True,
+            }
+            with unittest.mock.patch.dict(
+                os.environ, {"HOME": home, "QMB_SCRATCH": str(Path(home) / "scratch")}
+            ):
+                result = run_task(one(table))
+            self.assertEqual((result["status"], result["value"]), ("ok", {"quivers": 1714, "low": 1}))
+            self.assertEqual(json.loads((cache / "core_a3_chain_single.bin.json").read_text())["members"], 7)
 
     @unittest.skipUnless(HAVE_NUMPY, "numpy is not installed (experiments/requirements.txt)")
     def test_the_programs_of_experiments_against_python(self) -> None:

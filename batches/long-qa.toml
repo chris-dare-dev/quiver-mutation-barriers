@@ -3,29 +3,32 @@
 #   with no pruning for 2 <= a <= 48   (3,057,734,065 quivers at a = 48);
 #   with forks not expanded for 2 <= a <= 64   (4,165,617,632 at a = 64).
 # The original logs record, as upper bounds on a loaded machine, 2,264 s for a = 48 without pruning and
-# 3,168 s for a = 64 with it.  Their memory was not recorded: the limits below are starting values,
-# and `--retry timeout,memory` with larger ones computes again what was stopped.  Needs `make build`
-# and numpy (experiments/requirements.txt).  The program keeps a cache under ~/.cache/qmb-np/.
+# 3,168 s for a = 64 with it, and about 16 hours of single-process time for the whole batch.  Measured
+# here before the run: 49 s for a = 24 without pruning, against 81 s in the original log.
+#
+# The program prints a summary it kept from an earlier search instead of searching again.  A task
+# gives it an empty scratch directory as its home, so every count in a record was computed by that
+# task.  Needs `make build` and numpy (experiments/requirements.txt).
 
 name = "long-qa"
 
 [scheduler]
-workers = 3
+workers = 4
 memory_budget_mb = 12000
 
 [limits]
 time_seconds = 900
-memory_mb = 2000
+memory_mb = 1000
 
 [[limits.tier]]
 min_cost = 24
 time_seconds = 3600
-memory_mb = 4000
+memory_mb = 2000
 
 [[limits.tier]]
 min_cost = 40
 time_seconds = 14400
-memory_mb = 6000
+memory_mb = 3000
 
 [[tasks]]
 kind = "reach"

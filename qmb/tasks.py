@@ -591,9 +591,14 @@ def _run_reach(task: Task) -> Result:
     require("numpy")
     mode = "chain" if prune else "chain-nofork"
     with scratch(task["id"]) as work:
+        # np_qa_core.py keeps the summary of every search under ~/.cache/qmb-np/ and prints a kept one
+        # instead of searching again.  The task gives it the empty scratch directory as its home, so that
+        # what it reports was computed by this process and nothing outside the scratch directory is read
+        # or written.
         program(
             "np_qa_core.py", "family", "--amin", value, "--amax", value, "--workers", 1, "--mode", mode,
-            "--out", "family.jsonl", cwd=work, env={"NP_QA_CORE_BIN": str(binary("np_qa_core"))},
+            "--out", "family.jsonl", cwd=work,
+            env={"NP_QA_CORE_BIN": str(binary("np_qa_core")), "HOME": str(work)},
         )  # fmt: skip
         row = json.loads((work / "family.jsonl").read_text().splitlines()[0])
     closed = row["status"] == "closed" and row["H"] == bound and row["forks_of_height_le_w"] == 0
