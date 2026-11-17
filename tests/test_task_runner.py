@@ -164,6 +164,23 @@ class Kinds(unittest.TestCase):
         self.assertFalse(agrees({"a": 2}, {"a": 1}))
         self.assertFalse(agrees(None, 3))
 
+    def test_a_tube_stage_can_be_tried_on_a_sample(self) -> None:
+        whole = one({"kind": "tube", "stages": ["tube-certificates-note-14"], "procs": 6})
+        self.assertEqual((whole["id"], whole["sample"]), ("tube/tube-certificates-note-14", None))
+        self.assertEqual(whole["predicted"], {"classes": 232198, "certified": 225208})
+        sample = one({"kind": "tube", "stages": ["tube-certificates-note-14"], "procs": 2, "sample": 150})
+        self.assertEqual(
+            (sample["id"], sample["sample"]), ("tube/tube-certificates-note-14/sample-of-150", 150)
+        )
+        self.assertIsNone(sample["predicted"])  # the counts of a sample are not stored anywhere
+        with self.assertRaisesRegex(TaskError, "cannot take a sample"):
+            expand_batch({"tasks": [{"kind": "core", "stages": ["finite-cores"], "sample": 150}]})
+        # the note 14 program ends its run with the summary of what it wrote
+        log = "150 classes\nbottom: classes / certified / failed\n  all: 150 / 142 / 8\ncertified: 142; bottom not separated from the fourth members: 0\nwall time: 20s\n"
+        self.assertEqual(
+            parse_counts(STAGES["tube-certificates-note-14"], log), {"classes": 150, "certified": 142}
+        )
+
     def test_what_cannot_be_expanded_is_refused(self) -> None:
         refused = [
             {"kind": "nonsense"},

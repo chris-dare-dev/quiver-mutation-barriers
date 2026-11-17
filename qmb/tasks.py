@@ -15,7 +15,7 @@ Kinds and the keys of their `[[tasks]]` table:
     certificate   names, audit_tmax                 the verdict of a certificate program
     conj55        heights                           Conjecture 5.5 at one height, by enumeration
     conj55_program  N, workers                      the original program for all heights up to N
-    census, core, tube   stages, procs              one stage of Sections 8 and 13, by its own program
+    census, core, tube   stages, procs, sample      one stage of Sections 8 and 13, by its own program
     synthetic     items                             no mathematics: sleeps, holds memory or fails
 
 `method` is "search" (this package, the default), "np_barrier" (the C program, after `make build`; it holds
@@ -35,6 +35,7 @@ import ast
 import json
 import os
 import re
+import shutil
 import time
 from collections.abc import Callable, Iterator
 from dataclasses import dataclass
@@ -303,6 +304,7 @@ class Stage:
     modules: tuple[str, ...]
     cost: int
     article: str
+    sample: bool = False  # the first command takes `--limit N`: a random sample of N classes
 
 
 STAGES: dict[str, Stage] = {
@@ -347,7 +349,9 @@ STAGES: dict[str, Stage] = {
             ),
         ),
         inputs=("n4_opposite_cores.jsonl.gz",),
+        # `run` ends with the summary of what it wrote
         counts=(("classes", r"^(\d+) classes$"), ("certified", r"^certified: (\d+);")),
+        sample=True,
         modules=("numpy",),
         cost=3600,
         article="Section 13",
@@ -371,6 +375,7 @@ STAGES: dict[str, Stage] = {
             ("classes", r"^(\d+) classes; second-pass"),
             ("certified", r"^certified: (\d+); with a bottom"),
         ),
+        sample=True,
         modules=("numpy",),
         cost=2700,
         article="Section 13",
@@ -409,22 +414,27 @@ STAGES: dict[str, Stage] = {
 
 def _expand_stage(kind: str) -> Callable[[Task, str], Iterator[Task]]:
     def expand(table: Task, where: str) -> Iterator[Task]:
-        _known(table, where, "stages", "procs")
-        procs = table.get("procs", 4)
+        _known(table, where, "stages", "procs", "sample")
+        procs, sample = table.get("procs", 4), table.get("sample")
         names = table.get("stages")
         if not isinstance(names, list) or not names or type(procs) is not int or procs < 1:
             raise TaskError(f"{where} needs a list of stages, and procs at least 1")
+        if sample is not None and (type(sample) is not int or sample < 1):
+            raise TaskError(f"{where}: sample must be a whole number of classes")
         for name in names:
             stage = STAGES.get(name)
             if stage is None or stage.kind != kind:
                 own = [key for key, value in STAGES.items() if value.kind == kind]
                 raise TaskError(f"{where}: no {kind} stage {name!r}; there are {', '.join(own)}")
+            if sample is not None and not stage.sample:
+                raise TaskError(f"{where}: the program of the stage {name} cannot take a sample")
             yield {
-                "id": f"{kind}/{name}",
+                "id": f"{kind}/{name}" + (f"/sample-of-{sample}" if sample else ""),
                 "group": kind,
-                "cost": stage.cost,
+                "cost": stage.cost if sample is None else 1,
                 "stage": name,
                 "procs": procs,
+                "sample": sample,
                 "inputs": list(stage.inputs),
                 "article": stage.article,
                 "predicted": None,
@@ -741,12 +751,20 @@ def _run_stage(task: Task) -> Result:
     output = ""
     with scratch(task["id"]) as work:
         for name in stage.inputs:
-            (work / name).symlink_to((data / name).resolve())
-        for script, *arguments in stage.commands:
+            # a copy, not a link: whatever the program does to the file, the stored result is not touched
+            shutil.copyfile(data / name, work / name)
+        for number, (script, *arguments) in enumerate(stage.commands):
             filled = [argument.replace("{procs}", str(task["procs"])) for argument in arguments]
+            if number == 0 and task.get("sample"):
+                filled += ["--limit", str(task["sample"])]
             output += program(str(Path("..") / script), *filled, cwd=work)
+    counts = parse_counts(stage, output)
+    if counts is None:
+        raise BackendError(
+            f"the programs of the stage {task['stage']} did not print every count of the stage"
+        )
     return {
-        "value": parse_counts(stage, output),
+        "value": counts,
         "method": "; ".join(" ".join(command) for command in stage.commands).replace(
             "{procs}", str(task["procs"])
         ),
