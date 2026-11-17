@@ -106,7 +106,7 @@ Note 17 checked note 16 in full and found no theorem false. The checks here were
 
 | Claim | Where (note §) | Verdict | Evidence |
 |---|---|---|---|
-| Lemmas 16.1 (step), 53.2 (turn), 53.3 (the top) and the corollary of §2 | 16 §2 | Confirmed | Proofs re-derived. Random tests: 40,000 quivers each for 53.1 and 53.2, and 20,159 quivers that satisfy the hypotheses of 53.3, with no failure (`review19_lemmas16.log`) |
+| Lemmas 16.1 (step), 16.2 (turn), 16.3 (the top) and the corollary of §2 | 16 §2 | Confirmed | Proofs re-derived. Random tests: 40,000 quivers each for 16.1 and 16.2, and 20,159 quivers that satisfy the hypotheses of 16.3, with no failure (`review19_lemmas16.log`) |
 | Theorem 16.4: the route of 4t³ − 2t² + 4 mutations; one quiver at H⁺(t), all others at most H⁺(t) − t²; P⁺_t ≇ −P⁺_t; the same for P_t | 16 §3.2 | Confirmed | Proof re-derived. For every t from 2 to 64, `route16` builds the route and checks: every column of the table; μ_c(T) = −μ_p(T); every height; the number of mutations; non-isomorphism, by a canonical form; and the in-weight argument (`review19_route16.log`) |
 | Theorem 16.5: no lower route for 2 ≤ t ≤ 64, both families | 16 §3.3 | Confirmed | A labelled breadth-first search without fork pruning, for every t from 2 to 64 and both families, finds no quiver of height ≤ t² below H other than relabellings of the start. The counts are those of the table. P⁺_t has two labelled copies of each class (3,123,074 = 2 × 1,561,537 at t = 64) and P_t one (1,301,189), for totals of 25.7 and 21.4 million classes (`review19_search16.log`, `review19_search16_small.log`) |
 | `np_barrier.c` | 16 §3.3 | Sound | §5 |

@@ -59,7 +59,7 @@ Let x be a further vertex, joined to W_m(j) in any way. Record it by its *state*
 
 (A, B, U, V) = (b_px, b_qx, b_xr, b_xs).
 
-(A, B) is the column of x on the pair (p, q). The pair (U, V) plays the same note for the pair (r, s).
+(A, B) is the column of x on the pair (p, q). The pair (U, V) plays the same part for the pair (r, s).
 
 **Lemma 18.2 (the fifth vertex) [I].**
 - **(S) A step from position j, 0 ≤ j ≤ m.** If A ≥ 0, the state becomes (2A + B, −A, U, V). If A < 0, it becomes (B, −A, U + |A|·(m − j), V + |A|·j).
@@ -324,7 +324,7 @@ So the sample says little. On 6 vertices at height 2 the sets below the cap are 
 | n | Lower bound for F(n, w) | Status | Upper bound |
 |---|---|---|---|
 | 3 | w | Theorem 3.1 | w |
-| 4 | 2w² − 7w + 2 | Corollary 15.14, proved | 2w² conjectured (22.1) |
+| 4 | 2w² − 7w + 2 | Corollary 15.14, proved | 2w² conjectured (10.1) |
 | 5 | 2w^{5/2} − 11w² for every w ≥ 4 | Corollary 16.7, proved (computer-assisted) | none |
 | 5 | 4w³ − 15w² + 19w − 11 for 3 ≤ w ≤ 23 | Corollary 18.6: route proved for every w, lower bound by exhaustive search | none |
 | ≥ 6 | as for 5, with isolated vertices | | none |
@@ -391,7 +391,7 @@ $PY -I np_rowwalk.py sample --n 5 --w 2 --draws 60000 --cap 512 --budget 20000 >
 
 - `np_rowwalk.py` needs `np_corridor.py`, `np_barrier.c` and, for `sample`, numpy from the venv.
 - The `family` search allocates its tables for the whole budget: about 70 bytes per quiver.
-- The pruned `family` run was started for a = 23 to 30 and stopped by hand after a = 26; its log says so, and it has no `.jsonl`. `pycheck` was started for a = 8 as well and stopped. The first lines of the three `family` logs carried an older theorem number and were corrected to 66.4 by hand.
+- The pruned `family` run was started for a = 23 to 30 and stopped by hand after a = 26; its log says so, and it has no `.jsonl`. `pycheck` was started for a = 8 as well and stopped. The first lines of the three `family` logs carried an older theorem number and were corrected by hand to the number the theorem had at the time (it is now 18.4).
 - The scans for a = 3, 4, 5 were run with 4 workers, those for a = 6, 7 with 12; the machine was shared, so the times are upper bounds.
 
 ---

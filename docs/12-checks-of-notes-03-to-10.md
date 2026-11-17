@@ -84,9 +84,9 @@ The prior-art search was a first reading pass over the papers in §6. The statem
 | Mirror structure for bottom ≤ 4: 334 classes, 214 of them with mirror pairs | 8 §3 | Confirmed exactly | An own plateau-based test reproduces all six rows of the table |
 | 788,026 classes; "a few found a lower bottom" | 10 §1–2 | Count confirmed; wording wrong | 2,213 rows in the bottom-8 file and 4,906 in the bottom-9 file have a lower bottom, as do 461 rows in the bottom-6/7 file. Every one repeats a class already listed, with the same pairs up to the bound |
 | Note 10's table (largest deaths 12 … 144); every pocket dies by 1.834·b²; pockets above the bottom die by 1.31·b² | 10 §1 | Confirmed | Recomputed. The maxima are 66/36 = 1.8333 and 106/81 = 1.3086 |
-| Extremes: the bottom-6 mirror pair joins at 66, H(9, 8, 4, 2) joins at 144 | 20, 22 | Confirmed | Own enumerator at bound 400, above the census bounds of 256 and 192. H(9, 8, 4, 2) is also a mirror pair: its two bottom quivers are H and −H |
+| Extremes: the bottom-6 mirror pair joins at 66, H(9, 8, 4, 2) joins at 144 | 8, 10 | Confirmed | Own enumerator at bound 400, above the census bounds of 256 and 192. H(9, 8, 4, 2) is also a mirror pair: its two bottom quivers are H and −H |
 | The heavy-block scan: every other class of that shape is ≤ 1.125 | 10 §1 | Confirmed from the stored scan | H(9, 8, 2, 4) is the same class |
-| Spot check of the census | 20, 22 | Confirmed | 248 of 248 sampled classes match the check's enumerator exactly |
+| Spot check of the census | 8, 10 | Confirmed | 248 of 248 sampled classes match the check's enumerator exactly |
 
 ### Theorem 9.1 and its proof script (note 9)
 

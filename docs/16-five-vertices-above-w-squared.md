@@ -332,7 +332,7 @@ A hand argument points the same way [I]. Suppose a route goes up by one mutation
 | n | Lower bound for F(n, w) | Status | Upper bound |
 |---|---|---|---|
 | 3 | w | Theorem 3.1 | w |
-| 4 | 2w² − 7w + 2 | Corollary 15.14, proved | 2w² conjectured (22.1); supported by the census for w ≤ 9 |
+| 4 | 2w² − 7w + 2 | Corollary 15.14, proved | 2w² conjectured (10.1); supported by the census for w ≤ 9 |
 | 5 | 2w^{5/2} − 11w² | Theorem 16.6 and Corollary 16.7, proved (computer-assisted) | none |
 | ≥ 6 | as for 5, with isolated vertices; connected quivers and the constant √(n − 4) are measured only | §3.3, §5 | none |
 
@@ -408,7 +408,7 @@ $PY -I np_corridor.py rows --kind db2 --a 5 --k 6 --budget 150000 > np_corridor_
 
 ## Sources
 
-- Notes [3](03-profile-correction-and-rank-3.md), [9](09-n4-mirror-family.md), [10](10-n4-quadratic-bound.md), [11](11-n4-invariants-descent-joins.md), [12](12-checks-of-notes-03-to-10.md) and [15](15-rank-2-orbits-and-the-constant-2.md) of this repository. Lemma 15.5 (fork exclusion), Theorem 15.1 (orbits of two mutations), Theorem 15.6 (the quiver Q_t) and the certificate method of note 15 §5.3 are used as stated there.
+- Notes [3](03-profile-correction-and-rank-3.md), [9](09-n4-mirror-family.md), [10](10-n4-quadratic-bound.md), [11](11-n4-invariants-descent-joins.md), [12](12-checks-of-notes-03-to-10.md) and [15](15-rank-2-orbits-and-the-constant-2.md) of this repository. Lemma 15.5 (fork exclusion), Theorem 15.1 (orbits of two mutations), Theorem 15.6 (the quiver Q_t) and the certificate method of note 15 §5.4 are used as stated there.
 - Warkentin, *Exchange graphs via quiver mutation*, PhD thesis, TU Chemnitz 2014, Def. 2.1 and Lemma 2.5, as quoted in notes 3 and 15 (not read here): https://d-nb.info/1214302807/34
 - Beineke, Brüstle, Hille, *Cluster-cyclic quivers with three vertices and the Markov equation*, as used in note 12: https://arxiv.org/abs/math/0612213
 - Warkentin, *Subquivers of mutation-acyclic quivers are mutation-acyclic*, as used in note 12: https://arxiv.org/abs/1102.3382

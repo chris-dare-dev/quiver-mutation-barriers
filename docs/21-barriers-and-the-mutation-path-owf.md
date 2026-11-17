@@ -349,7 +349,7 @@ Planter: the literal route (mutations), and the compressed route (operations of 
 The mechanism behind every barrier found has three parts.
 
 1. **A counter climbs linearly.** It is a column on a pair of weight 2 that moves through an arithmetic progression (Lemma 16.1). A fifth vertex over a bounce cycle is the same thing one level up: a ball between two walls whose slopes change by a fixed linear map at each bounce (Proposition 18.3).
-2. **The top is symmetric.** At the top, Lemma 16.3 or the mirror rule 66.2(M) identifies the walk with its mirror image.
+2. **The top is symmetric.** At the top, Lemma 16.3 or the mirror rule 18.2(M) identifies the walk with its mirror image.
 3. **The route is the walk there and back.** It is a walk to the top, followed by the walk back as the opposite.
 
 Each part leaks.
@@ -357,7 +357,7 @@ Each part leaks.
 - **(2) fixes Q′.** In every family, and in all 90 random rows with h ≥ w^{n−2}/2, the far quiver is −Q. The instance names its own target, and the route to it is the walk from Q, so inverting is planting.
 - **(3) bounds the search.** A route that is one walk out and one walk back has at most two segments from each end, so a search over walk programs from both ends is shallow: depth 0 for Q_t, P⁺_t, Q_a and every random row, and depth 1 for R_b.
 
-This is the final report's cause 4 in a new place. Here the leaked invariant is not a lattice or a Mukai vector but the piecewise-linear structure of mutation on a pair of weight 2. The same structure gave Proposition 15.3, the closed forms of Theorems 15.6, 16.4 and 18.4, and note 20's lines.
+This is cause 4 of the wider project's summary (not included here) in a new place. Here the leaked invariant is not a lattice or a Mukai vector but the piecewise-linear structure of mutation on a pair of weight 2. The same structure gave Proposition 15.3, the closed forms of Theorems 15.6, 16.4 and 18.4, and note 20's lines.
 
 ---
 
