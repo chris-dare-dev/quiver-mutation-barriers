@@ -7,7 +7,9 @@
 #
 # A table has a heading of CLAIMS.md and its columns.  A claim has an id, its table, the cells of its
 # row in the order of the columns (Markdown, as printed), and `tasks`: ids of the tasks that compute
-# it, where `*` stands for any run of characters.  A claim without tasks says why in `no_task`.
+# it, where `*` stands for any run of characters.  A `*` may not follow a digit: `t=3*` would also take
+# t = 30, so the ids of one parameter value are written out.  A claim without tasks says why in
+# `no_task`.
 # Negative controls (ids ending in "!control") never count for a claim.
 
 [table.status]
@@ -291,7 +293,7 @@ cells = [
   '''`np_corridor_family_plus.jsonl` (t = 3); `owf_barrier_summary.log`; `../verify/smoke.py`''',
   '''**re-run here** (smoke)''',
 ]
-tasks = ["quiver/P+/t=3", "barrier/P+/t=3*", "route/P+/t=3*"]
+tasks = ["quiver/P+/t=3", "barrier/P+/t=3", "barrier/P+/t=3@np_barrier", "route/P+/t=3", "route/P+/t=3@shortest"]
 
 [[claim]]
 id = "s9-t8"
@@ -301,7 +303,7 @@ cells = [
   '''`np_corridor_family_plus.jsonl` (t = 8), `review17_plain.log`''',
   '''as above''',
 ]
-tasks = ["route/P+/t=8", "barrier/P+/t=8*"]
+tasks = ["route/P+/t=8", "barrier/P+/t=8", "barrier/P+/t=8@np_barrier"]
 
 [[claim]]
 id = "s9-search"
@@ -377,7 +379,7 @@ cells = [
   '''`np_rowwalk_family.jsonl` (a = 7)''',
   '''**re-run here** (route), and the barrier 1,242 by `../verify/smoke.py --full`''',
 ]
-tasks = ["quiver/Qa/a=7", "route/Qa/a=7", "barrier/Qa/a=7*"]
+tasks = ["quiver/Qa/a=7", "route/Qa/a=7", "barrier/Qa/a=7", "barrier/Qa/a=7@np_barrier"]
 
 [[claim]]
 id = "s10-a12"

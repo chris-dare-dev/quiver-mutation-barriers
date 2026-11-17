@@ -110,6 +110,10 @@ def validate(registry: dict[str, Any], tasks: dict[str, dict[str, Any]]) -> None
         if bool(claim["tasks"]) == ("no_task" in claim):
             problems.append(f"{claim['id']}: a claim has either tasks or a reason under no_task")
         for pattern in claim["tasks"]:
+            if re.search(r"\d\*", pattern):
+                problems.append(
+                    f"{claim['id']}: in {pattern!r} the * follows a digit and also matches longer numbers"
+                )
             if not fnmatch.filter(tasks, pattern):
                 problems.append(f"{claim['id']}: no task of any batch matches {pattern!r}")
         claimed.update(claim_tasks(claim, tasks))

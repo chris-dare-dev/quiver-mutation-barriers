@@ -1070,29 +1070,9 @@ P⁺₃: height 9, barrier 413, 94 mutations
 |---|---|---|---|---|---|
 | `barrier/P+/t=3` | section-09, smoke | 413 | `np_corridor_family_plus.jsonl`, line 2 (at_H.iso) | ok, 2026-11-17, `cf1a25a`, 0.132 s | 413 |
 | `barrier/P+/t=3@np_barrier` | long-pplus, section-14 | 413 | `np_corridor_family_plus.jsonl`, line 2 (at_H.iso) | ok, 2026-11-17, `cca3b91`, 0.143 s | 413 |
-| `barrier/P+/t=30@np_barrier` | long-pplus | 47,790,899 | `np_corridor_family_plus.jsonl`, line 29 (at_H.iso) | ok, 2026-11-17, `cca3b91`, 0.386 s | 47,790,899 |
-| `barrier/P+/t=31@np_barrier` | long-pplus | 56,335,741 | `np_corridor_family_plus.jsonl`, line 30 (at_H.iso) | ok, 2026-11-17, `cca3b91`, 0.46 s | 56,335,741 |
-| `barrier/P+/t=32@np_barrier` | long-pplus | 66,061,311 | `np_corridor_family_plus.jsonl`, line 31 (at_H.iso) | ok, 2026-11-17, `cca3b91`, 0.419 s | 66,061,311 |
-| `barrier/P+/t=33@np_barrier` | long-pplus | 77,085,953 | `np_corridor_family_plus.jsonl`, line 32 (at_H.iso) | ok, 2026-11-17, `cca3b91`, 0.497 s | 77,085,953 |
-| `barrier/P+/t=34@np_barrier` | long-pplus | 89,535,667 | `np_corridor_family_plus.jsonl`, line 33 (at_H.iso) | ok, 2026-11-17, `cca3b91`, 0.501 s | 89,535,667 |
-| `barrier/P+/t=35@np_barrier` | long-pplus | 103,544,349 | `np_corridor_family_plus.jsonl`, line 34 (at_H.iso) | ok, 2026-11-17, `cca3b91`, 0.52 s | 103,544,349 |
-| `barrier/P+/t=36@np_barrier` | long-pplus | 119,254,031 | `np_corridor_family_plus.jsonl`, line 35 (at_H.iso) | ok, 2026-11-17, `cca3b91`, 0.556 s | 119,254,031 |
-| `barrier/P+/t=37@np_barrier` | long-pplus | 136,815,121 | `np_corridor_family_plus.jsonl`, line 36 (at_H.iso) | ok, 2026-11-17, `cca3b91`, 0.603 s | 136,815,121 |
-| `barrier/P+/t=38@np_barrier` | long-pplus | 156,386,643 | `np_corridor_family_plus.jsonl`, line 37 (at_H.iso) | ok, 2026-11-17, `cca3b91`, 0.704 s | 156,386,643 |
-| `barrier/P+/t=39@np_barrier` | long-pplus | 178,136,477 | `np_corridor_family_plus.jsonl`, line 38 (at_H.iso) | ok, 2026-11-17, `cca3b91`, 0.703 s | 178,136,477 |
 | `quiver/P+/t=3` | section-09, smoke | height 9 |  | ok, 2026-11-17, `cf1a25a`, 0.065 s | height 9, mutation_heights (80, 26, 78, 52, 60) |
 | `route/P+/t=3` | section-09, smoke | mutations 94, top 413, at_top 1, ends_at_opposite yes | `np_corridor_family_plus.jsonl`, line 2 (route_steps_to_top) | ok, 2026-11-17, `cf1a25a`, 0.063 s | at_top 1, ends_at_opposite yes, first_heights (9, 26, 43, 44), mutations 94, top 413 |
 | `route/P+/t=3@shortest` | smoke | mutations 94, top 413 |  | ok, 2026-11-17, `cf1a25a`, 0.221 s | mutations 94, top 413 |
-| `route/P+/t=30` | section-09 | mutations 106,204, top 47,790,899, at_top 1, ends_at_opposite yes | `np_corridor_family_plus.jsonl`, line 29 (route_steps_to_top) | ok, 2026-11-17, `cf1a25a`, 0.253 s | at_top 1, ends_at_opposite yes, first_heights (900, 2,699, 4,498, 6,297), mutations 106,204, top 47,790,899 |
-| `route/P+/t=31` | section-09 | mutations 117,246, top 56,335,741, at_top 1, ends_at_opposite yes | `np_corridor_family_plus.jsonl`, line 30 (route_steps_to_top) | ok, 2026-11-17, `cf1a25a`, 0.294 s | at_top 1, ends_at_opposite yes, first_heights (961, 2,882, 4,803, 6,724), mutations 117,246, top 56,335,741 |
-| `route/P+/t=32` | section-09 | mutations 129,028, top 66,061,311, at_top 1, ends_at_opposite yes | `np_corridor_family_plus.jsonl`, line 31 (route_steps_to_top) | ok, 2026-11-17, `cf1a25a`, 0.315 s | at_top 1, ends_at_opposite yes, first_heights (1,024, 3,071, 5,118, 7,165), mutations 129,028, top 66,061,311 |
-| `route/P+/t=33` | section-09 | mutations 141,574, top 77,085,953, at_top 1, ends_at_opposite yes | `np_corridor_family_plus.jsonl`, line 32 (route_steps_to_top) | ok, 2026-11-17, `cf1a25a`, 0.316 s | at_top 1, ends_at_opposite yes, first_heights (1,089, 3,266, 5,443, 7,620), mutations 141,574, top 77,085,953 |
-| `route/P+/t=34` | section-09 | mutations 154,908, top 89,535,667, at_top 1, ends_at_opposite yes | `np_corridor_family_plus.jsonl`, line 33 (route_steps_to_top) | ok, 2026-11-17, `cf1a25a`, 0.335 s | at_top 1, ends_at_opposite yes, first_heights (1,156, 3,467, 5,778, 8,089), mutations 154,908, top 89,535,667 |
-| `route/P+/t=35` | section-09 | mutations 169,054, top 103,544,349, at_top 1, ends_at_opposite yes | `np_corridor_family_plus.jsonl`, line 34 (route_steps_to_top) | ok, 2026-11-17, `cf1a25a`, 0.374 s | at_top 1, ends_at_opposite yes, first_heights (1,225, 3,674, 6,123, 8,572), mutations 169,054, top 103,544,349 |
-| `route/P+/t=36` | section-09 | mutations 184,036, top 119,254,031, at_top 1, ends_at_opposite yes | `np_corridor_family_plus.jsonl`, line 35 (route_steps_to_top) | ok, 2026-11-17, `cf1a25a`, 0.393 s | at_top 1, ends_at_opposite yes, first_heights (1,296, 3,887, 6,478, 9,069), mutations 184,036, top 119,254,031 |
-| `route/P+/t=37` | section-09 | mutations 199,878, top 136,815,121, at_top 1, ends_at_opposite yes | `np_corridor_family_plus.jsonl`, line 36 (route_steps_to_top) | ok, 2026-11-17, `cf1a25a`, 0.414 s | at_top 1, ends_at_opposite yes, first_heights (1,369, 4,106, 6,843, 9,580), mutations 199,878, top 136,815,121 |
-| `route/P+/t=38` | section-09 | mutations 216,604, top 156,386,643, at_top 1, ends_at_opposite yes | `np_corridor_family_plus.jsonl`, line 37 (route_steps_to_top) | ok, 2026-11-17, `cf1a25a`, 0.435 s | at_top 1, ends_at_opposite yes, first_heights (1,444, 4,331, 7,218, 10,105), mutations 216,604, top 156,386,643 |
-| `route/P+/t=39` | section-09 | mutations 234,238, top 178,136,477, at_top 1, ends_at_opposite yes | `np_corridor_family_plus.jsonl`, line 38 (route_steps_to_top) | ok, 2026-11-17, `cf1a25a`, 0.475 s | at_top 1, ends_at_opposite yes, first_heights (1,521, 4,562, 7,603, 10,644), mutations 234,238, top 178,136,477 |
 
 <a name="claim-s9-t8"></a>
 
@@ -1104,7 +1084,6 @@ t = 8: 1,924 mutations, top 61,503
 |---|---|---|---|---|---|
 | `barrier/P+/t=8` | section-09 | 61,503 | `np_corridor_family_plus.jsonl`, line 7 (at_H.iso) | ok, 2026-11-17, `cf1a25a`, 1.231 s | 61,503 |
 | `barrier/P+/t=8@np_barrier` | long-pplus, section-14 | 61,503 | `np_corridor_family_plus.jsonl`, line 7 (at_H.iso) | ok, 2026-11-17, `cca3b91`, 0.129 s | 61,503 |
-| `barrier/P+/t=80@np_barrier` | long-pplus | 6,512,646,399 |  | unsupported, 2026-11-17, `b32b7c5`, 0.063 s |  |
 | `route/P+/t=8` | section-09 | mutations 1,924, top 61,503, at_top 1, ends_at_opposite yes | `np_corridor_family_plus.jsonl`, line 7 (route_steps_to_top) | ok, 2026-11-17, `cf1a25a`, 0.084 s | at_top 1, ends_at_opposite yes, first_heights (64, 191, 318, 445), mutations 1,924, top 61,503 |
 
 <a name="claim-s9-search"></a>
