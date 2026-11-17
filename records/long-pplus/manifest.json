@@ -1,0 +1,3922 @@
+{
+ "batch": "long-pplus",
+ "tasks": [
+  {
+   "article": "Theorem 9.1",
+   "cost": 2,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 1
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=2@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": 51,
+   "set": 0,
+   "value": 2
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 3,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 2
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=3@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": 413,
+   "set": 0,
+   "value": 3
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 4,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 3
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=4@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": 1807,
+   "set": 0,
+   "value": 4
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 5,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 4
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=5@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": 5649,
+   "set": 0,
+   "value": 5
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 6,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 5
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=6@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": 14291,
+   "set": 0,
+   "value": 6
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 7,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 6
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=7@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": 31261,
+   "set": 0,
+   "value": 7
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 8,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 7
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=8@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": 61503,
+   "set": 0,
+   "value": 8
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 9,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 8
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=9@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": 111617,
+   "set": 0,
+   "value": 9
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 10,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 9
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=10@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": 190099,
+   "set": 0,
+   "value": 10
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 11,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 10
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=11@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": 307581,
+   "set": 0,
+   "value": 11
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 12,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 11
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=12@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": 477071,
+   "set": 0,
+   "value": 12
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 13,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 12
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=13@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": 714193,
+   "set": 0,
+   "value": 13
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 14,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 13
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=14@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": 1037427,
+   "set": 0,
+   "value": 14
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 15,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 14
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=15@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": 1468349,
+   "set": 0,
+   "value": 15
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 16,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 15
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=16@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": 2031871,
+   "set": 0,
+   "value": 16
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 17,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 16
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=17@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": 2756481,
+   "set": 0,
+   "value": 17
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 18,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 17
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=18@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": 3674483,
+   "set": 0,
+   "value": 18
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 19,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 18
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=19@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": 4822237,
+   "set": 0,
+   "value": 19
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 20,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 19
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=20@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": 6240399,
+   "set": 0,
+   "value": 20
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 21,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 20
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=21@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": 7974161,
+   "set": 0,
+   "value": 21
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 22,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 21
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=22@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": 10073491,
+   "set": 0,
+   "value": 22
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 23,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 22
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=23@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": 12593373,
+   "set": 0,
+   "value": 23
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 24,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 23
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=24@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": 15594047,
+   "set": 0,
+   "value": 24
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 25,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 24
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=25@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": 19141249,
+   "set": 0,
+   "value": 25
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 26,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 25
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=26@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": 23306451,
+   "set": 0,
+   "value": 26
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 27,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 26
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=27@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": 28167101,
+   "set": 0,
+   "value": 27
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 28,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 27
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=28@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": 33806863,
+   "set": 0,
+   "value": 28
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 29,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 28
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=29@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": 40315857,
+   "set": 0,
+   "value": 29
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 30,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 29
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=30@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": 47790899,
+   "set": 0,
+   "value": 30
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 31,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 30
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=31@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": 56335741,
+   "set": 0,
+   "value": 31
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 32,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 31
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=32@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": 66061311,
+   "set": 0,
+   "value": 32
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 33,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 32
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=33@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": 77085953,
+   "set": 0,
+   "value": 33
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 34,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 33
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=34@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": 89535667,
+   "set": 0,
+   "value": 34
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 35,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 34
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=35@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": 103544349,
+   "set": 0,
+   "value": 35
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 36,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 35
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=36@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": 119254031,
+   "set": 0,
+   "value": 36
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 37,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 36
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=37@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": 136815121,
+   "set": 0,
+   "value": 37
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 38,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 37
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=38@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": 156386643,
+   "set": 0,
+   "value": 38
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 39,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 38
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=39@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": 178136477,
+   "set": 0,
+   "value": 39
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 40,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 39
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=40@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": 202241599,
+   "set": 0,
+   "value": 40
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 41,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 40
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=41@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": 228888321,
+   "set": 0,
+   "value": 41
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 42,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 41
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=42@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": 258272531,
+   "set": 0,
+   "value": 42
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 43,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 42
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=43@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": 290599933,
+   "set": 0,
+   "value": 43
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 44,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 43
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=44@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": 326086287,
+   "set": 0,
+   "value": 44
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 45,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 44
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=45@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": 364957649,
+   "set": 0,
+   "value": 45
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 46,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 45
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=46@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": 407450611,
+   "set": 0,
+   "value": 46
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 47,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 46
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=47@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": 453812541,
+   "set": 0,
+   "value": 47
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 48,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 47
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=48@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": 504301823,
+   "set": 0,
+   "value": 48
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 49,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 48
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=49@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": 559188097,
+   "set": 0,
+   "value": 49
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 50,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 49
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=50@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": 618752499,
+   "set": 0,
+   "value": 50
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 51,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 50
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=51@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": 683287901,
+   "set": 0,
+   "value": 51
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 52,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 51
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=52@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": 753099151,
+   "set": 0,
+   "value": 52
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 53,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 52
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=53@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": 828503313,
+   "set": 0,
+   "value": 53
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 54,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 53
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=54@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": 909829907,
+   "set": 0,
+   "value": 54
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 55,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 54
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=55@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": 997421149,
+   "set": 0,
+   "value": 55
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 56,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 55
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=56@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": 1091632191,
+   "set": 0,
+   "value": 56
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 57,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 56
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=57@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": 1192831361,
+   "set": 0,
+   "value": 57
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 58,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 57
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=58@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": 1301400403,
+   "set": 0,
+   "value": 58
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 59,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 58
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=59@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": 1417734717,
+   "set": 0,
+   "value": 59
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 60,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 59
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=60@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": 1542243599,
+   "set": 0,
+   "value": 60
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 61,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 60
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=61@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": 1675350481,
+   "set": 0,
+   "value": 61
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 62,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 61
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=62@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": 1817493171,
+   "set": 0,
+   "value": 62
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 63,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 62
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=63@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": 1969124093,
+   "set": 0,
+   "value": 63
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 64,
+   "evidence": [
+    {
+     "field": "at_H.iso",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 63
+    }
+   ],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=64@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": 2130710527,
+   "set": 0,
+   "value": 64
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 65,
+   "evidence": [],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=65@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": 2302734849,
+   "set": 0,
+   "value": 65
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 66,
+   "evidence": [],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=66@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": 2485694771,
+   "set": 0,
+   "value": 66
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 67,
+   "evidence": [],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=67@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": 2680103581,
+   "set": 0,
+   "value": 67
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 68,
+   "evidence": [],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=68@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": 2886490383,
+   "set": 0,
+   "value": 68
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 69,
+   "evidence": [],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=69@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": 3105400337,
+   "set": 0,
+   "value": 69
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 70,
+   "evidence": [],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=70@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": 3337394899,
+   "set": 0,
+   "value": 70
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 71,
+   "evidence": [],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=71@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": 3583052061,
+   "set": 0,
+   "value": 71
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 72,
+   "evidence": [],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=72@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": 3842966591,
+   "set": 0,
+   "value": 72
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 73,
+   "evidence": [],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=73@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": 4117750273,
+   "set": 0,
+   "value": 73
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 74,
+   "evidence": [],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=74@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": 4408032147,
+   "set": 0,
+   "value": 74
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 75,
+   "evidence": [],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=75@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": 4714458749,
+   "set": 0,
+   "value": 75
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 76,
+   "evidence": [],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=76@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": 5037694351,
+   "set": 0,
+   "value": 76
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 77,
+   "evidence": [],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=77@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": 5378421201,
+   "set": 0,
+   "value": 77
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 78,
+   "evidence": [],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=78@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": 5737339763,
+   "set": 0,
+   "value": 78
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 79,
+   "evidence": [],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=79@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": 6115168957,
+   "set": 0,
+   "value": 79
+  },
+  {
+   "article": "Theorem 9.1",
+   "cost": 80,
+   "evidence": [],
+   "family": "P+",
+   "group": "barrier P+_t",
+   "id": "barrier/P+/t=80@np_barrier",
+   "kind": "barrier",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": 6512646399,
+   "set": 0,
+   "value": 80
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 51,
+   "cost": 2,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 1
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=2@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 157
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 2
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 413,
+   "cost": 3,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 2
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=3@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 173
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 3
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 1807,
+   "cost": 4,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 3
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=4@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 381
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 4
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 5649,
+   "cost": 5,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 4
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=5@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 726
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 5
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 14291,
+   "cost": 6,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 5
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=6@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 1247
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 6
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 31261,
+   "cost": 7,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 6
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=7@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 1982
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 7
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 61503,
+   "cost": 8,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 7
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=8@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 2961
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 8
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 111617,
+   "cost": 9,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 8
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=9@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 4223
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 9
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 190099,
+   "cost": 10,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 9
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=10@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 5803
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 10
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 307581,
+   "cost": 11,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 10
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=11@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 7736
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 11
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 477071,
+   "cost": 12,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 11
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=12@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 10061
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 12
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 714193,
+   "cost": 13,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 12
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=13@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 12811
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 13
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 1037427,
+   "cost": 14,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 13
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=14@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 16022
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 14
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 1468349,
+   "cost": 15,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 14
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=15@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 19733
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 15
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 2031871,
+   "cost": 16,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 15
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=16@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 23980
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 16
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 2756481,
+   "cost": 17,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 16
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=17@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 28794
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 17
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 3674483,
+   "cost": 18,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 17
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=18@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 34216
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 18
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 4822237,
+   "cost": 19,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 18
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=19@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 40281
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 19
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 6240399,
+   "cost": 20,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 19
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=20@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 47021
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 20
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 7974161,
+   "cost": 21,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 20
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=21@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 54477
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 21
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 10073491,
+   "cost": 22,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 21
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=22@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 62686
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 22
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 12593373,
+   "cost": 23,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 22
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=23@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 71677
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 23
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 15594047,
+   "cost": 24,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 23
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=24@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 81493
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 24
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 19141249,
+   "cost": 25,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 24
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=25@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 92166
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 25
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 23306451,
+   "cost": 26,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 25
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=26@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 103732
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 26
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 28167101,
+   "cost": 27,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 26
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=27@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 116228
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 27
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 33806863,
+   "cost": 28,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 27
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=28@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 129692
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 28
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 40315857,
+   "cost": 29,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 28
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=29@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 144160
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 29
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 47790899,
+   "cost": 30,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 29
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=30@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 159662
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 30
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 56335741,
+   "cost": 31,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 30
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=31@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 176241
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 31
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 66061311,
+   "cost": 32,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 31
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=32@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 193929
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 32
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 77085953,
+   "cost": 33,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 32
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=33@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 212764
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 33
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 89535667,
+   "cost": 34,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 33
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=34@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 232779
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 34
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 103544349,
+   "cost": 35,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 34
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=35@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 254015
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 35
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 119254031,
+   "cost": 36,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 35
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=36@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 276504
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 36
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 136815121,
+   "cost": 37,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 36
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=37@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 300284
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 37
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 156386643,
+   "cost": 38,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 37
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=38@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 325388
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 38
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 178136477,
+   "cost": 39,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 38
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=39@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 600
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 351856
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 39
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 202241599,
+   "cost": 40,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 39
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=40@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 379723
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 40
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 228888321,
+   "cost": 41,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 40
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=41@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 409021
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 41
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 258272531,
+   "cost": 42,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 41
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=42@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 439790
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 42
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 290599933,
+   "cost": 43,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 42
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=43@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 472066
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 43
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 326086287,
+   "cost": 44,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 43
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=44@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 505883
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 44
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 364957649,
+   "cost": 45,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 44
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=45@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 541281
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 45
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 407450611,
+   "cost": 46,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 45
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=46@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 578292
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 46
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 453812541,
+   "cost": 47,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 46
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=47@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 616953
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 47
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 504301823,
+   "cost": 48,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 47
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=48@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 657299
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 48
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 559188097,
+   "cost": 49,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 48
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=49@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 699369
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 49
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 618752499,
+   "cost": 50,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 49
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=50@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 743195
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 50
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 683287901,
+   "cost": 51,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 50
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=51@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 788816
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 51
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 753099151,
+   "cost": 52,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 51
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=52@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 836268
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 52
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 828503313,
+   "cost": 53,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 52
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=53@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 885586
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 53
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 909829907,
+   "cost": 54,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 53
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=54@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 936805
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 54
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 997421149,
+   "cost": 55,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 54
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=55@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 989961
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 55
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 1091632191,
+   "cost": 56,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 55
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=56@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 1045096
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 56
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 1192831361,
+   "cost": 57,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 56
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=57@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 1102237
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 57
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 1301400403,
+   "cost": 58,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 57
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=58@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 1161426
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 58
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 1417734717,
+   "cost": 59,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 58
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=59@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 1222695
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 59
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 1542243599,
+   "cost": 60,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 59
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=60@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 1286083
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 60
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 1675350481,
+   "cost": 61,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 60
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=61@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 1351626
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 61
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 1817493171,
+   "cost": 62,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 61
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=62@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 1419360
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 62
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 1969124093,
+   "cost": 63,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 62
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=63@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 1489317
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 63
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 2130710527,
+   "cost": 64,
+   "evidence": [
+    {
+     "field": "below_H.popped",
+     "file": "np_corridor_family_plus.jsonl",
+     "line": 63
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=64@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 1561537
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 64
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 2302734849,
+   "cost": 65,
+   "evidence": [
+    {
+     "file": "review17_plain_65_80.log",
+     "line": 1
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=65@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 1636055
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 65
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 2485694771,
+   "cost": 66,
+   "evidence": [
+    {
+     "file": "review17_plain_65_80.log",
+     "line": 2
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=66@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 1712909
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 66
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 2680103581,
+   "cost": 67,
+   "evidence": [
+    {
+     "file": "review17_plain_65_80.log",
+     "line": 3
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=67@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 1792136
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 67
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 2886490383,
+   "cost": 68,
+   "evidence": [
+    {
+     "file": "review17_plain_65_80.log",
+     "line": 4
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=68@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 1873764
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 68
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 3105400337,
+   "cost": 69,
+   "evidence": [
+    {
+     "file": "review17_plain_65_80.log",
+     "line": 5
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=69@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 1957835
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 69
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 3337394899,
+   "cost": 70,
+   "evidence": [
+    {
+     "file": "review17_plain_65_80.log",
+     "line": 6
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=70@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 2044385
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 70
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 3583052061,
+   "cost": 71,
+   "evidence": [
+    {
+     "file": "review17_plain_65_80.log",
+     "line": 7
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=71@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 2133448
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 71
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 3842966591,
+   "cost": 72,
+   "evidence": [
+    {
+     "file": "review17_plain_65_80.log",
+     "line": 8
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=72@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 2225064
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 72
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 4117750273,
+   "cost": 73,
+   "evidence": [
+    {
+     "file": "review17_plain_65_80.log",
+     "line": 9
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=73@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 2319263
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 73
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 4408032147,
+   "cost": 74,
+   "evidence": [
+    {
+     "file": "review17_plain_65_80.log",
+     "line": 10
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=74@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 2416084
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 74
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 4714458749,
+   "cost": 75,
+   "evidence": [
+    {
+     "file": "review17_plain_65_80.log",
+     "line": 11
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=75@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 2515565
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 75
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 5037694351,
+   "cost": 76,
+   "evidence": [
+    {
+     "file": "review17_plain_65_80.log",
+     "line": 12
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=76@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 2617739
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 76
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 5378421201,
+   "cost": 77,
+   "evidence": [
+    {
+     "file": "review17_plain_65_80.log",
+     "line": 13
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=77@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 2722644
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 77
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 5737339763,
+   "cost": 78,
+   "evidence": [
+    {
+     "file": "review17_plain_65_80.log",
+     "line": 14
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=78@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 2830314
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 78
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 6115168957,
+   "cost": 79,
+   "evidence": [
+    {
+     "file": "review17_plain_65_80.log",
+     "line": 15
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=79@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 2940788
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 79
+  },
+  {
+   "article": "Theorem 9.1",
+   "bound": 6512646399,
+   "cost": 80,
+   "evidence": [
+    {
+     "file": "review17_plain_65_80.log",
+     "line": 16
+    }
+   ],
+   "family": "P+",
+   "group": "reach P+_t",
+   "id": "reach/P+/t=80@np_barrier",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1500,
+    "time_seconds": 1800
+   },
+   "method": "np_barrier",
+   "predicted": {
+    "low": 1,
+    "quivers": 3054100
+   },
+   "prune_forks": false,
+   "set": 1,
+   "value": 80
+  }
+ ]
+}
