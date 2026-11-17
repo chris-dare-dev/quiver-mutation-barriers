@@ -1,0 +1,41 @@
+# LONG RUN, for a machine left alone for hours.  Q_a (Proposition 10.2): the quivers reached from Q_a
+# below H(a), by the program of note 20 (experiments/np_qa_core.py, one process per a):
+#   with no pruning for 2 <= a <= 48   (3,057,734,065 quivers at a = 48);
+#   with forks not expanded for 2 <= a <= 64   (4,165,617,632 at a = 64).
+# The original logs record, as upper bounds on a loaded machine, 2,264 s for a = 48 without pruning and
+# 3,168 s for a = 64 with it.  Their memory was not recorded: the limits below are starting values,
+# and `--retry timeout,memory` with larger ones computes again what was stopped.  Needs `make build`
+# and numpy (experiments/requirements.txt).  The program keeps a cache under ~/.cache/qmb-np/.
+
+name = "long-qa"
+
+[scheduler]
+workers = 3
+memory_budget_mb = 12000
+
+[limits]
+time_seconds = 900
+memory_mb = 2000
+
+[[limits.tier]]
+min_cost = 24
+time_seconds = 3600
+memory_mb = 4000
+
+[[limits.tier]]
+min_cost = 40
+time_seconds = 14400
+memory_mb = 6000
+
+[[tasks]]
+kind = "reach"
+family = "Qa"
+range = [2, 48]
+method = "np_qa_core"
+
+[[tasks]]
+kind = "reach"
+family = "Qa"
+range = [2, 64]
+method = "np_qa_core"
+prune_forks = true

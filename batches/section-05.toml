@@ -1,0 +1,33 @@
+# Section 5, the first barrier (Theorem 5.1): G_k is joined to its opposite at exactly k(k - 1).
+# For 3 <= k <= 40: the heights of the four mutations, the barrier by search, the quivers below it
+# (G_k alone), and the route mu_1, mu_2, mu_3, mu_0.  Seconds; standard library only.
+
+name = "section-05"
+
+[scheduler]
+workers = 4
+memory_budget_mb = 1600
+
+[limits]
+time_seconds = 120
+memory_mb = 400
+
+[[tasks]]
+kind = "quiver"
+family = "G"
+range = [3, 40]
+
+[[tasks]]
+kind = "barrier"
+family = "G"
+range = [3, 40]
+
+[[tasks]]
+kind = "reach"
+family = "G"
+range = [3, 40]
+
+[[tasks]]
+kind = "route"
+family = "G"
+range = [3, 40]

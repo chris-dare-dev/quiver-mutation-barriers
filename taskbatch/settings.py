@@ -69,4 +69,6 @@ def load_settings(repository: Path = REPOSITORY) -> Settings:
     reserved = {"name", "scheduler", "limits", "tasks"} & set(keys)
     if reserved:
         raise SettingsError(f"[tool.taskbatch] description_keys cannot contain {sorted(reserved)[0]!r}")
-    return Settings(runner=None if runner is None else resolve_runner(runner, repository), description_keys=keys)
+    return Settings(
+        runner=None if runner is None else resolve_runner(runner, repository), description_keys=keys
+    )

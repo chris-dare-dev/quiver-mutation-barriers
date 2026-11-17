@@ -1,0 +1,44 @@
+# Section 7, counters and the constant 2: R_b (Theorem 7.2) and Q_t.
+# R_b for 5 <= b <= 60: the barrier 2b^2 - 3b - 3 by a search with no pruning (the theorem covers even
+# b >= 6; odd b is computational), the route for even b, and the quivers below the barrier where a stored count exists.  Q_t for
+# 3 <= t <= 16: the barrier 2t^4 - t^3 - t^2 + 2t.  The two certificate programs: 30 and 43 claims.
+# Under a minute; standard library only.
+
+name = "section-07"
+
+[scheduler]
+workers = 4
+memory_budget_mb = 2000
+
+[limits]
+time_seconds = 300
+memory_mb = 500
+
+[[tasks]]
+kind = "quiver"
+family = "R"
+range = [5, 60]
+
+[[tasks]]
+kind = "barrier"
+family = "R"
+range = [5, 60]
+
+[[tasks]]
+kind = "reach"
+family = "R"
+values = [6, 8, 10, 16, 20, 30, 40, 60]
+
+[[tasks]]
+kind = "route"
+family = "R"
+values = [6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60]
+
+[[tasks]]
+kind = "barrier"
+family = "Qt"
+range = [3, 16]
+
+[[tasks]]
+kind = "certificate"
+names = ["R_b", "Q_t"]

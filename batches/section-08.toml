@@ -1,0 +1,33 @@
+# Section 8, the census.  The census itself is a long run and is not a task of this repository (see
+# CLAIMS.md, "Re-running").  What is computed here is the one statement of the section about named
+# quivers: the two pockets born at height 9 that die at 132 are Q_3 and R_9.  Seconds.
+
+name = "section-08"
+
+[scheduler]
+workers = 2
+memory_budget_mb = 800
+
+[limits]
+time_seconds = 120
+memory_mb = 400
+
+[[tasks]]
+kind = "quiver"
+family = "Qt"
+values = [3]
+
+[[tasks]]
+kind = "quiver"
+family = "R"
+values = [9]
+
+[[tasks]]
+kind = "barrier"
+family = "Qt"
+values = [3]
+
+[[tasks]]
+kind = "barrier"
+family = "R"
+values = [9]

@@ -1,0 +1,19 @@
+# Section 13, deciding equivalence on four vertices: the counts of the section, recomputed by the
+# counting script of note 23 (verify/review23_n22_counts.py) FROM THE STORED OUTPUTS of the core and
+# tube programs.  This recounts; it does not regenerate a core or a certificate (that is
+# batches/long-section-13.toml).  Needs the data archive unpacked (DATA.md), or QMB_DATA set to the
+# directory with its files.  About 20 seconds and 3 GB.
+
+name = "section-13"
+
+[scheduler]
+workers = 1
+memory_budget_mb = 6000
+
+[limits]
+time_seconds = 600
+memory_mb = 6000
+
+[[tasks]]
+kind = "census"
+stages = ["decided-classes"]

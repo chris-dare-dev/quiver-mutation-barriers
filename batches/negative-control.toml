@@ -1,0 +1,30 @@
+# A negative control: three tasks whose predicted values are wrong on purpose.  Each must end
+# `mismatch`, and `run` must end with status 1.  If one of them ends `ok`, the comparison of computed
+# and predicted values is broken.  The ids end in "!control"; no claim refers to them.
+
+name = "negative-control"
+
+[scheduler]
+workers = 2
+memory_budget_mb = 800
+
+[limits]
+time_seconds = 120
+memory_mb = 400
+
+[[tasks]]
+kind = "barrier"
+family = "R"
+values = [8]
+control = { predicted = 100 }
+
+[[tasks]]
+kind = "route"
+family = "R"
+values = [8]
+control = { predicted = { mutations = 36 } }
+
+[[tasks]]
+kind = "certificate"
+names = ["R_b"]
+control = { predicted = { claims = 31 } }

@@ -17,7 +17,11 @@ The scripts behind the notes ([../docs/README.md](../docs/README.md) says which 
 | `np_barrier.c` | `python -I np_corridor.py build` (runs `gcc -O2 -Wall`) | `~/.cache/qmb-np/np_barrier` | `np_corridor.py`, `np_rowwalk.py`, `np_qa_core.py crosscheck`, `owf_barrier.py` |
 | `np_qa_core.c` | `python -I np_qa_core.py build` | `~/.cache/qmb-np/np_qa_core` (or the path in `NP_QA_CORE_BIN`) | `np_qa_core.py` |
 
-Both are plain C with no dependency beyond the C library; the build line is also in each file's header. They were built with gcc 15 on x86-64 Linux for the stored results, and `np_barrier.c` was rebuilt for this repository (see DATA.md, Verification). `owf_barrier.py` uses a second binary of `np_barrier.c` for eight vertices, `~/.cache/qmb-np/np_barrier8`; the two lines that build it are in the *Reproduce* section of [note 21](../docs/21-barriers-and-the-mutation-path-owf.md). `np_qa_core.py` keeps a cache of regions in `~/.cache/qmb-np/qa_core/` (1.7 GB for the runs of note 20).
+Both are plain C with no dependency beyond the C library; the build line is also in each file's header. `make build`, from the repository root, compiles the same two files with the same flags (`gcc -O2 -Wall`) into `build/`, where the task runner looks for them; it does not touch `~/.cache/qmb-np/`. They were built with gcc 15 on x86-64 Linux for the stored results, and `np_barrier.c` was rebuilt for this repository (see DATA.md, Verification). `owf_barrier.py` uses a second binary of `np_barrier.c` for eight vertices, `~/.cache/qmb-np/np_barrier8`; the two lines that build it are in the *Reproduce* section of [note 21](../docs/21-barriers-and-the-mutation-path-owf.md). `np_qa_core.py` keeps a cache of regions in `~/.cache/qmb-np/qa_core/` (1.7 GB for the runs of note 20).
+
+## These scripts and the tasks
+
+The scripts here are the programs that produced the stored results, and they are unchanged by the tasks and batches of this repository ([../README.md](../README.md#tasks-batches-and-records)). A task that needs one of them runs it as a program, in an empty scratch directory under `~/.cache/qmb-scratch/` (or `$QMB_SCRATCH`), never in this directory, so nothing here is overwritten. The package `../qmb/` is separate code and is not imported by any script here.
 
 ## Files added for this repository
 

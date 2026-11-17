@@ -1,0 +1,40 @@
+# Section 9, a fifth vertex: P+_t (Theorem 9.1).
+# The route of 4t^3 - 2t^2 + 4 mutations with one quiver at 2t^5 - t^4 + t^2 - 1, replayed for
+# 2 <= t <= 64; the barrier and the quivers below it by a search with no pruning for 2 <= t <= 12 (in
+# Python; batches/long-pplus.toml goes to t = 80 with the C search); and the certificate program for
+# t >= 8 (938 claims, 766 exits) with its audits to t = 11.  About a minute; standard library only.
+
+name = "section-09"
+
+[scheduler]
+workers = 4
+memory_budget_mb = 2400
+
+[limits]
+time_seconds = 600
+memory_mb = 600
+
+[[tasks]]
+kind = "quiver"
+family = "P+"
+range = [2, 64]
+
+[[tasks]]
+kind = "route"
+family = "P+"
+range = [2, 64]
+
+[[tasks]]
+kind = "barrier"
+family = "P+"
+range = [2, 12]
+
+[[tasks]]
+kind = "reach"
+family = "P+"
+range = [2, 12]
+
+[[tasks]]
+kind = "certificate"
+names = ["P+_t"]
+audit_tmax = 11

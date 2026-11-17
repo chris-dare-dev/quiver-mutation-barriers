@@ -1,0 +1,29 @@
+# LONG RUN, never executed under the scheduler, not even at reduced size: the programs take no option
+# that makes them small.  Section 13, three stages, each by its own program on the STORED OUTPUT of the
+# stage before it:
+#   finite-cores                 the core of every census class (original log: 520 s on 9 processes)
+#   tube-certificates-note-14    tube certificates of the classes without a finite core (about an hour)
+#   tube-certificates-note-22    the second pass (original log: 2,709 s on 6 processes)
+# Needs the data archive unpacked (DATA.md) or QMB_DATA, and numpy.  Each program starts `procs`
+# processes of its own.  The memory limit covers them all only under the control-group guard
+# (`--memory-guard cgroup`); the polling guard sees the first process alone.  The limits are guesses.
+
+name = "long-section-13"
+
+[scheduler]
+workers = 1
+memory_budget_mb = 16000
+
+[limits]
+time_seconds = 14400
+memory_mb = 16000
+
+[[tasks]]
+kind = "core"
+stages = ["finite-cores"]
+procs = 8
+
+[[tasks]]
+kind = "tube"
+stages = ["tube-certificates-note-14", "tube-certificates-note-22"]
+procs = 6

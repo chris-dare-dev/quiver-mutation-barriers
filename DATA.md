@@ -48,6 +48,12 @@ Every stored result behind the notes: the `.log`, `.json`, `.jsonl` and gzip-com
 
 Not in it: the papers the notes cite; the intermediate files listed under "What is not stored" in [CLAIMS.md](CLAIMS.md#what-is-not-stored).
 
+## Predicted values taken from the stored results
+
+[claims/expected.json](claims/expected.json) is in git. It maps a task of [batches/](batches/) to its predicted value and to the stored result that carries the original number, as file and line. [tools/expected.py](tools/expected.py) writes it from the unpacked archive (`make expected DATA=experiments`) and can check it (`python3 tools/expected.py check experiments`); its docstring says which values are copied from stored results and which are closed forms. It reads the stored results and changes none of them.
+
+A stored result is what an earlier program printed. It is not a record: the records in [records/](records/) are written by the scheduler when a task is computed here, and no stored result was converted into one.
+
 ## What was rewritten, and by which script
 
 No stored result was edited by hand for this repository. One script, [tools/renumber_results.py](tools/renumber_results.py), was applied once to a copy of the original outputs, and the archive holds its output. Its docstring is the specification. It changed three kinds of text and no number, count, quiver or timing:

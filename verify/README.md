@@ -14,6 +14,24 @@ All of this code, like the code it checks, was written by instances of the same 
 - `smoke.py` was written for this repository. It uses the standard library only, imports nothing from `experiments/` or from the other scripts here, and reads no stored result. It recomputes, from the definition of mutation: for R₈ the barrier 101, the 35 quivers below it, the 37 mutations and the 28 quivers at 101; the route of G₈ and the barriers of G_k (k ≤ 12), R_b (b ≤ 14), Q_t (t = 3, 4), P⁺_t (t = 2, 3) and Q_a (a ≤ 4, with route lengths for a ≤ 3); and Conjecture 5.5 up to height 4 (the counts of quivers and of those that reach an acyclic quiver within their height). `--full` adds Q₇ (1,242), R_b to b = 20 and heights 5 and 6. Its expected values are typed from the article. What it shares with the rest: nothing but the definitions.
 - `smoke_certificates.sh` runs the repository's own certificate programs (`n4_doors.py prove2`, `prove`; `np_corridor_prove.py prove`; the Q₇ route of `np_rowwalk.py`) and checks their last lines. It is not an independent check: it shows that the programs run from a clean copy and certify what the notes say.
 
+## The task runner and its core
+
+The tasks of [../batches/](../batches/) are computed by `../runners/task_runner.py` with the package [../qmb/](../qmb/). This is how each kind of task relates to the code under check and to the code in this directory:
+
+| Task kind, method | Computed by | What it shares |
+|---|---|---|
+| `quiver`, `barrier` and `reach` by search, `route`, `conj55` | `qmb/`: its own mutation, canonical form, fork test, searches and route words, standard library only | Nothing with `experiments/`, nothing with this directory. `qmb/` was written for this repository from the statements of the article and the paper; no script here imports it, and it imports none. `smoke.py` and `qmb/` are two separate implementations of the same definitions, and neither reads the other. |
+| `barrier` and `reach` with method `np_barrier` | `experiments/np_barrier.c`, built by `make build` | The search is the code under check. `qmb/` only writes its input line, and tests that the quiver it reports is the opposite of the start. |
+| `reach` with method `np_qa_core` | `experiments/np_qa_core.py` driving `np_qa_core.c` | The code under check, run again. |
+| `certificate` | `experiments/n4_doors.py prove2`, `prove`; `np_corridor_prove.py prove` | The certificate programs themselves, run again; the task reads their verdict. Not an independent check, as for `smoke_certificates.sh`. |
+| `conj55_program` | `experiments/n4_conj55.py run`, `resolve`, `summary` | The code under check, run again. |
+| `core`, `tube` | `experiments/n4_opposite_run.py cores`, `n4_opposite_tubes.py run`, `n4_tube_lemma.py certify2`, on stored inputs | The code under check, run again on the stored output of the stage before it. |
+| `census` (`decided-classes`) | `review23_n22_counts.py` of this directory, on stored outputs | The counting script of note 23, run again on the stored outputs of the programs it checks. It recounts those outputs and regenerates none of them. |
+
+Where two methods compute the same task, they can be compared: `make test` checks `np_barrier.c` against the searches of `qmb/` at small parameters (and `np_qa_core.py` too, when numpy is installed), and the section batches compare the searches of `qmb/` with the stored counts of the original programs (P⁺_t for t ≤ 12, Q_a for a ≤ 7, with and without expanding forks). `../tests/test_independence.py` fails if a script of this directory or of `experiments/` imports `qmb/` or the scheduler, or if `smoke.py` imports anything outside the standard library.
+
+`qmb/`, the batch files and the tests were written by an instance of the same AI model as the rest.
+
 ## The checks of notes 12, 17, 19 and 23
 
 File names: `reviewNN…` belongs to note NN; a tag `nMM` names the note under check (`review19_n13_…` checks note 13 and belongs to note 19; `n14a`, `n14b` are two separate checks of note 14).

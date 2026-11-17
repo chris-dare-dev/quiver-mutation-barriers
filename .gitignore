@@ -13,3 +13,12 @@ dist/
 __pycache__/
 *.pyc
 .venv/
+# Scratch runs of the scheduler, built C programs, caches of the lint tools
+results/
+build/
+.ruff_cache/
+.mypy_cache/
+# Kept in git, although the patterns above would ignore them: the predicted values and the records
+!claims/expected.json
+!records/*/results.jsonl
+!records/*/manifest.json

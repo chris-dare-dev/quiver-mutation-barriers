@@ -1,0 +1,27 @@
+# What a time limit and a memory limit look like in the records: four barriers next to two synthetic
+# tasks, one that sleeps past its time limit and one that allocates past its memory limit.  Both are
+# stopped and recorded; the barriers are computed.  `run` ends with status 3.
+
+name = "limits-demo"
+
+[scheduler]
+workers = 4
+memory_budget_mb = 1200
+
+[limits]
+time_seconds = 120
+memory_mb = 300
+
+[[tasks]]
+kind = "barrier"
+family = "R"
+values = [6, 8, 10, 12]
+
+[[tasks]]
+kind = "synthetic"
+limits = { time_seconds = 3 }
+items = [{ name = "sleeps-past-its-time-limit", sleep_seconds = 300 }]
+
+[[tasks]]
+kind = "synthetic"
+items = [{ name = "allocates-past-its-memory-limit", allocate_mb = 1000, sleep_seconds = 300 }]
