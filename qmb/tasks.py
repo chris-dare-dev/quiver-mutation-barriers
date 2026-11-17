@@ -20,7 +20,8 @@ Kinds and the keys of their `[[tasks]]` table:
 
 `method` is "search" (this package, the default), "np_barrier" (the C program, after `make build`; it holds
 entries in 32 bits, so a task whose barrier is 2^31 or more ends "unsupported"), or for `reach` also
-"np_qa_core" (the program of note 20); for `route` it is "replay" (the default) or
+"np_qa_core" (the program of note 20, family Qa) and "review17" (the second enumerator of note 17, in
+Python integers, family P+); for `route` it is "replay" (the default) or
 "shortest".  A table with `control = { predicted = ... }` makes negative controls: the same tasks under
 other ids, with a predicted value that is wrong on purpose.
 
@@ -158,11 +159,13 @@ def _expand_barrier(table: Task, where: str) -> Iterator[Task]:
 
 def _expand_reach(table: Task, where: str) -> Iterator[Task]:
     _known(table, where, "family", "values", "range", "method", "prune_forks")
-    method = _choice(table, "method", where, ("search", "np_barrier", "np_qa_core"))
+    method = _choice(table, "method", where, ("search", "np_barrier", "np_qa_core", "review17"))
     prune = bool(table.get("prune_forks", False))
     for chosen, value, task in _family_tasks(table, where):
         if method == "np_qa_core" and chosen.key != "Qa":
             raise TaskError(f"{where}: np_qa_core computes the family Qa only")
+        if method == "review17" and (chosen.key != "P+" or prune):
+            raise TaskError(f"{where}: review17 computes the family P+ only, without pruning")
         suffix = ("/forks-pruned" if prune else "") + ("" if method == "search" else f"@{method}")
         yield task | {
             "id": f"reach/{chosen.key}/{chosen.parameter}={value}{suffix}",
@@ -566,6 +569,24 @@ def _run_reach(task: Task) -> Result:
             "value": {"quivers": result["popped"], "low": result["plateau"]},
             "method": "np_barrier.c, cap one below the barrier, no pruning",
             "search_status": result["status"],
+        }
+    if task["method"] == "review17":
+        with scratch(task["id"]) as work:
+            output = program(
+                "../verify/review17.py", "plain", "--tmin", value, "--tmax", value, "--family", "plus",
+                "--workers", 1, cwd=work,
+            )  # fmt: skip
+        line = re.search(
+            r"^P\+_t t=(\d+) w=\d+ H=(\d+): (\d+) quivers reached below H, (\d+) of height <= w, "
+            r"(\d+) mutations lead to height >= H",
+            output,
+            re.MULTILINE,
+        )
+        found = line is not None and int(line[1]) == value and int(line[2]) == bound
+        return {
+            "value": {"quivers": int(line[3]), "low": int(line[4])} if line is not None and found else None,
+            "method": "verify/review17.py plain, no pruning",
+            "mutations_leading_above": int(line[5]) if line is not None else None,
         }
     require("numpy")
     mode = "chain" if prune else "chain-nofork"

@@ -134,6 +134,15 @@ class Kinds(unittest.TestCase):
         self.assertEqual(route["status"], "ok")
         self.assertEqual(route["value"]["mutations"], 312)
 
+    def test_the_second_enumerator_against_the_search_of_the_core(self) -> None:
+        # verify/review17.py plain shares no code with qmb; both count the quivers below the barrier
+        for t in (2, 3, 4):
+            region = search.below(families.p_plus(t), families.barrier_p_plus(t))
+            result = run_task(one({"kind": "reach", "family": "P+", "values": [t], "method": "review17"}))
+            self.assertEqual((result["status"], result["agrees"]), ("ok", True))
+            self.assertEqual(result["value"], {"quivers": region.quivers, "low": region.low})
+            self.assertEqual(result["method"], "verify/review17.py plain, no pruning")
+
     def test_a_wrong_predicted_value_is_a_mismatch(self) -> None:
         table = {"kind": "barrier", "family": "R", "values": [8], "control": {"predicted": 100}}
         task = one(table)
@@ -164,6 +173,8 @@ class Kinds(unittest.TestCase):
             {"kind": "route", "family": "R", "values": [7]},
             {"kind": "route", "family": "Qt", "values": [3]},
             {"kind": "reach", "family": "R", "values": [8], "method": "np_qa_core"},
+            {"kind": "reach", "family": "R", "values": [8], "method": "review17"},
+            {"kind": "reach", "family": "P+", "values": [3], "method": "review17", "prune_forks": True},
             {"kind": "certificate", "names": ["S_b"]},
             {"kind": "conj55", "heights": [9]},
             {"kind": "census", "stages": ["finite-cores"]},

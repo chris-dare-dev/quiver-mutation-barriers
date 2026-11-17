@@ -323,8 +323,7 @@ cells = [
   '''`np_corridor.py` with `np_barrier.c` against `verify/review17.py plain`; 65 ≤ t ≤ 80 is `review17.py` alone''',
   '''see [what is shared](#independent-checks-what-is-shared)''',
 ]
-tasks = []
-no_task = '''a statement about the two original programs; the tasks of the search are under the row above'''
+tasks = ["reach/P+/t=*@np_barrier", "reach/P+/t=*@review17"]
 
 [[claim]]
 id = "s9-exits"

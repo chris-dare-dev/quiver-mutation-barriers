@@ -137,20 +137,23 @@ def build(directory: Path) -> dict[str, Any]:
             add(f"barrier/P+/t={t}{suffix}", [at(name, line, "at_H.iso")])
             add(f"reach/P+/t={t}{suffix}", [at(name, line, "below_H.popped")], count)
         add(f"route/P+/t={t}", [at(name, line, "route_steps_to_top")])
-    name = "review17_plain_65_80.log"
+        add(f"reach/P+/t={t}@review17", [at(name, line, "below_H.popped")], count)
+    # the second enumerator of note 17: its own log for t <= 64, and the only source for 65 <= t <= 80
     pattern = re.compile(
         r"^P\+_t t=(\d+) w=\d+ H=(\d+): (\d+) quivers reached below H, (\d+) of height <= w,"
     )
-    for line, text in enumerate(stored.lines(name), start=1):
-        match = pattern.match(text)
-        if match:
-            t = int(match[1])
-            _need(int(match[2]) == pp.barrier(t), f"{name}:{line}")
-            add(
-                f"reach/P+/t={t}@np_barrier",
-                [at(name, line)],
-                {"quivers": int(match[3]), "low": int(match[4])},
-            )
+    for name in ("review17_plain.log", "review17_plain_65_80.log"):
+        for line, text in enumerate(stored.lines(name), start=1):
+            match = pattern.match(text)
+            if match:
+                t = int(match[1])
+                count = {"quivers": int(match[3]), "low": int(match[4])}
+                _need(int(match[2]) == pp.barrier(t), f"{name}:{line}")
+                known = tasks.get(f"reach/P+/t={t}@review17", {}).get("predicted")
+                _need(known is None or known == count, f"{name}:{line} against np_corridor_family_plus.jsonl")
+                add(f"reach/P+/t={t}@review17", [at(name, line)], count)
+                if t > 64:
+                    add(f"reach/P+/t={t}@np_barrier", [at(name, line)], count)
 
     # Q_a: the route and the searches of note 18 (a <= 22), and the searches of note 20 (a <= 48, a <= 64)
     name = "np_rowwalk_family.jsonl"
