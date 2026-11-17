@@ -221,11 +221,11 @@ def build(directory: Path) -> dict[str, Any]:
         add(task_id, [], entry["predicted"])
         tasks[task_id]["typed_from_the_article"] = sorted(entry["predicted"])
 
-    archive = (
-        (REPOSITORY / "dist" / "mutation-barriers-data-v1.tar.xz.sha256").read_text().split()[0]
-        if (REPOSITORY / "dist" / "mutation-barriers-data-v1.tar.xz.sha256").exists()
-        else None
+    # the checksum of the archive as DATA.md states it (dist/ is not in git)
+    stated = re.search(
+        r"^\| SHA-256 \| `([0-9a-f]{64})` \|$", (REPOSITORY / "DATA.md").read_text(), re.MULTILINE
     )
+    archive = stated[1] if stated else None
     return {"archive_sha256": archive, "tasks": dict(sorted(tasks.items()))}
 
 
