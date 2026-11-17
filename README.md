@@ -4,7 +4,7 @@
 
 > **Status of these results.** Everything here was produced with extensive help from AI tools. The proofs and computations were rechecked by fresh instances of the same AI model, mostly with separately written code (some certificates were rerun rather than reimplemented, and some ranges rest on a single program), but **no human has read the paper**, and no specialist has checked a single argument. Each result is labelled by how it is supported: **proved by hand**; a **computer-assisted proof**, which covers every value of the parameters, with a program checking finitely many polynomial identities and inequalities; **computational**, meaning an exhaustive check over a stated range and nothing beyond it; or **conjecture**. Nobody should cite these results as established until a mathematician has read them.
 
-**Start here:** `python3 -I verify/smoke.py` recomputes the headline numbers below from the definition of mutation in about 15 seconds, with the standard library only and without the data archive. Then [CLAIMS.md](CLAIMS.md) maps every claim of the article to a script, a stored output and a command.
+**Start here:** `python3 -I verify/smoke.py` recomputes the headline numbers below from the definition of mutation in about 15 seconds, with the standard library only and without the data archive. `make smoke` computes the same numbers as tasks under a scheduler and prints the [table below](#headline-numbers-recomputed). Then [CLAIMS.md](CLAIMS.md) maps every claim of the article to a script, a stored output and a command, and says what has been run again here.
 
 ## The question
 
@@ -35,6 +35,32 @@ The rows are those of the article's status table, with its labels. "Paper" numbe
 
 File names without a directory are stored results; they are in the data archive ([DATA.md](DATA.md)), not in git.
 
+## Headline numbers, recomputed
+
+`make smoke` runs the batch [batches/smoke.toml](batches/smoke.toml): 66 tasks, about ten seconds on four processes, with the standard library only and without the data archive. Each row is one quantity of one task: the value the article states, and what the task computed in its latest record in [records/](records/). `make smoke` ends by printing this table from its own fresh run, and fails if it is not the table printed here.
+
+<!-- BEGIN GENERATED headline: tools/claims.py tables -->
+| Quantity | Predicted | Computed | Status | Task |
+|---|---|---|---|---|
+| G₈ and −G₈ are joined at height | 56 |  | not re-run | `barrier/G/k=8` |
+| R₈ and −R₈ are joined at height | 101 |  | not re-run | `barrier/R/b=8` |
+| quivers reached from R₈ below 101, up to relabelling | 35 |  | not re-run | `reach/R/b=8` |
+| mutations on the route from R₈ to −R₈ | 37 |  | not re-run | `route/R/b=8` |
+| quivers at height 101 on that route | 28 |  | not re-run | `route/R/b=8` |
+| Q₃ and −Q₃ are joined at height | 132 |  | not re-run | `barrier/Qt/t=3` |
+| P⁺₃ (height 9) and −P⁺₃ are joined at height | 413 |  | not re-run | `barrier/P+/t=3` |
+| mutations on the route from P⁺₃ to −P⁺₃ | 94 |  | not re-run | `route/P+/t=3` |
+| top of the route from Q₇ (height 8) to −Q₇ | 1,242 |  | not re-run | `route/Qa/a=7` |
+| mutations on that route | 3,120 |  | not re-run | `route/Qa/a=7` |
+| quivers of height exactly 4, up to relabelling | 17,353 |  | not re-run | `conj55/h=4` |
+| of these, reaching an acyclic quiver within height 4 | 10,415 |  | not re-run | `conj55/h=4` |
+| claims certified for R_b, even b ≥ 6 | 30 |  | not re-run | `certificate/R_b` |
+| claims certified for Q_t, t ≥ 3 | 43 |  | not re-run | `certificate/Q_t` |
+| claims certified for P⁺_t, t ≥ 8 | 938 |  | not re-run | `certificate/P+_t/audit-to-7` |
+<!-- END GENERATED headline -->
+
+These tasks recompute, at the parameters shown, what the closed forms, the routes and the certificate programs say. They were written by the same AI model as everything else here. They do not replace the proofs, and they are not an independent reading.
+
 ## Limits
 
 - **No human reader.** See the status box. The checks recorded in notes 12, 17, 19 and 23 were made by fresh instances of the same AI model that wrote the notes they check. They are a check against slips, not a mathematician's reading.
@@ -45,7 +71,48 @@ File names without a directory are stored results; they are in the data archive 
 - **The census can hide joins.** A pocket that joined its class only above the bound to which the class was enumerated (192 or more) would not be seen.
 - **Cited theorems.** Proposition 12.1 rests on published and preprint theorems, among them Theorem 5.1 of arXiv:2610.36179 (an unrefereed preprint of 26 October 2026) for 253,191 quivers.
 - **Prior art.** The literature search (9 to 16 November 2026) did not cover MathSciNet or zbMATH. Prior art could exist under other names.
+- **What was run again here.** The records cover the smoke batch, the section batches and the recount of Section 13 from stored outputs. No long computation was run again: the searches for P⁺_t above t = 16 and for Q_a above a = 12, Conjecture 5.5 above height 6, the census, the cores and the tube certificates rest on the original outputs. [CLAIMS.md](CLAIMS.md) says so row by row.
 - **Known discrepancies** between the paper, the notes and the logs are listed in [CLAIMS.md](CLAIMS.md#known-discrepancies).
+
+## Tasks, batches and records
+
+Every claim that a program can check is a **task**: one computation with one answer, for example the least height at which R₈ is joined to −R₈. A task carries the value that is predicted for it (a closed form of the article, a number the article prints, or a count copied from a stored result) and names the stored result that holds the original number. A **batch** is a file in [batches/](batches/) that lists tasks with their time and memory limits. The scheduler, [taskbatch/](taskbatch/PROTOCOL.md), runs a batch with one process per task, stops a task at its limits, and appends one **record** per task: status, computed value, predicted value, limits, time, peak memory, versions and commit. The claim tables of [CLAIMS.md](CLAIMS.md) are generated from the records. A claim whose tasks have no record reads "not re-run", whatever the stored results say; the 471 stored results are the original outputs and were not turned into records.
+
+```bash
+make plan BATCH=batches/section-07.toml
+```
+
+```bash
+make run BATCH=batches/section-07.toml
+```
+
+```bash
+make report BATCH=batches/section-07.toml
+```
+
+`plan` lists the tasks with their limits and computes nothing. `run` computes every task that has no record yet and writes to `results/<batch>/`, which is not in git. `report` prints tables from the records. `run` ends with status 0 when every task is `ok`, 1 when a task is `mismatch`, `error` or `crashed`, 3 when nothing failed but a task was stopped at a limit, and 2 when the batch cannot be run as asked. A rerun computes the tasks without a record and nothing else; `--retry timeout,memory` computes again the tasks that were stopped, for example with larger limits.
+
+| Batch | Tasks | What it computes | Needs | Here |
+|---|---|---|---|---|
+| `smoke` | 66 | the headline numbers above | Python | 10 s |
+| `section-05` | 152 | G_k for 3 ≤ k ≤ 40: mutation heights, barrier, the quivers below it, the route | Python | 3 s |
+| `section-07` | 164 | R_b for 5 ≤ b ≤ 60 and Q_t for 3 ≤ t ≤ 16: barrier by search, route, the two certificate programs | Python | 6 s |
+| `section-08` | 4 | the two pockets born at 9 that die at 132 are Q₃ and R₉ | Python | 1 s |
+| `section-09` | 149 | P⁺_t: the route for t ≤ 64, the search for t ≤ 12, the certificate program | Python | 30 s |
+| `section-10` | 112 | Q_a: the route for a ≤ 48, the searches for a ≤ 7 | Python | 100 s, 450 MB |
+| `section-12` | 6 | Conjecture 5.5: the split at each height ≤ 6, by enumeration | Python | 50 s |
+| `section-13` | 1 | the counts of Section 13, recounted from the stored outputs of the core and tube programs | the data archive | 20 s, 3 GB |
+| `section-14` | 34 | the generic search of Section 14 on R_b, P⁺_t and Q_a | `make build` | 3 s |
+| `long-pplus` | 158 | P⁺_t for t ≤ 80 by the C search | `make build` | not run |
+| `long-qa` | 110 | Q_a for a ≤ 48 without pruning and a ≤ 64 with forks not expanded | `make build`, numpy | not run; hours |
+| `long-conj55` | 1 | Conjecture 5.5 to height 18, by the original program | numpy | not run; over an hour, 11 GB |
+| `long-section-13` | 3 | the cores and the tube certificates, regenerated from stored inputs | the data archive, numpy | never run |
+| `limits-demo` | 6 | a task stopped at its time limit and one at its memory limit, next to four that finish | Python | 3 s |
+| `negative-control` | 3 | predicted values that are wrong on purpose: each task must end `mismatch` | Python | 1 s |
+
+The long batches are the original long runs, described as tasks with limits. They are for a machine left alone for hours and have not been run for this repository; their claims read "not re-run". The census of Section 8 is not a task at all ([CLAIMS.md](CLAIMS.md#tasks-and-records)). The task kinds and the keys of a batch file are listed at the top of [qmb/tasks.py](qmb/tasks.py); what a run guarantees, and the contract between the scheduler and the program that computes, are in [taskbatch/PROTOCOL.md](taskbatch/PROTOCOL.md).
+
+The records in [records/](records/) were computed on one machine, from committed code, and each names its commit. [claims/RECORDS.md](claims/RECORDS.md) lists every task with its predicted value, its stored evidence and its record.
 
 ## Repository layout
 
@@ -53,11 +120,19 @@ File names without a directory are stored results; they are in the data archive 
 |---|---|
 | [paper/](paper/) | The draft paper, `mutation-barriers.tex` and its PDF (16 November 2026) |
 | [docs/](docs/README.md) | 23 notes in reading order, with an index: the arguments, computations and checks |
-| [CLAIMS.md](CLAIMS.md) | Article section → repository path; every claim → script, stored output, command; what is not stored; known discrepancies |
+| [CLAIMS.md](CLAIMS.md) | Article section → repository path; every claim → script, stored output, command, and what the records say; what is not stored; known discrepancies |
+| [claims/](claims/) | `claims.toml`, the registry of claims and their tasks; `expected.json`, predicted values and stored evidence by task; `RECORDS.md`, generated: every task with its record |
+| [batches/](batches/) | Batch files: which tasks, which limits |
+| [records/](records/) | The records of the batches that were run for this repository |
+| [qmb/](qmb/) | The core that tasks compute with: mutation, relabelling, forks, the families and their closed forms, searches, the task kinds. Standard library only. It is new code: the scripts of `experiments/` and `verify/` do not use it |
+| [runners/task_runner.py](runners/task_runner.py) | The command the scheduler calls: lists the tasks of a batch, computes one task |
+| [taskbatch/](taskbatch/PROTOCOL.md) | The scheduler: batch files, limits, records, reports. First written for another repository of the same author and copied here under a neutral name; `PROTOCOL.md` is its contract with a runner |
+| [tests/](tests/) | Tests of the core, the runner, the registry and the scheduler |
 | [experiments/](experiments/README.md) | The scripts behind the notes, two C programs, `requirements.txt` |
 | [verify/](verify/README.md) | Checking code, kept apart from the code it checks: `smoke.py` and the scripts of notes 12, 17, 19, 23 |
 | [DATA.md](DATA.md) | The stored results: one archive, its checksum, every file in it |
-| [tools/](tools/) | The script that rewrote references in the stored results, and the archive builder |
+| [tools/](tools/) | The script that rewrote references in the stored results, the archive builder, the builder of `claims/expected.json` and the generator of the claim tables |
+| `Makefile`, `Dockerfile`, `pyproject.toml`, `.python-version`, `.github/workflows/` | Targets, container, lint settings, the interpreter, continuous integration |
 | [LICENSE](LICENSE), [LICENSE-TEXT.md](LICENSE-TEXT.md) | MIT for code; CC BY 4.0 for prose, paper and data |
 | [CITATION.cff](CITATION.cff) | How to cite |
 
@@ -71,6 +146,21 @@ File names without a directory are stored results; they are in the data archive 
 python3 -I verify/smoke.py            # about 15 s, under 100 MB: R_8 (101, 35 quivers, 37 mutations), G_8, R_b, Q_t, P+_t, Q_a, Conjecture 5.5 to height 4
 python3 -I verify/smoke.py --full     # about 2.5 min, under 500 MB: adds Q_7 (1,242), R_b to b = 20, Conjecture 5.5 to height 6
 sh verify/smoke_certificates.sh       # about 10 s: the 30 + 43 claims of note 15 and the certificate of note 16, from the repository's own programs
+```
+
+**The tests and the smoke batch** need Python 3.11 or later, and a C compiler for the tests of the C search (they are skipped without one). Linux is assumed: the scheduler reads `/proc` and, where `systemd-run --user` is available, uses control groups.
+
+```bash
+make test             # under a minute: the core against values computed by hand, the runner, the registry, the scheduler
+make smoke            # about 10 s: the smoke batch, computed afresh, and the headline table from it
+make test-slow        # several minutes: verify/smoke.py and the section batches, each computed afresh
+```
+
+Without Python 3.12, make or a compiler on the machine, build the container once (this needs the network) and run inside it without:
+
+```bash
+docker build -t mutation-barriers .
+docker run --rm --network none --user "$(id -u):$(id -g)" -e HOME=/tmp -v "$PWD":/work -w /work mutation-barriers make test
 ```
 
 **In a clean container**, with no network and the repository mounted read-only:
