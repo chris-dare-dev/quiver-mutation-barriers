@@ -1053,9 +1053,9 @@ A predicted value is a closed form of the article, a number the article prints, 
 | Task | Batches | Predicted | Stored evidence | Record | Computed |
 |---|---|---|---|---|---|
 | `census/decided-classes` | section-13 | acyclic_bottom 1,556, classes 788,026, decided 785,198, disconnected 400, finite_cores 555,828, mirror_pairs 377,451, open_classes 2,828, settled_by_cores_and_… | `review23_n22_counts.log` | ok, 2026-11-17, `3342335`, 24.277 s | acyclic_bottom 1,556, classes 788,026, decided 785,198, disconnected 400, finite_cores 555,828, mirror_pairs 377,451, open_classes 2,828, settled_by_cores_and_… |
-| `core/finite-cores` | long-section-13 | classes 788,026, finite_cores 555,828, search_stopped_at_a_cap 232,198 | `n4_opposite_cores.log` | not re-run |  |
-| `tube/tube-certificates-note-14` | long-section-13 | certified 225,208, classes 232,198 | `n4_opposite_tubes.log` | not re-run |  |
-| `tube/tube-certificates-note-22` | long-section-13 | certified 2,206, classes 6,990 | `n4_tube_certify2.log` | not re-run |  |
+| `core/finite-cores` | long-section-13 | classes 788,026, finite_cores 555,828, search_stopped_at_a_cap 232,198 | `n4_opposite_cores.log` | ok, 2026-11-18, `5da0969`, 341.521 s | classes 788,026, finite_cores 555,828, search_stopped_at_a_cap 232,198 |
+| `tube/tube-certificates-note-14` | long-section-13 | certified 225,208, classes 232,198 | `n4_opposite_tubes.log` | mismatch, 2026-11-18, `5da0969`, 4436.43 s | certified 225,207, classes 232,198 |
+| `tube/tube-certificates-note-22` | long-section-13 | certified 2,206, classes 6,990 | `n4_tube_certify2.log` | ok, 2026-11-18, `5da0969`, 3189.43 s | certified 2,206, classes 6,990 |
 
 <a name="claim-s8-classes"></a>
 
@@ -1066,7 +1066,7 @@ A predicted value is a closed form of the article, a number the article prints, 
 | Task | Batches | Predicted | Stored evidence | Record | Computed |
 |---|---|---|---|---|---|
 | `census/decided-classes` | section-13 | acyclic_bottom 1,556, classes 788,026, decided 785,198, disconnected 400, finite_cores 555,828, mirror_pairs 377,451, open_classes 2,828, settled_by_cores_and_… | `review23_n22_counts.log` | ok, 2026-11-17, `3342335`, 24.277 s | acyclic_bottom 1,556, classes 788,026, decided 785,198, disconnected 400, finite_cores 555,828, mirror_pairs 377,451, open_classes 2,828, settled_by_cores_and_… |
-| `core/finite-cores` | long-section-13 | classes 788,026, finite_cores 555,828, search_stopped_at_a_cap 232,198 | `n4_opposite_cores.log` | not re-run |  |
+| `core/finite-cores` | long-section-13 | classes 788,026, finite_cores 555,828, search_stopped_at_a_cap 232,198 | `n4_opposite_cores.log` | ok, 2026-11-18, `5da0969`, 341.521 s | classes 788,026, finite_cores 555,828, search_stopped_at_a_cap 232,198 |
 
 <a name="claim-s8-q3-r9"></a>
 
@@ -1879,7 +1879,7 @@ highest search exactly h³ + h² + 5
 | Task | Batches | Predicted | Stored evidence | Record | Computed |
 |---|---|---|---|---|---|
 | `census/decided-classes` | section-13 | acyclic_bottom 1,556, classes 788,026, decided 785,198, disconnected 400, finite_cores 555,828, mirror_pairs 377,451, open_classes 2,828, settled_by_cores_and_… | `review23_n22_counts.log` | ok, 2026-11-17, `3342335`, 24.277 s | acyclic_bottom 1,556, classes 788,026, decided 785,198, disconnected 400, finite_cores 555,828, mirror_pairs 377,451, open_classes 2,828, settled_by_cores_and_… |
-| `core/finite-cores` | long-section-13 | classes 788,026, finite_cores 555,828, search_stopped_at_a_cap 232,198 | `n4_opposite_cores.log` | not re-run |  |
+| `core/finite-cores` | long-section-13 | classes 788,026, finite_cores 555,828, search_stopped_at_a_cap 232,198 | `n4_opposite_cores.log` | ok, 2026-11-18, `5da0969`, 341.521 s | classes 788,026, finite_cores 555,828, search_stopped_at_a_cap 232,198 |
 
 <a name="claim-s13-tubes"></a>
 
@@ -1890,8 +1890,8 @@ highest search exactly h³ + h² + 5
 | Task | Batches | Predicted | Stored evidence | Record | Computed |
 |---|---|---|---|---|---|
 | `census/decided-classes` | section-13 | acyclic_bottom 1,556, classes 788,026, decided 785,198, disconnected 400, finite_cores 555,828, mirror_pairs 377,451, open_classes 2,828, settled_by_cores_and_… | `review23_n22_counts.log` | ok, 2026-11-17, `3342335`, 24.277 s | acyclic_bottom 1,556, classes 788,026, decided 785,198, disconnected 400, finite_cores 555,828, mirror_pairs 377,451, open_classes 2,828, settled_by_cores_and_… |
-| `tube/tube-certificates-note-14` | long-section-13 | certified 225,208, classes 232,198 | `n4_opposite_tubes.log` | not re-run |  |
-| `tube/tube-certificates-note-22` | long-section-13 | certified 2,206, classes 6,990 | `n4_tube_certify2.log` | not re-run |  |
+| `tube/tube-certificates-note-14` | long-section-13 | certified 225,208, classes 232,198 | `n4_opposite_tubes.log` | mismatch, 2026-11-18, `5da0969`, 4436.43 s | certified 225,207, classes 232,198 |
+| `tube/tube-certificates-note-22` | long-section-13 | certified 2,206, classes 6,990 | `n4_tube_certify2.log` | ok, 2026-11-18, `5da0969`, 3189.43 s | certified 2,206, classes 6,990 |
 
 <a name="claim-s13-decided"></a>
 
