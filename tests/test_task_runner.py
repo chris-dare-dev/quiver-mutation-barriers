@@ -14,7 +14,7 @@ from pathlib import Path
 from typing import Any
 
 from qmb import families, search
-from qmb.backends import BUILD, BackendError, np_barrier
+from qmb.backends import BUILD, BackendError, keep_output, np_barrier
 from qmb.tasks import STAGES, TaskError, agrees, expand_batch, parse_conj55_summary, parse_counts, run_task
 from taskbatch.cli import EXIT_FAILED, EXIT_LIMITS, EXIT_OK
 from taskbatch.config import load_config
@@ -291,6 +291,24 @@ class CBackEnds(unittest.TestCase):
                 result = run_task(one(table))
             self.assertEqual((result["status"], result["value"]), ("ok", {"quivers": 1714, "low": 1}))
             self.assertEqual(json.loads((cache / "core_a3_chain_single.bin.json").read_text())["members"], 7)
+
+    def test_a_stage_keeps_its_output_only_when_asked(self) -> None:
+        with tempfile.TemporaryDirectory() as home:
+            work = Path(home) / "scratch" / "tube-x"
+            work.mkdir(parents=True)
+            (work / "cores.jsonl.gz").write_bytes(b"input")
+            (work / "tubes.jsonl.gz").write_bytes(b"output")
+            with unittest.mock.patch.dict(os.environ, {"QMB_KEEP": ""}):
+                self.assertEqual(keep_output(work, ["cores.jsonl.gz"]), {})
+            with unittest.mock.patch.dict(os.environ, {"QMB_KEEP": str(Path(home) / "kept")}):
+                digests = keep_output(work, ["cores.jsonl.gz"])
+            kept = Path(home) / "kept" / "tube-x"
+            self.assertEqual([path.name for path in kept.iterdir()], ["tubes.jsonl.gz"])
+            self.assertEqual((kept / "tubes.jsonl.gz").read_bytes(), b"output")
+            self.assertEqual(
+                digests,
+                {"tubes.jsonl.gz": "e0ee8bb50685e05fa0f47ed04203ae953fdfd055f5bd2892ea186504254f8c3a"},
+            )
 
     @unittest.skipUnless(HAVE_NUMPY, "numpy is not installed (experiments/requirements.txt)")
     def test_the_programs_of_experiments_against_python(self) -> None:

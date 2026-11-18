@@ -16,6 +16,9 @@
 # To try a tube stage at reduced size, give its table `sample = 150`: the program then takes a random
 # sample of that many classes, and the task has another id and no predicted value.  The program of
 # finite-cores has no such option.
+#
+# A task keeps the counts and removes what its program wrote.  To keep the output per class as well,
+# set QMB_KEEP to a directory: the files are copied there and their SHA-256 goes into the record.
 
 name = "long-section-13"
 

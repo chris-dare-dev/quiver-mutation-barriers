@@ -3,7 +3,9 @@
 The programs of experiments/ produced the stored results.  A task that runs one of them starts it in an
 empty scratch directory, never in experiments/, because most of them overwrite their output files.  The
 scratch directory is `$QMB_SCRATCH/<task>` if that variable is set, else `~/.cache/qmb-scratch/<task>`.
-Some programs also keep caches of their own under `~/.cache/qmb-np/`.
+Some programs also keep caches of their own under `~/.cache/qmb-np/`.  The scratch directory is removed
+when the task ends; with QMB_KEEP set to a directory, a stage of Section 13 first copies there what its
+program wrote (keep_output).
 """
 
 from __future__ import annotations
@@ -18,7 +20,7 @@ import re
 import shutil
 import subprocess
 import sys
-from collections.abc import Iterator, Sequence
+from collections.abc import Iterable, Iterator, Sequence
 from pathlib import Path
 from typing import Any
 
@@ -77,6 +79,24 @@ def scratch(task_id: str) -> Iterator[Path]:
         yield path
     finally:
         shutil.rmtree(path, ignore_errors=True)
+
+
+def keep_output(work: Path, inputs: Iterable[str]) -> dict[str, str]:
+    """Copy what a program wrote in `work` to `$QMB_KEEP/<name of work>`: the SHA-256 of each file kept.
+
+    The copies of the inputs are left out.  Without QMB_KEEP nothing is kept and the result is empty.
+    """
+    root = os.environ.get("QMB_KEEP")
+    if not root:
+        return {}
+    kept = Path(root) / work.name
+    kept.mkdir(parents=True, exist_ok=True)
+    digests = {}
+    for path in sorted(work.iterdir()):
+        if path.is_file() and path.name not in inputs:
+            shutil.copyfile(path, kept / path.name)
+            digests[path.name] = hashlib.sha256(path.read_bytes()).hexdigest()
+    return digests
 
 
 def require(*modules: str) -> None:

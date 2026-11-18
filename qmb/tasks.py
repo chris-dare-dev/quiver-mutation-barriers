@@ -49,6 +49,7 @@ from .backends import (
     REPOSITORY,
     BackendError,
     binary,
+    keep_output,
     np_barrier,
     program,
     require,
@@ -758,6 +759,7 @@ def _run_stage(task: Task) -> Result:
             if number == 0 and task.get("sample"):
                 filled += ["--limit", str(task["sample"])]
             output += program(str(Path("..") / script), *filled, cwd=work)
+        kept = keep_output(work, stage.inputs)
     counts = parse_counts(stage, output)
     if counts is None:
         raise BackendError(
@@ -769,6 +771,7 @@ def _run_stage(task: Task) -> Result:
             "{procs}", str(task["procs"])
         ),
         "inputs": "stored results of the data archive",
+        **({"kept_output": kept} if kept else {}),
     }
 
 
