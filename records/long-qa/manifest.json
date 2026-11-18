@@ -1,0 +1,3085 @@
+{
+ "batch": "long-qa",
+ "tasks": [
+  {
+   "article": "Theorem 10.1",
+   "bound": 21,
+   "cost": 2,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 1
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=2@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 900
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 525
+   },
+   "prune_forks": false,
+   "set": 0,
+   "value": 2
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 88,
+   "cost": 3,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 2
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=3@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 900
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 3907
+   },
+   "prune_forks": false,
+   "set": 0,
+   "value": 3
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 212,
+   "cost": 4,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 3
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=4@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 900
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 13645
+   },
+   "prune_forks": false,
+   "set": 0,
+   "value": 4
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 437,
+   "cost": 5,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 4
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=5@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 900
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 41316
+   },
+   "prune_forks": false,
+   "set": 0,
+   "value": 5
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 763,
+   "cost": 6,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 5
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=6@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 900
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 95260
+   },
+   "prune_forks": false,
+   "set": 0,
+   "value": 6
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 1242,
+   "cost": 7,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 6
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=7@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 900
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 206989
+   },
+   "prune_forks": false,
+   "set": 0,
+   "value": 7
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 1866,
+   "cost": 8,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 7
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=8@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 900
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 396948
+   },
+   "prune_forks": false,
+   "set": 0,
+   "value": 8
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 2695,
+   "cost": 9,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 8
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=9@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 900
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 718638
+   },
+   "prune_forks": false,
+   "set": 0,
+   "value": 9
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 3713,
+   "cost": 10,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 9
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=10@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 900
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 1206172
+   },
+   "prune_forks": false,
+   "set": 0,
+   "value": 10
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 4988,
+   "cost": 11,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 10
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=11@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 900
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 1949336
+   },
+   "prune_forks": false,
+   "set": 0,
+   "value": 11
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 6496,
+   "cost": 12,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 11
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=12@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 900
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 2995196
+   },
+   "prune_forks": false,
+   "set": 0,
+   "value": 12
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 8313,
+   "cost": 13,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 12
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=13@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 900
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 4481140
+   },
+   "prune_forks": false,
+   "set": 0,
+   "value": 13
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 10407,
+   "cost": 14,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 13
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=14@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 900
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 6466683
+   },
+   "prune_forks": false,
+   "set": 0,
+   "value": 14
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 12862,
+   "cost": 15,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 14
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=15@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 900
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 9149455
+   },
+   "prune_forks": false,
+   "set": 0,
+   "value": 15
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 15638,
+   "cost": 16,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 15
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=16@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 900
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 12599812
+   },
+   "prune_forks": false,
+   "set": 0,
+   "value": 16
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 18827,
+   "cost": 17,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 16
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=17@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 900
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 17089352
+   },
+   "prune_forks": false,
+   "set": 0,
+   "value": 17
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 22381,
+   "cost": 18,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 17
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=18@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 900
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 22696357
+   },
+   "prune_forks": false,
+   "set": 0,
+   "value": 18
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 26400,
+   "cost": 19,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 18
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=19@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 900
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 29781264
+   },
+   "prune_forks": false,
+   "set": 0,
+   "value": 19
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 30828,
+   "cost": 20,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 19
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=20@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 900
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 38426424
+   },
+   "prune_forks": false,
+   "set": 0,
+   "value": 20
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 35773,
+   "cost": 21,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 20
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=21@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 900
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 49097396
+   },
+   "prune_forks": false,
+   "set": 0,
+   "value": 21
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 41171,
+   "cost": 22,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 21
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=22@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 900
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 61875173
+   },
+   "prune_forks": false,
+   "set": 0,
+   "value": 22
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 47138,
+   "cost": 23,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 22
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=23@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 900
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 77347713
+   },
+   "prune_forks": false,
+   "set": 0,
+   "value": 23
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 53602,
+   "cost": 24,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 23
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=24@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 2000,
+    "time_seconds": 3600
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 95588541
+   },
+   "prune_forks": false,
+   "set": 0,
+   "value": 24
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 60687,
+   "cost": 25,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 24
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=25@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 2000,
+    "time_seconds": 3600
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 117326209
+   },
+   "prune_forks": false,
+   "set": 0,
+   "value": 25
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 68313,
+   "cost": 26,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 25
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=26@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 2000,
+    "time_seconds": 3600
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 142619202
+   },
+   "prune_forks": false,
+   "set": 0,
+   "value": 26
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 76612,
+   "cost": 27,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 26
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=27@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 2000,
+    "time_seconds": 3600
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 172356393
+   },
+   "prune_forks": false,
+   "set": 0,
+   "value": 27
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 85496,
+   "cost": 28,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 27
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=28@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 2000,
+    "time_seconds": 3600
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 206572735
+   },
+   "prune_forks": false,
+   "set": 0,
+   "value": 28
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 95105,
+   "cost": 29,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 28
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=29@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 2000,
+    "time_seconds": 3600
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 246338026
+   },
+   "prune_forks": false,
+   "set": 0,
+   "value": 29
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 105343,
+   "cost": 30,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 29
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=30@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 2000,
+    "time_seconds": 3600
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 291653896
+   },
+   "prune_forks": false,
+   "set": 0,
+   "value": 30
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 116358,
+   "cost": 31,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 30
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=31@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 2000,
+    "time_seconds": 3600
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 343792818
+   },
+   "prune_forks": false,
+   "set": 0,
+   "value": 31
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 128046,
+   "cost": 32,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 31
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=32@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 2000,
+    "time_seconds": 3600
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 402712351
+   },
+   "prune_forks": false,
+   "set": 0,
+   "value": 32
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 140563,
+   "cost": 33,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 32
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=33@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 2000,
+    "time_seconds": 3600
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 469910819
+   },
+   "prune_forks": false,
+   "set": 0,
+   "value": 33
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 153797,
+   "cost": 34,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 33
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=34@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 2000,
+    "time_seconds": 3600
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 545289206
+   },
+   "prune_forks": false,
+   "set": 0,
+   "value": 34
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 167912,
+   "cost": 35,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 34
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=35@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 2000,
+    "time_seconds": 3600
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 630596100
+   },
+   "prune_forks": false,
+   "set": 0,
+   "value": 35
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 182788,
+   "cost": 36,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 35
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=36@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 2000,
+    "time_seconds": 3600
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 725663106
+   },
+   "prune_forks": false,
+   "set": 0,
+   "value": 36
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 198597,
+   "cost": 37,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 36
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=37@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 2000,
+    "time_seconds": 3600
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 832513503
+   },
+   "prune_forks": false,
+   "set": 0,
+   "value": 37
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 215211,
+   "cost": 38,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 37
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=38@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 2000,
+    "time_seconds": 3600
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 950895378
+   },
+   "prune_forks": false,
+   "set": 0,
+   "value": 38
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 232810,
+   "cost": 39,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 38
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=39@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 2000,
+    "time_seconds": 3600
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 1083133773
+   },
+   "prune_forks": false,
+   "set": 0,
+   "value": 39
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 251258,
+   "cost": 40,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 39
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=40@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 3000,
+    "time_seconds": 14400
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 1228877393
+   },
+   "prune_forks": false,
+   "set": 0,
+   "value": 40
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 270743,
+   "cost": 41,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 40
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=41@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 3000,
+    "time_seconds": 14400
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 1390780406
+   },
+   "prune_forks": false,
+   "set": 0,
+   "value": 41
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 291121,
+   "cost": 42,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 41
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=42@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 3000,
+    "time_seconds": 14400
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 1568375589
+   },
+   "prune_forks": false,
+   "set": 0,
+   "value": 42
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 312588,
+   "cost": 43,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 42
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=43@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 3000,
+    "time_seconds": 14400
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 1764675087
+   },
+   "prune_forks": false,
+   "set": 0,
+   "value": 43
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 334992,
+   "cost": 44,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 43
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=44@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 3000,
+    "time_seconds": 14400
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 1979078085
+   },
+   "prune_forks": false,
+   "set": 0,
+   "value": 44
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 358537,
+   "cost": 45,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 44
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=45@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 3000,
+    "time_seconds": 14400
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 2214984647
+   },
+   "prune_forks": false,
+   "set": 0,
+   "value": 45
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 383063,
+   "cost": 46,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 45
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=46@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 3000,
+    "time_seconds": 14400
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 2471640917
+   },
+   "prune_forks": false,
+   "set": 0,
+   "value": 46
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 408782,
+   "cost": 47,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 46
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=47@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 3000,
+    "time_seconds": 14400
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 2752866281
+   },
+   "prune_forks": false,
+   "set": 0,
+   "value": 47
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 435526,
+   "cost": 48,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family_nofork.jsonl",
+     "line": 47
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=48@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 3000,
+    "time_seconds": 14400
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 3057734065
+   },
+   "prune_forks": false,
+   "set": 0,
+   "value": 48
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 21,
+   "cost": 2,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 1
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=2/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 900
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 391
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 2
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 88,
+   "cost": 3,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 2
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=3/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 900
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 1714
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 3
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 212,
+   "cost": 4,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 3
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=4/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 900
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 3955
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 4
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 437,
+   "cost": 5,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 4
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=5/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 900
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 10983
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 5
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 763,
+   "cost": 6,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 5
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=6/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 900
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 25706
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 6
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 1242,
+   "cost": 7,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 6
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=7/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 900
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 56313
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 7
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 1866,
+   "cost": 8,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 7
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=8/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 900
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 109326
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 8
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 2695,
+   "cost": 9,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 8
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=9/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 900
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 200535
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 9
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 3713,
+   "cost": 10,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 9
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=10/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 900
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 340734
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 10
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 4988,
+   "cost": 11,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 10
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=11/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 900
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 556926
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 11
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 6496,
+   "cost": 12,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 11
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=12/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 900
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 864408
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 12
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 8313,
+   "cost": 13,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 12
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=13/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 900
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 1305065
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 13
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 10407,
+   "cost": 14,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 13
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=14/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 900
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 1898603
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 14
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 12862,
+   "cost": 15,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 14
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=15/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 900
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 2705863
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 15
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 15638,
+   "cost": 16,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 15
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=16/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 900
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 3750605
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 16
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 18827,
+   "cost": 17,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 16
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=17/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 900
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 5117053
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 17
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 22381,
+   "cost": 18,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 17
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=18/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 900
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 6832188
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 18
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 26400,
+   "cost": 19,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 18
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=19/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 900
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 9008471
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 19
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 30828,
+   "cost": 20,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 19
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=20/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 900
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 11674892
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 20
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 35773,
+   "cost": 21,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 20
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=21/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 900
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 14977428
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 21
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 41171,
+   "cost": 22,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 21
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=22/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 900
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 18945464
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 22
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 47138,
+   "cost": 23,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 22
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=23/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 1000,
+    "time_seconds": 900
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 23764082
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 23
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 53602,
+   "cost": 24,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 23
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=24/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 2000,
+    "time_seconds": 3600
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 29461148
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 24
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 60687,
+   "cost": 25,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 24
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=25/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 2000,
+    "time_seconds": 3600
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 36266842
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 25
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 68313,
+   "cost": 26,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 25
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=26/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 2000,
+    "time_seconds": 3600
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 44205101
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 26
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 76612,
+   "cost": 27,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 26
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=27/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 2000,
+    "time_seconds": 3600
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 53557633
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 27
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 85496,
+   "cost": 28,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 27
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=28/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 2000,
+    "time_seconds": 3600
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 64341713
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 28
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 95105,
+   "cost": 29,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 28
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=29/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 2000,
+    "time_seconds": 3600
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 76897325
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 29
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 105343,
+   "cost": 30,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 29
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=30/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 2000,
+    "time_seconds": 3600
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 91232000
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 30
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 116358,
+   "cost": 31,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 30
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=31/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 2000,
+    "time_seconds": 3600
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 107751142
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 31
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 128046,
+   "cost": 32,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 31
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=32/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 2000,
+    "time_seconds": 3600
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 126448965
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 32
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 140563,
+   "cost": 33,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 32
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=33/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 2000,
+    "time_seconds": 3600
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 147803830
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 33
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 153797,
+   "cost": 34,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 33
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=34/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 2000,
+    "time_seconds": 3600
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 171792842
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 34
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 167912,
+   "cost": 35,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 34
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=35/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 2000,
+    "time_seconds": 3600
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 198975218
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 35
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 182788,
+   "cost": 36,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 35
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=36/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 2000,
+    "time_seconds": 3600
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 229306637
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 36
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 198597,
+   "cost": 37,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 36
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=37/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 2000,
+    "time_seconds": 3600
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 263435498
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 37
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 215211,
+   "cost": 38,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 37
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=38/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 2000,
+    "time_seconds": 3600
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 301291404
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 38
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 232810,
+   "cost": 39,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 38
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=39/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 2000,
+    "time_seconds": 3600
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 343620609
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 39
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 251258,
+   "cost": 40,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 39
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=40/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 3000,
+    "time_seconds": 14400
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 390321574
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 40
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 270743,
+   "cost": 41,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 40
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=41/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 3000,
+    "time_seconds": 14400
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 442247527
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 41
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 291121,
+   "cost": 42,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 41
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=42/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 3000,
+    "time_seconds": 14400
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 499260374
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 42
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 312588,
+   "cost": 43,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 42
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=43/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 3000,
+    "time_seconds": 14400
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 562329729
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 43
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 334992,
+   "cost": 44,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 43
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=44/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 3000,
+    "time_seconds": 14400
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 631275131
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 44
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 358537,
+   "cost": 45,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 44
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=45/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 3000,
+    "time_seconds": 14400
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 707192457
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 45
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 383063,
+   "cost": 46,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 45
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=46/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 3000,
+    "time_seconds": 14400
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 789852692
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 46
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 408782,
+   "cost": 47,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 46
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=47/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 3000,
+    "time_seconds": 14400
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 880488138
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 47
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 435526,
+   "cost": 48,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 47
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=48/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 3000,
+    "time_seconds": 14400
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 978814710
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 48
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 463515,
+   "cost": 49,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 48
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=49/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 3000,
+    "time_seconds": 14400
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 1086211777
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 49
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 492573,
+   "cost": 50,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 49
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=50/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 3000,
+    "time_seconds": 14400
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 1202333095
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 50
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 522928,
+   "cost": 51,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 50
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=51/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 3000,
+    "time_seconds": 14400
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 1328716129
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 51
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 554396,
+   "cost": 52,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 51
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=52/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 3000,
+    "time_seconds": 14400
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 1464945237
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 52
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 587213,
+   "cost": 53,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 52
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=53/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 3000,
+    "time_seconds": 14400
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 1612727318
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 53
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 621187,
+   "cost": 54,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 53
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=54/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 3000,
+    "time_seconds": 14400
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 1771569567
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 54
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 656562,
+   "cost": 55,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 54
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=55/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 3000,
+    "time_seconds": 14400
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 1943360078
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 55
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 693138,
+   "cost": 56,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 55
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=56/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 3000,
+    "time_seconds": 14400
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 2127520764
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 56
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 731167,
+   "cost": 57,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 56
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=57/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 3000,
+    "time_seconds": 14400
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 2326133061
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 57
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 770441,
+   "cost": 58,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 57
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=58/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 3000,
+    "time_seconds": 14400
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 2538525122
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 58
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 811220,
+   "cost": 59,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 58
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=59/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 3000,
+    "time_seconds": 14400
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 2766984256
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 59
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 853288,
+   "cost": 60,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 59
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=60/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 3000,
+    "time_seconds": 14400
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 3010735964
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 60
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 896913,
+   "cost": 61,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 60
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=61/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 3000,
+    "time_seconds": 14400
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 3272286359
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 61
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 941871,
+   "cost": 62,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 61
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=62/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 3000,
+    "time_seconds": 14400
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 3550748992
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 62
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 988438,
+   "cost": 63,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 62
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=63/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 3000,
+    "time_seconds": 14400
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 3848862080
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 63
+  },
+  {
+   "article": "Theorem 10.1",
+   "bound": 1036382,
+   "cost": 64,
+   "evidence": [
+    {
+     "field": "members",
+     "file": "np_qa_core_family.jsonl",
+     "line": 63
+    }
+   ],
+   "family": "Qa",
+   "group": "reach Q_a",
+   "id": "reach/Qa/a=64/forks-pruned@np_qa_core",
+   "kind": "reach",
+   "limits": {
+    "memory_mb": 3000,
+    "time_seconds": 14400
+   },
+   "method": "np_qa_core",
+   "predicted": {
+    "low": 1,
+    "quivers": 4165617632
+   },
+   "prune_forks": true,
+   "set": 1,
+   "value": 64
+  }
+ ]
+}
