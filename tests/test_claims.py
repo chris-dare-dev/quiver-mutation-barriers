@@ -3,9 +3,11 @@
 from __future__ import annotations
 
 import json
+import subprocess
 import sys
 import tempfile
 import unittest
+import unittest.mock
 from pathlib import Path
 from typing import Any
 
@@ -163,6 +165,45 @@ class Files(unittest.TestCase):
             (run_dir / "results.jsonl").write_text("")
             with self.assertRaisesRegex(claims.RegistryError, "no records"):
                 claims.command_adopt([run_dir])
+
+    def test_a_record_follows_its_commit_through_a_rewrite_of_the_messages(self) -> None:
+        def git(*arguments: str) -> str:
+            identity = ["-c", "user.name=t", "-c", "user.email=t@example.org", "-c", "commit.gpgsign=false"]
+            done = subprocess.run(
+                ["git", "-C", str(root), *identity, *arguments], capture_output=True, text=True
+            )
+            self.assertEqual(done.returncode, 0, done.stderr)
+            return done.stdout.strip()
+
+        with tempfile.TemporaryDirectory() as scratch:
+            root = Path(scratch)
+            git("init", "-q")
+            (root / "code.py").write_text("1\n")
+            git("add", "code.py")
+            git("commit", "-q", "-m", "first, with a trailer")
+            before = git("rev-parse", "HEAD")
+            git("commit", "-q", "--amend", "-m", "first")  # the same tree under a new number
+            after = git("rev-parse", "HEAD")
+            (root / "code.py").write_text("2\n")
+            git("commit", "-q", "-am", "second")
+            self.assertNotEqual(before, after)
+            run_dir = root / "results" / "trial"
+            run_dir.mkdir(parents=True)
+            (run_dir / "manifest.json").write_text("{}")
+            rows = [record("old") | {"code": {"commit": before, "dirty": False}}]
+            rows.append(record("new") | {"code": {"commit": git("rev-parse", "HEAD"), "dirty": False}})
+            text = "".join(json.dumps(row, sort_keys=True) + "\n" for row in rows)
+            (run_dir / "results.jsonl").write_text(text)
+            with unittest.mock.patch.multiple(claims, REPOSITORY=root, RECORDS=root / "records"):
+                claims.command_adopt([run_dir])
+                adopted = (root / "records" / "trial" / "results.jsonl").read_text().splitlines()
+                self.assertEqual(json.loads(adopted[0])["code"]["commit"], after)
+                self.assertEqual(json.loads(adopted[0]) | {"code": None}, rows[0] | {"code": None})
+                self.assertEqual(adopted[1], text.splitlines()[1])  # untouched, byte for byte
+                # a commit that is nowhere in the repository cannot be placed
+                (run_dir / "results.jsonl").write_text(json.dumps(record("lost")) + "\n")
+                with self.assertRaisesRegex(claims.RegistryError, "not in this repository"):
+                    claims.command_adopt([run_dir])
 
     def test_the_latest_record_of_a_task_wins_across_run_directories(self) -> None:
         with tempfile.TemporaryDirectory() as scratch:

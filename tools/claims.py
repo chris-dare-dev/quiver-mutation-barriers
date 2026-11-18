@@ -16,14 +16,18 @@ tasks exist), claims/expected.json (predicted values and stored evidence), recor
 (what was computed here).  A task without a record reads "not re-run", whatever the stored results say.
 
 `adopt` copies results.jsonl and manifest.json unchanged, and refuses records that were computed from a
-working tree with uncommitted changes: a record must name the commit of the code that computed it.
+working tree with uncommitted changes: a record must name the commit of the code that computed it.  One
+field can change on the way: if the history was rewritten after the run (messages only, every tree as it
+was), a record's commit is replaced by the commit that now has the same tree, and `adopt` says so.
 """
 
 from __future__ import annotations
 
 import fnmatch
+import json
 import re
 import shutil
+import subprocess
 import sys
 import tomllib
 from collections import Counter
@@ -353,6 +357,35 @@ def command_headline(root: Path) -> int:
     return 0
 
 
+def _git(*arguments: str) -> str | None:
+    done = subprocess.run(
+        ["git", "-C", str(REPOSITORY), *arguments], capture_output=True, text=True, check=False
+    )
+    return done.stdout.strip() if done.returncode == 0 else None
+
+
+def renumbered(commit: str) -> str:
+    """The commit of the present history that a record's commit stands for.
+
+    A record names the commit of the code that computed it.  If the history was rewritten since (its
+    messages changed, its trees not), that commit is no longer in it; the commit that now has the same
+    tree is the same code under a new number.  Any other case is refused.
+    """
+    if _git("merge-base", "--is-ancestor", commit, "HEAD") is not None:
+        return commit
+    tree = _git("rev-parse", f"{commit}^{{tree}}")
+    if tree is None:
+        raise RegistryError(f"the commit {commit[:7]} of a record is not in this repository")
+    history = [line.split() for line in (_git("log", "--format=%H %T", "HEAD") or "").splitlines()]
+    same = [number for number, its_tree in history if its_tree == tree]
+    if len(same) != 1:
+        raise RegistryError(
+            f"the commit {commit[:7]} of a record is not in the history, and {len(same)} commits of the history "
+            "have its tree: the record cannot be placed"
+        )
+    return same[0]
+
+
 def command_adopt(run_dirs: list[Path]) -> int:
     for run_dir in run_dirs:
         records = list(ResultStore(run_dir / "results.jsonl").latest().values())
@@ -366,9 +399,29 @@ def command_adopt(run_dirs: list[Path]) -> int:
             )
         target = RECORDS / run_dir.name
         target.mkdir(parents=True, exist_ok=True)
-        for name in ("results.jsonl", "manifest.json"):
-            shutil.copyfile(run_dir / name, target / name)
-        print(f"records/{run_dir.name}: {len(records)} records, {stamp(records)}")
+        # every line is copied as it is, unless its commit was renumbered by a rewrite of the history:
+        # then that one field changes, and nothing else
+        moved: Counter[tuple[str, str]] = Counter()
+        lines = []
+        for line in (run_dir / "results.jsonl").read_text(encoding="utf-8").splitlines():
+            try:
+                record = json.loads(line)
+                commit = record["code"]["commit"]
+            except (json.JSONDecodeError, KeyError, TypeError):
+                lines.append(line)
+                continue
+            now = renumbered(commit)
+            if now != commit:
+                record["code"]["commit"] = now
+                moved[commit, now] += 1
+                line = json.dumps(record, sort_keys=True, ensure_ascii=False, allow_nan=False)
+            lines.append(line)
+        (target / "results.jsonl").write_text("\n".join(lines) + "\n", encoding="utf-8")
+        shutil.copyfile(run_dir / "manifest.json", target / "manifest.json")
+        adopted = list(ResultStore(target / "results.jsonl").latest().values())
+        print(f"records/{run_dir.name}: {len(adopted)} records, {stamp(adopted)}")
+        for (old, now), count in sorted(moved.items()):
+            print(f"   {count} records: commit {old[:7]} is {now[:7]} in the present history (same tree)")
     return 0
 
 
