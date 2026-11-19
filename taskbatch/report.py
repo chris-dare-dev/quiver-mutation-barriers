@@ -8,34 +8,36 @@ from pathlib import Path
 from typing import Any
 
 from .model import Status
+from .record import Record
 from .store import ResultStore
 
 NOT_RUN = "not run"
 COLUMNS = [str(status) for status in Status] + [NOT_RUN]
 
 
-def _cell(value: Any) -> str:
+def cell(value: Any) -> str:
     """A value as it appears in a table cell."""
     if value is None:
         return ""
     if isinstance(value, bool):
         return "yes" if value else "no"
     if isinstance(value, dict):
-        return ", ".join(f"{key} {_cell(item)}" for key, item in value.items())
+        return ", ".join(f"{key} {cell(item)}" for key, item in value.items())
     if isinstance(value, list):
-        return "(" + ", ".join(_cell(item) for item in value) + ")"
+        return "(" + ", ".join(cell(item) for item in value) + ")"
     if isinstance(value, float):
         return f"{value:g}"
     return str(value).replace("|", "\\|")
 
 
-def _table(header: list[str], rows: list[list[Any]]) -> list[str]:
+def table(header: list[str], rows: list[list[Any]]) -> list[str]:
+    """The lines of a Markdown table, with an empty line after it."""
     lines = ["| " + " | ".join(header) + " |", "|" + "---|" * len(header)]
-    lines += ["| " + " | ".join(_cell(item) for item in row) + " |" for row in rows]
+    lines += ["| " + " | ".join(cell(item) for item in row) + " |" for row in rows]
     return [*lines, ""]
 
 
-def _name(record: dict[str, Any]) -> str:
+def _name(record: Record) -> str:
     return f"`{record['task_id']}`"
 
 
@@ -69,7 +71,7 @@ def render(run_dir: Path, *, full: bool = False) -> str:
 
     lines += ["## Summary", ""]
     used = [column for column in COLUMNS if any(counts[column] for counts in groups.values())]
-    lines += _table(
+    lines += table(
         ["group", "tasks", *used],
         [
             [group, counts.total(), *(counts[column] for column in used)]
@@ -81,7 +83,7 @@ def render(run_dir: Path, *, full: bool = False) -> str:
         chosen = [record for record in records if record["status"] in statuses]
         if chosen:
             lines.extend([f"## {title}", ""])
-            lines.extend(_table(header, [row(record) for record in chosen]))
+            lines.extend(table(header, [row(record) for record in chosen]))
 
     section(
         "Computed values that differ from the predicted ones",
@@ -137,14 +139,14 @@ def render(run_dir: Path, *, full: bool = False) -> str:
         )[:10]
         if slowest:
             lines += ["## Slowest computed tasks", ""]
-            lines += _table(
+            lines += table(
                 ["task", "cost", "wall (s)", "peak (MB)"],
                 [[_name(r), r["task"].get("cost"), r["wall_seconds"], r["peak_rss_mb"]] for r in slowest],
             )
     return "\n".join(lines).rstrip() + "\n"
 
 
-def _provenance(records: list[dict[str, Any]], unreadable: int) -> list[str]:
+def _provenance(records: list[Record], unreadable: int) -> list[str]:
     def distinct(pick: Any) -> str:
         values = sorted({str(value) for value in map(pick, records) if value is not None})
         return ", ".join(values) if values else "unknown"
@@ -152,7 +154,7 @@ def _provenance(records: list[dict[str, Any]], unreadable: int) -> list[str]:
     lines = [
         f"- records: {len(records)}",
         f"- code: {distinct(lambda r: r.get('code', {}).get('commit'))}",
-        f"- runner: {distinct(lambda r: _cell(r.get('runner')) or None)}",
+        f"- runner: {distinct(lambda r: cell(r.get('runner')) or None)}",
         f"- wall time of all tasks: {sum(r['wall_seconds'] for r in records):.0f} s",
     ]
     if any(r.get("code", {}).get("dirty") for r in records):

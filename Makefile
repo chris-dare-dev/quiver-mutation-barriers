@@ -24,7 +24,7 @@ SCHEDULER = $(PYTHON) -m taskbatch
 NAME      = $(basename $(notdir $(BATCH)))
 RUN_DIR   = results/$(NAME)
 SECTIONS  = section-05 section-07 section-08 section-09 section-10 section-12 section-14
-CHECKED   = taskbatch qmb runners tests tools/claims.py tools/expected.py
+CHECKED   = taskbatch qmb runners tests tools/adopt.py tools/claims.py tools/expected.py
 
 .PHONY: test test-slow lint format build plan run report smoke record tables check expected
 

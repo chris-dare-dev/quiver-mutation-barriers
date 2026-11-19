@@ -25,6 +25,9 @@ RUNNER_STATUSES = frozenset({Status.OK, Status.MISMATCH, Status.UNSUPPORTED})
 # Statuses that count as the task having been carried out as intended.
 COMPLETED_STATUSES = frozenset({Status.OK, Status.UNSUPPORTED})
 
+# Statuses that make a run fail; a task stopped at a limit is neither completed nor failed.
+FAILED_STATUSES = frozenset({Status.MISMATCH, Status.ERROR, Status.CRASHED})
+
 
 @dataclass(frozen=True)
 class Limits:

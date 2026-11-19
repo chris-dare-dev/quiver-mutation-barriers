@@ -15,7 +15,7 @@ The tables of the three sections after the next one are generated: their rows ar
 The last column, *Re-run under the scheduler*, is computed from the records in [records/](records/). A claim that a program can check has tasks: computations with one answer each, defined by the batch files in [batches/](batches/) and run by the scheduler under time and memory limits ([README.md](README.md#tasks-batches-and-records)). The column reads:
 
 - **all N tasks ok**, when every task of the claim has a record and each computed value agrees with the predicted one, with the day and the commit of the records;
-- the count of tasks by status otherwise: `ok`, `mismatch`, `unsupported` (the task's method cannot compute it), `timeout`, `memory`, `error`, `crashed`, and `not re-run` for tasks without a record;
+- the count of tasks by status otherwise: `ok`, `mismatch`, `unsupported` (the task's method cannot compute it), `timeout`, `memory`, `error`, `crashed`, `stale` for a record of a task that has changed since it was computed (another method, another predicted value; such a record supports nothing), and `not re-run` for tasks without a record;
 - **not re-run**, when no task of the claim has a record. The stored output named in the row is then the only support, and it is the original output, not a run of this repository;
 - **no task**, with the reason, when nothing in the batch files computes the claim.
 

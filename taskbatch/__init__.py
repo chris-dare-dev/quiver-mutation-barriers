@@ -5,4 +5,4 @@ knows only that a runner can expand a batch description into tasks and compute o
 it schedules the tasks, enforces the limits, and keeps one structured record per task.
 """
 
-__version__ = "0.3"
+__version__ = "0.4"

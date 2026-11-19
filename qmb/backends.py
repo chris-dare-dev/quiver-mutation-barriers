@@ -21,6 +21,7 @@ import shutil
 import subprocess
 import sys
 from collections.abc import Iterable, Iterator, Sequence
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
@@ -34,6 +35,10 @@ class BackendError(RuntimeError):
     """A back end is missing or failed; the message says what to do."""
 
 
+class Unsupported(Exception):
+    """A back end cannot compute what a task asks; the message says why.  The task ends "unsupported"."""
+
+
 def binary(name: str) -> Path:
     path = BUILD / name
     if not path.is_file():
@@ -41,19 +46,26 @@ def binary(name: str) -> Path:
     return path
 
 
-def np_barrier(
-    quiver: Sequence[int], *, low: int, cap: int, n: int, prune_forks: bool = False, budget: int = 6_000_000
-) -> dict[str, Any]:
-    """One search of experiments/np_barrier.c.
+@dataclass(frozen=True)
+class Search:
+    """What one search of np_barrier.c found."""
 
-    From `quiver`, through quivers of height at most `cap`, lowest bottleneck first, until a quiver of
-    height at most `low` outside the start's own component at that height is reached.  The result has
-    `status` ("found", with `iso` and `target`; "cap" or "closed" when there is none within the cap;
-    "budget" when more than `budget` quivers were needed), `popped` (quivers taken from the queue),
-    `plateau` (quivers of height at most `low` among them) and `forks`.
+    status: str  # "found"; "cap" or "closed" when no other low quiver is within the cap
+    popped: int  # quivers taken from the queue
+    plateau: int  # quivers of height at most `low` among them
+    forks: int
+    iso: int | None = None  # with "found": the height at which the other low quiver is reached
+    target: tuple[int, ...] | None = None  # with "found": that quiver
+
+
+def c_search(
+    quiver: Sequence[int], *, low: int, cap: int, n: int, prune_forks: bool, budget: int
+) -> dict[str, Any]:
+    """The row that experiments/np_barrier.c prints for one search, as it prints it.
+
+    This is all that is said to the C program and heard from it; `np_barrier` decides what may be asked
+    of it and what its answer means.
     """
-    if cap > INT_MAX:
-        raise BackendError(f"np_barrier.c holds entries in 32 bits: the cap {cap} is above 2^31 - 1")
     line = f"{n} {low} {cap} {budget} {int(prune_forks)} {' '.join(map(str, quiver))}\n"
     done = subprocess.run(
         [str(binary("np_barrier"))], input=line, capture_output=True, text=True, check=False
@@ -61,10 +73,47 @@ def np_barrier(
     rows = [row for row in done.stdout.splitlines() if row.strip().endswith("}")]
     if done.returncode != 0 or len(rows) != 1:
         raise BackendError(f"np_barrier failed (status {done.returncode}): {done.stderr.strip()[-300:]}")
-    result: dict[str, Any] = json.loads(rows[0])
+    row: dict[str, Any] = json.loads(rows[0])
+    return row
+
+
+def np_barrier(
+    quiver: Sequence[int],
+    *,
+    low: int,
+    cap: int,
+    n: int,
+    barrier: int,
+    prune_forks: bool = False,
+    budget: int = 6_000_000,
+) -> Search:
+    """One search of experiments/np_barrier.c.
+
+    From `quiver`, through quivers of height at most `cap`, lowest bottleneck first, until a quiver of
+    height at most `low` outside the start's own component at that height is reached.
+
+    `barrier` is the height up to which the caller relies on the search.  np_barrier.c holds every entry
+    in 32 bits and discards a quiver with a larger one, so it sees the whole region below a barrier, and
+    the join at it, only when the barrier is below 2^31: above that the search is Unsupported.  A `cap`
+    above 2^31 - 1 is lowered to it, which only bounds the search.  A search that needs more than `budget`
+    quivers is an error.
+    """
+    if barrier > INT_MAX:
+        raise Unsupported(
+            "np_barrier.c holds entries in 32 bits, and the barrier of this task, "
+            f"{barrier}, is above 2^31 - 1"
+        )
+    result = c_search(quiver, low=low, cap=min(cap, INT_MAX), n=n, prune_forks=prune_forks, budget=budget)
     if result["status"] == "budget":
         raise BackendError(f"np_barrier needed more than its budget of {budget} quivers")
-    return result
+    return Search(
+        status=result["status"],
+        popped=result["popped"],
+        plateau=result["plateau"],
+        forks=result["forks"],
+        iso=result.get("iso"),
+        target=tuple(result["target"]) if "target" in result else None,
+    )
 
 
 @contextlib.contextmanager

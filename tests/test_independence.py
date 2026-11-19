@@ -9,7 +9,7 @@ from pathlib import Path
 
 from taskbatch.settings import REPOSITORY
 
-NEW_CODE = {"qmb", "taskbatch", "runners", "claims", "expected", "task_runner"}
+NEW_CODE = {"qmb", "taskbatch", "runners", "adopt", "claims", "expected", "task_runner"}
 
 
 def imports(path: Path) -> set[str]:
@@ -39,14 +39,16 @@ class Independence(unittest.TestCase):
 
     def test_the_core_and_the_scheduler_use_the_standard_library_only(self) -> None:
         for package in ("qmb", "taskbatch"):
-            for module in sorted((REPOSITORY / package).glob("*.py")):
+            for module in sorted((REPOSITORY / package).rglob("*.py")):
                 self.assertLessEqual(imports(module), sys.stdlib_module_names | {package}, module.name)
 
     def test_the_core_does_not_import_the_scripts_it_runs(self) -> None:
         names = {
             path.stem for folder in ("experiments", "verify") for path in (REPOSITORY / folder).glob("*.py")
         }
-        for module in sorted((REPOSITORY / "qmb").glob("*.py")):
+        modules = sorted((REPOSITORY / "qmb").rglob("*.py"))
+        self.assertGreater(len(modules), 15)  # the kinds, one module each, are among them
+        for module in modules:
             self.assertFalse(imports(module) & names, module.name)
 
 

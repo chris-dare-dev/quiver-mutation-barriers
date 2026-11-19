@@ -25,7 +25,8 @@ from typing import Any
 from .config import BatchConfig, ConfigError
 from .memory import MemoryGuard
 from .model import RUNNER_STATUSES, Limits, Status, Task
-from .runner import error_lines, parse_result, run_command
+from .record import Record, classify, make_record
+from .runner import run_command
 from .settings import REPOSITORY
 from .store import ResultStore
 
@@ -48,10 +49,10 @@ class _Running:
     log: Path
     started: float
     started_at: str
-    verdict: Status | None = None  # set when the scheduler kills the process
+    stopped: Status | None = None  # the limit at which the scheduler killed the process
 
 
-Progress = Callable[[dict[str, Any], int, int], None]
+Progress = Callable[[Record, int, int], None]
 
 
 class Scheduler:
@@ -161,16 +162,16 @@ class Scheduler:
 
     # ending ----------------------------------------------------------------------------------------
 
-    def _collect(self, running: list[_Running]) -> list[dict[str, Any]]:
+    def _collect(self, running: list[_Running]) -> list[Record]:
         """Records for the processes that ended or had to be stopped; removes them from `running`."""
         records = []
         for entry in list(running):
             pid, status, usage = os.wait4(entry.process.pid, os.WNOHANG)
             if pid == 0:
                 if time.monotonic() - entry.started > entry.limits.time_seconds:
-                    entry.verdict = Status.TIMEOUT
+                    entry.stopped = Status.TIMEOUT
                 elif self.guard.over_limit(entry.process.pid, entry.limits.memory_mb):
-                    entry.verdict = Status.MEMORY
+                    entry.stopped = Status.MEMORY
                 else:
                     continue
                 status, usage = self._kill(entry)
@@ -188,58 +189,34 @@ class Scheduler:
         entry.process.returncode = os.waitstatus_to_exitcode(status)
         return status, usage
 
-    def _record(self, entry: _Running, exit_code: int, usage: Any, wall: float) -> dict[str, Any]:
+    def _record(self, entry: _Running, exit_code: int, usage: Any, wall: float) -> Record:
         output = entry.log.read_text(encoding="utf-8", errors="replace")
-        result = parse_result(output) if exit_code == 0 else None
-        error = None
-        if entry.verdict is not None:
-            status = entry.verdict
-            result = None
-        elif result is not None and result.get("status") in RUNNER_STATUSES:
-            status = Status(result["status"])
-        elif exit_code == -signal.SIGKILL and self.guard.killed_for_memory(entry.tag):
-            status = Status.MEMORY
-        elif exit_code > 0:
-            status = Status.ERROR
-            error = error_lines(output) or f"exit status {exit_code}"
-        else:
-            status = Status.CRASHED
-            error = (
-                f"ended by signal {signal.Signals(-exit_code).name}"
-                if exit_code < 0
-                else "ended without a result"
-            )
+        status, result, error = classify(
+            output,
+            exit_code,
+            stopped=entry.stopped,
+            killed_for_memory=lambda: self.guard.killed_for_memory(entry.tag),
+        )
         if exit_code != 0:
             self.guard.release(entry.tag)
-
-        result = result or {}
         keep_log = status not in RUNNER_STATUSES
         if not keep_log:
             entry.log.unlink(missing_ok=True)
-        record = {
-            "task_id": entry.task.id,
-            "task": entry.task.payload,
-            "status": str(status),
-            "value": result.get("value"),
-            "predicted": result.get("predicted", entry.task.payload.get("predicted")),
-            "agrees": result.get("agrees"),
-            "detail": {
-                key: value
-                for key, value in result.items()
-                if key not in {"status", "value", "predicted", "agrees"}
-            },
-            "error": error,
-            "wall_seconds": round(wall, 3),
-            "cpu_seconds": round(usage.ru_utime + usage.ru_stime, 3),
-            "peak_rss_mb": round(usage.ru_maxrss / 1024, 1),
-            "limits": entry.limits.as_dict(),
-            "memory_guard": self.guard.name,
-            "exit_code": exit_code if exit_code >= 0 else None,
-            "exit_signal": signal.Signals(-exit_code).name if exit_code < 0 else None,
-            "started_at": entry.started_at,
-            "log": str(entry.log.relative_to(self.run_dir)) if keep_log else None,
-        }
-        return record | self.stamp
+        return make_record(
+            entry.task,
+            entry.limits,
+            status,
+            result,
+            error,
+            wall_seconds=wall,
+            cpu_seconds=usage.ru_utime + usage.ru_stime,
+            peak_rss_mb=usage.ru_maxrss / 1024,
+            memory_guard=self.guard.name,
+            exit_code=exit_code,
+            started_at=entry.started_at,
+            log=str(entry.log.relative_to(self.run_dir)) if keep_log else None,
+            stamp=self.stamp,
+        )
 
 
 def _raise_interrupt(signum: int, frame: object) -> None:

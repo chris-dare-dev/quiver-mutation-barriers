@@ -11,29 +11,16 @@ from typing import Any
 from taskbatch.report import render
 from taskbatch.store import ResultStore
 
+from . import helpers
+
 
 def task(name: str, group: str = "pairs d2", **more: Any) -> dict[str, Any]:
     return {"id": name, "kind": "ext_pair", "group": group, "cost": 3} | more
 
 
 def record(name: str, status: str, **more: Any) -> dict[str, Any]:
-    base = {
-        "task_id": name,
-        "task": task(name),
-        "status": status,
-        "value": None,
-        "predicted": {"chi": 2},
-        "agrees": None,
-        "detail": {},
-        "error": None,
-        "wall_seconds": 1.5,
-        "peak_rss_mb": 120.0,
-        "limits": {"time_seconds": 60, "memory_mb": 500},
-        "log": None,
-        "runner": {"m2_version": "1.25.11"},
-        "code": {"commit": "abc123", "dirty": False},
-    }
-    return base | more
+    fields = {"predicted": {"chi": 2}, "runner": {"version": "1.0"}} | more
+    return dict(helpers.record(fields.pop("task", task(name)), status, **fields))
 
 
 class Report(unittest.TestCase):
@@ -73,7 +60,7 @@ class Report(unittest.TestCase):
 
         self.assertIn("# Results in example", report)
         self.assertIn("- code: abc123", report)
-        self.assertIn("- runner: m2_version 1.25.11", report)
+        self.assertIn("- runner: version 1.0", report)
         self.assertIn(
             "| group | tasks | ok | mismatch | unsupported | timeout | memory | error | not run |", report
         )

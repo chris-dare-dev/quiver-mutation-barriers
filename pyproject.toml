@@ -30,4 +30,4 @@ select = ["E", "F", "W", "I", "B", "UP", "SIM", "C4", "PIE", "RET", "RUF"]
 [tool.mypy]
 python_version = "3.11"
 strict = true
-files = ["taskbatch", "qmb", "runners", "tools/claims.py", "tools/expected.py"]
+files = ["taskbatch", "qmb", "runners", "tools/adopt.py", "tools/claims.py", "tools/expected.py"]

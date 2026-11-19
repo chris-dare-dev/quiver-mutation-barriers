@@ -5,9 +5,11 @@ from __future__ import annotations
 import fcntl
 import json
 import os
-from collections.abc import Collection
+from collections.abc import Collection, Mapping
 from pathlib import Path
-from typing import Any
+from typing import Any, cast
+
+from .record import Record
 
 
 class StoreLocked(RuntimeError):
@@ -30,12 +32,12 @@ class ResultStore:
 
     # reading ---------------------------------------------------------------------------------------
 
-    def records(self) -> list[dict[str, Any]]:
+    def records(self) -> list[Record]:
         """Every record in the file, oldest first."""
         self.unreadable_lines = 0
         if not self.path.exists():
             return []
-        records = []
+        records: list[Record] = []
         with self.path.open("r", encoding="utf-8") as handle:
             for line in handle:
                 if not line.strip():
@@ -46,12 +48,12 @@ class ResultStore:
                     self.unreadable_lines += 1
                     continue
                 if isinstance(record, dict) and "task_id" in record and "status" in record:
-                    records.append(record)
+                    records.append(cast(Record, record))
                 else:
                     self.unreadable_lines += 1
         return records
 
-    def latest(self) -> dict[str, dict[str, Any]]:
+    def latest(self) -> dict[str, Record]:
         """The most recent record of each task."""
         return {record["task_id"]: record for record in self.records()}
 
@@ -83,7 +85,7 @@ class ResultStore:
             handle.seek(size - 1)
             return handle.read(1) != b"\n"
 
-    def append(self, record: dict[str, Any]) -> None:
+    def append(self, record: Mapping[str, Any]) -> None:
         if self._fd is None:
             raise RuntimeError("the store is not open for writing")
         line = json.dumps(record, sort_keys=True, ensure_ascii=False, allow_nan=False) + "\n"

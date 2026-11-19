@@ -9,7 +9,7 @@ import shlex
 import socket
 import sys
 from collections import Counter
-from collections.abc import Sequence
+from collections.abc import Iterable, Sequence
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
@@ -17,7 +17,8 @@ from typing import Any
 from . import __version__, report
 from .config import BatchConfig, ConfigError, load_config
 from .memory import available_mb, choose_guard
-from .model import COMPLETED_STATUSES, Limits, Status, Task
+from .model import COMPLETED_STATUSES, FAILED_STATUSES, Limits, Status, Task
+from .record import Record
 from .runner import RunnerError, code_version, expand
 from .scheduler import Scheduler
 from .settings import REPOSITORY, SettingsError, load_settings
@@ -187,18 +188,23 @@ def _command_run(arguments: argparse.Namespace) -> int:
     summary = ", ".join(f"{count} {status}" for status, count in sorted(outcome.items())) or "nothing to do"
     print(f"this run: {summary}", file=sys.stderr)
     latest = store.latest()
-    statuses = Counter(latest[task.id]["status"] for task in tasks if task.id in latest)
-    if statuses[Status.MISMATCH] or statuses[Status.ERROR] or statuses[Status.CRASHED]:
+    return exit_status(latest[task.id]["status"] for task in tasks if task.id in latest)
+
+
+def exit_status(statuses: Iterable[str]) -> int:
+    """The exit status of a run whose tasks have these latest statuses."""
+    found = set(statuses)
+    if found & FAILED_STATUSES:
         return EXIT_FAILED
-    if any(count for status, count in statuses.items() if status not in COMPLETED_STATUSES):
+    if found - COMPLETED_STATUSES:
         return EXIT_LIMITS
     return EXIT_OK
 
 
-def _print_progress(record: dict[str, Any], done: int, total: int) -> None:
+def _print_progress(record: Record, done: int, total: int) -> None:
     note = ""
     if record["status"] == Status.MISMATCH:
-        note = f"  computed {report._cell(record['value'])}, predicted {report._cell(record['predicted'])}"
+        note = f"  computed {report.cell(record['value'])}, predicted {report.cell(record['predicted'])}"
     elif record["error"]:
         note = "  " + record["error"].splitlines()[-1]
     print(

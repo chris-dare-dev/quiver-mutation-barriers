@@ -11,6 +11,8 @@ from typing import Any
 
 from taskbatch.config import BatchConfig, parse_config
 from taskbatch.memory import MemoryGuard, PollingGuard
+from taskbatch.model import Limits, Status, Task
+from taskbatch.record import Record, make_record
 from taskbatch.runner import expand
 from taskbatch.scheduler import Scheduler
 from taskbatch.store import ResultStore
@@ -36,6 +38,30 @@ def fake_config(
             "tasks": sets,
         }
     )
+
+
+def record(task: dict[str, Any], status: str, **fields: Any) -> Record:
+    """A record with every field, as the scheduler writes it; `fields` replace the ones they name."""
+    made = make_record(
+        Task.from_payload(task),
+        Limits(time_seconds=60, memory_mb=500),
+        Status(status),
+        {},
+        None,
+        wall_seconds=1.5,
+        cpu_seconds=1.4,
+        peak_rss_mb=120.0,
+        memory_guard="poll",
+        exit_code=0,
+        started_at="2026-01-01T00:00:00+00:00",
+        log=None,
+        stamp={"run_id": "test", "runner": {}, "code": {"commit": "abc123", "dirty": False}},
+    )
+    unknown = set(fields) - set(made)
+    if unknown:
+        raise TypeError(f"a record has no field {sorted(unknown)}")
+    made.update(fields)  # type: ignore[typeddict-item]
+    return made
 
 
 class Journal:

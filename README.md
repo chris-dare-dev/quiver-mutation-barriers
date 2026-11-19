@@ -112,7 +112,7 @@ make report BATCH=batches/section-07.toml
 
 The long batches are the original long runs, described as tasks with limits. All four have been run. In `long-section-13` the first tube pass was one certified class short of the stored count in its first run and reproduced it in its second. The census of Section 8 is not a task at all ([CLAIMS.md](CLAIMS.md#tasks-and-records)). The task kinds and the keys of a batch file are listed at the top of [qmb/tasks.py](qmb/tasks.py); what a run guarantees, and the contract between the scheduler and the program that computes, are in [taskbatch/PROTOCOL.md](taskbatch/PROTOCOL.md).
 
-The records in [records/](records/) were computed on one machine, from committed code, and each names its commit. [claims/RECORDS.md](claims/RECORDS.md) lists every task with its predicted value, its stored evidence and its record.
+The records in [records/](records/) were computed on one machine, from committed code, and each names its commit; a record that names the machine or a directory outside the repository is not adopted. [claims/RECORDS.md](claims/RECORDS.md) lists every task with its predicted value, its stored evidence and its record.
 
 ## Repository layout
 
@@ -131,7 +131,7 @@ The records in [records/](records/) were computed on one machine, from committed
 | [experiments/](experiments/README.md) | The scripts behind the notes, two C programs, `requirements.txt` |
 | [verify/](verify/README.md) | Checking code, kept apart from the code it checks: `smoke.py` and the scripts of notes 12, 17, 19, 23 |
 | [DATA.md](DATA.md) | The stored results: one archive, its checksum, every file in it |
-| [tools/](tools/) | The script that rewrote references in the stored results, the archive builder, the builder of `claims/expected.json` and the generator of the claim tables |
+| [tools/](tools/) | The script that rewrote references in the stored results, the archive builder, the builder of `claims/expected.json`, the generator of the claim tables, and `adopt.py`, which copies the records of a finished run into `records/` |
 | `Makefile`, `Dockerfile`, `pyproject.toml`, `.python-version`, `.github/workflows/` | Targets, container, lint settings, the interpreter, continuous integration |
 | [LICENSE](LICENSE), [LICENSE-TEXT.md](LICENSE-TEXT.md) | MIT for code; CC BY 4.0 for prose, paper and data |
 | [CITATION.cff](CITATION.cff) | How to cite |

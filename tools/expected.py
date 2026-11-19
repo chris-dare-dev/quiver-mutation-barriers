@@ -34,7 +34,14 @@ REPOSITORY = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPOSITORY))
 
 from qmb.families import FAMILIES  # noqa: E402
-from qmb.tasks import EXPECTED, STAGES, parse_conj55_summary, parse_counts  # noqa: E402
+from qmb.tasks import (  # noqa: E402
+    EXPECTED,
+    STAGES,
+    np_qa_core_row,
+    parse_conj55_summary,
+    parse_counts,
+    parse_review17,
+)
 
 # Values the article prints for its running example, R_8 = (-8, -8, 7, -2, 6, -8).
 ARTICLE: dict[str, dict[str, Any]] = {
@@ -139,16 +146,13 @@ def build(directory: Path) -> dict[str, Any]:
         add(f"route/P+/t={t}", [at(name, line, "route_steps_to_top")])
         add(f"reach/P+/t={t}@review17", [at(name, line, "below_H.popped")], count)
     # the second enumerator of note 17: its own log for t <= 64, and the only source for 65 <= t <= 80
-    pattern = re.compile(
-        r"^P\+_t t=(\d+) w=\d+ H=(\d+): (\d+) quivers reached below H, (\d+) of height <= w,"
-    )
     for name in ("review17_plain.log", "review17_plain_65_80.log"):
         for line, text in enumerate(stored.lines(name), start=1):
-            match = pattern.match(text)
-            if match:
-                t = int(match[1])
-                count = {"quivers": int(match[3]), "low": int(match[4])}
-                _need(int(match[2]) == pp.barrier(t), f"{name}:{line}")
+            plain = parse_review17(text)
+            if plain is not None:
+                t = plain.t
+                count = {"quivers": plain.quivers, "low": plain.low}
+                _need(plain.barrier == pp.barrier(t), f"{name}:{line}")
                 known = tasks.get(f"reach/P+/t={t}@review17", {}).get("predicted")
                 _need(known is None or known == count, f"{name}:{line} against np_corridor_family_plus.jsonl")
                 add(f"reach/P+/t={t}@review17", [at(name, line)], count)
@@ -180,8 +184,9 @@ def build(directory: Path) -> dict[str, Any]:
         ("np_qa_core_family.jsonl", "/forks-pruned"),
     ):
         for a, (line, row) in stored.rows(name, "a").items():
-            _need(row["H"] == qa.barrier(a) and row["ok"] and row["status"] == "closed", f"{name}:{line}")
-            count = {"quivers": row["members"], "low": row["members_of_height_le_w"]}
+            core = np_qa_core_row(row)
+            _need(core.barrier == qa.barrier(a) and core.ok and core.status == "closed", f"{name}:{line}")
+            count = {"quivers": core.members, "low": core.low}
             add(f"reach/Qa/a={a}{pruned}@np_qa_core", [at(name, line, "members")], count)
             add(f"reach/Qa/a={a}{pruned}", [at(name, line, "members")], count)
 
@@ -194,14 +199,14 @@ def build(directory: Path) -> dict[str, Any]:
         for n, text in enumerate(lines, start=1)
         if (cells := text.split("|"))[0] == "" and len(cells) > 2
     }
-    for h, row in summary["heights"].items():
+    for h, counted in summary["heights"].items():
         add(
             f"conj55/h={h}",
             [at(name, row_line[h])],
-            {"quivers": row["quivers"], "reach_acyclic": row["reach_acyclic"]},
+            {"quivers": counted["quivers"], "reach_acyclic": counted["reach_acyclic"]},
         )
     for bound in range(2, 18):
-        rows = {h: row for h, row in summary["heights"].items() if int(h) <= bound}
+        rows = {h: counted for h, counted in summary["heights"].items() if int(h) <= bound}
         add(f"conj55_program/N={bound}", [{"file": name, "lines": [3, bound + 2]}], {"heights": rows})
     add("conj55_program/N=18", [{"file": name}], summary)
 
