@@ -107,7 +107,7 @@ Run on 17 November 2026 on the machine that produced the results (Linux, 8-core 
 | `python3 -I verify/smoke.py` (clean copy, no archive; CPython 3.12.14 and 3.14.4) | 40 checks, 0 mismatches; 15 s, 38 MB |
 | `python3 -I verify/smoke.py --full` (CPython 3.14.4) | 0 mismatches; 134 s, 437 MB |
 | `sh verify/smoke_certificates.sh` (clean copy, no archive) | all five lines agree (8 s) |
-| the two `docker run --rm --network none … python:3.12-slim …` lines of the README (CPython 3.12.16 in the image, repository mounted read-only) | both pass; 20 s and 12 s |
+| the two `docker run --rm --network none … python:3.12-slim …` lines of the guide (CPython 3.12.16 in the image, repository mounted read-only) | both pass; 20 s and 12 s |
 | `n4_doors.py selftest`, `prove2`, `prove`, each compared with its stored log | identical (2 s, under 1 s, under 1 s) |
 | `np_corridor_prove.py prove --T0 8 --audit-tmax 11`, compared with `np_corridor_prove.log` | identical (24 s) |
 | `np_corridor.py build`, then `family_plus --tmin 2 --tmax 8` | built with gcc 15.2; the lines for t = 2 to 8 agree with `np_corridor_family_plus.log` up to the times |

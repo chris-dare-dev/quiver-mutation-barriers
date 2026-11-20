@@ -1,7 +1,7 @@
 # The registry of claims: every row of the claim tables of CLAIMS.md.
 #
 # tools/claims.py writes the tables of CLAIMS.md, the file claims/RECORDS.md and the headline table of
-# README.md from this file, from the batch files (which tasks exist), from claims/expected.json
+# GUIDE.md from this file, from the batch files (which tasks exist), from claims/expected.json
 # (predicted values and stored evidence) and from the records in records/.  `make check` fails if
 # the committed tables differ from what it writes.
 #
@@ -716,7 +716,7 @@ cells = [
 tasks = []
 no_task = '''a timing of the original program; not a task'''
 
-# The headline table of README.md: one row per entry, from the task's latest record.
+# The headline table of GUIDE.md: one row per entry, from the task's latest record.
 # `key` picks one entry of a computed table; without it the whole value is shown.
 
 [[headline]]

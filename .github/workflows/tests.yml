@@ -31,5 +31,5 @@ jobs:
         run: make test
       - name: The generated claim tables are up to date
         run: make check
-      - name: Smoke batch, and the headline table of the README from it
+      - name: Smoke batch, and the headline table of the guide from it
         run: make smoke

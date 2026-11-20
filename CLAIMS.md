@@ -12,7 +12,7 @@ Contents: [Tasks and records](#tasks-and-records) · [Article sections and figur
 
 The tables of the three sections after the next one are generated: their rows are in [claims/claims.toml](claims/claims.toml), and `make tables` writes them here. Every column but the last is the row as it was written by hand. In those columns **re-run here** refers to the manual reruns of 17 November 2026 described above.
 
-The last column, *Re-run under the scheduler*, is computed from the records in [records/](records/). A claim that a program can check has tasks: computations with one answer each, defined by the batch files in [batches/](batches/) and run by the scheduler under time and memory limits ([README.md](README.md#tasks-batches-and-records)). The column reads:
+The last column, *Re-run under the scheduler*, is computed from the records in [records/](records/). A claim that a program can check has tasks: computations with one answer each, defined by the batch files in [batches/](batches/) and run by the scheduler under time and memory limits ([GUIDE.md](GUIDE.md#tasks-batches-and-records)). The column reads:
 
 - **all N tasks ok**, when every task of the claim has a record and each computed value agrees with the predicted one, with the day and the commit of the records;
 - the count of tasks by status otherwise: `ok`, `mismatch`, `unsupported` (the task's method cannot compute it), `timeout`, `memory`, `error`, `crashed`, `stale` for a record of a task that has changed since it was computed (another method, another predicted value; such a record supports nothing), and `not re-run` for tasks without a record;

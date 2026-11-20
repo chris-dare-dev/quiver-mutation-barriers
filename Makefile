@@ -3,12 +3,12 @@
 #   make test-slow   verify/smoke.py and the section batches, each computed afresh (several minutes)
 #   make lint        ruff and mypy (neither is needed to run anything)
 #   make build       the two C search programs, into build/
-#   make smoke       the smoke batch, computed afresh, and the headline table of README.md from it
+#   make smoke       the smoke batch, computed afresh, and the headline table of GUIDE.md from it
 #   make plan BATCH=batches/section-07.toml     list what a run would compute, without computing
 #   make run BATCH=batches/section-07.toml      compute the tasks of a batch that have no record yet
 #   make report BATCH=batches/section-07.toml REPORT_ARGS=--full
 #   make record BATCH=batches/section-07.toml   run, then copy the records into records/ (committed code only)
-#   make tables      write the generated tables of CLAIMS.md, README.md and claims/RECORDS.md
+#   make tables      write the generated tables of CLAIMS.md, GUIDE.md and claims/RECORDS.md
 #   make check       fail if those tables are not what the registry and the records give
 #   make expected DATA=experiments              rebuild claims/expected.json from the unpacked data archive
 # ARGS is passed to the scheduler, for example ARGS="--workers 8 --memory-budget 16000".

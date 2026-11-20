@@ -21,7 +21,7 @@ Both are plain C with no dependency beyond the C library; the build line is also
 
 ## These scripts and the tasks
 
-The scripts here are the programs that produced the stored results, and they are unchanged by the tasks and batches of this repository ([../README.md](../README.md#tasks-batches-and-records)). A task that needs one of them runs it as a program, in an empty scratch directory under `~/.cache/qmb-scratch/` (or `$QMB_SCRATCH`), never in this directory, so nothing here is overwritten. The package `../qmb/` is separate code and is not imported by any script here.
+The scripts here are the programs that produced the stored results, and they are unchanged by the tasks and batches of this repository ([../GUIDE.md](../GUIDE.md#tasks-batches-and-records)). A task that needs one of them runs it as a program, in an empty scratch directory under `~/.cache/qmb-scratch/` (or `$QMB_SCRATCH`), never in this directory, so nothing here is overwritten. The package `../qmb/` is separate code and is not imported by any script here.
 
 ## Files added for this repository
 
