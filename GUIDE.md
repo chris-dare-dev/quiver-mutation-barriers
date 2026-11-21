@@ -116,6 +116,61 @@ The long batches are the original long runs, described as tasks with limits. All
 
 The records in [records/](records/) were computed on one machine, from committed code, and each names its commit; a record that names the machine or a directory outside the repository is not adopted. [claims/RECORDS.md](claims/RECORDS.md) lists every task with its predicted value, its stored evidence and its record.
 
+## A quiver of your own
+
+The searches run on any quiver, not only on those of the article. A quiver is given by the entries b_ij, i < j, of its exchange matrix, row by row: b₀₁, b₀₂, b₀₃, b₁₂, b₁₃, b₂₃ on four vertices, with b_ij > 0 for b_ij arrows i → j.
+
+```bash
+python3 -m qmb explore 3 -2 2 -1 3 -3
+```
+
+```text
+quiver    (3, -2, 2, -1, 3, -3) on 4 vertices, of height 3
+mutation  at each vertex in turn gives heights 7, 11, 4, 8
+barrier   10: the opposite is reached through heights at most 10, and not below
+below it  8 quivers up to relabelling, the start included; 1 of height at most 3
+route     16 mutations at the least, staying at or below 10
+searched  23 quivers, taken in order of height
+```
+
+The command looks for the least height at which the quiver is joined to its opposite, counts the quivers reached below that height, and counts the mutations of a shortest route at it. The mutation class of most quivers is infinite, and a quiver need not be joined to its opposite at any height a search reaches, so the search is stopped: `--cap H` leaves out every quiver above height H, and without a cap the search ends after 100,000 quivers (`--budget N` sets another number). Both stops are counts, so a command gives the same answer on every machine. A stopped search still gives a bound, because the quivers are taken in order of height: here R₈ with its last entry changed from −8 to −7.
+
+```bash
+python3 -m qmb explore -8 -8 7 -2 6 -7 --cap 1000
+```
+
+```text
+quiver    (-8, -8, 7, -2, 6, -7) on 4 vertices, of height 8
+mutation  at each vertex in turn gives heights 62, 24, 49, 41
+barrier   not found: no route to the opposite stays at or below height 1000
+          (the cap of 1000 left quivers out; a higher route is not excluded)
+searched  579 quivers, taken in order of height
+```
+
+`--json` prints the same result as JSON. The search is the one of [qmb/search.py](qmb/search.py), in Python integers and without pruning. It compares quivers up to relabelling, at a cost that grows with the number of vertices: here it takes about 18,000 quivers a second on four vertices and 300 on six, and 100,000 quivers on four vertices hold about 120 MB.
+
+Several quivers at once, under time and memory limits and with a record each, are a batch file with tasks of the kind `explore`. [examples/own-quivers.toml](examples/own-quivers.toml) is one to copy:
+
+```toml
+[[tasks]]
+kind = "explore"
+quiver = [-8, -8, 7, -2, 6, -8]
+name = "R8"                                                   # ends the id of the task; otherwise the entries do
+cap = 200                                                     # as --cap
+budget = 50000                                                # as --budget
+predicted = { barrier = 101, quivers = 35, mutations = 37 }   # what you expect, on any keys of the value
+```
+
+```bash
+make run BATCH=examples/own-quivers.toml
+```
+
+```bash
+make report BATCH=examples/own-quivers.toml REPORT_ARGS=--full
+```
+
+Only `quiver` is required. With `predicted` a task ends `ok` when the search agrees on every key given, and `mismatch` when it does not. Without it the task ends `ok` whenever the search ends: there is nothing to agree with, and the record holds the numbers. The keys of the value are listed at the top of [qmb/kinds/explore.py](qmb/kinds/explore.py). These tasks belong to no claim of the article, so the example is kept outside `batches/` and nothing of it is in `records/`.
+
 ## Repository layout
 
 | Path | What it is |
@@ -125,6 +180,7 @@ The records in [records/](records/) were computed on one machine, from committed
 | [CLAIMS.md](CLAIMS.md) | Article section → repository path; every claim → script, stored output, command, and what the records say; what is not stored; known discrepancies |
 | [claims/](claims/) | `claims.toml`, the registry of claims and their tasks; `expected.json`, predicted values and stored evidence by task; `RECORDS.md`, generated: every task with its record |
 | [batches/](batches/) | Batch files: which tasks, which limits |
+| [examples/](examples/own-quivers.toml) | A batch file to copy for quivers of your own, outside the claims |
 | [records/](records/) | The records of the batches that were run for this repository |
 | [qmb/](qmb/) | The core that tasks compute with: mutation, relabelling, forks, the families and their closed forms, searches, the task kinds. Standard library only. It is new code: the scripts of `experiments/` and `verify/` do not use it |
 | [runners/task_runner.py](runners/task_runner.py) | The command the scheduler calls: lists the tasks of a batch, computes one task |

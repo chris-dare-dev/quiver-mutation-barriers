@@ -15,6 +15,8 @@ The kinds, one module of `kinds/` each; the module says the keys of its `[[tasks
     conj55          Conjecture 5.5 at one height, by enumeration
     conj55_program  the original program for all heights up to N
     census, core, tube   one stage of Sections 8 and 13, by its own program (kinds/stages.py)
+    explore         a quiver given by its entries: its barrier if a bounded search finds one, and the
+                    quivers below it
     synthetic       no mathematics: sleeps, holds memory or fails
 
 A table with `control = { predicted = ... }` makes negative controls: the same tasks under other ids,
@@ -32,7 +34,18 @@ from pathlib import Path
 from typing import Any
 
 from .backends import REPOSITORY, Unsupported
-from .kinds import barrier, certificate, conj55, conj55_program, quiver, reach, route, stages, synthetic
+from .kinds import (
+    barrier,
+    certificate,
+    conj55,
+    conj55_program,
+    explore,
+    quiver,
+    reach,
+    route,
+    stages,
+    synthetic,
+)
 from .kinds.base import Kind, Result, Task, TaskError
 from .kinds.certificate import CERTIFICATES, parse_verdict
 from .kinds.conj55_program import parse_summary as parse_conj55_summary
@@ -73,6 +86,7 @@ KINDS: dict[str, Kind[Any]] = {
     "census": stages.kind("census"),
     "core": stages.kind("core"),
     "tube": stages.kind("tube"),
+    "explore": explore.KIND,
     "synthetic": synthetic.KIND,
 }
 

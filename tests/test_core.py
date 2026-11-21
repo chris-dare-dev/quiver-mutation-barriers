@@ -163,6 +163,34 @@ class Searches(unittest.TestCase):
         self.assertEqual((pruned.quivers, pruned.low), (391, 1))
         self.assertGreater(pruned.forks, 0)
 
+    def test_a_cap_stops_the_search_and_what_it_cleared_is_the_cap(self) -> None:
+        # at the barrier or above, a cap changes nothing
+        self.assertEqual(search.barrier(R8, cap=101), search.barrier(R8))
+        self.assertEqual(search.barrier(R8, cap=5000), search.barrier(R8))
+        # one below it, the search takes the 35 quivers below the barrier and no other
+        stopped = search.barrier(R8, cap=100)
+        self.assertEqual((stopped.level, stopped.popped, stopped.cleared), (None, 35, 100))
+
+    def test_a_budget_stops_the_search_and_what_it_cleared_is_true(self) -> None:
+        whole = search.barrier(R8)
+        self.assertEqual((whole.level, whole.popped, whole.cleared), (101, 68, None))
+        self.assertEqual(search.barrier(R8, budget=whole.popped), whole)
+        cleared = []
+        for budget in range(1, whole.popped):
+            stopped = search.barrier(R8, budget=budget)
+            self.assertEqual((stopped.level, stopped.popped), (None, budget))
+            assert stopped.cleared is not None
+            # no route to the opposite stays at or below what was cleared
+            self.assertLess(stopped.cleared, 101)
+            self.assertFalse(search.below(R8, stopped.cleared + 1).has_opposite)
+            cleared.append(stopped.cleared)
+        self.assertEqual(cleared, sorted(cleared))
+        self.assertEqual((cleared[0], cleared[-1]), (7, 100))  # the start alone; all 35 below the barrier
+
+    def test_a_budget_stops_the_search_for_a_shortest_route(self) -> None:
+        self.assertEqual(search.shortest(R8, 101, budget=5), (None, []))
+        self.assertEqual(search.shortest(R8, 101, budget=10**6)[0], 37)
+
 
 class Conjecture(unittest.TestCase):
     def test_the_first_heights(self) -> None:

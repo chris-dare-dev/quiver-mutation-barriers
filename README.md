@@ -31,9 +31,12 @@ In general F(4, w) ≥ w(w − 1) and F(5, w) ≥ 4w³ − O(w²), the latter co
 ## Try it
 
 ```bash
-python3 -I verify/smoke.py   # about 15 s, standard library only: recomputes the headline numbers
-make test && make smoke      # tests, then the same numbers as tasks under the scheduler
+python3 -I verify/smoke.py              # about 15 s, standard library only: recomputes the headline numbers
+make test && make smoke                 # tests, then the same numbers as tasks under the scheduler
+python3 -m qmb explore 3 -2 2 -1 3 -3   # a quiver of your own: the height at which it is joined to its opposite
 ```
+
+The last command takes any quiver, as the entries above the diagonal of its exchange matrix; see [a quiver of your own](GUIDE.md#a-quiver-of-your-own).
 
 ## Read
 

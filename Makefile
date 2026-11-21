@@ -7,6 +7,8 @@
 #   make plan BATCH=batches/section-07.toml     list what a run would compute, without computing
 #   make run BATCH=batches/section-07.toml      compute the tasks of a batch that have no record yet
 #   make report BATCH=batches/section-07.toml REPORT_ARGS=--full
+#   make run BATCH=examples/own-quivers.toml    quivers of your own, as tasks (GUIDE.md); for one quiver,
+#                                               python3 -m qmb explore 3 -2 2 -1 3 -3
 #   make record BATCH=batches/section-07.toml   run, then copy the records into records/ (committed code only)
 #   make tables      write the generated tables of CLAIMS.md, GUIDE.md and claims/RECORDS.md
 #   make check       fail if those tables are not what the registry and the records give

@@ -1,0 +1,49 @@
+# Quivers of your own, as tasks: copy this file, put your quivers in it, and run it.
+#
+#     python3 -m taskbatch run examples/own-quivers.toml       (or: make run BATCH=examples/own-quivers.toml)
+#     python3 -m taskbatch report results/own-quivers --full
+#
+# A quiver is the list of the entries b_ij, i < j, of its exchange matrix, row by row: on four vertices
+# b01, b02, b03, b12, b13, b23, with b_ij > 0 for b_ij arrows i -> j.  Each task searches for the least
+# height at which the quiver is joined to its opposite, and counts what lies below (qmb/kinds/explore.py).
+# For one quiver without a file: python3 -m qmb explore 3 -2 2 -1 3 -3
+#
+# These tasks belong to no claim of the article, and the records of this file are not kept in git.
+
+name = "own-quivers"
+
+[scheduler]
+workers = 2
+memory_budget_mb = 2000
+
+[limits]
+time_seconds = 300
+memory_mb = 1000
+
+# The running example of the article, R_8, with what the article says of it as the prediction: the task
+# ends "ok" if the search agrees and "mismatch" if it does not.
+[[tasks]]
+kind = "explore"
+name = "R8"
+quiver = [-8, -8, 7, -2, 6, -8]
+predicted = { barrier = 101, quivers = 35, mutations = 37 }
+
+# R_8 with one entry changed.  The search is stopped at height 1000, and the answer is a bound: no route
+# to the opposite stays at or below 1000.
+[[tasks]]
+kind = "explore"
+name = "R8-last-entry-7"
+quiver = [-8, -8, 7, -2, 6, -7]
+cap = 1000
+
+# A quiver of height 3 with no prediction: whatever the search finds, the task ends "ok".
+[[tasks]]
+kind = "explore"
+quiver = [3, -2, 2, -1, 3, -3]
+
+# Without a cap the search stops after `budget` quivers (100,000 unless said otherwise).
+[[tasks]]
+kind = "explore"
+name = "stopped-by-budget"
+quiver = [-2, 1, 3, 3, 3, -3]
+budget = 20000
