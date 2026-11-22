@@ -1,0 +1,19 @@
+# Section 12, Conjecture 5.5 of Armstrong-Williams, Hirst, Jackson and Lee (Proposition 12.1).
+# For each height h <= 6: the four-vertex quivers of height exactly h up to relabelling, and how many
+# reach an acyclic quiver through quivers of height at most h, by direct enumeration in Python.  The
+# article's statement goes to height 18 and also certifies that the others are mutation-cyclic; that
+# is the original program, data/batches/long-conj55.toml.  About two minutes; standard library only.
+
+name = "section-12"
+
+[scheduler]
+workers = 4
+memory_budget_mb = 2400
+
+[limits]
+time_seconds = 900
+memory_mb = 600
+
+[[tasks]]
+kind = "conj55"
+heights = [1, 2, 3, 4, 5, 6]

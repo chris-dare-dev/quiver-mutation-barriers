@@ -1,0 +1,41 @@
+# LONG RUN.  Section 13, three stages, each by its own program on a copy of the STORED OUTPUT of the
+# stage before it:
+#   finite-cores                 the core of every census class (original log: 520 s on 9 processes)
+#   tube-certificates-note-14    tube certificates of the classes without a finite core (about an hour)
+#   tube-certificates-note-22    the second pass (original log: 2,709 s on 6 processes)
+# Needs the data archive unpacked (data/README.md) or QMB_DATA, and numpy.
+#
+# The two tube programs give every class a budget of wall-clock time (6 s and 12 s), and a class that
+# runs out of it is not certified.  Their counts therefore depend on how fast and how busy the machine
+# is: the original logs record 18 and 472 classes that failed for time.  Run these two stages on a
+# machine that is otherwise idle, and read a count below the stored one with that in mind.
+#
+# Each program starts `procs` processes of its own.  The memory limit covers them all only under the
+# control-group guard (`--memory-guard cgroup`); the polling guard sees the first process alone.
+#
+# To try a tube stage at reduced size, give its table `sample = 150`: the program then takes a random
+# sample of that many classes, and the task has another id and no predicted value.  The program of
+# finite-cores has no such option.
+#
+# A task keeps the counts and removes what its program wrote.  To keep the output per class as well,
+# set QMB_KEEP to a directory: the files are copied there and their SHA-256 goes into the record.
+
+name = "long-section-13"
+
+[scheduler]
+workers = 1
+memory_budget_mb = 16000
+
+[limits]
+time_seconds = 14400
+memory_mb = 16000
+
+[[tasks]]
+kind = "core"
+stages = ["finite-cores"]
+procs = 8
+
+[[tasks]]
+kind = "tube"
+stages = ["tube-certificates-note-14", "tube-certificates-note-22"]
+procs = 6

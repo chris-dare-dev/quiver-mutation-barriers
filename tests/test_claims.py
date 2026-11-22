@@ -14,7 +14,7 @@ from taskbatch.settings import REPOSITORY
 
 from . import helpers
 
-sys.path.insert(0, str(REPOSITORY / "tools"))
+sys.path.insert(0, str(REPOSITORY / "src" / "bookkeeping"))
 
 import claims
 
@@ -87,7 +87,7 @@ class Registry(unittest.TestCase):
             "no table 'u'",
             "either tasks or a reason",
             "barrier/R/b=8 (smoke) belongs to no claim",
-            "not a task of batches/smoke.toml",
+            "not a task of data/batches/smoke.toml",
         ):
             self.assertIn(part, message)
         self.assertNotIn("!control", message)
@@ -179,7 +179,10 @@ class Files(unittest.TestCase):
         self.assertEqual(stale, [], "run `make tables`")
 
     def test_generated_parts_need_their_markers(self) -> None:
-        begin, end = "<!-- BEGIN GENERATED x: tools/claims.py tables -->", "<!-- END GENERATED x -->"
+        begin, end = (
+            "<!-- BEGIN GENERATED x: src/bookkeeping/claims.py tables -->",
+            "<!-- END GENERATED x -->",
+        )
         text = f"before\n{begin}\nold\n{end}\nafter\n"
         self.assertEqual(
             claims.splice(text, "x", ["new"], Path("f.md")), f"before\n{begin}\nnew\n{end}\nafter\n"

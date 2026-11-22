@@ -1,0 +1,48 @@
+# Section 10, a ball between two walls: Q_a (Theorem 10.1, Proposition 10.2).
+# The route of (2a + 2)(4a^2 - a + 6) mutations, none at x, replayed for 2 <= a <= 48; the barrier H(a)
+# and the quivers below it, with and without expanding forks, by a search in Python for 2 <= a <= 7
+# (data/batches/long-qa.toml goes to a = 64 with the C programs).  A few minutes; the search at a = 7 holds
+# about 500 MB.  Standard library only.
+
+name = "section-10"
+
+[scheduler]
+workers = 4
+memory_budget_mb = 3000
+
+[limits]
+time_seconds = 300
+memory_mb = 400
+
+[[limits.tier]]
+min_cost = 6
+time_seconds = 1200
+memory_mb = 1000
+
+[[tasks]]
+kind = "quiver"
+family = "Qa"
+range = [2, 48]
+limits = { time_seconds = 120, memory_mb = 400 }
+
+[[tasks]]
+kind = "route"
+family = "Qa"
+range = [2, 48]
+limits = { time_seconds = 300, memory_mb = 400 }
+
+[[tasks]]
+kind = "barrier"
+family = "Qa"
+range = [2, 7]
+
+[[tasks]]
+kind = "reach"
+family = "Qa"
+range = [2, 7]
+
+[[tasks]]
+kind = "reach"
+family = "Qa"
+range = [2, 7]
+prune_forks = true

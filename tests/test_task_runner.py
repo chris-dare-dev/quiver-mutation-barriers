@@ -34,7 +34,7 @@ from taskbatch.model import Task
 from taskbatch.runner import RunnerError, expand
 from taskbatch.settings import REPOSITORY, load_settings
 
-RUNNER = (sys.executable, "-I", str(REPOSITORY / "runners" / "task_runner.py"))
+RUNNER = (sys.executable, "-I", str(REPOSITORY / "src" / "runners" / "task_runner.py"))
 HAVE_C = (BUILD / "np_barrier").is_file() and (BUILD / "np_qa_core").is_file()
 HAVE_NUMPY = importlib.util.find_spec("numpy") is not None
 
@@ -149,13 +149,13 @@ class Kinds(unittest.TestCase):
         self.assertEqual(route["value"]["mutations"], 312)
 
     def test_the_second_enumerator_against_the_search_of_the_core(self) -> None:
-        # verify/review17.py plain shares no code with qmb; both count the quivers below the barrier
+        # research/verify/review17.py plain shares no code with qmb; both count the quivers below the barrier
         for t in (2, 3, 4):
             region = search.below(families.p_plus(t), families.barrier_p_plus(t))
             result = run_task(one({"kind": "reach", "family": "P+", "values": [t], "method": "review17"}))
             self.assertEqual((result["status"], result["agrees"]), ("ok", True))
             self.assertEqual(result["value"], {"quivers": region.quivers, "low": region.low})
-            self.assertEqual(result["method"], "verify/review17.py plain, no pruning")
+            self.assertEqual(result["method"], "research/verify/review17.py plain, no pruning")
 
     def test_a_wrong_predicted_value_is_a_mismatch(self) -> None:
         table = {"kind": "barrier", "family": "R", "values": [8], "control": {"predicted": 100}}
@@ -488,7 +488,7 @@ class CBackEnds(unittest.TestCase):
         with self.assertRaisesRegex(BackendError, "budget"):
             np_barrier(families.p_plus(3), low=9, cap=2000, n=5, barrier=413, budget=5)
 
-    @unittest.skipUnless(HAVE_NUMPY, "numpy is not installed (experiments/requirements.txt)")
+    @unittest.skipUnless(HAVE_NUMPY, "numpy is not installed (research/experiments/requirements.txt)")
     def test_np_qa_core_computes_and_does_not_read_a_kept_summary(self) -> None:
         # np_qa_core.py prints the summary it kept under ~/.cache/qmb-np/ when there is one.  Here the home
         # directory holds a kept summary with a wrong count; a task must compute its own
@@ -514,7 +514,7 @@ class CBackEnds(unittest.TestCase):
             self.assertEqual((result["status"], result["value"]), ("ok", {"quivers": 1714, "low": 1}))
             self.assertEqual(json.loads((cache / "core_a3_chain_single.bin.json").read_text())["members"], 7)
 
-    @unittest.skipUnless(HAVE_NUMPY, "numpy is not installed (experiments/requirements.txt)")
+    @unittest.skipUnless(HAVE_NUMPY, "numpy is not installed (research/experiments/requirements.txt)")
     def test_the_programs_of_experiments_against_python(self) -> None:
         for prune in (False, True):
             table = {
@@ -539,7 +539,7 @@ class Batches(unittest.TestCase):
     """The batch files of the repository, and two of them through the scheduler."""
 
     def taskbatch(self, verb: str, batch: str, out: Path) -> subprocess.CompletedProcess[str]:
-        command = [sys.executable, "-m", "taskbatch", verb, f"batches/{batch}.toml", "--out", str(out)]
+        command = [sys.executable, "-m", "taskbatch", verb, f"data/batches/{batch}.toml", "--out", str(out)]
         if verb == "run":
             command += ["--quiet", "--memory-guard", "poll"]
         return subprocess.run(command, capture_output=True, text=True, cwd=REPOSITORY, timeout=300)
@@ -549,12 +549,12 @@ class Batches(unittest.TestCase):
         return {record["task_id"]: record for record in map(json.loads, lines)}
 
     def test_every_batch_file_expands(self) -> None:
-        names = sorted(path.stem for path in (REPOSITORY / "batches").glob("*.toml"))
+        names = sorted(path.stem for path in (REPOSITORY / "data" / "batches").glob("*.toml"))
         self.assertLessEqual({"smoke", "limits-demo", "negative-control"}, set(names))
         self.assertLessEqual({f"section-{n:02d}" for n in (5, 7, 8, 9, 10, 12, 13, 14)}, set(names))
         for name in names:
             with self.subTest(batch=name):
-                config = load_config(REPOSITORY / "batches" / f"{name}.toml")
+                config = load_config(REPOSITORY / "data" / "batches" / f"{name}.toml")
                 tasks = expand_batch(config.description)
                 self.assertTrue(tasks)
                 self.assertEqual(config.name, name)

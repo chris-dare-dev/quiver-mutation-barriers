@@ -12,7 +12,7 @@
 [![Last commit](https://img.shields.io/github/last-commit/chris-dare-dev/quiver-mutation-barriers.svg)](https://github.com/chris-dare-dev/quiver-mutation-barriers/commits)
 
 **How high must a mutation path between two quivers of small height climb?**
-Notes, code and stored results behind the draft paper [paper/mutation-barriers.pdf](paper/mutation-barriers.pdf).
+Notes, code and stored results behind the draft paper [research/paper/mutation-barriers.pdf](research/paper/mutation-barriers.pdf).
 
 A quiver is a skew-symmetric integer matrix, its *height* its largest entry, and mutation is the move of Fomin–Zelevinsky cluster algebras. A computable bound on the height a route needs would decide mutation equivalence, which is not known to be decidable for four or more vertices.
 
@@ -31,9 +31,9 @@ In general F(4, w) ≥ w(w − 1) and F(5, w) ≥ 4w³ − O(w²), the latter co
 ## Try it
 
 ```bash
-python3 -I verify/smoke.py              # about 15 s, standard library only: recomputes the headline numbers
-make test && make smoke                 # tests, then the same numbers as tasks under the scheduler
-python3 -m qmb explore 3 -2 2 -1 3 -3   # a quiver of your own: the height at which it is joined to its opposite
+python3 -I research/verify/smoke.py                   # about 15 s, standard library only: recomputes the headline numbers
+make test && make smoke                               # tests, then the same numbers as tasks under the scheduler
+PYTHONPATH=src python3 -m qmb explore 3 -2 2 -1 3 -3  # a quiver of your own: the height at which it is joined to its opposite
 ```
 
 The last command takes any quiver, as the entries above the diagonal of its exchange matrix; see [a quiver of your own](GUIDE.md#a-quiver-of-your-own).
@@ -42,10 +42,10 @@ The last command takes any quiver, as the entries above the diagonal of its exch
 
 | | |
 |---|---|
-| [paper/](paper/mutation-barriers.pdf) | The draft paper |
-| [docs/](docs/README.md) | 23 notes in reading order: arguments, computations, checks |
+| [research/paper/](research/paper/mutation-barriers.pdf) | The draft paper |
+| [research/docs/](research/docs/README.md) | 23 notes in reading order: arguments, computations, checks |
 | [CLAIMS.md](CLAIMS.md) | Each claim, its script, stored output and command, and what has been rerun |
-| [DATA.md](DATA.md) | The stored results and how to install them |
+| [data/README.md](data/README.md) | The stored results and how to install them |
 | [GUIDE.md](GUIDE.md) | Full results table, limits, layout, tasks and batches |
 
 ## Status
