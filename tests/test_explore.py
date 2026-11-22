@@ -21,7 +21,7 @@ from taskbatch.settings import REPOSITORY
 
 R8 = [-8, -8, 7, -2, 6, -8]
 NEAR_R8 = [-8, -8, 7, -2, 6, -7]  # one entry changed: not joined to its opposite at any height near 101
-EXAMPLE = REPOSITORY / "examples" / "own-quivers.toml"
+EXAMPLE = REPOSITORY / "data" / "examples" / "own-quivers.toml"
 SCHEDULER = (sys.executable, "-m", "taskbatch")
 QUIETLY = ("--quiet", "--memory-guard", "poll")
 
@@ -195,7 +195,7 @@ class Command(unittest.TestCase):
 class Guide(unittest.TestCase):
     def test_the_commands_of_the_guide_print_what_the_guide_shows(self) -> None:
         text = (REPOSITORY / "GUIDE.md").read_text(encoding="utf-8")
-        block = r"```bash\npython3 -m qmb explore ([^\n]+)\n```\n\n```text\n(.*?)```"
+        block = r"```bash\nPYTHONPATH=src python3 -m qmb explore ([^\n]+)\n```\n\n```text\n(.*?)```"
         shown = re.findall(block, text, re.DOTALL)
         self.assertEqual(len(shown), 2)
         for arguments, output in shown:
@@ -204,7 +204,8 @@ class Guide(unittest.TestCase):
 
     def test_the_readme_names_a_command_that_runs(self) -> None:
         text = (REPOSITORY / "README.md").read_text(encoding="utf-8")
-        (arguments,) = re.findall(r"^python3 -m qmb explore ([-0-9 ]+?) +#", text, re.MULTILINE)
+        pattern = r"^PYTHONPATH=src python3 -m qmb explore ([-0-9 ]+?) +#"
+        (arguments,) = re.findall(pattern, text, re.MULTILINE)
         self.assertEqual(command(*arguments.split()).returncode, 0)
         self.assertIn("(GUIDE.md#a-quiver-of-your-own)", text)
         self.assertIn("\n## A quiver of your own\n", (REPOSITORY / "GUIDE.md").read_text(encoding="utf-8"))
@@ -212,10 +213,10 @@ class Guide(unittest.TestCase):
 
 class Example(unittest.TestCase):
     def test_the_example_is_outside_the_batches_of_the_claims(self) -> None:
-        # every task of batches/ must belong to a claim; a reader's quivers belong to none
+        # every task of data/batches/ must belong to a claim; a reader's quivers belong to none
         description = tomllib.loads(EXAMPLE.read_text(encoding="utf-8"))
         self.assertEqual({table["kind"] for table in description["tasks"]}, {"explore"})
-        for path in (REPOSITORY / "batches").glob("*.toml"):
+        for path in (REPOSITORY / "data" / "batches").glob("*.toml"):
             tables = tomllib.loads(path.read_text(encoding="utf-8")).get("tasks", [])
             self.assertNotIn("explore", {table["kind"] for table in tables}, path.name)
 

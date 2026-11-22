@@ -1,4 +1,5 @@
-"""What the checking code shares with the code it checks: the statements of verify/README.md, kept true."""
+"""What the checking code shares with the code it checks: the statements of research/verify/README.md, kept
+true."""
 
 from __future__ import annotations
 
@@ -8,6 +9,9 @@ import unittest
 from pathlib import Path
 
 from taskbatch.settings import REPOSITORY
+
+SOURCE = REPOSITORY / "src"
+RESEARCH = REPOSITORY / "research"
 
 NEW_CODE = {"qmb", "taskbatch", "runners", "adopt", "claims", "expected", "task_runner"}
 
@@ -25,28 +29,28 @@ def imports(path: Path) -> set[str]:
 
 class Independence(unittest.TestCase):
     def test_the_smoke_script_uses_the_standard_library_only(self) -> None:
-        self.assertLessEqual(imports(REPOSITORY / "verify" / "smoke.py"), sys.stdlib_module_names)
+        self.assertLessEqual(imports(RESEARCH / "verify" / "smoke.py"), sys.stdlib_module_names)
 
     def test_no_checking_script_imports_the_core_or_the_scheduler(self) -> None:
-        scripts = sorted((REPOSITORY / "verify").glob("*.py"))
+        scripts = sorted((RESEARCH / "verify").glob("*.py"))
         self.assertGreater(len(scripts), 50)
         for script in scripts:
             self.assertFalse(imports(script) & NEW_CODE, script.name)
 
     def test_the_scripts_of_experiments_do_not_use_the_core(self) -> None:
-        for script in sorted((REPOSITORY / "experiments").glob("*.py")):
+        for script in sorted((RESEARCH / "experiments").glob("*.py")):
             self.assertFalse(imports(script) & NEW_CODE, script.name)
 
     def test_the_core_and_the_scheduler_use_the_standard_library_only(self) -> None:
         for package in ("qmb", "taskbatch"):
-            for module in sorted((REPOSITORY / package).rglob("*.py")):
+            for module in sorted((SOURCE / package).rglob("*.py")):
                 self.assertLessEqual(imports(module), sys.stdlib_module_names | {package}, module.name)
 
     def test_the_core_does_not_import_the_scripts_it_runs(self) -> None:
         names = {
-            path.stem for folder in ("experiments", "verify") for path in (REPOSITORY / folder).glob("*.py")
+            path.stem for folder in ("experiments", "verify") for path in (RESEARCH / folder).glob("*.py")
         }
-        modules = sorted((REPOSITORY / "qmb").rglob("*.py"))
+        modules = sorted((SOURCE / "qmb").rglob("*.py"))
         self.assertGreater(len(modules), 15)  # the kinds, one module each, are among them
         for module in modules:
             self.assertFalse(imports(module) & names, module.name)

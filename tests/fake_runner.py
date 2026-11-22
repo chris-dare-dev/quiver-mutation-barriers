@@ -1,6 +1,6 @@
 """A runner without mathematics, for testing the scheduler.
 
-It follows the runner protocol (taskbatch/PROTOCOL.md).  A batch description lists items; each becomes one
+It follows the runner protocol (src/taskbatch/PROTOCOL.md).  A batch description lists items; each becomes one
 task, and its keys say how the task behaves:
 
     cost         the task's cost

@@ -90,7 +90,7 @@ class Fields(unittest.TestCase):
         self.assertEqual(set(self.make({})), set(Record.__annotations__))
 
     def test_the_protocol_names_every_field(self) -> None:
-        protocol = (REPOSITORY / "taskbatch" / "PROTOCOL.md").read_text(encoding="utf-8")
+        protocol = (REPOSITORY / "src" / "taskbatch" / "PROTOCOL.md").read_text(encoding="utf-8")
         section = protocol.split("## Records", 1)[1].split("\n## ", 1)[0]
         first_paragraph = section.strip().split("\n\n", 1)[0]
         self.assertEqual(set(re.findall(r"`([a-z_]+)`", first_paragraph)), set(Record.__annotations__))

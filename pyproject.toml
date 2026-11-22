@@ -6,23 +6,24 @@ requires-python = ">=3.11"
 license = "MIT"
 dependencies = []
 
-# What the scheduler (taskbatch/) is told about this repository: see taskbatch/PROTOCOL.md.
+# What the scheduler (src/taskbatch/) is told about this repository: see src/taskbatch/PROTOCOL.md.
 [tool.taskbatch]
-runner = ["{python}", "-I", "runners/task_runner.py"]
+runner = ["{python}", "-I", "src/runners/task_runner.py"]
 description_keys = []
 
 [tool.ruff]
+src = ["src", "tests"]
 line-length = 110
 target-version = "py311"
-extend-exclude = ["experiments", "verify", "tools/renumber_results.py", "tools/make_manifest.py"]
+extend-exclude = ["research", "src/bookkeeping/renumber_results.py", "src/bookkeeping/make_manifest.py"]
 
 [tool.ruff.lint]
 select = ["E", "F", "W", "I", "B", "UP", "SIM", "C4", "PIE", "RET", "RUF"]
 
 [tool.ruff.lint.per-file-ignores]
 # sentences of the generated pages, kept on one line each
-"tools/claims.py" = ["E501"]
-"tools/expected.py" = ["E501"]
+"src/bookkeeping/claims.py" = ["E501"]
+"src/bookkeeping/expected.py" = ["E501"]
 # rows of tables and lines of logs, as they are printed
 "tests/test_claims.py" = ["E501"]
 "tests/test_task_runner.py" = ["E501"]
@@ -30,4 +31,8 @@ select = ["E", "F", "W", "I", "B", "UP", "SIM", "C4", "PIE", "RET", "RUF"]
 [tool.mypy]
 python_version = "3.11"
 strict = true
-files = ["taskbatch", "qmb", "runners", "tools/adopt.py", "tools/claims.py", "tools/expected.py"]
+files = [
+    "src/taskbatch", "src/qmb", "src/runners",
+    "src/bookkeeping/adopt.py", "src/bookkeeping/claims.py", "src/bookkeeping/expected.py",
+]
+mypy_path = "src"

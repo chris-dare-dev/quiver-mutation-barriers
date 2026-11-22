@@ -1,0 +1,791 @@
+# The registry of claims: every row of the claim tables of CLAIMS.md.
+#
+# src/bookkeeping/claims.py writes the tables of CLAIMS.md, the file data/claims/RECORDS.md and the headline table of
+# GUIDE.md from this file, from the batch files (which tasks exist), from data/claims/expected.json
+# (predicted values and stored evidence) and from the records in data/records/.  `make check` fails if
+# the committed tables differ from what it writes.
+#
+# A table has a heading of CLAIMS.md and its columns.  A claim has an id, its table, the cells of its
+# row in the order of the columns (Markdown, as printed), and `tasks`: ids of the tasks that compute
+# it, where `*` stands for any run of characters.  A `*` may not follow a digit: `t=3*` would also take
+# t = 30, so the ids of one parameter value are written out.  A claim without tasks says why in
+# `no_task`.
+# Negative controls (ids ending in "!control") never count for a claim.
+
+[table.status]
+heading = '''The status table, row by row'''
+columns = ['''Article''', '''Paper''', '''Support''', '''Script and command''', '''Stored output''', '''Run time, memory''']
+
+[[claim]]
+id = "thm-5.1"
+table = "status"
+cells = [
+  '''**Thm 5.1.** G_k joined to −G_k at k(k − 1); F(n, w) ≥ w(w − 1), n ≥ 4''',
+  '''Thm 3.1, Prop. 3.2''',
+  '''proof by hand ([note 12](research/docs/12-checks-of-notes-03-to-10.md) §4–5)''',
+  '''Numerical and symbolic support only: `n4_mirror_proof.py`; `../verify/review12.py handproof`; `../verify/review12.py pendant --n 5 6 7 --k 3 4 5 6 8`; `../verify/smoke.py` (k = 3..12)''',
+  '''`n4_mirror_proof.log`, `review12_handproof.log`, `review12_symbolic.log`, `review12_pendant.log`''',
+  '''seconds; smoke **re-run here**''',
+]
+tasks = ["quiver/G/*", "barrier/G/*", "reach/G/*", "route/G/*"]
+
+[[claim]]
+id = "thm-7.2"
+table = "status"
+cells = [
+  '''**Thm 7.2.** R_b joined at 2b² − 3b − 3, even b ≥ 6''',
+  '''Thm 3.4''',
+  '''route by hand; lower bound computer-assisted (30 claims)''',
+  '''`n4_doors.py prove2`; written out by `n4_doors_readable.py prove2`; integers: `n4_doors.py family3 --bmax 60 --show 8` (every 5 ≤ b ≤ 60); second program: `../verify/review19.py search15` (5 ≤ b ≤ 48)''',
+  '''`n4_doors_prove2.log`, `n4_doors_prove2_readable.log`, `n4_doors_family3.log`, `review19_search15.log`''',
+  '''`prove2` under 1 s, no package, **re-run here: identical to the stored log**. `family3`, `search15`: not re-run''',
+]
+tasks = ["quiver/R/*", "barrier/R/*", "reach/R/*", "route/R/*", "certificate/R_b"]
+
+[[claim]]
+id = "q-t"
+table = "status"
+cells = [
+  '''**Section 7.** Q_t joined at 2t⁴ − t³ − t² + 2t, t ≥ 3''',
+  '''Rem. 3.7''',
+  '''computer-assisted (43 claims)''',
+  '''`n4_doors.py prove`; `n4_doors_readable.py prove`; integers: `n4_doors.py family --tmax 30 --show 3 7`; second program: `../verify/review19.py search15` (t = 3..16)''',
+  '''`n4_doors_prove.log`, `n4_doors_prove_readable.log`, `n4_doors_family.log`, `review19_search15.log`''',
+  '''`prove` under 1 s, **re-run here: identical**. `family`: about 80 s, not re-run''',
+]
+tasks = ["quiver/Qt/*", "barrier/Qt/*", "certificate/Q_t"]
+
+[[claim]]
+id = "remark-8.1"
+table = "status"
+cells = [
+  '''**Remark 8.1.** F(4, w) ≤ 2w²''',
+  '''Conj. 3.8''',
+  '''conjecture; census evidence up to w = 9''',
+  '''the census commands of [note 8](research/docs/08-n4-ratio.md) §6 and [note 10](research/docs/10-n4-quadratic-bound.md) §4 (`n4_all.py run --N 14 --keep-survivors K`, then `n4_classes.py`)''',
+  '''the five `n4_classes_*` files''',
+  '''not re-run; `n4_all.py run --N 18` took 27 minutes and 11 GB inside the run of Section 12. The intermediate file `n4_all_N14_k9.json` (55 MB) was never kept, so the classes with least height 8 and 9 need the first command again''',
+]
+tasks = []
+no_task = '''a conjecture; the census behind its evidence is not a task'''
+
+[[claim]]
+id = "thm-9.1"
+table = "status"
+cells = [
+  '''**Thm 9.1.** P⁺_t joined at 2t⁵ − t⁴ + t² − 1; F(5, w) ≥ 2w^{5/2} − 11w²''',
+  '''Thms 4.1, 4.2, Cor. 4.3''',
+  '''route by hand; search for t ≤ 80; certificate for t ≥ 8''',
+  '''search: `np_corridor.py build`, then `np_corridor.py family_plus --tmin 2 --tmax 64 --out np_corridor_family_plus.jsonl`; second enumerator: `../verify/review17.py plain --tmin 2 --tmax 64 --family both --workers 7` and `plain --tmin 65 --tmax 80 --family plus --workers 6`; certificate: `np_corridor_prove.py prove --T0 8 --audit-tmax 11`; members: `np_corridor_members.py`; second certifier: `../verify/review17.py replay`''',
+  '''`np_corridor_family_plus.jsonl`, `.log`; `review17_plain.log`, `review17_plain_65_80.log`; `np_corridor_prove.log`; `np_corridor_members.log`; `review17_replay.log`''',
+  '''`prove`: 24 s, no package, **re-run here: identical**. `np_corridor_members.py`: 9 s, **run here**. `replay`: under 1 s, **re-run here: same verdicts** (the order of one list of names and the time differ). `family_plus` to t = 64: about 4 minutes; `plain`: a few minutes each; not re-run beyond t ≤ 8''',
+]
+tasks = ["quiver/P+/*", "route/P+/*", "barrier/P+/*", "reach/P+/*", "certificate/P+_t/*"]
+
+[[claim]]
+id = "thm-10.1"
+table = "status"
+cells = [
+  '''**Thm 10.1.** the Q_a route, height 4a³ − 3a² + O(a)''',
+  '''Thm 4.7''',
+  '''derived by hand ([note 18](research/docs/18-five-vertices-cubic-barrier.md) §5), printed as a sketch; replayed for a ≤ 48''',
+  '''`np_rowwalk.py family --amin 2 --amax 22 --search-amax 22 --prune 0 --budget 120000000 --out np_rowwalk_family.jsonl`; `np_rowwalk.py family --amin 23 --amax 48 --search-amax 0`; second program, a = 2..20: `../verify/review23_n20_checks.py`; a = 1,000 literally: `../verify/review23_n21_review.py` (the long replay)''',
+  '''`np_rowwalk_family.jsonl`, `.log`, `np_rowwalk_family_route_only.log`; `review23_n20_checks_all.log`; `review23_n21_longreplay.log`''',
+  '''route only: under 1 s per a (**re-run here for a = 7**: 3,120 mutations, height 1,242). With the search to a = 22: about 35 minutes and 9 GB, not re-run''',
+]
+tasks = ["quiver/Qa/*", "route/Qa/*"]
+
+[[claim]]
+id = "prop-10.2"
+table = "status"
+cells = [
+  '''**Prop. 10.2.** no lower route, 2 ≤ a ≤ 64; F(5, w) ≥ 4w³ − O(w²)''',
+  '''Comp. 4.8, Cor. 4.9, Conj. 4.10''',
+  '''computational, w ≤ 65; conjectured beyond''',
+  '''`np_qa_core.py build`; `np_qa_core.py family --amin 2 --amax 64 --workers 12 --out np_qa_core_family.jsonl` (forks pruned); `np_qa_core.py family --mode chain-nofork --amin 2 --amax 48 --workers 12 --out np_qa_core_family_nofork.jsonl` (no pruning); second program: `../verify/review23_n20_runs.py` with `review23_n20_search.c`''',
+  '''`np_qa_core_family.jsonl`, `np_qa_core_family_nofork.jsonl` and their logs; `review23_n20_search_*.jsonl`, `.log`''',
+  '''not re-run. The logs record 3,168 s for a = 64 with pruning and 2,264 s for a = 48 without, as upper bounds (up to 25 processes on 16 threads at the time); the caches took 1.7 GB of disk''',
+]
+tasks = ["barrier/Qa/*", "reach/Qa/*"]
+
+[[claim]]
+id = "prop-12.1"
+table = "status"
+cells = [
+  '''**Prop. 12.1.** Conjecture 5.5 of Armstrong-Williams et al., height ≤ 18''',
+  '''Comp. 5.1, Prop. 5.2''',
+  '''computational, resting on cited theorems''',
+  '''`n4_conj55.py run --H 18 --N 18 --store-h 18 --out n4_conj55_N18.json.gz`; `n4_conj55.py resolve --inp n4_conj55_N18.json.gz --out n4_conj55_N18_resolve.json.gz --H 18 --every 20000 --workers 4`; `n4_conj55.py summary --run … --resolve …`''',
+  '''`n4_conj55_N18.json.gz`, `n4_conj55_N18_resolve.json.gz`, `n4_conj55_N18.log`, `n4_conj55_N18_resolve.log`, `n4_conj55_N18_summary.log`''',
+  '''`run`: 27 minutes, 11 GB; `resolve`: 41 minutes; not re-run. `../verify/smoke.py` recomputes the counts and the passing quivers up to height 4 (6 with `--full`), **re-run here**''',
+]
+tasks = ["conj55/*", "conj55_program/N=18"]
+
+[[claim]]
+id = "section-13"
+table = "status"
+cells = [
+  '''**Section 13.** 785,198 of 788,026 census classes decided''',
+  '''Thm 6.1, Comp. 6.2, 6.5, Cor. 6.7''',
+  '''computational, certificates not stored''',
+  '''`n4_opposite_run.py cores --cap 800 --level-cap 1000000 --procs 9`; `n4_opposite_tubes.py run --procs 8`; `n4_tube_lemma.py classify …`; `n4_tube_lemma.py certify2 --budget 12 --procs 6 --out n4_tube_certify2.jsonl.gz`; the counts: `../verify/review23_n22_counts.py`''',
+  '''`n4_opposite_cores.jsonl.gz`, `n4_opposite_tubes.jsonl.gz` (one summary record per class), `n4_tube_classify.jsonl.gz`, `n4_tube_certify2.jsonl.gz`; `review23_n22_counts.log`''',
+  '''cores about 9 minutes, tubes about an hour, `certify2` about 45 minutes; not re-run. A sample of the certificates was regenerated here, see [below](#what-is-not-stored)''',
+]
+tasks = ["census/decided-classes", "core/finite-cores", "tube/*"]
+
+[[claim]]
+id = "thm-13.2"
+table = "status"
+cells = [
+  '''**Thm 13.2.** the Markov quiver with a pendant arrow has no tube certificate''',
+  '''Thm 6.6''',
+  '''proof by hand ([note 22](research/docs/22-tube-lemma-and-its-limits.md) §5.1)''',
+  '''the cuts only: `n4_tube_lemma.py markov`; second program: `../verify/review23_lead_n22.py`''',
+  '''`n4_tube_markov.log`, `review23_lead_n22_markov.log`''',
+  '''not re-run''',
+]
+tasks = []
+no_task = '''a proof by hand; the cuts are not a task'''
+
+[table.s8]
+heading = '''Section 8, the census'''
+columns = ['''Count in the article''', '''Where it is''', '''Command''']
+
+[[claim]]
+id = "s8-classes"
+table = "s8"
+cells = [
+  '''788,026 classes containing a quiver of height ≤ 9''',
+  '''`n4_opposite_cores.log`, `review23_n22_counts.log` (first line)''',
+  '''census commands of notes 8 and 10; recount `../verify/review19_n14b_counts.py`''',
+]
+tasks = ["census/decided-classes", "core/finite-cores"]
+
+[[claim]]
+id = "s8-enumeration"
+table = "s8"
+cells = [
+  '''every quiver of height ≤ 14 enumerated; each class explored to a bound of at least 192''',
+  '''file names `n4_all_N14*`, `n4_classes_*_B192`, `_B256`, `_B512`''',
+  '''as above''',
+]
+tasks = []
+no_task = '''the census is not a task'''
+
+[[claim]]
+id = "s8-pockets"
+table = "s8"
+cells = [
+  '''30,527 pockets born at height ≤ 9''',
+  '''`n4_doors_thin.log`, first line''',
+  '''`n4_doors.py thin --workers 6`''',
+]
+tasks = []
+no_task = '''the census is not a task'''
+
+[[claim]]
+id = "s8-largest-ratio"
+table = "s8"
+cells = [
+  '''largest death/birth² = 1.833, a mirror pair born at 6 joining at 66''',
+  '''`n4_doors_thin.log` (`join/b^2 1.833, birth 6, join 66`), `n4_opposite_mirror.log`''',
+  '''as above''',
+]
+tasks = []
+no_task = '''the census is not a task'''
+
+[[claim]]
+id = "s8-largest-deaths"
+table = "s8"
+cells = [
+  '''largest death at births 3 to 9: 12, 28, 45, 66, 79, 101, 144''',
+  '''the class files; table of [note 10](research/docs/10-n4-quadratic-bound.md) §1; recomputed in `review12_classes.log` (lines `birth b at the class bottom: largest death …`)''',
+  '''`../verify/review12.py classes --per-file 25 --slow-max 6000 --f-every 4`''',
+]
+tasks = []
+no_task = '''the census is not a task'''
+
+[[claim]]
+id = "s8-q3-r9"
+table = "s8"
+cells = [
+  '''the two pockets born at 9 that die at 132 are Q₃ and R₉''',
+  '''[note 15](research/docs/15-rank-2-orbits-and-the-constant-2.md) §6; `n4_doors_family.log` (t = 3), `n4_doors_family3.log` (b = 9)''',
+  '''`../verify/smoke.py` recomputes both barriers as 132 (**re-run here**)''',
+]
+tasks = ["quiver/Qt/t=3", "barrier/Qt/t=3", "quiver/R/b=9", "barrier/R/b=9"]
+
+[[claim]]
+id = "s8-rejoin"
+table = "s8"
+cells = [
+  '''re-enumeration up to 8b² of the classes with least height 6 to 9 found no hidden join''',
+  '''`n4_rejoin_c8.jsonl`, `n4_rejoin_c8_summary.json`, `n4_certify.json`''',
+  '''`n4_evidence.py`, commands of [note 11](research/docs/11-n4-invariants-descent-joins.md) §8''',
+]
+tasks = []
+no_task = '''the census is not a task'''
+
+[[claim]]
+id = "s8-258363"
+table = "s8"
+cells = [
+  '''258,363 classes with f(Q, w) ≤ max(w, 0.703 w²)''',
+  '''`n4_opposite_pockets.log`; spot-checked in `review19_n14a_pockets.log`, `review19_n14a_pockets_big.log`''',
+  '''`n4_opposite_run.py pockets --procs 4`''',
+]
+tasks = []
+no_task = '''the pockets of the finite cores are not a task'''
+
+[[claim]]
+id = "s8-orbit-joins"
+table = "s8"
+cells = [
+  '''joins inside one orbit of two mutations within w² + w''',
+  '''`n4_doors_orbit.log`, `n4_doors_orbit01.log`; `review19_orbits.log`''',
+  '''`n4_doors.py orbit --samples 20000 --c 2 3 4 --wmax 7` (about 3 minutes); `orbit01 --wmax 8` (about 4 minutes)''',
+]
+tasks = []
+no_task = '''a sampling script; not a task'''
+
+[[claim]]
+id = "s8-nothing-above"
+table = "s8"
+cells = [
+  '''"nothing found exceeds 2w² − w"''',
+  '''[note 15](research/docs/15-rank-2-orbits-and-the-constant-2.md) §6: the scans `n4_doors_doors.log`, `n4_doors_doors12.log`, `n4_doors_scan2_b10.log`, `n4_doors_scan2_b11_12.log`, `n4_doors_family2.log`''',
+  '''`n4_doors.py doors …`, `scan2 …` (11 and about 44 minutes), `family2 --tmax 9`''',
+]
+tasks = []
+no_task = '''scans; not a task'''
+
+[[claim]]
+id = "s8-acyclic"
+table = "s8"
+cells = [
+  '''mutation-acyclic classes: f(Q, w) ≤ w⁴ + 4w³ + 6w², and ≤ w for w ≤ 18''',
+  '''a consequence of cited theorems and of Section 12; [note 13](research/docs/13-conjecture-5-5-up-to-height-18.md) §6''',
+  '''—''',
+]
+tasks = []
+no_task = '''a consequence of cited theorems; nothing to compute'''
+
+[table.s9]
+heading = '''Section 9, P⁺_t'''
+columns = ['''Count in the article''', '''Where it is''', '''Command''']
+
+[[claim]]
+id = "s9-route"
+table = "s9"
+cells = [
+  '''route of 4t³ − 2t² + 4 mutations; one quiver at 2t⁵ − t⁴ + t² − 1''',
+  '''`np_corridor_family_plus.jsonl` (fields `route_steps_to_top`, `top_height_is_H`), `review17_route.log`, `review19_route16.log`''',
+  '''`np_corridor.py family_plus …`; `../verify/review17.py route --tmin 2 --tmax 64`''',
+]
+tasks = ["route/P+/*"]
+
+[[claim]]
+id = "s9-p3"
+table = "s9"
+cells = [
+  '''P⁺₃: height 9, barrier 413, 94 mutations''',
+  '''`np_corridor_family_plus.jsonl` (t = 3); `owf_barrier_summary.log`; `../verify/smoke.py`''',
+  '''**re-run here** (smoke)''',
+]
+tasks = ["quiver/P+/t=3", "barrier/P+/t=3", "barrier/P+/t=3@np_barrier", "route/P+/t=3", "route/P+/t=3@shortest"]
+
+[[claim]]
+id = "s9-t8"
+table = "s9"
+cells = [
+  '''t = 8: 1,924 mutations, top 61,503''',
+  '''`np_corridor_family_plus.jsonl` (t = 8), `review17_plain.log`''',
+  '''as above''',
+]
+tasks = ["route/P+/t=8", "barrier/P+/t=8", "barrier/P+/t=8@np_barrier"]
+
+[[claim]]
+id = "s9-search"
+table = "s9"
+cells = [
+  '''2 ≤ t ≤ 80 searched with no pruning; H⁺(64) = 2,130,710,527 with 1,561,537 quivers reached''',
+  '''`np_corridor_family_plus.log`, `review17_plain.log`; t = 65..80: `review17_plain_65_80.log`, `review17_closure_65_80.log`''',
+  '''as in the status table''',
+]
+tasks = ["barrier/P+/*", "reach/P+/*"]
+
+[[claim]]
+id = "s9-two-enumerators"
+table = "s9"
+cells = [
+  '''"two independently written enumerators agree up to t = 64; one of them was continued to t = 80"''',
+  '''`np_corridor.py` with `np_barrier.c` against `research/verify/review17.py plain`; 65 ≤ t ≤ 80 is `review17.py` alone''',
+  '''see [what is shared](#independent-checks-what-is-shared)''',
+]
+tasks = ["reach/P+/t=*@np_barrier", "reach/P+/t=*@review17"]
+
+[[claim]]
+id = "s9-exits"
+table = "s9"
+cells = [
+  '''766 exits: 161 to members, 428 high, 54 forks, 123 creating a further member''',
+  '''last lines of `np_corridor_prove.log`; `review17_replay.log`''',
+  '''`np_corridor_prove.py prove --T0 8 --audit-tmax 11` (**re-run here: identical**)''',
+]
+tasks = ["certificate/P+_t/*"]
+
+[[claim]]
+id = "s9-members"
+table = "s9"
+cells = [
+  '''the member families behind the 766 exits (149 members)''',
+  '''`np_corridor_members.log`: each member with its domain, its derivation and its ten entries as polynomials''',
+  '''`np_corridor_members.py > np_corridor_members.log` (**run here**, 9 s)''',
+]
+tasks = ["certificate/P+_t/*"]
+
+[[claim]]
+id = "s9-constant-11"
+table = "s9"
+cells = [
+  '''constant 11 is least: with 10 the inequality first fails at w = 783''',
+  '''`review17_corollary.log`''',
+  '''`../verify/review17.py corollary`''',
+]
+tasks = []
+no_task = '''arithmetic on a closed form; not a task'''
+
+[table.s10]
+heading = '''Section 10, Q_a'''
+columns = ['''Count in the article''', '''Where it is''', '''Command''']
+
+[[claim]]
+id = "s10-route"
+table = "s10"
+cells = [
+  '''route of (2a + 2)(4a² − a + 6) mutations, none at x; no entry away from x above 2a + 2''',
+  '''`np_rowwalk_family.jsonl` (fields `mutations`, `no_mutation_at_x`, `largest_entry_away_from_x`), a ≤ 22; `np_rowwalk_family_route_only.log`, 23 ≤ a ≤ 48''',
+  '''`np_rowwalk.py family …`''',
+]
+tasks = ["route/Qa/*"]
+
+[[claim]]
+id = "s10-a7"
+table = "s10"
+cells = [
+  '''a = 7: height 8, 3,120 mutations, top 1,242, at most 16 arrows among the four bouncing vertices''',
+  '''`np_rowwalk_family.jsonl` (a = 7)''',
+  '''**re-run here** (route), and the barrier 1,242 by `../verify/smoke.py --full`''',
+]
+tasks = ["quiver/Qa/a=7", "route/Qa/a=7", "barrier/Qa/a=7", "barrier/Qa/a=7@np_barrier"]
+
+[[claim]]
+id = "s10-a12"
+table = "s10"
+cells = [
+  '''a = 12: 14,820 mutations, top 6,496''',
+  '''`np_rowwalk_family.log` (line a=12)''',
+  '''see also [Known discrepancies](#known-discrepancies)''',
+]
+tasks = ["route/Qa/a=12", "barrier/Qa/a=12@np_barrier"]
+
+[[claim]]
+id = "s10-rebuilt"
+table = "s10"
+cells = [
+  '''rebuilt and compared with the table turn by turn for a ≤ 48; by a second program for a ≤ 20''',
+  '''`np_rowwalk_family*.log` ("closed forms at N turns ok"); `review23_n20_checks_all.log`, `review23_n20_lines_a2_14.log`, `review23_n20_lines_a15_20.log` ([note 23](research/docs/23-checks-of-notes-20-to-22.md) §3)''',
+  '''`../verify/review23_n20_checks.py`''',
+]
+tasks = ["route/Qa/*"]
+
+[[claim]]
+id = "s10-a1000"
+table = "s10"
+cells = [
+  '''a = 1,000: 8,006,010,012 mutations replayed literally''',
+  '''`review23_n21_longreplay.log`, `owf_barrier_attack.log`''',
+  '''`../verify/review23_n21_review.py` with `review23_n21_search.c`''',
+]
+tasks = []
+no_task = '''the replay of 8,006,010,012 mutations is not a task'''
+
+[[claim]]
+id = "s10-a48"
+table = "s10"
+cells = [
+  '''3,057,734,065 quivers at a = 48 below H(48) = 435,526, no pruning''',
+  '''`np_qa_core_family_nofork.log`, `.jsonl`''',
+  '''`np_qa_core.py family --mode chain-nofork …`''',
+]
+tasks = ["reach/Qa/a=48@np_qa_core"]
+
+[[claim]]
+id = "s10-a64"
+table = "s10"
+cells = [
+  '''4,165,617,632 non-fork quivers below H(64) = 1,036,382''',
+  '''`np_qa_core_family.log`, `.jsonl`''',
+  '''`np_qa_core.py family --amin 2 --amax 64 …`''',
+]
+tasks = ["reach/Qa/a=64/forks-pruned@np_qa_core"]
+
+[[claim]]
+id = "s10-second-program"
+table = "s10"
+cells = [
+  '''second program: no pruning for a ≤ 26 and a = 32; pruned for a ≤ 32, 36, 40''',
+  '''`review23_n20_search_classes_nopruning.log`, `…_nopruning_a32.log`, `review23_n20_search_classes_pruned.log`, `…_pruned_a36.log`, `…_pruned_a40.log`, and the two `review23_n20_search_labelled_*` files''',
+  '''`../verify/review23_n20_runs.py`''',
+]
+tasks = []
+no_task = '''a statement about the second original program'''
+
+[[claim]]
+id = "s10-kinds"
+table = "s10"
+cells = [
+  '''about 4a⁵ quivers below H(a) without entering a fork; more than 98% on lines; roughly a hundred other kinds''',
+  '''`np_qa_core_kinds.log`, `np_qa_core_lines.log`, `np_qa_core_anatomy.log`, `np_qa_core_region.log`''',
+  '''`np_qa_core.py kinds …`, `lines …`, `anatomy …`, `region …`''',
+]
+tasks = []
+no_task = '''not a task'''
+
+[[claim]]
+id = "s10-spiral"
+table = "s10"
+cells = [
+  '''the spiral: ten mutations, eigenvalues φ⁸, 1, φ⁻⁸''',
+  '''`np_qa_core_spiral.log`; `review23_n20_checks_all.log`''',
+  '''`np_qa_core.py spiral`''',
+]
+tasks = []
+no_task = '''not a task'''
+
+[table.s12]
+heading = '''Section 12, Conjecture 5.5'''
+columns = ['''Count in the article''', '''Where it is''']
+
+[[claim]]
+id = "s12-totals"
+table = "s12"
+cells = [
+  '''106,918,566 quivers of height ≤ 18; 45,694,973 reach an acyclic quiver within their height; 61,223,593 certified mutation-cyclic''',
+  '''line `totals:` (`quivers`, `pass`, `fail`)''',
+]
+tasks = ["conj55_program/N=18"]
+
+[[claim]]
+id = "s12-certificates"
+table = "s12"
+cells = [
+  '''50,110,169 by a mutation-cyclic triangle; 9,261,670 by a vortex; 1,598,562 by the Markov-invariant lemma; 253,191 by Corollary 5.2; one in a finite class''',
+  '''line `failing quivers by certificate`: `tri`, `vortex`, `markov`, `cor52`, `closed`''',
+]
+tasks = ["conj55_program/N=18"]
+
+[[claim]]
+id = "s12-neville"
+table = "s12"
+cells = [
+  '''about 10.9 million rest on Neville's theorem''',
+  '''derived: 9,261,670 + 1,598,562''',
+]
+tasks = ["conj55_program/N=18"]
+
+[[claim]]
+id = "s12-per-height"
+table = "s12"
+cells = [
+  '''the per-height split of Fig. 12.1''',
+  '''the table at the top of the file''',
+]
+tasks = ["conj55/*", "conj55_program/N=18"]
+
+[[claim]]
+id = "s12-highest-search"
+table = "s12"
+cells = [
+  '''highest search exactly h³ + h² + 5''',
+  '''line `resolve, largest cor52 bound K per height`''',
+]
+tasks = ["conj55_program/N=18"]
+
+[[claim]]
+id = "s12-low-heights"
+table = "s12"
+cells = [
+  '''counts of the original paper reproduced at heights ≤ 3''',
+  '''the column `connected` of the table (34, 633, 4,276), see [note 13](research/docs/13-conjecture-5-5-up-to-height-18.md) §2; the paper's examples are unit-checked in `n4_conj55_check.log` (`n4_conj55.py check`)''',
+]
+tasks = []
+no_task = '''the column `connected` is not computed by a task'''
+
+[[claim]]
+id = "s12-recount"
+table = "s12"
+cells = [
+  '''6,171,451 quivers of height ≤ 11 recomputed by a separately written program''',
+  '''`n4_conj55_N9_recount.log`, `n4_conj55_N18_recount_10_11.log` (`n4_conj55.py recount`). The 6,171,451 is the sum of the column `quivers` of the table in `n4_conj55_N18_summary.log` over heights 1 to 11: 41 + 653 + 4,317 + 17,353 + 51,841 + 127,541 + 273,813 + 531,537 + 955,033 + 1,613,981 + 2,595,341 = 6,171,451; it is also printed in `review12_burnside.log` ("cumulative 6171451" at level 11)''',
+]
+tasks = []
+no_task = '''a statement about the original recount; the tasks of the split are under the per-height row'''
+
+[[claim]]
+id = "s12-note-19"
+table = "s12"
+cells = [
+  '''the check of note 19 to height 10; 1,889,317 failing quivers re-certified; 418,042 upward searches repeated''',
+  '''`review19_n13_lowh_*.log`, `review19_n13_lowcert_*.log`. The 1,889,317 is the sum of the column `fail` of the table in `n4_conj55_N18_summary.log` over heights 1 to 10: 2 + 132 + 1,401 + 6,938 + 23,318 + 61,148 + 137,881 + 275,785 + 508,070 + 874,642 = 1,889,317, `review19_n13_allrows_a.log`, `review19_n13_allrows_b.log`, `review19_n13_arith.log`''',
+]
+tasks = []
+no_task = '''a statement about the check of note 19'''
+
+[[claim]]
+id = "s12-samples"
+table = "s12"
+cells = [
+  '''above height 11 the passing verdicts were checked on samples''',
+  '''`n4_conj55_N18_verify.log`, `review19_n13_samples_*.log`''',
+]
+tasks = []
+no_task = '''a statement about the original sample checks'''
+
+[table.s13]
+heading = '''Section 13, cores and tubes'''
+columns = ['''Count in the article''', '''Where it is''', '''Command''']
+
+[[claim]]
+id = "s13-finite-cores"
+table = "s13"
+cells = [
+  '''555,828 classes with a finite core; pairwise distinct''',
+  '''`n4_opposite_summary.log`, `n4_opposite_mirror.log`; `review23_n22_counts.log`''',
+  '''`n4_opposite_run.py cores …`, `summary`, `mirror`''',
+]
+tasks = ["core/finite-cores", "census/decided-classes"]
+
+[[claim]]
+id = "s13-core-size"
+table = "s13"
+cells = [
+  '''cores of at most 77 quivers and height at most 1,312''',
+  '''`n4_opposite_summary.log` (`highest: 1312`), and the field `n` of `n4_opposite_cores.jsonl.gz`''',
+  '''as above''',
+]
+tasks = []
+no_task = '''not a task'''
+
+[[claim]]
+id = "s13-cores-recomputed"
+table = "s13"
+cells = [
+  '''all cores recomputed by independent code''',
+  '''`review19_n14b_cores.log`, `review19_n14b_full.log`, `review19_n14b_fullsum.log`''',
+  '''`../verify/review19_n14b_cores.py`, `review19_n14b_full.py`''',
+]
+tasks = []
+no_task = '''a statement about the check of note 19'''
+
+[[claim]]
+id = "s13-caps"
+table = "s13"
+cells = [
+  '''caps of 800 quivers or height 10⁶''',
+  '''the options `--cap 800 --level-cap 1000000`''',
+  '''—''',
+]
+tasks = []
+no_task = '''options of the original run'''
+
+[[claim]]
+id = "s13-tubes"
+table = "s13"
+cells = [
+  '''232,198 classes whose core search did not close; 227,414 with a tube certificate (225,208 + 2,206)''',
+  '''`n4_opposite_tubes.log`, `n4_tube_certify2.log`, `review23_n22_counts.log`''',
+  '''`n4_opposite_tubes.py run`, `n4_tube_lemma.py certify2`''',
+]
+tasks = ["tube/*", "census/decided-classes"]
+
+[[claim]]
+id = "s13-decided"
+table = "s13"
+cells = [
+  '''783,242 settled by forks, cores and tubes; 400 disconnected; 1,556 with an acyclic least quiver; 785,198 decided; 2,828 open''',
+  '''`review23_n22_counts.log` (last lines; lines `disconnected`, `acyclic bottom`, `open classes 2828`)''',
+  '''`../verify/review23_n22_counts.py`''',
+]
+tasks = ["census/decided-classes"]
+
+[[claim]]
+id = "s13-mirror-pairs"
+table = "s13"
+cells = [
+  '''377,451 mirror pairs; 376,240 certified to be two classes; 1,211 open''',
+  '''`review23_n22_counts.log`: `pairs 377451`; the 1,211 is derived (2,139 open after note 14, minus 896 + 4 pairs certified by note 22 and 28 disconnected pairs); 376,240 = 377,451 − 1,211''',
+  '''as above''',
+]
+tasks = ["census/decided-classes"]
+
+[[claim]]
+id = "s13-322"
+table = "s13"
+cells = [
+  '''322 certificates attacked by independent code''',
+  '''`review19_n14b_tubecert.log`, `review19_n14b_tubecheck_*.log`, `review19_n14b_tubeplat.log`''',
+  '''`../verify/review19_n14b_tubecert.py`, `../verify/review19_n14b_tubecheck.py`''',
+]
+tasks = []
+no_task = '''a statement about the check of note 19'''
+
+[[claim]]
+id = "s13-bottoms"
+table = "s13"
+cells = [
+  '''least quivers of 2,206 certificates confirmed by exhaustive cuts up to 1,024 times the least height''',
+  '''`review23_n22_bottoms.log`''',
+  '''`../verify/review23_n22_bottoms.py 1024 400000 PROCS`''',
+]
+tasks = []
+no_task = '''a statement about the check of note 23'''
+
+[[claim]]
+id = "s13-engine"
+table = "s13"
+cells = [
+  '''149 of a sample of 150 re-certified by a second engine''',
+  '''`review23_n22_engine.log` (144 on the first pass), then `review23_n22_engine_retry.log`, `review23_n22_engine_highlam.log`, `review23_n22_engine_500677.log` for the six that failed it; the total is stated in [note 23](research/docs/23-checks-of-notes-20-to-22.md) §3, not in one log line''',
+  '''`../verify/review23_n22_engine.py`, `review23_n22_engine_retry.py`, `review23_n22_engine_highlam.py`, `review23_n22_engine_500677.py`''',
+]
+tasks = []
+no_task = '''a statement about the check of note 23'''
+
+[[claim]]
+id = "s13-markov-cuts"
+table = "s13"
+cells = [
+  '''cuts of V′(X₀) at heights 25, 50, 100, 200: 823, 3,181, 12,383, 49,157''',
+  '''`n4_tube_markov.log`; `review23_lead_n22_markov.log`''',
+  '''`n4_tube_lemma.py markov`''',
+]
+tasks = []
+no_task = '''not a task'''
+
+[table.example]
+heading = '''The running example'''
+columns = ['''Number''', '''Where it is''']
+
+[[claim]]
+id = "ex-numbers"
+table = "example"
+cells = [
+  '''height 8; mutation heights 62, 24, 57, 48; barrier 101; 35 quivers below 101, only R₈ of height ≤ 8; 37 mutations; 28 quivers at 101; climb 8, 24, 40, 56''',
+  '''recomputed by `../verify/smoke.py` (**re-run here**)''',
+]
+tasks = ["quiver/R/b=8", "barrier/R/b=8", "reach/R/b=8", "route/R/b=8", "route/R/b=8@shortest"]
+
+[[claim]]
+id = "ex-stored"
+table = "example"
+cells = [
+  '''the same, stored''',
+  '''`owf_barrier_summary.log`, row `R 8 8 101 \| 37 \| 68 \| 46 \| 35` (`owf_barrier.py summarize`, **re-run here: identical**); `n4_doors_family3.log` (b = 8, with the exit table)''',
+]
+tasks = ["barrier/R/b=8", "reach/R/b=8", "route/R/b=8"]
+
+[[claim]]
+id = "ex-generic-search"
+table = "example"
+cells = [
+  '''68 quivers popped by the generic search, 46 with forks pruned''',
+  '''the same row; from `owf_barrier_generic.jsonl` (`owf_barrier.py generic`). A plain breadth-first search pops more: these are counts for the tie-breaking order best for the attacker ([note 21](research/docs/21-barriers-and-the-mutation-path-owf.md) §3.1, [note 23](research/docs/23-checks-of-notes-20-to-22.md) §3)''',
+]
+tasks = []
+no_task = '''the count depends on the order in which the search breaks ties; not a task'''
+
+[[claim]]
+id = "ex-attacker"
+table = "example"
+cells = [
+  '''0.026 s and 860 isomorphism tests for the structure-aware attacker''',
+  '''`owf_barrier_summary.log`, second table, row `R 8` (from `owf_barrier_attack.jsonl`)''',
+]
+tasks = []
+no_task = '''a timing of the original program; not a task'''
+
+# The headline table of GUIDE.md: one row per entry, from the task's latest record.
+# `key` picks one entry of a computed table; without it the whole value is shown.
+
+[[headline]]
+label = '''G₈ and −G₈ are joined at height'''
+task = "barrier/G/k=8"
+
+[[headline]]
+label = '''R₈ and −R₈ are joined at height'''
+task = "barrier/R/b=8"
+
+[[headline]]
+label = '''quivers reached from R₈ below 101, up to relabelling'''
+task = "reach/R/b=8"
+key = "quivers"
+
+[[headline]]
+label = '''mutations on the route from R₈ to −R₈'''
+task = "route/R/b=8"
+key = "mutations"
+
+[[headline]]
+label = '''quivers at height 101 on that route'''
+task = "route/R/b=8"
+key = "at_top"
+
+[[headline]]
+label = '''Q₃ and −Q₃ are joined at height'''
+task = "barrier/Qt/t=3"
+
+[[headline]]
+label = '''P⁺₃ (height 9) and −P⁺₃ are joined at height'''
+task = "barrier/P+/t=3"
+
+[[headline]]
+label = '''mutations on the route from P⁺₃ to −P⁺₃'''
+task = "route/P+/t=3"
+key = "mutations"
+
+[[headline]]
+label = '''top of the route from Q₇ (height 8) to −Q₇'''
+task = "route/Qa/a=7"
+key = "top"
+
+[[headline]]
+label = '''mutations on that route'''
+task = "route/Qa/a=7"
+key = "mutations"
+
+[[headline]]
+label = '''quivers of height exactly 4, up to relabelling'''
+task = "conj55/h=4"
+key = "quivers"
+
+[[headline]]
+label = '''of these, reaching an acyclic quiver within height 4'''
+task = "conj55/h=4"
+key = "reach_acyclic"
+
+[[headline]]
+label = '''claims certified for R_b, even b ≥ 6'''
+task = "certificate/R_b"
+key = "claims"
+
+[[headline]]
+label = '''claims certified for Q_t, t ≥ 3'''
+task = "certificate/Q_t"
+key = "claims"
+
+[[headline]]
+label = '''claims certified for P⁺_t, t ≥ 8'''
+task = "certificate/P+_t/audit-to-7"
+key = "claims"
