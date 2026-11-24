@@ -7,8 +7,9 @@ authors:
     given-names: Christopher
 date-released: 2026-11-17
 version: "1.0-draft"
-# Not a choice between two licences: MIT applies to the code (research/experiments/, research/verify/, src/bookkeeping/), and
-# CC-BY-4.0 to the text, the paper and the data archive. See LICENSE and LICENSE-TEXT.md.
+# Not a choice between two licences: MIT applies to the code (src/qmb/, src/taskbatch/, src/runners/,
+# src/bookkeeping/, research/experiments/, research/verify/), and CC-BY-4.0 to the text, the paper and the
+# data archive. See LICENSE and LICENSE-TEXT.md.
 license: [MIT, CC-BY-4.0]
 # TODO-REPOSITORY-URL: set once the repository is public
 # repository-code: "TODO-REPOSITORY-URL"
