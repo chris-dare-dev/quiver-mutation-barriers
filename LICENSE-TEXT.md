@@ -1,6 +1,6 @@
 # Licence for the text and data
 
-The code in `src/qmb/`, `src/taskbatch/`, `src/runners/`, `src/bookkeeping/`, `research/experiments/` and `research/verify/` is released under the MIT licence in [LICENSE](LICENSE).
+The code in `src/` (`qmb`, `taskbatch`, `runners`, `bookkeeping`), `tests/`, `.github/`, `research/experiments/` and `research/verify/` is released under the MIT licence in [LICENSE](LICENSE).
 
 Everything else in this repository, namely the prose in `README.md`, `GUIDE.md`, `CLAIMS.md`, `data/README.md`, `research/docs/`, the paper in `research/paper/`, and the data archive described in [data/README.md](data/README.md), is © 2026 Christopher Dare and is released under the **Creative Commons Attribution 4.0 International licence (CC BY 4.0)**.
 
